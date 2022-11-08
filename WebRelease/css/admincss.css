@@ -1,0 +1,102 @@
+.more1 p{
+    float: left;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+.more1{
+    padding: 10px;
+    background-color: #f7f8fc;
+    border-radius: 5px;
+    display: flex;
+}
+.more1 form {
+    margin-top: 2px;
+}
+.more1 a:hover{
+    color: #007bff;
+}
+.align-self-start{
+    height: 100%;
+    margin-right: 6px;
+}
+.menuctner{
+    display: flex;
+    flex-direction: column;
+}
+.doanhthu .doanhthuitem div i{
+    margin-right: 10px;
+}
+.doanhthu{
+    width: 100%;
+    display: flex;
+    gap: 16%;
+    margin-bottom: 50px;
+}
+.doanhthu .doanhthuitem {
+    border-style: solid;
+    border-radius: 5px;
+    border-color: antiquewhite;
+}
+.doanhthuitem .doanhthuctn
+{
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.doanhthuitem strong {
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+.doanhthuitem div div{
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.doanhthuitem div i {
+    padding-left: 25px;
+}
+.menuctner2{
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+.table{
+    margin-left: 3%;
+}
+.cd-table-container{
+    background: #fff;
+    box-shadow: 1px 2px 26px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    max-width: 720px;
+}
+/* Table Design */
+.cd-table{
+    width: 100%;
+    color: #666;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+.cd-table tr,
+.cd-table td{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.cd-table th{
+
+    padding: 10px;
+}
+
+/* Search Box */
+.cd-search{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Search Title */
+.cd-title{
+    color: #666;
+    margin: 15px 0;
+}
