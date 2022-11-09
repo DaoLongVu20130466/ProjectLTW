@@ -128,7 +128,7 @@
                         <h2>Trang Admin</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Admin</a>
-                            <span>Thêm Sản Phẩm</span>
+                            <span>Sản Phẩm</span>
                         </div>
                     </div>
                 </div>
@@ -159,57 +159,84 @@
                     </div>
                 </div>
               <div class="col-lg-10 col-md-5">
+                <h2>Toàn bộ sản phẩm:</h2>
+                <div class="TaiKhoan">
+                    <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
+                    <table class="cd-table order-table table">
+                        <thead>
+                        <tr>
+                                <th>Tên Món Ăn</th>
+                                <th>Giá Món Ăn (VND)</th>
+                                <th>ID Món Ăn</th>
+                                <th>Loại Món Ăn</th>
+                                <th>Trạng Thái</th>
+                                <th>Hành Động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                         <tr>
+                            <td>Cơm Gà</td>
+                            <td>200000</td>
+                            <td>12</td>
+                            <td>Cơm</td>
+                         
+                            <td><a href=""><i class="fa fa-eye" aria-hidden="true"></i>Hiển thị</a><br>
+                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Ẩn</a></td>
 
-                <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
-                <form action="" id="form">
-                    <label for="fname" id="text">Tên món ăn : </label>
-                    <input type="text" id="fname" name="fname" placeholder="Tên món ăn"> <br><br>
-                  </form>
-                  <form action="" id="form">
-                    <label for="fname" id="text">Từ khóa tìm kiếm : </label>
-                    <input type="text" id="fname" name="fname" placeholder="Giữa các từ khóa ngăn cách dấu ','"> <br><br>
-                  </form>
-                  <form action="" id="form">
-                    <label for="fname" id="text">Giá bán    : </label>
-                    <input type="text" id="gban" name="fname" placeholder="Giá món ăn"> VNĐ<br><br>
-                  </form>
-                  <label for="cars" id="text">Loại Món Ăn : </label>
-                  <form action="">
-                    <select id="cars" name="cars">
-                      <option value="ComSon">Cơm Sườn</option>
-                      <option value="ComBaroi">Cơm Ba rọi</option>
-                      <option value="ComChien">Cơm chiên</option>
-                      <option value="ComHaiSan">Cơm hải sản</option>
-                      <option value="ComBo">Cơm bò</option>
-                      <option value="ComGa">Cơm Gà</option>
-                      <option value="CacMonKhac">Các món cơm khác</option>
-                      <option value="BunPho">Các món Bún, Phở</option>
-                      <option value="ThucUong">Thức uống</option>
-                      <option value="MonCanh">Món canh</option>
-          
-                    </select>
-                    <br><br>
-                  </form>
-                  <form action="">
-                    <label for="myfile" id="text">Chọn Hình Ảnh : </label><br><br>
-                    <input type="file" id="myfile" name="myfile"><br><br>
-                  </form>
-                  <label for="fname" id="text">Mô tả món ăn  : </label>
-                  <form action="" id="ckedit">
-                     <div id="editor">Mô tả <br><br><br><br></div>
-                        <script>
-                                 ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-                      </script>
-                    </form>
-                    <button class="btn">Cập Nhật</button>
-                    <button class="btn">Xóa</button>
+                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
+                            <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                            <a href=""> <i class="fa fa-home" aria-hidden="true"></i>Xem trên trang chủ</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cơm Gà</td>
+                            <td>200000</td>
+                            <td>12</td>
+                            <td>Cơm</td>
+                         
+                            <td><a href=""><i class="fa fa-eye" aria-hidden="true"></i>Hiển thị</a><br>
+                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Ẩn</a></td>
+
+                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
+                            <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                            <a href=""> <i class="fa fa-home" aria-hidden="true"></i>Xem trên trang chủ</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cơm Gà</td>
+                            <td>200000</td>
+                            <td>12</td>
+                            <td>Cơm</td>
+                         
+                            <td><a href=""><i class="fa fa-eye" aria-hidden="true"></i>Hiển thị</a><br>
+                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Ẩn</a></td>
+
+                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
+                            <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                            <a href=""> <i class="fa fa-home" aria-hidden="true"></i>Xem trên trang chủ</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cơm Gà</td>
+                            <td>200000</td>
+                            <td>12</td>
+                            <td>Cơm</td>
+                         
+                            <td><a href=""><i class="fa fa-eye" aria-hidden="true"></i>Hiển thị</a><br>
+                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Ẩn</a></td>
+
+                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
+                            <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                            <a href=""> <i class="fa fa-home" aria-hidden="true"></i>Xem trên trang chủ</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="product__pagination">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+                
     
                      
                   </div>
@@ -221,12 +248,6 @@
             </div>
         </div>
     </section>
-    <!-- Product Section End -->
-
-    <!-- Footer Section Begin -->
-    <!-- Footer Section End -->
-
-    <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
