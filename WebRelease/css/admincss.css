@@ -103,6 +103,86 @@
 .TaiKhoan a:hover{
     color: #1b1e21;
 }
+ HEAD
+.itin4{
+    display: flex;
+}
+.itin4 img{
+    height: 60px;
+    width: 60px;
+}
+.itemi4 {
+    font-weight: 1000;
+    color: #2962ff;
+    font-size: larger;
+    font-family: math;
+}
+.mahang {
+    margin-bottom: -5px;
+}
+.ittabp{
+    margin-left: 10px;
+}
+.hed {
+    margin-top: 25px;
+    display: flex;
+    margin-left: 4%;
+}
+.hed p {
+    color: #2962ff;
+    font-size: large;
+    font-weight: 500;
+}
+.infor{
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.ChiTietDonHangs{
+    border-radius: 3px;
+    margin-left: 15px;
+    border-style: groove;
+}
+.chitietdonhang {
+    margin-bottom: 25px;
+
+    display: flex;
+    gap: 50px;
+}
+.chitietdonhang-cl1{
+    max-width: 50%;
+    width: 45%;
+    margin-right: -20px;
+}
+.chitietdonhang-cl1 div{
+    margin-bottom: 2%;
+    margin-left: 35px;
+    height: 35px;
+    width: 100%;
+}
+.lbin4{
+    float: right;
+    color: #2962ff;
+}
+.lbin41{
+    float: right;
+}
+.lbin42{
+    float: right;
+    font-weight: 700;
+}
+.lbdt{
+    float: left;
+}
+.Statusdon{
+    background: #2962ff;
+    color: white;
+    float: right;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+
 /* --------------------------------------------- */
 /* --------------------------------------------- */
 /* ---------------------ThemSP------------------------ */
@@ -110,12 +190,12 @@
     width: 300px;
     box-shadow: 10px 10px 18px #e6e6e6;
     flex-direction: column;
-    background: var(--main-color);
+    /*background: var(--main-color);*/
     grid-column-start: 1;
     grid-column-end: 3;
 }
 #gban{
-    width: 2 00px;
+    width: 200px;
     box-shadow: 10px 10px 18px #e6e6e6;
     flex-direction: column;
     grid-column-start: 1;
