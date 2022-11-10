@@ -243,7 +243,83 @@ table {
       margin-left: 1%;
       border-radius: 5px;
   }
-  
+  #voucher {
+      column-gap: 1%;
+      row-gap: 13%;
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 50% 50%;
+  }
+  #voucher div{
+      display: flex;
+
+
+  }
+#voucher div input{
+    width: 100%;
+}
+#voucher div label{
+    width: 30%;;
+}
+.c3 {
+    display: flex;
+    grid-row: 3;
+}
+.day1{
+    grid-column: 1
+}
+.ghichu{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.day1 input{
+    width: auto;
+}
+.day2 input{
+    width: auto;
+}
+.btnacc{
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: white;
+    width: 125px;
+    font-weight: 700;
+    padding: 7px;
+    border-radius: 3px;
+    text-align: center;
+    margin-left: 88%;
+}
+#loaigiam{
+    width: 40%;
+}
+.ghichu input {
+
+}
+.head2 {
+    margin-bottom: 4%;
+    font-size: large;
+    font-weight: 700;
+    color: #1a73e8;
+}
+#themvoucher{
+    border-style: groove;
+    border-radius: 5px;
+    margin-left: 1%;
+}
+.boderform{
+    margin-top: 3%;
+    margin-right: 2%;
+    margin-left: 1%;
+}
+.nice-select{
+    width: 40%;
+    margin-left: -7%;
+}
+.stg {
+    height: 35px;
+    /* width: 66%; */
+    margin-left: 1%;
+}
 
  
 
