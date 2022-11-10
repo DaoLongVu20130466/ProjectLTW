@@ -231,6 +231,18 @@ table {
     text-align: left;
     padding: 8px;
   }
+  .vouchersearch{
+      display: flex;
+  }
+  .vouchersearch a {
+      background: #007bff;
+      color: white;
+      width: 15%;
+      text-align: center;
+      padding: 1%;
+      margin-left: 1%;
+      border-radius: 5px;
+  }
   
 
  
