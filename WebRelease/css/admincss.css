@@ -103,7 +103,6 @@
 .TaiKhoan a:hover{
     color: #1b1e21;
 }
- HEAD
 .itin4{
     display: flex;
 }
@@ -233,8 +232,6 @@ table {
     padding: 8px;
   }
   
-  tr:nth-child(even) {
-    background-color: #D6EEEE;
-  }
+
  
 
