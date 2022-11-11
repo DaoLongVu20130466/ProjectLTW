@@ -11,8 +11,10 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
   <!-- Css Styles -->
+
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -22,7 +24,6 @@
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <link rel="stylesheet" href="css/admincss.css">
-  <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -84,10 +85,10 @@
         <nav class="header__menu">
           <ul>
             <li><a href="./index.html">Home</a></li>
-            <li class="active"><a href="./shop-grid.html">Shop</a></li>
+            <li class="active"><a href="DoanhThu.html">Shop</a></li>
             <li><a href="#">Pages</a>
               <ul class="header__menu__dropdown">
-                <li><a href="./shop-details.html">Shop Details</a></li>
+                <li><a href="ád.html">Shop Details</a></li>
                 <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                 <li><a href="./checkout.html">Check Out</a></li>
                 <li><a href="./blog-details.html">Blog Details</a></li>
@@ -128,7 +129,7 @@
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
             <a href="./index.html">Admin</a>
-            <span>Thêm Sản Phẩm</span>
+            <span>Quản Lý Tài Khoản</span>
           </div>
         </div>
       </div>
@@ -147,9 +148,8 @@
           <div class="sidebar__item">
             <h4>Quản Lý</h4>
             <ul>
-              <li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Điều Khiển </a></li>
+              <li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
               <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-              <li><a href="#"><i class="fa fa-line-chart" aria-hidden="true"></i> Doanh Thu </a></li>
               <li><a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
               <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="#"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
@@ -158,65 +158,51 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-10 col-md-5">
+      <div class="col-lg-10 col-md-5" id="themvoucher">
+        <div>
 
-        <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
-        <form action="" id="form">
-          <label for="fname" id="text">Tên món ăn : </label>
-          <input type="text" id="fname" name="fname" placeholder="Tên món ăn"> <br><br>
-        </form>
-        <form action="" id="form">
-          <label for="fname" id="text">Từ khóa tìm kiếm : </label>
-          <input type="text" id="fname" name="fname" placeholder="Giữa các từ khóa ngăn cách dấu ','"> <br><br>
-        </form>
-        <form action="" id="form">
-          <label for="fname" id="text">Giá bán    : </label>
-          <input type="text" id="gban" name="fname" placeholder="Giá món ăn"> VNĐ<br><br>
-        </form>
-        <label for="cars" id="text">Loại Món Ăn : </label>
-        <form action="">
-          <select id="cars" name="cars">
-            <option value="ComSon">Cơm Sườn</option>
-            <option value="ComBaroi">Cơm Ba rọi</option>
-            <option value="ComChien">Cơm chiên</option>
-            <option value="ComHaiSan">Cơm hải sản</option>
-            <option value="ComBo">Cơm bò</option>
-            <option value="ComGa">Cơm Gà</option>
-            <option value="CacMonKhac">Các món cơm khác</option>
-            <option value="BunPho">Các món Bún, Phở</option>
-            <option value="ThucUong">Thức uống</option>
-            <option value="MonCanh">Món canh</option>
 
-          </select>
-          <br><br>
-        </form>
-        <form action="">
-          <label for="myfile" id="text">Chọn Hình Ảnh : </label><br><br>
-          <input type="file" id="myfile" name="myfile"><br><br>
-        </form>
-        <label for="fname" id="text">Mô tả món ăn  : </label>
-        <form action="" id="ckedit">
-          <div id="editor">Mô tả <br><br><br><br></div>
-          <script>
-            ClassicEditor
-                    .create( document.querySelector( '#editor' ) )
-                    .then( editor => {
-                      console.log( editor );
-                    } )
-                    .catch( error => {
-                      console.error( error );
-                    } );
-          </script>
-        </form>
-        <button class="btn">Cập Nhật</button>
-        <button class="btn">Xóa</button>
+          <div class="boderform">
+          <label class="head2">Thêm Voucher Mới</label>
+          <form action="" id="voucher">
+
+            <div>
+            <label>Tên Voucher:</label>
+              <input type="text">
+            </div>
+
+            <div>
+            <label>Mã Voucher:</label>
+            <input type="text">
+            </div>
+            <div class="c3">
+            <label>Số Tiền Giảm:</label>
+            <input class="stg" type="text">
+              <p class="dd">đ</p>
+             </div>
+            <div>
+            <label for="loaigiam">Loại Giảm :</label>
+            <select name="cars" id="loaigiam">
+              <option value="ship">Giảm Phí Ship</option>
+              <option value="phantram">Giảm Phần Trăm Tiền</option>
+              <option value="tienmat">Giảm Tiền</option>
+            </select>
+            </div>
+            <div class="day1">
+            <label>Ngày Bắt Đầu : </label>
+            <input type="date">
+            </div>
+            <div class="day2">
+            <label>Ngày Kết Thúc : </label>
+            <input type="date">
+        </div>
+            <input class="btnacc" type="button" value="Xác Nhận">
+          </form>
+          </div>
 
 
       </div>
-
-
     </div>
-  </div>
 
   </div>
   </div>
@@ -235,6 +221,39 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+
+<!--    <table class="table table-striped">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th scope="col">#</th>-->
+<!--            <th scope="col">First</th>-->
+<!--            <th scope="col">Last</th>-->
+<!--            <th scope="col">Handle</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr>-->
+<!--            <th scope="row">1</th>-->
+<!--            <td>Mark</td>-->
+<!--            <td>Otto</td>-->
+<!--            <td>@mdo</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th scope="row">2</th>-->
+<!--            <td>Jacob</td>-->
+<!--            <td>Thornton</td>-->
+<!--            <td>@fat</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th scope="row">3</th>-->
+<!--            <td>Larry</td>-->
+<!--            <td>the Bird</td>-->
+<!--            <td>@twitter</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+
 
 
 </body>
