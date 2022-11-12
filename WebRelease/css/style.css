@@ -3637,4 +3637,16 @@ ol {
 .input-and-icon .btn_cnc{
 	border: white;
 }
+.product__pagination{
+	color: rgb(218, 28, 28);
+	margin-left: 80%;
+}.product__pagination .active{
+	background-color: #2ec791;
+	
+}
+.product__pagination a{
+	color: #000;
+	border-radius: 1px;
+}
+
 
