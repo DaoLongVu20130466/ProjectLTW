@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SBE-Cơm trưa</title>
+    <title>SBE-Cơm Trưa</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -74,6 +74,14 @@
                         <ul>
                             <li ><a href="./index.html">Trang Chủ</a></li>
                             <li class="active"><a href="./shop-grid.html">Gian Hàng</a></li>
+<!--                            <li><a href="#">Pages</a>-->
+<!--                                <ul class="header__menu__dropdown">-->
+<!--                                    <li><a href="./shop-details.html">Shop Details</a></li>-->
+<!--                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>-->
+<!--                                    <li><a href="./checkout.html">Check Out</a></li>-->
+<!--                                    <li><a href="./blog-details.html">Blog Details</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
 
                             <li><a href="./blog.html">Giới Thiệu</a></li>
                             <li><a href="./contact.html">Liên Hệ</a></li>
@@ -187,82 +195,77 @@
              
            
     </div>
-    <div class="userr" style="width: 100%;margin-left: 0px; ">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <div class="container">
-            <div class="view-account">
-                <section class="module">
-                    <div class="module-inner">
-                     
-                        <div class="content-panel">
-                            <h2 class="title">CHỉnh sửa</h2>
-                            <form class="form-horizontal">
-                                <fieldset class="fieldset">
+    <div class="userr" style="width:80%;">
+        <div class="TaiKhoan">
+          <table class="cd-table order-table table">
+            <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã Voucher</th>
+              <th>Tên Voucher</th>
+              <th>Loại Voucher</th>
+              <th>Giảm</th>
+              <th>Thời hạn</th>
+              
+              <th>Hành Động</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1.</td>
+              <td>FREESHIP20/10</td>
+              <td>Freeship 20/10</td>
+              <td>Giảm phí ship</td>
+              <td>100%</td>
+              <td>20/11/2022</td>
+              <td><a href=""><i class="fa fa-hand-o-right" aria-hidden="true"></i>Sử dụng</a></td>
+            </tr>
 
-                                    <div class="form-group avatar">
-                                        <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                            <img class="img-rounded img-responsive" src="https://i.imgur.com/cMy8V5j.png" alt="">
-                                        </figure>
-                                        <div class="form-inline col-md-10 col-sm-9 col-xs-12">
-                                            <input type="file" class="file-uploader pull-left">
-                                            <button type="submit" class="btn btn-sm btn-default-alt pull-left" style="    margin-top: 0px; margin-left: 5px;" >Update Image</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-2 col-sm-3 col-xs-12 control-label">Tên Người Dùng</label>
-                                        <div class="col-md-10 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" value="">
-                                        </div>
-                                    </div>
-                
-                                    <div class="form-group">
-                                        <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Tên</label>
-                                        <div class="col-md-10 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-2 col-sm-3 col-xs-12 control-label">Ngày Sinh</label>
-                                        <div class="col-md-10 col-sm-9 col-xs-12">
-                                            <input type="date" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset">
-                                    <h3 class="fieldset-title">Thông tin liên lạc</h3>
-                                    <div class="form-group">
-                                        <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
-                                        <div class="col-md-10 col-sm-9 col-xs-12">
-                                            <input type="email" class="form-control" value="">
-                                    
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
-                                        <div class="col-md-10 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-2  col-sm-3 col-xs-12 control-label">Địa chỉ</label>
-                                        <div class="col-md-10 col-sm-9 col-xs-12">
-                                            <input type="text" class="form-control" value="">
-                                       
-                                        </div>
-                                    </div>
-                                    
-                                </fieldset>
-                                <hr>
-                                <div class="form-group">
-                                    <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                        <input class="btn btn-primary" type="submit" style="    margin-top:5px;" value="Update Profile">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            <tr>
+              <td>2</td>
+              <td>HALLOWEEN</td>
+              <td>Haloween vui vẻ</td>
+              <td>Giảm phần trăm</td>
+              <td>20%</td>
+              <td>05/11/2022</td>
+              <td><a href=""><i class="fa fa-hand-o-right" aria-hidden="true"></i>Sử dụng</a></td>         
+               </tr>
+            
+            <tr>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td><a href=""> .  <!--<i class="fa fa-hand-o-right" aria-hidden="true"></i></a>  --></td>            
+                  </tr>
+              
+            <tr>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td><a href=""> .  <!--<i class="fa fa-hand-o-right" aria-hidden="true"></i></a>  --></td>            
+                </tr>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+              <td><a href="">.<!--<i class="fa fa-hand-o-right" aria-hidden="true"></i></a>  --></td>       
+             </tr>
+            </tbody>
+          </table>
+          <div class="product__pagination">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+          </div>
         </div>
       </div>
      
