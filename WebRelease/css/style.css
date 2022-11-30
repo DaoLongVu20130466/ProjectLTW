@@ -780,7 +780,7 @@ ol {
 .categories__item h5 a {
 	font-size: 18px;
 	color: #1c1c1c;
-	font-weight: 700;
+
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	padding: 12px 0 10px;
@@ -1129,7 +1129,7 @@ ol {
 
 .price-range-wrap .range-slider .price-input:after {
 	position: absolute;
-	left: 38px;
+	left: 95px;
 	top: 13px;
 	height: 1px;
 	width: 5px;
@@ -1141,7 +1141,7 @@ ol {
 	font-size: 16px;
 	color: #dd2222;
 	font-weight: 700;
-	max-width: 20%;
+	max-width: 40%;
 	border: none;
 	display: inline-block;
 }
