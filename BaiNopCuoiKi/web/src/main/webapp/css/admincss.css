@@ -1,0 +1,327 @@
+.more1 p{
+    float: left;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+.more1{
+    padding: 10px;
+    background-color: #f7f8fc;
+    border-radius: 5px;
+    display: flex;
+}
+.more1 form {
+    margin-top: 2px;
+}
+.more1 a:hover{
+    color: #007bff;
+}
+.align-self-start{
+    height: 100%;
+    margin-right: 6px;
+}
+.menuctner{
+    display: flex;
+    flex-direction: column;
+}
+.doanhthu .doanhthuitem div i{
+    margin-right: 10px;
+}
+.doanhthu{
+    width: 100%;
+    display: flex;
+    gap: 16%;
+    margin-bottom: 50px;
+}
+.doanhthu .doanhthuitem {
+    border-style: solid;
+    border-radius: 5px;
+    border-color: antiquewhite;
+}
+.doanhthuitem .doanhthuctn
+{
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.doanhthuitem strong {
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+.doanhthuitem div div{
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.doanhthuitem div i {
+    padding-left: 25px;
+}
+.menuctner2{
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+.table{
+    margin-left: 3%;
+}
+.cd-table-container{
+    background: #fff;
+    box-shadow: 1px 2px 26px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    max-width: 720px;
+}
+/* Table Design */
+.cd-table{
+    width: 100%;
+    color: #666;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+.cd-table tr,
+.cd-table td{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.cd-table th{
+
+    padding: 10px;
+}
+
+/* Search Box */
+.cd-search{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Search Title */
+.cd-title{
+    color: #666;
+    margin: 15px 0;
+}
+.TaiKhoan a:hover{
+    color: #1b1e21;
+}
+.itin4{
+    display: flex;
+}
+.itin4 img{
+    height: 60px;
+    width: 60px;
+}
+.itemi4 {
+    font-weight: 1000;
+    color: #2962ff;
+    font-size: larger;
+    font-family: math;
+}
+.mahang {
+    margin-bottom: -5px;
+}
+.ittabp{
+    margin-left: 10px;
+}
+.hed {
+    margin-top: 25px;
+    display: flex;
+    margin-left: 4%;
+}
+.hed p {
+    color: #2962ff;
+    font-size: large;
+    font-weight: 500;
+}
+.infor{
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.ChiTietDonHangs{
+    border-radius: 3px;
+    margin-left: 15px;
+    border-style: groove;
+}
+.chitietdonhang {
+    margin-bottom: 25px;
+
+    display: flex;
+    gap: 50px;
+}
+.chitietdonhang-cl1{
+    max-width: 50%;
+    width: 45%;
+    margin-right: -20px;
+}
+.chitietdonhang-cl1 div{
+    margin-bottom: 2%;
+    margin-left: 35px;
+    height: 35px;
+    width: 100%;
+}
+.lbin4{
+    float: right;
+    color: #2962ff;
+}
+.lbin41{
+    float: right;
+}
+.lbin42{
+    float: right;
+    font-weight: 700;
+}
+.lbdt{
+    float: left;
+}
+.Statusdon{
+    background: #2962ff;
+    color: white;
+    float: right;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* ---------------------ThemSP------------------------ */
+#fname  {
+    width: 300px;
+    box-shadow: 10px 10px 18px #e6e6e6;
+    flex-direction: column;
+    /*background: var(--main-color);*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#gban{
+    width: 200px;
+    box-shadow: 10px 10px 18px #e6e6e6;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.btn{
+    background: #2ec791;
+    border: #333333;
+    padding: 10px;
+    box-shadow: 10px 10px 18px #b6b6e7;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    grid-column:1/3;
+}
+#text{
+    background: #2ec791;
+    border: #333333;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    grid-column:1/3;
+}
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* -------------------SanPham-------------------------- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  .vouchersearch{
+      display: flex;
+  }
+  .vouchersearch a {
+      background: #007bff;
+      color: white;
+      width: 15%;
+      text-align: center;
+      padding: 1%;
+      margin-left: 1%;
+      border-radius: 5px;
+  }
+  #voucher {
+      column-gap: 1%;
+      row-gap: 13%;
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 50% 50%;
+  }
+  #voucher div{
+      display: flex;
+
+
+  }
+#voucher div input{
+    width: 100%;
+}
+#voucher div label{
+    width: 30%;;
+}
+.c3 {
+    display: flex;
+    grid-row: 3;
+}
+.day1{
+    grid-column: 1
+}
+.ghichu{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.day1 input{
+    width: auto;
+}
+.day2 input{
+    width: auto;
+}
+.btnacc{
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: white;
+    width: 125px;
+    font-weight: 700;
+    padding: 7px;
+    border-radius: 3px;
+    text-align: center;
+    margin-left: 88%;
+}
+#loaigiam{
+    width: 40%;
+}
+.ghichu input {
+
+}
+.head2 {
+    margin-bottom: 4%;
+    font-size: large;
+    font-weight: 700;
+    color: #1a73e8;
+}
+#themvoucher{
+    border-style: groove;
+    border-radius: 5px;
+    margin-left: 1%;
+}
+.boderform{
+    margin-top: 3%;
+    margin-right: 2%;
+    margin-left: 1%;
+}
+.nice-select{
+    width: 88%;
+    height: 36px;
+    padding-bottom: 4px;
+  
+}
+.stg {
+    height: 35px;
+    /* width: 66%; */
+    margin-left: 1%;
+}
+
+ 
+
