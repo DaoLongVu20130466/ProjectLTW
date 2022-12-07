@@ -9,11 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8485ad3-3f07-4cb0-954e-1de8f37fc6a5" name="Changes" comment="add lai" />
+    <list default="true" id="e8485ad3-3f07-4cb0-954e-1de8f37fc6a5" name="Changes" comment="add lai">
+      <change afterPath="$PROJECT_DIR$/New Text Document.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/db/DBProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/db/JDBIConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,11 +56,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="17" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="web:war">
@@ -144,6 +158,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669800303279</updated>
       <workItem from="1669800305194" duration="788000" />
+      <workItem from="1670418420387" duration="2979000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
