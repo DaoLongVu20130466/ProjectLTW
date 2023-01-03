@@ -11,8 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e8485ad3-3f07-4cb0-954e-1de8f37fc6a5" name="Changes" comment="add lai">
       <change afterPath="$PROJECT_DIR$/New Text Document.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletDeleteUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getUserControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/db/ConnectMysqlExample.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/db/DBProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/db/JDBIConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/useService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -25,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -57,11 +63,53 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+<<<<<<< HEAD
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="17" nameIsGenerated="true">
+=======
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+    <configuration name="ConnectMysqlExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.db.ConnectMysqlExample" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBIConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.db.JDBIConnector" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-18" nameIsGenerated="true">
+>>>>>>> vu
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="web:war">
@@ -148,6 +196,12 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConnectMysqlExample" />
+        <item itemvalue="Application.JDBIConnector" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -159,9 +213,13 @@
       <updated>1669800303279</updated>
       <workItem from="1669800305194" duration="788000" />
       <workItem from="1670418420387" duration="3931000" />
+<<<<<<< HEAD
       <workItem from="1670424267411" duration="431000" />
       <workItem from="1670984115323" duration="732000" />
       <workItem from="1670986484682" duration="736000" />
+=======
+      <workItem from="1672710672878" duration="8975000" />
+>>>>>>> vu
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
@@ -198,5 +256,15 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add lai" />
     <option name="LAST_COMMIT_MESSAGE" value="add lai" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
