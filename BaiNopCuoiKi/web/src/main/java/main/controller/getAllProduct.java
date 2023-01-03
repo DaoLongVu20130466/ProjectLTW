@@ -14,6 +14,7 @@ import java.util.List;
 public class getAllProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< Updated upstream
         String productinfor = request.getParameter("productInfor");
         List<Products> products = new ArrayList<>();
         if (productinfor != null) {
@@ -27,6 +28,11 @@ public class getAllProduct extends HttpServlet {
             request.setAttribute("allproduct", products);
             request.getRequestDispatcher("shop.jsp").forward(request, response);
         }
+=======
+        ArrayList<User> user = useService.getInstance().getAllUser();
+        request.setAttribute("allproduct", Products);
+        request.getRequestDispatcher("shop_gird.jsp").forward(request, response);
+>>>>>>> Stashed changes
     }
 
     @Override
