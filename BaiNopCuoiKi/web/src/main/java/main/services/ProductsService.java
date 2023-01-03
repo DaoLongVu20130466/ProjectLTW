@@ -1,8 +1,6 @@
 package main.services;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import main.bean.*;
-import main.db.JDBIConnector;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,12 +25,12 @@ public class ProductsService {
     }
 
     public void getAllProducts() {
-        allproducts = JDBIConnector.get().withHandle(h ->
-                h.createQuery("select id,productsname , logo, value, type from producst")
-                        .mapToBean(Products.class)
-                        .stream()
-                        .collect(Collectors.toList())
-        );
+//        allproducts = JDBIConnector.get().withHandle(h ->
+//                h.createQuery("select id,productsname , logo, value, type from producst")
+//                        .mapToBean(Products.class)
+//                        .stream()
+//                        .collect(Collectors.toList())
+//        );
     }
 
     public List<Products> getAllproducts() {
@@ -40,12 +38,12 @@ public class ProductsService {
     }
 
     public List<Products> getProductByAttb(String Atb) {
-        List<Products> rs = JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select id,productsname , logo, value, type from producst where type = ?")
-                        .bind(0, Atb)
-                        .mapToBean(Products.class)
-                        .collect(Collectors.toList())
-        );
-        return rs;
+//        List<Products> rs = JDBIConnector.get().withHandle(handle ->
+//                handle.createQuery("select id,productsname , logo, value, type from producst where type = ?")
+//                        .bind(0, Atb)
+//                        .mapToBean(Products.class)
+//                        .collect(Collectors.toList())
+//        );
+        return null;
     }
 }
