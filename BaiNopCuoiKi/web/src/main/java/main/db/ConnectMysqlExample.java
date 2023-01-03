@@ -42,6 +42,7 @@ public class ConnectMysqlExample {
     }
 
 
+
     public static Connection getConnection(String dbURL, String userName,
                                            String password) {
         Connection conn = null;

@@ -12,6 +12,7 @@
     <list default="true" id="e8485ad3-3f07-4cb0-954e-1de8f37fc6a5" name="Changes" comment="add lai">
       <change afterPath="$PROJECT_DIR$/New Text Document.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletDeleteUser.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getUserControl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/db/ConnectMysqlExample.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/db/DBProperties.java" afterDir="false" />
@@ -73,7 +74,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Application.ConnectMysqlExample">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="ConnectMysqlExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.db.ConnectMysqlExample" />
       <module name="web" />
@@ -204,7 +205,7 @@
       <updated>1669800303279</updated>
       <workItem from="1669800305194" duration="788000" />
       <workItem from="1670418420387" duration="3931000" />
-      <workItem from="1672710672878" duration="520000" />
+      <workItem from="1672710672878" duration="8975000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>

@@ -4,16 +4,27 @@ public class User {
     String userId;
     String userName;
     String password;
+    String provine;
+    int numberBuy;
     String status;
     String email;
     String phoneNumber;
     String avatar;
-    int isBlock;
+
     public User(){
 
     }
 
-    public User(String userId, String userName, String password, String status, String email, String phoneNumber, String avatar, int isBlock) {
+    public User(String userId, String userName, String phoneNumber, String provine ,int numberBuy, String status) {
+        this.userId = userId;
+        this.userName = userName;
+        this.provine = provine;
+        this.numberBuy = numberBuy;
+        this.status = status;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(String userId, String userName, String password, String status, String email, String phoneNumber, String avatar) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
@@ -21,7 +32,7 @@ public class User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.avatar = avatar;
-        this.isBlock = isBlock;
+
     }
 
     public String getUserId() {
@@ -34,6 +45,14 @@ public class User {
 
     public String getUserName() {
         return userName;
+    }
+
+    public String getProvine() {
+        return provine;
+    }
+
+    public int getNumberBuy() {
+        return numberBuy;
     }
 
     public void setUserName(String userName) {
@@ -80,13 +99,6 @@ public class User {
         this.avatar = avatar;
     }
 
-    public int getIsBlock() {
-        return isBlock;
-    }
-
-    public void setIsBlock(int isBlock) {
-        this.isBlock = isBlock;
-    }
 
     @Override
     public String toString() {
@@ -98,7 +110,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", avatar='" + avatar + '\'' +
-                ", isBlock=" + isBlock +
                 '}';
     }
 }

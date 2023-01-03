@@ -7,6 +7,7 @@
 --%>
 <%@ page import="main.bean.User" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -175,19 +176,19 @@
                             </tr>
                             </thead>
                             <%
-                                List<User> list = (List<User>) request.getAttribute("alluser");
+                                ArrayList<User> list = (ArrayList<User>) request.getAttribute("alluser");
                                 for (User item: list) {
                             %>
                             <tbody>
                             <tr>
                                 <td><%=item.getUserId()%></td>
-                                <td>ssa</td>
-                                <td>HCM.</td>
-                                <td>11233.</td>
-                                <td>12</td>
-                                <td>13.</td>
+                                <td><%=item.getUserName()%></td>
+                                <td><%=item.getPhoneNumber()%></td>
+                                <td><%=item.getProvine()%></td>
+                                <td><%=item.getNumberBuy()%></td>
+                                <td><%=item.getStatus()%></td>
                                 <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
-                                    <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+                                    <a href="ServletDeleteUser" methods="get"><i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
                             </tr>
                             </tbody>
                             <%}%>
