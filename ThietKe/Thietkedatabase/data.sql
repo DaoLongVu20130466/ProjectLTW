@@ -1,4 +1,4 @@
-SET DATEFORMAT dmy;   
+ 
 CREATE TABLE ACCOUNT (
 	ID_ACCOUNT CHAR(10) ,
 	USERS VARCHAR(100) ,
@@ -208,6 +208,202 @@ Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon s�
 INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
 VALUES ('COM_GA12','Cơm gà chiên nước mắm','SIZE2',47000,'CƠM GÀ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
 Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComGa/12comga_chiennuocmam-min.jpg');
+
+	/*/ Cơm Bòa size 1/*/
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO1','Cơm bò nướng đậu que','SIZE1',57000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/1combo_nuongdauque-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO2','Cơm bò hầm trứng lòng đào','SIZE1',58000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/2combo_bohamtrunglongdao-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO3','Cơm bò hầm','SIZE1',55000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm n	gon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/3combo_boham-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO4','Cơm bò nướng trứng lòng đào','SIZE1',62000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/4combo_bonuongtrunglongdao-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO5','Cơm bò nướng Osaka','SIZE1',59000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/5combo_bonuongOsaka-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO6','Cơm bò lươn nướng','SIZE1',74000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/6combo_luonnuong-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO7','Cơm bò lươn nướng phô mai','SIZE1',80000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/7combo_luonnuong_phomai-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO8','Cơm bò Bulgogi nhỏ','SIZE1',50000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/8combo_bulgogi_nho-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO9','Cơm bò Bulgogi','SIZE1',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/9combo_bulgogi_lon-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO10','Cơm bò ngũ vị sốt kem','SIZE1',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/10combo_nguvisotkem-min.jpeg');
+
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO11','Cơm bò kim chi pho mai','SIZE1',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/11combo_kimchiphomai-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO12','Cơm bò bông cải','SIZE1',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/12combo_bongcai-min.jpeg');
+
+	/*/ Cơm Bòa size 2/*/
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO1','Cơm bò nướng đậu que','SIZE2',57000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/1combo_nuongdauque-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO2','Cơm bò hầm trứng lòng đào','SIZE2',58000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/2combo_bohamtrunglongdao-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO3','Cơm bò hầm','SIZE1',55000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm n	gon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/3combo_boham-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO4','Cơm bò nướng trứng lòng đào','SIZE2',62000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/4combo_bonuongtrunglongdao-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO5','Cơm bò nướng Osaka','SIZE2',59000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/5combo_bonuongOsaka-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO6','Cơm bò lươn nướng','SIZE2',74000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/6combo_luonnuong-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO7','Cơm bò lươn nướng phô mai','SIZE2',80000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/7combo_luonnuong_phomai-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO8','Cơm bò Bulgogi nhỏ','SIZE2',50000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/8combo_bulgogi_nho-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO9','Cơm bò Bulgogi','SIZE2',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/9combo_bulgogi_lon-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO10','Cơm bò ngũ vị sốt kem','SIZE2',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/10combo_nguvisotkem-min.jpeg');
+
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO11','Cơm bò kim chi pho mai','SIZE2',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/11combo_kimchiphomai-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_BO12','Cơm bò bông cải','SIZE2',60000,'CƠM BÒ',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComBo/12combo_bongcai-min.jpeg');
+
+	/*/ Cơm chiên size 1/*/
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN1','Cơm Chiên','SIZE1',40000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/1comchien-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN2','Cơm chiên thịt','SIZE1',45000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/2comchien_thit-min.jpg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN3','Cơm chiên thập cẩm','SIZE1',49000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/3comchien_thapcam-min.jpg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN4','Mì trộn','SIZE1',45000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/4comchien_mitron-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN5','Cơm chiên bò lúc lắc','SIZE1',69000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/5comchien_boluclac-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN6','Cơm chiên da gà','SIZE1',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/6comchien_daga-min.jpg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN7','Cơm chiên Linh Động','SIZE1',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/7comchien_linhdong-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN8','Cơm chiên hải sản','SIZE1',59000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/8comchien_haisan-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN9','Cơm chiên cá mặn','SIZE1',49000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/9comchien_caman-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN10','Cơm chiên dương châu','SIZE1',52000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/10comchien_duongchau-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN11','Cơm chiên đùi gà','SIZE1',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/11comchien_duiga-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN12','Cơm chiên bò xào dưa ','SIZE1',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/10comchien_duabo-min.jpeg');
+
+
+	/*/ Cơm chiên size 2/*/
+	INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN1','Cơm Chiên','SIZE2',40000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/1comchien-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN2','Cơm chiên thịt','SIZE2',45000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/2comchien_thit-min.jpg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN3','Cơm chiên thập cẩm','SIZE2',49000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/3comchien_thapcam-min.jpg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN4','Mì trộn','SIZE2',45000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/4comchien_mitron-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN5','Cơm chiên bò lúc lắc','SIZE2',69000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/5comchien_boluclac-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN6','Cơm chiên da gà','SIZE2',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/6comchien_daga-min.jpg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN7','Cơm chiên Linh Động','SIZE2',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/7comchien_linhdong-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN8','Cơm chiên hải sản','SIZE2',59000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/8comchien_haisan-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN9','Cơm chiên cá mặn','SIZE2',49000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/9comchien_caman-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN10','Cơm chiên dương châu','SIZE2',52000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/10comchien_duongchau-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN11','Cơm chiên đùi gà','SIZE2',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/11comchien_duiga-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_CHIEN12','Cơm chiên bò xào dưa ','SIZE2',55000,'CƠM CHIÊN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComChien/10comchien_duabo-min.jpeg');
+
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON1','Thịt heo chiên xù','SIZE2',55000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/1Common_thitheochienxu-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON2','Tonkatsudon','SIZE2',55000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/2Common_tonkatsudon-min.jpeg');
+
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON3','Cà ri bò','SIZE2',55000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/3Common_caribo-min.jpeg');
+
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON4','Beefsteak','SIZE2',45000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/4Common_beefsteak-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON5','Bắp bò hấp','SIZE2',55000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/5Common_combapbohap-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON6','Oyakodon','SIZE2',60000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/6Common_oyakodon-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON7','Trứng sốt demi','SIZE2',70000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/7Common_trungsotdemi-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON8','Cá hồi áp chảo','SIZE2',70000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/8Common_cahoiapchao-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON9','Chay thập cẩm','SIZE2',45000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/9Common_chaythapcam-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON10','Thịt heo chiên xù','SIZE2',55000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/10Common_thitheochienxu-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON11','Cà ri + thịt heo chiên xù','SIZE2',65000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/11Common_carithitheochienxu-min.jpeg');
+INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG) 
+VALUES ('COM_MON12','Bò BulGogi xào ớt chuông','SIZE2',75000,'CƠM MÓN',50,'CÒN HÀNG',0,'SALE2','NORMAL','Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền 
+Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền','img/Data/ComMon/12Common_bobulgogixaootchuong-min.jpeg');
+
+
 /*****************************************/
 
 /*   SALE*/
@@ -285,3 +481,4 @@ INSERT INTO ORDER_DETAILS(ID_ORDER,ID_FOOD,	ID_SIZE,PRICE,QUANTITY,DELIVERY_CHAR
 VALUES ('OD2','COM_GA4','SIZE1',180000,2,20000,'ĐÃ GIAO');
 INSERT INTO ORDER_DETAILS(ID_ORDER,ID_FOOD,	ID_SIZE,PRICE,QUANTITY,DELIVERY_CHARGES,STATUSS)
 VALUES ('OD3','COM_GA4','SIZE1',180000,3,20000,'ĐÃ GIAO');
+
