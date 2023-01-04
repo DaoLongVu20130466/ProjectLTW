@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="834af1c5-2fa6-435f-82b5-e7c1fc5452d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/bean/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/getAllProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/getUserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/getUserControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/shop-grid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/shop-grid.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,18 +31,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vu/Documents/GitHub/ProjectLTW&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ProjectLTW" />
@@ -73,7 +60,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="$USER_HOME$/.jdks/corretto-18.0.2" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
       <server-settings>
@@ -166,7 +153,7 @@
       <workItem from="1672763658120" duration="158000" />
       <workItem from="1672809240608" duration="1477000" />
       <workItem from="1672810753397" duration="357000" />
-      <workItem from="1672811137411" duration="120000" />
+      <workItem from="1672811137411" duration="563000" />
     </task>
     <servers />
   </component>

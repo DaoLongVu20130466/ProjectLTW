@@ -18,7 +18,7 @@ public class getAllProduct extends HttpServlet {
 <<<<<<< Updated upstream
         ArrayList<User> user = useService.getInstance().getAllUser();
         request.setAttribute("allproduct", products);
-        request.getRequestDispatcher("shop_gird.jsp").forward(request, response);
+        request.getRequestDispatcher("shop_grid.jsp").forward(request, response);
 =======
         ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
         request.setAttribute("allproducts", products);
