@@ -8,7 +8,7 @@ public class DBProperties {
 
     static {
         try {
-            prop.load(DBProperties.class.getClassLoader().getResourceAsStream("db.shopdoan"));
+            prop.load(DBProperties.class.getClassLoader().getResourceAsStream("db.properties"));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
@@ -39,3 +39,4 @@ public class DBProperties {
         return prop.get("db.databaseName").toString();
     }
 }
+
