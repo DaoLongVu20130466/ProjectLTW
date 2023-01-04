@@ -1,23 +1,21 @@
 package main.controller;
 
-import main.bean.Products;
-
-import main.bean.User;
 import main.services.useService;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.PrintWriter;
 
-@WebServlet(name = "getUserControl", value = "/getUserControl")
-public class getUserControl extends HttpServlet {
+@WebServlet(name = "ServletDeleteUser", value = "/ServletDeleteUser")
+public class ServletDeleteUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<User> user = useService.getInstance().getAllUser();
-        request.setAttribute("alluser", user);
-        request.getRequestDispatcher("QuanLyTaiKhoan.jsp").forward(request, response);
+        String username = (String) request.getParameter("test");
+        useService.getInstance().showid(username);
+        PrintWriter out = response.getWriter();
+        out.println(username);
     }
 
     @Override
