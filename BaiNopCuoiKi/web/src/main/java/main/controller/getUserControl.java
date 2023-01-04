@@ -1,7 +1,7 @@
 package main.controller;
 
-import main.bean.Products;
-import main.services.ProductsService;
+import main.bean.User;
+import main.services.useService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,28 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getAllProduct", value = "/getAllProduct")
-public class getAllProduct extends HttpServlet {
+@WebServlet(name = "getUserControl", value = "/getUserControl")
+public class getUserControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< Updated upstream
         ArrayList<User> user = useService.getInstance().getAllUser();
-        request.setAttribute("allproduct", products);
-        request.getRequestDispatcher("shop_gird.jsp").forward(request, response);
-=======
-        ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
-        request.setAttribute("allproducts", products);
-        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
->>>>>>> Stashed changes
+        request.setAttribute("alluser", user);
+        request.getRequestDispatcher("QuanLyTaiKhoan.jsp").forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-}
-
-
-
 }

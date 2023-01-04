@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
@@ -13,34 +14,49 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+=======
+    <list default="true" id="81deba11-d583-4350-97b9-6c6a9ef66b6c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.html" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/src/main/webapp/shop-grid.html" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectId" id="2IadZx8x6b4JU8JsuWaOiRb2mQf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,23 +65,30 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< Updated upstream
     "last_opened_file_path": "D:/ProjectLTW/BaiNopCuoiKi",
     "settings.editor.selected.configurable": "preferences.keymap"
+=======
+    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+>>>>>>> Stashed changes
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="15" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="web:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/web_war" />
-          </settings>
-        </artifact>
-      </deployment>
+      <deployment />
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="33c48a7a-9273-406f-a536-8153ed5ee649" />
+        <option name="BASE_DIRECTORY_NAME" value="0cc573ac-3c48-48aa-8da2-9d86e6d8e7d5" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -73,7 +96,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50719" />
+        <option name="DEBUG_PORT" value="54790" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -137,22 +160,24 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="web:war" />
-        </option>
       </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="" />
-      <created>1670423686761</created>
+      <changelist id="81deba11-d583-4350-97b9-6c6a9ef66b6c" name="Changes" comment="" />
+      <created>1672757443312</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< Updated upstream
       <updated>1670423686761</updated>
       <workItem from="1670423688251" duration="267000" />
       <workItem from="1670726474232" duration="4602000" />
+=======
+      <updated>1672757443312</updated>
+      <workItem from="1672757444791" duration="5673000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -170,4 +195,10 @@
       </map>
     </option>
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BaiNopCuoiKi$Tomcat_9_0_68.ic" NAME="Tomcat 9.0.68 Coverage Results" MODIFIED="1672763111159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+>>>>>>> Stashed changes
 </project>

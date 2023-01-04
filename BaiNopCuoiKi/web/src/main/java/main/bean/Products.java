@@ -11,6 +11,10 @@ public class Products {
     String idSale;
     String DESCRIPTION;
     String path;
+<<<<<<< Updated upstream
+=======
+    String Status;
+>>>>>>> Stashed changes
     public Products() {
     }
     public Products(String ID_food, String foodName, String size, int LISTED_PRICE,String path ) {
@@ -21,6 +25,41 @@ public class Products {
         this.path = path;
 
     }
+<<<<<<< Updated upstream
+=======
+    public Products(String ID_food, String foodName,String path, int LISTED_PRICE ) {
+        this.ID_food = ID_food;
+        this.foodName = foodName;
+        this.path = path;
+        this.LISTED_PRICE = LISTED_PRICE;
+
+
+    }
+
+    public Products(String id, String foodName, int price, String path, String status) {
+        this.ID_food=id;
+        this.foodName = foodName;
+        this.path = path;
+        this.LISTED_PRICE = price;
+        this.Status=status;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public int getLISTED_PRICE() {
+        return LISTED_PRICE;
+    }
+
+    public void setLISTED_PRICE(int LISTED_PRICE) {
+        this.LISTED_PRICE = LISTED_PRICE;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
+>>>>>>> Stashed changes
 
     public void setType(String type) {
         this.type = type;
