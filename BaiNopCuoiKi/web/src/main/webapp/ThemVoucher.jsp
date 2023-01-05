@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -141,62 +144,52 @@
               <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
               <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="Truysuatdonhang.html"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="TangVoucher.html"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="TangVoucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col-lg-10 col-md-5">
+      <div class="col-lg-10 col-md-5" id="themvoucher">
         <div>
-          <div class="TaiKhoan">
-            <div class="vouchersearch">
-            <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
-            <a href="ThemVoucher.html">Thêm Voucher</a>
-            </div>
-            <table class="cd-table order-table table">
-              <thead>
-              <tr>
-                <th>ID</th>
-                <th>Tên Voucher</th>
-                <th>Mã</th>
-                <th>Loại Voucher</th>
-                <th>Số Tiền Giảm</th>
-                <th>Trạng Thái</th>
-                <th>Hành Động</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>01</td>
-                <td>Giảm Ngày WC</td>
-                <td>WCKHONGNHAYCAU01</td>
-                <td>Giảm Tiền</td>
-                <td>30.000 VND</td>
-                <td>Còn Hạn</td>
-                <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
-                  <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
-              </tr>
 
-              <tr>
-                <td>02</td>
-                <td>Giảm Ngày WC 2</td>
-                <td>WCKHONGBANNHA</td>
-                <td>Giảm Phần Trăm</td>
-                <td>30%</td>
-                <td>Còn Hạn</td>
-                <td><a href=""><i class="fa fa-lock" aria-hidden="true">Khóa</i></a>
-                  <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</a></td>
-              </tr>
-              </tbody>
-            </table>
-            <div class="product__pagination">
-              <a href="#">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+
+          <div class="boderform">
+          <label class="head2">Thêm Voucher Mới</label>
+          <form action="ServletAddVoucher"  method="post" id="voucher">
+            <div>
+            <label>Tên Voucher:</label>
+              <input name="Names" type="text">
             </div>
-          </div>
+            <div>
+            <label>Mã Voucher:</label>
+            <input name="Idcode" type="text">
+            </div>
+            <div class="c3">
+            <label>Số Tiền Giảm:</label>
+            <input name="discount" class="stg" type="text">
+              <p class="dd">đ</p>
+             </div>
+            <div>
+            <label for="loaigiam">Loại Giảm :</label>
+            <select name="type" id="loaigiam">
+              <option value="2">Giảm Phí Ship</option>
+              <option value="1">Giảm Phần Trăm Tiền</option>
+              <option value="0">Giảm Tiền</option>
+            </select>
+            </div>
+            <div class="day1">
+            <label>Ngày Bắt Đầu : </label>
+            <input name="dateStart" type="date">
+            </div>
+            <div class="day2">
+            <label>Ngày Kết Thúc : </label>
+            <input name="dayEnd" type="date">
         </div>
+            <input class="btnacc" type="submit" value="Xác Nhận">
+          </form>
+          </div>
+
+
       </div>
     </div>
 
@@ -218,79 +211,9 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
 
-<!--    <table class="table table-striped">-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th scope="col">#</th>-->
-<!--            <th scope="col">First</th>-->
-<!--            <th scope="col">Last</th>-->
-<!--            <th scope="col">Handle</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--        <tr>-->
-<!--            <th scope="row">1</th>-->
-<!--            <td>Mark</td>-->
-<!--            <td>Otto</td>-->
-<!--            <td>@mdo</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <th scope="row">2</th>-->
-<!--            <td>Jacob</td>-->
-<!--            <td>Thornton</td>-->
-<!--            <td>@fat</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <th scope="row">3</th>-->
-<!--            <td>Larry</td>-->
-<!--            <td>the Bird</td>-->
-<!--            <td>@twitter</td>-->
-<!--        </tr>-->
-<!--        </tbody>-->
-<!--    </table>-->
 
 
-<script>
-  (function() {
-    'use strict';
 
-    var TableFilter = (function() {
-      var Arr = Array.prototype;
-      var input;
-
-      function onInputEvent(e) {
-        input = e.target;
-        var table1 = document.getElementsByClassName(input.getAttribute('data-table'));
-        Arr.forEach.call(table1, function(table) {
-          Arr.forEach.call(table.tBodies, function(tbody) {
-            Arr.forEach.call(tbody.rows, filter);
-          });
-        });
-      }
-
-      function filter(row) {
-        var text = row.textContent.toLowerCase();
-        //console.log(text);
-        var val = input.value.toLowerCase();
-        //console.log(val);
-        row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-      }
-
-      return {
-        init: function() {
-          var inputs = document.getElementsByClassName('table-filter');
-          Arr.forEach.call(inputs, function(input) {
-            input.oninput = onInputEvent;
-          });
-        }
-      };
-
-    })();
-
-
-    TableFilter.init();
-  })();
-</script>
 
 </body>
 

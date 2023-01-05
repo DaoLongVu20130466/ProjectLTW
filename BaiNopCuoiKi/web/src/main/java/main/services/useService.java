@@ -3,6 +3,7 @@ import main.db.ConnectMysqlExample;
 import main.bean.User;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class useService {
                     "USER_NAMES as userid , \n" +
                     "PHONE_NUMBER as phone,\n" +
                     "PROVINCE as pro,\n" +
-                    "STATUSS as sts\n" +
+                    "IS_BLOCK as sts\n" +
                     "FROM account\n" +
                     "join user_information \n" +
                     "join addresss \n" +
@@ -51,7 +52,7 @@ public class useService {
                 String phonenum = rs.getString(3);
                 String province = rs.getString(4);
                 int numberBuy = rs.getInt(5);
-                String status = rs.getString(6);
+                int status = rs.getInt(6);
                 allusercontronl.add(new User(id, username, phonenum, province, numberBuy, status));
             }
             // close connection
@@ -62,6 +63,33 @@ public class useService {
         return allusercontronl;
     }
 
+    public void LockUser(String uid){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement stmt = conn.prepareStatement("UPDATE account SET IS_BLOCK = 1 WHERE ID_ACCOUNT = ?");
+            stmt.setString(1,uid);
+            stmt.execute();
+            conn.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void UnLockUser(String uid){
+        {
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+                PreparedStatement stmt = conn.prepareStatement("UPDATE account SET IS_BLOCK = 0 WHERE ID_ACCOUNT = ?");
+                stmt.setString(1,uid);
+                stmt.execute();
+                conn.close();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+    }
     public void showid(String name){
         System.out.println( name);
     }

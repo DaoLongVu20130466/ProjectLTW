@@ -154,7 +154,7 @@
                             <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
                             <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
                             <li><a href="Truysuatdonhang.html"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-                            <li><a href="TangVoucher.html"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                            <li><a href="TangVoucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
                         </ul>
                     </div>
                 </div>
@@ -187,8 +187,13 @@
                                 <td><%=item.getProvine()%></td>
                                 <td><%=item.getNumberBuy()%></td>
                                 <td><%=item.getStatus()%></td>
-                                <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
-                                    <a href="ServletDeleteUser" methods="get"><i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+                                <td><%if(item.getStatusInt() == 1) {%>
+                                    <a href="ServletUnlock?uid=<%=item.getUserId()%>"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Mở Khóa</a>
+                                    <%}
+                                        else if(item.getStatusInt() == 0) {
+                                    %>
+                                    <a href="ServletLock?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
+                                <%}%>
                             </tr>
                             </tbody>
                             <%}%>

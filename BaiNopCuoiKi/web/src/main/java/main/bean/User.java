@@ -6,7 +6,7 @@ public class User {
     String password;
     String provine;
     int numberBuy;
-    String status;
+    int status;
     String email;
     String phoneNumber;
     String avatar;
@@ -15,7 +15,7 @@ public class User {
 
     }
 
-    public User(String userId, String userName, String phoneNumber, String provine ,int numberBuy, String status) {
+    public User(String userId, String userName, String phoneNumber, String provine ,int numberBuy, int status) {
         this.userId = userId;
         this.userName = userName;
         this.provine = provine;
@@ -24,7 +24,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public User(String userId, String userName, String password, String status, String email, String phoneNumber, String avatar) {
+    public User(String userId, String userName, String password, int status, String email, String phoneNumber, String avatar) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
@@ -68,12 +68,15 @@ public class User {
     }
 
     public String getStatus() {
-        return status;
+        if(getStatusInt() == 0 )
+            return "Bình Thường";
+        else return "Bị Khóa";
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public int getStatusInt(){
+        return this.status;
     }
+
 
     public String getEmail() {
         return email;

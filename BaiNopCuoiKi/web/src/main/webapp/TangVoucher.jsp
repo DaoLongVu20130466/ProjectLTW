@@ -1,3 +1,10 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.Voucher" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -141,54 +148,56 @@
               <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
               <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="Truysuatdonhang.html"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="TangVoucher.html"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="TangVoucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col-lg-10 col-md-5" id="themvoucher">
+      <div class="col-lg-10 col-md-5">
         <div>
-
-
-          <div class="boderform">
-          <label class="head2">Thêm Voucher Mới</label>
-          <form action="" id="voucher">
-
-            <div>
-            <label>Tên Voucher:</label>
-              <input type="text">
+          <div class="TaiKhoan">
+            <div class="vouchersearch">
+            <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
+            <a href="ThemVoucher.jsp">Thêm Voucher</a>
             </div>
-
-            <div>
-            <label>Mã Voucher:</label>
-            <input type="text">
+            <table class="cd-table order-table table">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên Voucher</th>
+                <th>Mã</th>
+                <th>Loại Voucher</th>
+                <th>Số Tiền Giảm</th>
+                <th>Trạng Thái</th>
+                <th>Hành Động</th>
+              </tr>
+              </thead>
+                <%
+                    ArrayList<Voucher> list = (ArrayList<Voucher>) request.getAttribute("allvoucher");
+                    for (Voucher item: list) {
+                %>
+              <tbody>
+              <tr>
+                <td><%=item.getIdVoucher()%></td>
+                <td><%=item.getVoucherName()%></td>
+                <td><%=item.getVoucherCode()%></td>
+                <td><%=item.getType()%></td>
+                <td><%=item.getDisCount()%></td>
+                <td><%=item.getIsOutDate()%></td>
+                <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
+                  <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+              </tr>
+              </tbody>
+                <%}%>
+            </table>
+            <div class="product__pagination">
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#"><i class="fa fa-long-arrow-right"></i></a>
             </div>
-            <div class="c3">
-            <label>Số Tiền Giảm:</label>
-            <input class="stg" type="text">
-              <p class="dd">đ</p>
-             </div>
-            <div>
-            <label for="loaigiam">Loại Giảm :</label>
-            <select name="cars" id="loaigiam">
-              <option value="ship">Giảm Phí Ship</option>
-              <option value="phantram">Giảm Phần Trăm Tiền</option>
-              <option value="tienmat">Giảm Tiền</option>
-            </select>
-            </div>
-            <div class="day1">
-            <label>Ngày Bắt Đầu : </label>
-            <input type="date">
-            </div>
-            <div class="day2">
-            <label>Ngày Kết Thúc : </label>
-            <input type="date">
-        </div>
-            <input class="btnacc" type="button" value="Xác Nhận">
-          </form>
           </div>
-
-
+        </div>
       </div>
     </div>
 
@@ -242,7 +251,47 @@
 <!--    </table>-->
 
 
+<script>
+  (function() {
+    'use strict';
 
+    var TableFilter = (function() {
+      var Arr = Array.prototype;
+      var input;
+
+      function onInputEvent(e) {
+        input = e.target;
+        var table1 = document.getElementsByClassName(input.getAttribute('data-table'));
+        Arr.forEach.call(table1, function(table) {
+          Arr.forEach.call(table.tBodies, function(tbody) {
+            Arr.forEach.call(tbody.rows, filter);
+          });
+        });
+      }
+
+      function filter(row) {
+        var text = row.textContent.toLowerCase();
+        //console.log(text);
+        var val = input.value.toLowerCase();
+        //console.log(val);
+        row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+      }
+
+      return {
+        init: function() {
+          var inputs = document.getElementsByClassName('table-filter');
+          Arr.forEach.call(inputs, function(input) {
+            input.oninput = onInputEvent;
+          });
+        }
+      };
+
+    })();
+
+
+    TableFilter.init();
+  })();
+</script>
 
 </body>
 
