@@ -1,15 +1,15 @@
 package main.controller;
 
+import main.bean.Products;
+
 import main.bean.User;
 import main.services.useService;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "getUserControl", value = "/getUserControl")
 public class getUserControl extends HttpServlet {

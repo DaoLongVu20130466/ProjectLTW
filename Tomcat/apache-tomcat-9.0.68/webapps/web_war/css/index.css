@@ -1,0 +1,40 @@
+.categories__slider .col-lg-3 label{
+    background: #de1212;
+    color: white;
+    height: 30px;
+    width: 75px;
+    text-align: center;
+}
+.featured .container .more {
+    margin-left: 92%;
+    color: #2ec791;
+    font-size: 15px;
+}
+.featured .container .more:hover  {
+color: #2ec791;
+}
+.Banner .container .bannerctn {
+    position: relative;
+    text-align: center;
+    height: 400px;
+
+}
+.Banner .container .bannerctn .imgbnr{
+    width: 100%;
+    height: 400px;
+}
+.Banner .container .bannerctn a{
+font-size: 14px;
+padding: 10px 28px 10px;
+color: #ffffff;
+text-transform: uppercase;
+font-weight: 700;
+background: #2ec791;
+letter-spacing: 2px;
+position: absolute;
+left: 42%;
+bottom: 45%;
+border-color: #fbb12f;}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+

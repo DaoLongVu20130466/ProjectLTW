@@ -4,409 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/loginservice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
-=======
-    <list default="true" id="81deba11-d583-4350-97b9-6c6a9ef66b6c" name="Changes" comment="">
-=======
-    <list default="true" id="a57da475-0e8b-4ef1-bd62-931dbffde378" name="Changes" comment="">
->>>>>>> Stashed changes
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/db/DBC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/ComGa.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/shop-gird.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/shop-gird.jsp" afterDir="false" />
->>>>>>> Stashed changes
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.html" afterDir="false" />
->>>>>>> Stashed changes
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/.idea/libraries/Source.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/.idea/ogani-master.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Bun_Pho.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/CheckOut.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ChiTietDonHang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Chinhsuathongtin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ChitietSanpham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ComBo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ComChien.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ComGa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ComMon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Comsuon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/DangKy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/DangNhap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/DoanhThu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/DoiMatKhau.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Donhang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/GioHang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Haisan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/MonCanh.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/QuanLyTaiKhoan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/QuanLyTaiKhoan.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/QuenMK.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/SanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/OwlCarousel2-2.3.4.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/SlickNav-master.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/bootstrap-4.4.1-dist.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/font-awesome-4.7.0.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/jquery-nice-select-1.1.0.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/jquery-ui-1.12.1.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Source/sass.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/TangVoucher.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ThemSanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ThemVoucher.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/ThucUong.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Truysuatdonhang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/Voucher.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/bean/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/bean/Products.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/bean/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/controller/ServletDeleteUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/controller/ServletDeleteUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/controller/getAllProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/controller/getAllProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/controller/getUserControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/controller/getUserControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/db/ConnectMysqlExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/db/ConnectMysqlExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/db/DBProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/db/DBProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/services/ProductsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/services/ProductsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/services/loginservice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/services/loginservice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/services/useService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/classes/main/services/useService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/lib/commons-fileupload-1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/lib/commons-io-2.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/lib/javax.mail-1.6.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/lib/mysql-connector-j-8.0.31.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/WEB-INF/lib/protobuf-java-3.19.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/User.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/aboutus.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/admincss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/elegant-icons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/fonts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/nice-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/slicknav.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/ElegantIcons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/ElegantIcons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/ElegantIcons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/ElegantIcons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/22-222655_fast-delivery-vector-png-transparent-png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/10pho_taibam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/11pho_botai-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/12pho_bonam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/1bun_bovien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/2bun_botaibovien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/3bun_rieucuagioheo-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/4bun_rieucuathapcam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/5bun_bohuedacbiet-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/6bun_bohuetaicha-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/7pho_tainambovien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/8pho_namgan-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Bun/9pho_dacbiet-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/10combo_nguvisotkem-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/11combo_kimchiphomai-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/12combo_bongcai-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/1combo_nuongdauque-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/2combo_bohamtrunglongdao-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/3combo_boham-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/4combo_bonuongtrunglongdao-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/5combo_bonuongOsaka-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/6combo_luonnuong-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/7combo_luongnuong_phomai-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/8combo_bulgogi_nho-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComBo/9combo_bulgogi_lon-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/10comchine_duongchau-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/11comchien_duiga-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/12comchien_duabo-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/1comchien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/2comchien_thit-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/3comchien_thapcam-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/4cowmchine_mitron-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/5comchien_boluclac-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/6comchien_daga-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/7comchien_lindong-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/8comchien_haisan-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComChien/9comchien_caman-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/10Comga_xoimoT99-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/11Comga_xoimoTC-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/12comga_chiennuocmam-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/1comga_aquang-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/2comga_dagion-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/3comga_denhat-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/4comga_garanjpeg-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/5comga_mamtoi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/6comga_ngon-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/7comga_nuongtieuxanh-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/8Comga_xoimo142-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComGa/9comga_xoimoongdia-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/10haisan_goikhocasac-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/11haisan_mucchiennuocmam-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/12haisan_tomchiengion-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/1haisan_goicacauquan-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/2haisan_muconghap-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/3haisan_tomlanhoWasabi-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/4haisan_cangudaiduong-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/5haisan_chacuongcatrich-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/6haisan_chaohaosua-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/7haisan_haunuongphomai-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/8haisan_haisankhoilua-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComHaiSan/9haisan_charamtondat-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/10Common_thitheochienxu-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/11Common_carithitheochienxu-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/12Common_bobulgogixaootchuong-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/1Common_thitheochienxu-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/2Common_tonkatsudon-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/3Common_caribo-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/4Common_beefsteak-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/5Common_combapbohap-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/6Common_oyakodon-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/7Common_trungsotdemi-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/8Common_cahoiapchao-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComMon/9Common_chaythapcam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/10comsuon_lapxuong-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/11comsuon_cayopla-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/12comsuon_suongcay-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/1comsuon-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/2comsuon_trung-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/3comsuon_chabi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/4comsuon_bi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/5comsuon_trungchabi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/6comsuon_nuong-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/7comsuon_trung2-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/8comsuon_trungopla-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/ComSuon/9comsuon_trungkho-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/1combo_2suonbicha+raumadauxanh-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/2combo_comsuon+comthem+raumadauxanh-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/3combo_2suongbicha+1comthem-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/4combo_2suongchaopla+comthem-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/5combo_bunbodacbiet+02pepsi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/6combo_comga+pepssi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/7combo_suonbichatietkiem-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Combomonan/8combo_suontietkiem+1montuychon-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/GiamGia/1comga_aquang-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/GiamGia/2comga_dagion-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/GiamGia/4comga_garanjpeg-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/GiamGia/5comga_mamtoi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/GiamGia/5haisan_chacuongcatrich-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/GiamGia/6haisan_chaohaosua-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/1bun_bovien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/1comga_aquang-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/1comsuon-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/2comga_dagion-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/2comsuon_trung-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/4comga_garanjpeg-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/5comga_mamtoi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Hothonhot/9pho_dacbiet-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/10canh_rongbienthitbam2-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/11canh_chua2-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/12canh_xuongham-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/1canh_rongbienthitnam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/2canh_caichuathitbam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/3canh_rongbien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/4canh_chua-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/5canh_rongbien2-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/6canh_chuacahu-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/7canh_khoqua-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/8canh_caingot-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/MonCanh/9canh_caichuathitbam-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/10thucuong_string-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/11thucuong_olong-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/12thucuong_aquafina-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/1thucuong_tradao-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/2thucuong_travai-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/3thucuong_tradaohatchia-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/4thucuong_nuocsuoi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/5thucuong_sprite-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/6thucuong_cocacola-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/7thucuong_fanta-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/8thucuong_pepsi-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/Data/Thucuong/9thucuong_7up-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/ad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/banner/BANNER1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/banner/banner-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/cart/1bun_bovien-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/cart/2comga_dagion-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/cart/5haisan_chacuongcatrich-min.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/cart/cart-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/cart/cart-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/cart/cart-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/img/language.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/jquery.nice-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/jquery.slicknav.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/mixitup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_base.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_blog-details.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_blog-sidebar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_blog.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_breadcrumb.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_checkout.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_contact.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_hero.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_home-page.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_responsive.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_shop-details.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_shop-grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_shoping-cart.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_sidebar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/_variable.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/sass/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/shop-grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomcat/apache-tomcat-9.0.68/webapps/web_war/yeuthich.html" beforeDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/web/src/main/webapp/shop-grid.html" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
-<<<<<<< Updated upstream
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2JpGKluSZ0aFjderYxM3qtQ3Rzm" />
->>>>>>> Stashed changes
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2IadZx8x6b4JU8JsuWaOiRb2mQf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< Updated upstream
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-<<<<<<< Updated upstream
-    "last_opened_file_path": "D:/ProjectLTW/BaiNopCuoiKi",
-    "settings.editor.selected.configurable": "preferences.keymap"
-=======
-    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
->>>>>>> Stashed changes
-  }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="15" nameIsGenerated="true">
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dhNongLam/ProjectLTW/BaiNopCuoiKi&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/ProjectLTW/BaiNopCuoiKi&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
-    <configuration name="DBC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.db.DBC" />
-      <module name="web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="19" nameIsGenerated="true">
->>>>>>> Stashed changes
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment />
+      <deployment>
+        <artifact name="web:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/web_war" />
+          </settings>
+        </artifact>
+      </deployment>
       <server-settings>
-<<<<<<< Updated upstream
-        <option name="BASE_DIRECTORY_NAME" value="0cc573ac-3c48-48aa-8da2-9d86e6d8e7d5" />
-=======
-        <option name="BASE_DIRECTORY_NAME" value="cee0cba8-754a-414b-9b52-bc51eb47715c" />
->>>>>>> Stashed changes
+        <option name="BASE_DIRECTORY_NAME" value="33c48a7a-9273-406f-a536-8153ed5ee649" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -414,11 +66,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-<<<<<<< Updated upstream
-        <option name="DEBUG_PORT" value="54790" />
-=======
-        <option name="DEBUG_PORT" value="50483" />
->>>>>>> Stashed changes
+        <option name="DEBUG_PORT" value="50719" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -482,44 +130,22 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="web:war" />
+        </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.DBC" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.DBC" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< Updated upstream
-      <changelist id="81deba11-d583-4350-97b9-6c6a9ef66b6c" name="Changes" comment="" />
-      <created>1672757443312</created>
+      <changelist id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="" />
+      <created>1670423686761</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< Updated upstream
       <updated>1670423686761</updated>
       <workItem from="1670423688251" duration="267000" />
       <workItem from="1670726474232" duration="4602000" />
-=======
-      <updated>1672757443312</updated>
-      <workItem from="1672757444791" duration="5673000" />
->>>>>>> Stashed changes
-=======
-      <changelist id="a57da475-0e8b-4ef1-bd62-931dbffde378" name="Changes" comment="" />
-      <created>1672764415295</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1672764415295</updated>
-      <workItem from="1672764417264" duration="3112000" />
-      <workItem from="1672767557648" duration="26000" />
-      <workItem from="1672819307319" duration="561000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -537,13 +163,4 @@
       </map>
     </option>
   </component>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BaiNopCuoiKi$Tomcat_9_0_68.ic" NAME="Tomcat 9.0.68 Coverage Results" MODIFIED="1672763111159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 </project>
