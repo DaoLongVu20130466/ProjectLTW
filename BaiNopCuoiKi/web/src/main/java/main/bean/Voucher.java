@@ -1,5 +1,6 @@
 package main.bean;
 
+import jdk.jshell.Snippet;
 import main.services.AppService;
 
 import java.text.DateFormat;
@@ -30,7 +31,7 @@ public class Voucher {
     public Voucher(String idVoucher, String voucherName, int typeInt, int disCount) {
         this.idVoucher = idVoucher;
         this.voucherName = voucherName;
-        this.type = type;
+        this.typeInt = typeInt;
         this.disCount = disCount;
     }
 
@@ -89,6 +90,10 @@ public class Voucher {
         this.dayEnd = dayEnd;
     }
 
+    public int getIntDiscount(){
+        return  this.disCount;
+    }
+
     public String getDisCount() {
         if (1 == getIntType(this.type)) {
             return disCount + "%";
@@ -127,6 +132,7 @@ public class Voucher {
         }
         else return "Không Khả Dụng";
     }
+
 
     @Override
     public String toString() {

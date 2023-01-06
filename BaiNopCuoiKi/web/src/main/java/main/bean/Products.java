@@ -37,6 +37,13 @@ public class Products {
         this.basePrice = basePrice;
     }
 
+    public Products(String ID_food, String foodName,int basePrice , int LISTED_PRICE, String path) {
+        this.ID_food = ID_food;
+        this.foodName = foodName;
+        this.LISTED_PRICE = LISTED_PRICE;
+        this.path = path;
+    }
+
     public String getIsHot() {
         return isHot;
     }

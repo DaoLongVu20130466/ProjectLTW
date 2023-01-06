@@ -50,6 +50,11 @@ public class Address {
         return district;
     }
 
+    @Override
+    public String toString() {
+        return  commune + ',' +  district + ',' +provine + ',' + adressDeail ;
+    }
+
     public String getProvine() {
         return provine;
     }

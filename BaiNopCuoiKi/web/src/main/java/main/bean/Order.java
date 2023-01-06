@@ -1,5 +1,7 @@
 package main.bean;
 
+import main.services.AppService;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -36,7 +38,7 @@ public class Order {
         this.allOderCart = allproduct;
     }
 
-    public Order(String idOder , String idAccount, Address address , ArrayList<OderCart> products, String status , Voucher voucher )  {
+    public Order(String idOder, String idAccount, Address address, ArrayList<OderCart> products, String status, Voucher voucher) {
         this.idOder = idOder;
         this.status = status;
         this.allOderCart = products;
@@ -77,36 +79,146 @@ public class Order {
         return status;
     }
 
-    public int getCost() {
-        return cost;
-    }
-
     public int getShip() {
         return ship;
-    }
-
-    public int getNet() {
-        return net;
-    }
-
-    public int getTotal() {
-        return total;
     }
 
     public Voucher getVoucher() {
         return voucher;
     }
 
+    public void setIdOder(String idOder) {
+        this.idOder = idOder;
+    }
+
+    public void setPbuyName(String pbuyName) {
+        this.pbuyName = pbuyName;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setNote(String note) {
+        Note = note;
+    }
+
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setIdAccount(String idAccount) {
+        this.idAccount = idAccount;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public void setShip(int ship) {
+        this.ship = ship;
+    }
+
+    public void setNet(int net) {
+        this.net = net;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public void setVoucher(Voucher voucher) {
+        this.voucher = voucher;
+    }
+
+    public void setAllOderCart(ArrayList<OderCart> allOderCart) {
+        this.allOderCart = allOderCart;
+    }
+
     public Address getAddress() {
         return address;
     }
 
-    public int getTotalValue() {
+    public int getProfit() {
         int value = 0;
-        for (OderCart item: getAllOderCart()) {
+        for (OderCart item : getAllOderCart()) {
             value += item.getItem().LISTED_PRICE * item.getValue();
         }
-        return  value;
+        return value;
+    }
+
+    public String getTotalValue() {
+        return AppService.intToVND(getProfit());
+    }
+
+    public String getTotalAfterVoucher() {
+        int rs = getProfit();
+        int newShip = ship;
+        int voucherValue = voucher.getIntDiscount();
+        switch (voucher.getTypeInt()) {
+            case 0:
+                if (voucherValue > rs)
+                    rs = 0;
+                else
+                    rs -= voucherValue;
+                break;
+            case 1:
+                if (voucherValue >= 100) {
+                    rs = 0;
+                } else
+                    rs -= (rs * voucherValue) / 100;
+                break;
+            case 2:
+                if (voucherValue > ship)
+                    newShip = 0;
+                else
+                    newShip -= voucherValue;
+                break;
+        }
+        rs += newShip;
+        return AppService.intToVND(rs);
+    }
+
+    public int getNewShip() {
+        int newShip = ship;
+        int voucherValue = voucher.getIntDiscount();
+        if (voucher.typeInt == 2 ) {
+            if (voucherValue > ship)
+                newShip = 0;
+            else
+                newShip -= voucherValue;
+        }
+        return newShip;
+    }
+
+    public String getDiscount() {
+        if (voucher.getTypeInt() == 1)
+            return voucher.disCount + "%";
+        else if (voucher.getTypeInt() == 0)
+            return AppService.intToVND(voucher.disCount);
+        else
+            return "0VND";
+    }
+
+    public int getAllTotal() {
+        int rs = 0;
+        for (OderCart item : allOderCart) {
+            rs += item.getValue();
+        }
+        return rs;
+    }
+
+    public String revice() {
+        if ("Đã Giao".equals(status)) {
+            return getTotalAfterVoucher();
+        } else if ("Chưa Giao".equals(status))
+            return "0VND";
+        return "0VND";
     }
 
     public ArrayList<OderCart> getAllOderCart() {

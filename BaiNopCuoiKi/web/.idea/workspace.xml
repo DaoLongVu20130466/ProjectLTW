@@ -34,7 +34,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHang.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/DoanhThu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DoanhThu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/SanPham.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SanPham.html" afterDir="false" />
@@ -266,7 +266,7 @@
       <workItem from="1672710672878" duration="8975000" />
       <workItem from="1672820038466" duration="15343000" />
       <workItem from="1672885400714" duration="14278000" />
-      <workItem from="1672970519773" duration="13854000" />
+      <workItem from="1672970519773" duration="22018000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>

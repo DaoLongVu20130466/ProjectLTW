@@ -170,7 +170,7 @@
                             <td><%=item.getAddress().getProvine()%></td>
                             <td><%=item.getTotalValue()%></td>
                             <td><%=item.getStatus()%></td>
-                            <td><a href="/Oder/ServletInforOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
+                            <td><a href="/web_war/ServletInforOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
                         </tr>
                         <%}%>
                         </tbody>

@@ -1,3 +1,12 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.Voucher" %>
+<%@ page import="main.bean.OderCart" %>
+<%@ page import="main.bean.Order" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -155,45 +164,28 @@
                     <th> Thành Tiền(đ)</th>
                   </tr>
                   </thead>
+
                   <tbody>
+                  <%
+                      Order oder = (Order) request.getAttribute("inforOder");
+                      ArrayList<OderCart> list = oder.getAllOderCart();
+                      for (OderCart item: list) {
+                  %>
                   <tr>
                     <td>
                       <div class="itin4">
-                        <img src="img/cart/2comga_dagion-min.jpeg" alt="" >
+                        <img src="<%=item.getItem().getPath()%>" alt="" >
                         <div class="ittabp">
-                        <p class="itemi4"> Cơm gà da giòn</p>
-                        <p class="mahang"> CM-001</p>
+                        <p class="itemi4"> <%=item.getItem().getFoodName()%></p>
+                        <p class="mahang"> <%=item.getItem().getID_food()%></p>
                         </div>
                     </div>
                     </td>
-                    <td> 1</td>
-                    <td>45.000 đ</td>
-                    <td>45.000 đ</td>
+                    <td> <%=item.getValue()%></td>
+                    <td><%=item.getItem().getLISTED_PRICE()%></td>
+                    <td><%=item.getItem().getLISTED_PRICE()%></td>
                   </tr>
-                  <tr>
-                    <td><div class="itin4">
-                      <img src="img/cart/5haisan_chacuongcatrich-min.jpeg" alt="" >
-                      <div class="ittabp">
-                        <p class="itemi4"> Gỏi cuốn cá trích</p>
-                        <p class="mahang"> CN-001</p>
-                      </div>
-                    </div></td>
-                    <td>1</td>
-                    <td>120.000 đ</td>
-                    <td>120.000 đ</td>
-                  </tr>
-                  <tr>
-                    <td><div class="itin4">
-                      <img src="img/cart/1bun_bovien-min.jpeg" alt="" >
-                      <div class="ittabp">
-                        <p class="itemi4"> Bún bò viên</p>
-                        <p class="mahang"> CK-001</p>
-                      </div>
-                    </div></td>
-                    <td>1</td>
-                    <td>57.000 đ</td>
-                    <td>57.000 đ</td>
-                  </tr>
+                  <%}%>
                   </tbody>
                 </table>
               </div>
@@ -201,25 +193,25 @@
               <div class="chitietdonhang">
                 <div class="chitietdonhang-cl1">
                   <div>
-                    <label class="lbin4">DH001</label>
+                    <label class="lbin4"><%=oder.getIdOder()%></label>
                     <label class="lbdt">Mã Đơn Hàng</label>
                   </div>
                   <div>
-                    <label class="lbin4">Đào Long Vũ</label>
+                    <label class="lbin4"><%=oder.getPbuyName()%></label>
                     <label class="lbdt">Tên Người Đặt</label>
                   </div>
                   <div>
-                    <label class="lbin4">Vĩnh Phú 38A, Thuận An, Bình Dương</label>
+                    <label class="lbin4"><%=oder.getAddress().toString()%></label>
                     <label class="lbdt">Địa Chỉ</label>
                   </div>
                 </div>
                 <div class="chitietdonhang-cl1">
                   <div>
-                    <label class="Statusdon">Đã Giao</label>
+                    <label class="Statusdon"><%=oder.getStatus()%></label>
                     <label class="lbdt">Tình Trạng</label>
                   </div>
                   <div>
-                    <label class="lbin4">0985034347</label>
+                    <label class="lbin4"><%=oder.getPhoneNumber()%></label>
                     <label class="lbdt">Số Điện Thoại</label>
                   </div>
                 </div>
@@ -232,47 +224,39 @@
               <div class="chitietdonhang">
                 <div class="chitietdonhang-cl1">
                   <div>
-                    <label class="lbin4">Cơm gà không da em nhé</label>
+                    <label class="lbin4"><%=oder.getNote()%></label>
                     <label class="lbdt">Ghi Chú</label>
                   </div>
                   <div>
-                    <label class="lbin4">phunuvietnam</label>
+                    <label class="lbin4"><%=oder.getVoucher().getVoucherName()%></label>
                     <label class="lbdt">Voucher</label>
                   </div>
 
                 </div>
                 <div class="chitietdonhang-cl1">
                   <div>
-                    <label class="lbin41">3</label>
+                    <label class="lbin41"><%=oder.getAllTotal()%></label>
                     <label class="lbdt">Số Lượng Sản Phẩm</label>
                   </div>
                   <div>
-                    <label class="lbin41">210.000 đ</label>
+                    <label class="lbin41"><%=oder.getTotalValue()%></label>
                     <label class="lbdt">Tổng Tiền Hàng</label>
                   </div>
                   <div>
-                    <label class="lbin41">40.000 đ</label>
+                    <label class="lbin41"><%=oder.getDiscount()%></label>
                     <label class="lbdt">Giảm Giá</label>
                   </div>
                   <div>
-                    <label class="lbin41">20.000 đ</label>
+                    <label class="lbin41"><%=oder.getNewShip()%></label>
                     <label class="lbdt">Vận Chuyển</label>
                   </div>
                   <div>
-                    <label class="lbin42">190.000 đ</label>
+                    <label class="lbin42"><%=oder.getTotalAfterVoucher()%></label>
                     <label class="lbdt">Tổng Giá Trị Đơn</label>
                   </div>
                   <div>
-                    <label class="lbin41">190.000 đ</label>
+                    <label class="lbin41"><%=oder.revice()%></label>
                     <label class="lbdt">Đã Nhận</label>
-                  </div>
-                  <div>
-                    <label class="lbin41">0 đ</label>
-                    <label class="lbdt">Hoàn Trả</label>
-                  </div>
-                  <div>
-                    <label class="lbin41">190.000 đ</label>
-                    <label class="lbdt">Thực Nhận</label>
                   </div>
                 </div>
               </div>
