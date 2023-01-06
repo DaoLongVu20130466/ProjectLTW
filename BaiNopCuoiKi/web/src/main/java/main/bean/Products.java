@@ -189,9 +189,28 @@ public class Products {
         this.LISTED_PRICE = price;
         this.Status=status;
     }
+   public Products(String ID_food, String foodName, String size, int LISTED_PRICE, String type,  int quantity, String status, boolean isCombo, String idSale,String isHot, String DESCRIPTION, String path) {
+        this.ID_food = ID_food;
+        this.foodName = foodName;
+        this.size = size;
+        this.LISTED_PRICE = LISTED_PRICE;
+        this.type = type;
+        this.quantity = quantity;
+        Status = status;
+        this.isCombo = isCombo;
+        this.idSale = idSale;
+        this.isHot = isHot;
+        this.DESCRIPTION = DESCRIPTION;
+        this.path = path;
 
+<<<<<<< Updated upstream
     public String getStatus() {
         return Status;
+=======
+    }
+    public String getIsHot() {
+        return isHot;
+>>>>>>> Stashed changes
     }
 
     public int getLISTED_PRICE() {
