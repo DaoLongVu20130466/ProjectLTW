@@ -38,6 +38,7 @@ public class ProductsService {
                             "                            WHERE ID_ORDER = ?");
 
                     ps.setString(1,oderId);
+                    int temp=1;
                     ResultSet rs = ps.executeQuery();
 
                     while (rs.next()) {
