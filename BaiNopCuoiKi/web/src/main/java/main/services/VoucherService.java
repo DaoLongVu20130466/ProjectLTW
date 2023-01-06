@@ -89,6 +89,28 @@ public class VoucherService {
         }
 
     }
+    public Voucher getVcByOderId(String oderId) {
+        Voucher vchr = new Voucher();
+        try {
+            vchr = new Voucher();
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement stmt = conn.prepareStatement("SELECT voucher.ID_VOUCHER, voucher.NAMES , TYPE_VOUCHER, VALUESS FROM voucher join orders on voucher.ID_VOUCHER = orders.ID_VOUCHER WHERE ID_ORDER = ?");
+            stmt.setString(1, oderId);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+
+                vchr.setIdVoucher(rs.getString(1));
+                vchr.setVoucherName(rs.getString(2));
+                vchr.setTypeInt(rs.getInt(3));
+                vchr.setDisCount(rs.getInt(4));
+
+            }
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return vchr;
+    }
 
     public static void main(String[] args) {
         ArrayList<Voucher> s = VoucherService.getInstance().getControlVoucher();

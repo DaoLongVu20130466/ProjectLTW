@@ -12,6 +12,7 @@ public class Voucher {
     String voucherName;
     String voucherCode;
     String type;
+    int typeInt;
     int disCount;
     Date dayStart;
     Date dayEnd;
@@ -24,6 +25,24 @@ public class Voucher {
         this.disCount = disCount;
         this.dayStart = dayStart;
         this.dayEnd = dayEnd;
+    }
+
+    public Voucher(String idVoucher, String voucherName, int typeInt, int disCount) {
+        this.idVoucher = idVoucher;
+        this.voucherName = voucherName;
+        this.type = type;
+        this.disCount = disCount;
+    }
+
+    public int getTypeInt() {
+        return typeInt;
+    }
+
+    public void setTypeInt(int typeInt) {
+        this.typeInt = typeInt;
+    }
+
+    public Voucher() {
     }
 
     public Voucher(String idVoucher) {
@@ -40,6 +59,34 @@ public class Voucher {
 
     public String getType() {
         return type;
+    }
+
+    public void setIdVoucher(String idVoucher) {
+        this.idVoucher = idVoucher;
+    }
+
+    public void setVoucherName(String voucherName) {
+        this.voucherName = voucherName;
+    }
+
+    public void setVoucherCode(String voucherCode) {
+        this.voucherCode = voucherCode;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setDisCount(int disCount) {
+        this.disCount = disCount;
+    }
+
+    public void setDayStart(Date dayStart) {
+        this.dayStart = dayStart;
+    }
+
+    public void setDayEnd(Date dayEnd) {
+        this.dayEnd = dayEnd;
     }
 
     public String getDisCount() {

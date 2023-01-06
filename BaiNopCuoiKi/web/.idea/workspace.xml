@@ -12,16 +12,23 @@
     <list default="true" id="6f6a5316-14e0-4e75-96c4-2096cc9699bf" name="Changes" comment="add lai">
       <change afterPath="$PROJECT_DIR$/New Text Document.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/VouCher/ServletDelete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/OderCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/Order.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/Voucher.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddVoucher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetAllOder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletLock.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUnlock.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletVoucher.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getUserControl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/db/ConnectMysqlExample.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/db/DBProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/AdressService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/AppService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/OderService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/VoucherService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/useService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
@@ -34,7 +41,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/TangVoucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/TangVoucher.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ThemSanPham.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ThemSanPham.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ThemVoucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ThemVoucher.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Truysuatdonhang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Truysuatdonhang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Truysuatdonhang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Truysuatdonhang.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +97,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.bean" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\LTWProject\ProjectLTW\BaiNopCuoiKi\web\src\main\java" />
     </key>
@@ -255,7 +265,8 @@
       <workItem from="1670418420387" duration="3931000" />
       <workItem from="1672710672878" duration="8975000" />
       <workItem from="1672820038466" duration="15343000" />
-      <workItem from="1672885400714" duration="10412000" />
+      <workItem from="1672885400714" duration="14278000" />
+      <workItem from="1672970519773" duration="13854000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
