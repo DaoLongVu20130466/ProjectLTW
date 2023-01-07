@@ -113,7 +113,19 @@
         </div>
     </header>
     <!-- Header Section End -->
+    <%
+        String error = (String) request.getAttribute("error");
+    %>
+    <%
+        if (error != null) {
+    %>
+    <SCRIPT >
+        alert ("<%=error %>")
+    </script>
 
+    <%
+        }
+    %>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">

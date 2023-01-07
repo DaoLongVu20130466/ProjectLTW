@@ -2,6 +2,8 @@ package main.bean;
 
 public class User {
      int isblock;
+    int role;
+    String roleName;
     String userId;
     String userName;
     String Name;
@@ -122,6 +124,8 @@ public class User {
         this.userId= userId;
         this.isblock=anInt;
         this.Name=string2;
+        this.role=role;
+        this.roleName =roleName;
     }
 
     public String getName() {
@@ -132,3 +136,10 @@ public class User {
         Name = name;
     }
 }
+    public int getRole() {
+        return role;
+    }
+
+    public boolean checkRole(int i) {
+        return this.role >= i;
+    }

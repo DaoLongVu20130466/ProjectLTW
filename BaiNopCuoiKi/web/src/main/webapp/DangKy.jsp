@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="zxx">
 <%@ page import="main.bean.User" %>
 <%@ page import="java.util.ArrayList" %>
+<!DOCTYPE html>
+<html lang="zxx">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
     <meta charset="UTF-8">
@@ -27,10 +27,9 @@
     <link rel="stylesheet" href="css/admincss.css">
     <style> .container-form {background-image: url(./img/1.png);}</style>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
-    
 </head>
 
-<body>
+<body style="height: 1200px">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -67,11 +66,10 @@
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
                                     <li><a href="#">Tiếng Việt</a></li>
-                                    <li><a href="#">English</a></li>
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i>...</a>
+                                <a href="DangNhap.jsp"><i class="fa fa-user"></i> Đăng Nhập</a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="index.jsp"><img src="img/a.png" alt=""></a>
+                        <a href="./index.jsp"><img src="img/a.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -110,42 +108,66 @@
     </header>
     <div class="container-form">
          <div class="form_lg">
-        <p1>Đăng nhập</p1>
-        <form action="checkLogin" class="main-form" method="post">
+        <p1>Đăng ký</p1>
+
+        <form action="registry" class="main-form" onSubmit="return checkPw(this)">
+
             <%
                 String error = (String) request.getAttribute("error");
             %>
             <%
                 if (error != null) {
             %>
-            <div class="login-input" role="alert">
-                <SCRIPT >
-                    alert ("<%=error %>")
-                </script>
-            </div>
+            <SCRIPT >
+                 alert ("<%=error %>")
+            </script>
+
             <%
                 }
             %>
             <div class='login-input'>
                 Tài khoản:
-                <input type='text'  name='username' value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>" placeholder="Sđt hoặc Tên người dùng ">
+                <input type='text' name='username' placeholder="Sđt hoặc Tên người dùng "value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>">
             </div>
             <div class='login-input'>
                 Mật khẩu:
                 <input type='password' name='password' placeholder="Mật khẩu">
             </div>
-            <input type="submit"  value="Đăng Nhập" class="btn">
-            <div class="signup-or"><span>Hoặc</span></div>
+            <div class='login-input'>
+                Nhập lại mật khẩu:
+                <input type='password' name='passwordag' placeholder="Mật khẩu">
+            </div>
+            <div class='login-input'>
+                Email:
+                <input type='email' name='email' placeholder="Email của bạn"value="<%= request.getParameter("email")!=null?request.getParameter("email"):"" %>">
+            </div>
+            <div class='login-input'>
+                SDT:
+                <input type='text' name='phone' placeholder="SDT của bạn"value="<%= request.getParameter("phone")!=null?request.getParameter("phone"):"" %>">
+            </div>
+            <div class='login-input'>
+                Địa chỉ:
+                <input class="innn" type='text' name='Xa' placeholder="Xã"value="<%= request.getParameter("Xa")!=null?request.getParameter("Xa"):"" %>">
+                <input class="innn" type='text' name='Huyen' placeholder="Huyện"value="<%= request.getParameter("Huyen")!=null?request.getParameter("Huyen"):"" %>">
+                <input class="innn" type='text' name='Tinh' placeholder="Tỉnh"value="<%= request.getParameter("Tinh")!=null?request.getParameter("Tinh"):"" %>">
+                <input class="innn" type='text' name='Ap' placeholder="Ấp"value="<%= request.getParameter("Ap")!=null?request.getParameter("Ap"):"" %>">
+
+            </div>
+
+
+            <input type="submit" name="Đăng ký" class="btn" style="height: 45px;" value="Đăng ký">
+           
             <div class="input-and-icon">
                 <div>
-                    <i class="fa fa-facebook-official" aria-hidden="true"> Đăng nhập bằng fb</i>
+                    <i class="fa fa-glide-g" aria-hidden="true">Hướng dãn</i>
+                 
                 </div>
                 <div class="input-and-icon">
                 <div>
-                     <i class="fa fa-registered" aria-hidden="true"> <a href="QuenMK.html">Quên Mật Khẩu</a></i>
+                     <i class="fa fa-commenting-o" aria-hidden="true"> Cảm ơn đã tin tưởng</i>
                 </div>
             </div>
-            Nếu chưa có tài khoản hay ấn vào đây: <a href="DangKy.html">Đăng ký</a>
+             <a>Nếu đã chưa có tài khoản hay ấn vào đây: </a> <i> <a href="DangNhap.jsp">Đăng nhập</a></i>
         </div>
                
     
@@ -161,7 +183,19 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <SCRIPT LANGUAGE="JavaScript">
+        function checkPw(form) {
+            pw1 = form.password.value;
+            pw2 = form.passwordag.value;
 
+            if (pw1 != pw2) {
+                alert ("\nMật Khẩu nhập lại không khớp vui lòng nhập lại")
+                return false;
+            }
+            else return true;
+        }
+
+    </script>
   
 </body>
 

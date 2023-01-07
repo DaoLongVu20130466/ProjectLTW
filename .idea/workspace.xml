@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="834af1c5-2fa6-435f-82b5-e7c1fc5452d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/services/useService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/DangNhap.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/Doimk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/checkAmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/controller/registry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/DangKy.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/java/main/services/useService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/DangNhap.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/DangNhap.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web/src/main/webapp",
+    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web/src/main/java/main/controller",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,8 +55,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\webapp" />
       <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\java\main\controller" />
+      <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\webapp" />
       <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\java\main\bean" />
       <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\java\main\services" />
     </key>
@@ -170,6 +172,7 @@
       <workItem from="1672811726992" duration="28000" />
       <workItem from="1672813175370" duration="375000" />
       <workItem from="1672891200221" duration="610000" />
+      <workItem from="1673073928789" duration="603000" />
     </task>
     <servers />
   </component>
