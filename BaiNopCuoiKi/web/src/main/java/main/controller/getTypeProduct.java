@@ -23,7 +23,7 @@ public class getTypeProduct extends HttpServlet {
 
 
         request.setAttribute("allproducts", allProductByType);
-
+        request.setAttribute("type",type);
         request.setAttribute("alltype", typePro);
         request.setAttribute("numberP",numberP);
         request.setAttribute("productBySale", producBySale);

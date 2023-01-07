@@ -77,6 +77,37 @@ public class useService {
         return allusercontronl;
     }
 
+    public User getAllUserByID(String iduser) {
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement("SELECT user_information.USER_NAMES , " +
+                    "addresss.PROVINCE , user_information.PHONE_NUMBER, account.STATUSS, account.AVATAR,account.EMAIL, account.ID_ACCOUNT \n" +
+                    "FROM  account join  (user_information JOIN addresss " +
+                    "on user_information.ID_ADDRESS = addresss.ID_ADDRESS)  on  " +
+                    "account.ID_USER = user_information.ID_USER\n" +
+                    "WHERE user_information.ID_USER = ?");
+            ps.setString(1,iduser);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String userName = rs.getNString(1);
+                String provine = rs.getNString(2);
+                String phoneNumber = rs.getString(3);
+                String status = rs.getNString(4);
+                String avatar = rs.getString(5);
+                String email = rs.getString(6);
+                String idacc = rs.getString(7);
+                return new User (userName,provine,phoneNumber, status,avatar,email,idacc);
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
     public void LockUser(String uid){
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
