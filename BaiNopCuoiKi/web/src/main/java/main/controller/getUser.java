@@ -24,11 +24,11 @@ public class getUser extends HttpServlet {
             tag="yeuthich";
         }
 //
-//        User user = useService.getInstance().getAllUserByID(idser);
-//        ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
-//        request.setAttribute("userID", user);
-//        request.setAttribute("product", product);
-//        request.setAttribute("tag2",tag);
+        User user = useService.getInstance().getAllUserByID(idser);
+        ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
+        request.setAttribute("userID", user);
+        request.setAttribute("product", product);
+        request.setAttribute("tag2",tag);
 
         request.getRequestDispatcher("user.jsp").forward(request, response);
 
