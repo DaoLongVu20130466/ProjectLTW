@@ -22,6 +22,20 @@ public class useService {
         }
         return instance;
     }
+    public void deletaFavourite(String idf , String id ){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM favourite " +
+                    "WHERE ID_FOOD = ? AND ID_ACCOUNT =?");
+            ps.setString(1,idf);
+            ps.setString(2,id);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+
+    }
     public ArrayList<User> getAllUser() {
         ArrayList<User> allusercontronl = new ArrayList<User>();
         try {
