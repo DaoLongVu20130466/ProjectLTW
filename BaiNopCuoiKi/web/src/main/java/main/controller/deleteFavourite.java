@@ -13,10 +13,7 @@ public class deleteFavourite extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String id = request.getParameter("idacc");
             String idf = request.getParameter("idf");
-
-            useService u = new useService().getInstance();
-            u.deletaFavourite(idf,id);
-
+            useService.getInstance().deletaFavourite(idf,id);
         response.sendRedirect("/web_war/getUser");
     }
 

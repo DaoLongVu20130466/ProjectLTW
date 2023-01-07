@@ -15,7 +15,6 @@ public class checkAmin extends HttpServlet {
         User auth = (User) session.getAttribute("auth");
         if (auth == null || !auth.checkRole(2)) {
             request.setAttribute("error", "Bạn không có quyền truy cập vào trang này");
-
             request.getRequestDispatcher("index.jsp").forward(request, response);
             return;
         } else {

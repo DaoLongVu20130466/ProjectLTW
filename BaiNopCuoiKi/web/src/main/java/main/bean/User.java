@@ -14,9 +14,8 @@ public class User {
     String avatar;
     int isblock;
     int role;
+    String Name;
     String roleName;
-    String userId;
-
     String idacc;
 
     public User(){
@@ -47,7 +46,7 @@ public class User {
         this.password=string1;
         this.userId= userId;
         this.isblock=anInt;
-        this.userName=string2;
+        this.Name=string2;
         this.role=role;
         this.roleName =roleName;
     }
@@ -63,6 +62,33 @@ public class User {
 
     }
 
+    public void setNumberBuy(int numberBuy) {
+        this.numberBuy = numberBuy;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setIsblock(int isblock) {
+        this.isblock = isblock;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
     public void setProvine(String provine) {
         this.provine = provine;
