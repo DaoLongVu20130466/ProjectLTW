@@ -13,7 +13,7 @@ public class User {
     int isblock;
     int role;
     String roleName;
-    String userId;
+    String Name;
 
     public User(){
 
