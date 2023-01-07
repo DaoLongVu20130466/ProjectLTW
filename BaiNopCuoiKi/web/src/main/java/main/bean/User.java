@@ -10,6 +10,10 @@ public class User {
     String email;
     String phoneNumber;
     String avatar;
+    int isblock;
+    int role;
+    String roleName;
+    String userId;
 
     public User(){
 
@@ -34,7 +38,31 @@ public class User {
         this.avatar = avatar;
 
     }
+    public User(String string, String string1,String userId, int anInt, String string2,int role , String roleName) {
+        this.userName= string ;
+        this.password=string1;
+        this.userId= userId;
+        this.isblock=anInt;
+        this.Name=string2;
+        this.role=role;
+        this.roleName =roleName;
+    }
 
+
+    public int getRole() {
+        return role;
+    }
+
+    public int getIsblock() {
+        return isblock;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+    public boolean checkRole(int i) {
+        return this.role >= i;
+    }
     public String getUserId() {
         return userId;
     }
