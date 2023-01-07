@@ -7,13 +7,16 @@ public class User {
     String provine;
     int numberBuy;
     int status;
+
+    String statuss;
     String email;
     String phoneNumber;
     String avatar;
     int isblock;
     int role;
+    String Name;
     String roleName;
-    String userId;
+    String idacc;
 
     public User(){
 
@@ -48,6 +51,64 @@ public class User {
         this.roleName =roleName;
     }
 
+    public  User(String userName, String provine, String phoneNumber, String status, String avatar, String email,String idacc) {
+        this.userName = userName;
+        this.provine = provine;
+        this.phoneNumber = phoneNumber;
+        this.statuss = status;
+        this.avatar = avatar;
+        this.email = email;
+        this.idacc = idacc;
+
+    }
+
+    public void setNumberBuy(int numberBuy) {
+        this.numberBuy = numberBuy;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setIsblock(int isblock) {
+        this.isblock = isblock;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public void setProvine(String provine) {
+        this.provine = provine;
+    }
+
+    public String getStatuss() {
+        return statuss;
+    }
+
+    public void setStatuss(String statuss) {
+        this.statuss = statuss;
+    }
+
+    public String getIdacc() {
+        return idacc;
+    }
+
+    public void setIdacc(String idacc) {
+        this.idacc = idacc;
+    }
 
     public int getRole() {
         return role;
