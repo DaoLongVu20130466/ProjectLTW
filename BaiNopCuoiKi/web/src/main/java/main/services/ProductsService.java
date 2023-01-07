@@ -131,9 +131,7 @@ public class ProductsService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select ID_TYPE,TYPE_FOOD from TYPE_FOOD"
-
-            );
+            ResultSet rs = stmt.executeQuery("select ID_TYPE,TYPE_FOOD from TYPE_FOOD");
 
             while (rs.next()) {
                 allType.add(new TypeProducts(

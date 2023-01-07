@@ -77,7 +77,7 @@
                         <% }else{%>
                         <div   class="fa" role="alert">
 
-                            <a href="getUser?iduser=<%=user.getUserId()%>"><i class="fa fa-user" ></i> <%= a+user.getName()%></a>
+                            <a href="getUser?iduser=<%=user.getUserId()%>"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
 
                         </div>
                         <%}%>

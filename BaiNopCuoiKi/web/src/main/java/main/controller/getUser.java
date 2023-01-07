@@ -23,12 +23,12 @@ public class getUser extends HttpServlet {
             idser = (String) session.getAttribute("idser");
             tag="yeuthich";
         }
-
-        User user = useService.getInstance().getAllUserByID(idser);
-        ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
-        request.setAttribute("userID", user);
-        request.setAttribute("product", product);
-        request.setAttribute("tag2",tag);
+//
+//        User user = useService.getInstance().getAllUserByID(idser);
+//        ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
+//        request.setAttribute("userID", user);
+//        request.setAttribute("product", product);
+//        request.setAttribute("tag2",tag);
 
         request.getRequestDispatcher("user.jsp").forward(request, response);
 
@@ -42,4 +42,5 @@ public class getUser extends HttpServlet {
         HttpSession session = request.getSession(true);
         session.setAttribute("idser", idser);
     }
+
 }
