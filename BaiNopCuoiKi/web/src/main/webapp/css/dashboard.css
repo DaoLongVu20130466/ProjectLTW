@@ -1,0 +1,12 @@
+#getinput {
+    display: flex;
+}
+#getinput .btnsummit{
+width: 200px;
+    height: 35px;
+    margin-left: auto;
+    border-color: #e8e8e8;
+    border-radius: 3px;
+    background: #ffffff;
+    margin-left: 10px;
+}
