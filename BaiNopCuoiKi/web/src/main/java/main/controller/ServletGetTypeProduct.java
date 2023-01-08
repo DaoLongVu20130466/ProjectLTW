@@ -10,20 +10,27 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getIndex", value = "/getIndex")
-public class getIndex extends HttpServlet {
+@WebServlet(name = "getTypeProduct", value = "/getAllProductByType")
+public class ServletGetTypeProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
-        ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
-        ArrayList<Products> producByHot = (ArrayList<Products>) ProductsService.getInstance().getAllproductByHot();
-        ArrayList<Products> producByCombo = (ArrayList<Products>) ProductsService.getInstance().getAllproductByCombo();
+        String type = request.getParameter("type");
 
+        ArrayList<Products> allProductByType = (ArrayList<Products>) ProductsService.getInstance().getAllproductsByType(type);
+        int numberP = allProductByType.size()/12 +1;
+        ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
+        ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
+
+
+        request.setAttribute("allproducts", allProductByType);
+        request.setAttribute("type",type);
         request.setAttribute("alltype", typePro);
+        request.setAttribute("numberP",numberP);
         request.setAttribute("productBySale", producBySale);
-        request.setAttribute("productByHot", producByHot);
-        request.setAttribute("productByCombo", producByCombo);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
+
+
     }
 
     @Override

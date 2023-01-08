@@ -8,7 +8,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "deleteFavourite", value = "/deleteFavourite")
-public class deleteFavourite extends HttpServlet {
+public class ServletDeleteFavourite extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String id = request.getParameter("idacc");

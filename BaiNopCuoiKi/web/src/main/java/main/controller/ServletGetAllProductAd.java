@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet(name = "getAllProductByAdmin", value = "/getAllProductByAdmin")
-public class getAllProductByAdmin extends HttpServlet {
+public class ServletGetAllProductAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
