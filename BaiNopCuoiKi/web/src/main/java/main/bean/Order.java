@@ -47,6 +47,10 @@ public class Order {
         this.voucher = voucher;
     }
 
+    public void setDayCrate(Date dayCrate) {
+        this.dayCrate = dayCrate;
+    }
+
     public Order(String idOder) {
         this.idOder = idOder;
     }
@@ -144,10 +148,13 @@ public class Order {
         return address;
     }
 
+    public int getMouth(){
+        return dayCrate.getMonth();
+    }
     public int getProfit() {
         int value = 0;
         for (OderCart item : getAllOderCart()) {
-            value += item.getItem().LISTED_PRICE * item.getValue();
+            value += item.getThisodercartvl();
         }
         return value;
     }

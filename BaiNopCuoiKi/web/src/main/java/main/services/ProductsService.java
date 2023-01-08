@@ -25,17 +25,19 @@ public class ProductsService {
 
     public  ArrayList<OderCart> getProductByOderID(String oderId){
         {
-            ArrayList<OderCart> orc = new ArrayList<OderCart>();
+            ArrayList<OderCart> orc = new ArrayList<>();
             {
 
                 try {
                     Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-                    PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD, FOOD_NAME,  BASE_PRICE , LISTED_PRICE , L_IMG , order_details.QUANTITY \n" +
-                            "                            FROM order_details \n" +
-                            "                            JOIN food \n" +
-                            "                            on food.ID_FOOD = order_details.ID_FOOD  AND food.ID_SIZE = order_details.ID_SIZE\n" +
-                            "                            WHERE ID_ORDER = ?");
+                    PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD, FOOD_NAME,  BASE_PRICE , LISTED_PRICE , L_IMG , order_details.QUANTITY , type_food.ID_TYPE\n" +
+                            "FROM order_details \n" +
+                            "join TYPE_FOOD\n" +
+                            "JOIN food \n" +
+                            "on TYPE_FOOD.TYPE_FOOD = food.TYPE_FOOD\n" +
+                            "on food.ID_FOOD = order_details.ID_FOOD  AND food.ID_SIZE = order_details.ID_SIZE \n" +
+                            " WHERE ID_ORDER = ?");
 
                     ps.setString(1,oderId);
                     int temp=1;
@@ -43,7 +45,7 @@ public class ProductsService {
 
                     while (rs.next()) {
                         OderCart rsl = new OderCart();
-                        rsl.setItem(new Products(rs.getString(1),rs.getString(2),rs.getInt(3), rs.getInt(4),rs.getString(5) ));
+                        rsl.setItem(new Products(rs.getString(1),rs.getString(2),rs.getInt(3), rs.getInt(4),rs.getString(5),rs.getString(7) ));
                         rsl.setValue(rs.getInt(6));
                         orc.add(rsl);
                     }
