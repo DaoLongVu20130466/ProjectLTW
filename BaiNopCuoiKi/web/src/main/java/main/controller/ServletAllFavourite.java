@@ -15,7 +15,9 @@ import java.util.ArrayList;
 public class ServletAllFavourite extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idser = request.getParameter("iduser");
+        HttpSession session = request.getSession(true);
+        User user0 = (User) session.getAttribute("auth");
+        String  idser = user0.getUserId();
         String tag = request.getParameter("tag");
 
 //
@@ -28,7 +30,7 @@ public class ServletAllFavourite extends HttpServlet {
         request.getRequestDispatcher("yeuthich.jsp").forward(request, response);
 
     }
-    }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -69,10 +69,6 @@
               <%
                 String a = (String) session.getAttribute("login");
                 User user = (User) session.getAttribute("auth");
-                User userID = (User) request.getAttribute("userID");
-                ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
-                String tag2 = (String) request.getAttribute("tag2");
-
               %>
               <%
                 if (a == null) {
@@ -155,9 +151,9 @@
           <div class="sidebar">
             <div class="sidebar__item">
               <ul>
-                <li ><a href="getUser?iduser=<%=user.getUserId()%>"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
                 <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
-                <li><a href="getAllFavourite?iduser=<%=user.getUserId()%>"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
+                <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                 <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
                 <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
@@ -170,6 +166,9 @@
           <!-- Thong tin -->
           <!-- Thong tin -->
           <!-- Thong tin -->
+          <%
+            User userID = (User) request.getAttribute("userID");
+          %>
           <div class="wrapper">
             <div class="left">
               <img src="<%=userID.getAvatar()%>" alt="user" width="100">

@@ -106,7 +106,14 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href=""><i class="fa fa-user"></i> </a></li>
+                        <%
+                            if (a == null) {
+                        %>
+                        <li> <a href=""> <i class="fa fa-user"></i> </a></li>
+                        <% }else{%>
+                        <li> <a href="getUser"> <i class="fa fa-user"></i> </a></li>
+                        <%}%>
+
                         <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
