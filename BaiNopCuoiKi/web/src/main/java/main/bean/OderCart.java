@@ -20,6 +20,9 @@ public class OderCart {
         return value;
     }
 
+    public int getThisodercartvl(){
+        return Item.LISTED_PRICE * value;
+    }
     public OderCart() {
     }
 
