@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet(name = "getProduct", value = "/detail")
-public class getProduct extends HttpServlet {
+public class ServletGetProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fid = request.getParameter("fid");
