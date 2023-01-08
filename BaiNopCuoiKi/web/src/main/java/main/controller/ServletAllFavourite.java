@@ -11,8 +11,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getUser", value = "/getUser")
-public class ServletGetUser extends HttpServlet {
+@WebServlet(name = "ServletAllFavourite", value = "/getAllFavourite")
+public class ServletAllFavourite extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idser = request.getParameter("iduser");
@@ -25,17 +25,13 @@ public class ServletGetUser extends HttpServlet {
         request.setAttribute("product", product);
         request.setAttribute("tag2",tag);
 
-        request.getRequestDispatcher("user.jsp").forward(request, response);
+        request.getRequestDispatcher("yeuthich.jsp").forward(request, response);
 
+    }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idser = request.getParameter("iduser");
-        String tag = request.getParameter("tag");
 
-        HttpSession session = request.getSession(true);
-        session.setAttribute("idser", idser);
     }
-
 }
