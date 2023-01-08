@@ -11,14 +11,14 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-    @WebServlet(name = "ServletGetAllOder", value = "/Admin/ServletGetAllOder")
+@WebServlet(name = "ServletGetAllOder", value = "/ServletGetAllOder")
 public class ServletGetAllOder extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ArrayList<Order> oder = OderService.getInstance().getAllOder();
         request.setAttribute("alloder", oder);
-        request.getRequestDispatcher("../Truysuatdonhang.jsp").forward(request, response);
+        request.getRequestDispatcher("Truysuatdonhang.jsp").forward(request, response);
     }
 
     @Override
