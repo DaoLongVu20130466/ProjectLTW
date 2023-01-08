@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet(name = "getPageAD", value = "/getPageAD")
-public class getPageAD extends HttpServlet {
+public class ServletGetPageAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");
