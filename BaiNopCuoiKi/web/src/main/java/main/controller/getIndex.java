@@ -15,7 +15,7 @@ public class getIndex extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
-        ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
+        ArrayList<TypeProducts> typePro =  ProductsService.getInstance().getTypeProduct();
         ArrayList<Products> producByHot = (ArrayList<Products>) ProductsService.getInstance().getAllproductByHot();
         ArrayList<Products> producByCombo = (ArrayList<Products>) ProductsService.getInstance().getAllproductByCombo();
 
@@ -23,7 +23,7 @@ public class getIndex extends HttpServlet {
         request.setAttribute("productBySale", producBySale);
         request.setAttribute("productByHot", producByHot);
         request.setAttribute("productByCombo", producByCombo);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("../index.jsp").forward(request, response);
     }
 
     @Override

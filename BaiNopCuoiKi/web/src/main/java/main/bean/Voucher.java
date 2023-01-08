@@ -1,6 +1,5 @@
 package main.bean;
 
-import jdk.jshell.Snippet;
 import main.services.AppService;
 
 import java.text.DateFormat;
