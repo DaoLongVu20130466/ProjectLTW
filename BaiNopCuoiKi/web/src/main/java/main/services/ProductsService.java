@@ -96,8 +96,8 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement( "SELECT ID_FOOD,FOOD_NAME,ID_SIZE,LISTED_PRICE,TYPE_FOOD,QUANTITY,STATUSS,IS_COMBO,ID_SALE,IS_HOT,DESCRIPTION,L_IMG FROM `food`\n" +
-                    "WHERE food.ID_SIZE=\"SIZE1\"\n and TYPE_FOOD = ?" +
+            PreparedStatement ps = conn.prepareStatement( "SELECT FOOD.ID_FOOD,FOOD.FOOD_NAME,FOOD.ID_SIZE,FOOD.LISTED_PRICE,FOOD.TYPE_FOOD,FOOD.QUANTITY,FOOD.STATUSS,FOOD.IS_COMBO,FOOD.ID_SALE,FOOD.IS_HOT,FOOD.DESCRIPTION,FOOD.L_IMG FROM FOOD JOIN TYPE_FOOD ON FOOD.TYPE_FOOD = TYPE_FOOD.TYPE_FOOD\n" +
+                    "WHERE food.ID_SIZE=\"SIZE1\"\n and TYPE_FOOD.TYPE_FOOD = ?" +
                     "LIMIT 12 OFFSET ?"
 
 

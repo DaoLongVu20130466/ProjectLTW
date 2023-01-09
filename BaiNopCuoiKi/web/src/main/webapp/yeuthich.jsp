@@ -156,11 +156,11 @@
                         <div class="sidebar__item">
                             <ul>
                                 <li ><a href="getUserInfor"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                                <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                                <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                                 <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                                 <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
-                                <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
+                                <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                             </ul>
                         </div>
                     </div>
@@ -224,7 +224,6 @@
                 </div>
 
 
-                <div class="userr" style="width:80%;">
 
                     <!-- yeu thich -->
                     <!-- yeu thich -->
