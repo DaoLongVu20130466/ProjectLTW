@@ -1,3 +1,8 @@
+<%@ page import="main.bean.Voucher" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -134,11 +139,11 @@
                 <div class="sidebar__item">
                     <ul>
                         <li ><a href="user.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                        <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                        <li><a href="Donhang.jsp"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                         <li><a href="yeuthich.html"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                         <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
                       
-                        <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
+                        <li><a href="Voucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,70 +200,40 @@
              
            
     </div>
-    <div class="userr">
+    <div class="userr" style="width:80%;">
         <div class="TaiKhoan">
-            <h2 style="margin-left: 42%;margin-bottom: 20px;">Đơn Hàng</h2>
+            <h2 style="margin-left: 42%;margin-bottom: 20px;">Voucher</h2>
           <table class="cd-table order-table table">
             <thead>
             <tr>
-              <th>Mã Đơn</th>
-              <th>Tài Khoản</th>
-              <th>Địa Chỉ</th>
-              <th>Số Tiền</th>
-              <th>Số Đơn Mua</th>
-              <th>Trạng Thái</th>
+              <th>STT</th>
+              <th>Mã Voucher</th>
+              <th>Tên Voucher</th>
+              <th>Loại Voucher</th>
+              <th>Giảm</th>
+              <th>Thời hạn</th>
+              
               <th>Hành Động</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-              <td>123.</td>
-              <td>MAi giao</td>
-              <td>1223331.</td>
-              <td>11233.</td>
-              <td>Dang Giao.</td>
-              <td>11233.</td>
-              <td><a href=""><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a><a href="" style="color: red;"><i class="fa fa-trash-o" aria-hidden="true"></i>  Hủy</a></td>
-            </tr>
 
-            <tr>
-              <td>Your data goes here...</td>
-              <td>Email goes here...</td>
-              <td>Phone number goes here...</td>
-              <td>ID goes here...</td>
-              <td>1223331.</td>
-              <td>11233.</td>
-              <td><a href=""><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a><a href="" style="color: red;"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a></td>
-            </tr>
-            
-            <tr>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td><a href=""><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a><a href="" style="color: red;"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a></td>
-              </tr>
-              
+              <%
+                  ArrayList<Voucher> list = (ArrayList<Voucher>) request.getAttribute("allvoucher");
+                  for (Voucher item: list) {
+              %>
+              <tbody>
               <tr>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td><a href=""><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a><a href="" style="color: red;"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a></td>
+                  <td><%=item.getIdVoucher()%></td>
+                  <td><%=item.getVoucherName()%></td>
+                  <td><%=item.getVoucherCode()%></td>
+                  <td><%=item.getType()%></td>
+                  <td><%=item.getDisCount()%></td>
+                  <td><%=item.getIsOutDate()%></td>
+                  <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
+                      <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
               </tr>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td><a href=""><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a><a href="" style="color: red;"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a></td>
-              </tr>
-            </tbody>
+              <%}%>
+              </tbody>
           </table>
           <div class="product__pagination">
             <a href="#">1</a>
