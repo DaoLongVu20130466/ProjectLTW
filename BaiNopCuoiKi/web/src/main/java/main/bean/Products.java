@@ -46,11 +46,12 @@ public class Products {
     }
 
 
-    public Products(String ID_food, String foodName,int basePrice , int LISTED_PRICE, String path) {
+    public Products(String ID_food, String foodName,int basePrice , int LISTED_PRICE, String path, String type) {
         this.ID_food = ID_food;
         this.foodName = foodName;
         this.LISTED_PRICE = LISTED_PRICE;
         this.path = path;
+        this.type = type;
     }
 
     public String getIsHot() {
