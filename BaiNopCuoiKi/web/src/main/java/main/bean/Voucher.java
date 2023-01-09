@@ -5,6 +5,7 @@ import main.services.AppService;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -127,7 +128,10 @@ public class Voucher {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date now = new Date();
         dateFormat.format(now);
-        if (now.after(dayStart)&&now.before(dayEnd)) {
+        LocalDate date1 = LocalDate.parse(dayStart.toString());
+        LocalDate date2 = LocalDate.parse(dayEnd.toString());
+        LocalDate nowd = LocalDate.parse(dateFormat.format(now));
+        if (nowd.isAfter(date1)&&nowd.isBefore(date2)) {
             return "Khả Dụng";
         }
         else return "Không Khả Dụng";
@@ -145,5 +149,11 @@ public class Voucher {
                 ", dayStart=" + dayStart.toString() +
                 ", dayEnd=" + dayEnd.toString() +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        Date now = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(dateFormat.format(now));
     }
 }
