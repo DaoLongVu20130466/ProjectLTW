@@ -434,12 +434,48 @@ public class ProductsService {
             e.printStackTrace();
         }
     }
+    public List<Products> getAllproductSearch(String txt) {
+        ArrayList<Products> allProductSearch = new ArrayList<Products>();
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+
+            PreparedStatement ps = conn.prepareStatement("SELECT ID_FOOD,FOOD_NAME,ID_SIZE,LISTED_PRICE,TYPE_FOOD," +
+                    "QUANTITY,STATUSS,IS_COMBO,ID_SALE,IS_HOT,DESCRIPTION,L_IMG " +
+                    "FROM FOOD WHERE food.ID_SIZE=\"SIZE1\" AND FOOD_NAME like ?"
+
+
+            );
+            ps.setString(1,"%"+txt+"%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                allProductSearch.add( new Products(
+                        rs.getString(1),
+                        rs.getNString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getNString(5),
+                        rs.getInt(6),
+                        rs.getNString(7),
+                        rs.getBoolean(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getNString(11),
+                        rs.getNString(12)));
+            }
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return allProductSearch;
+    }
+
 
 
 
 
     public static void main(String[] args) {
-//            ProductsService a = new ProductsService();
+           ProductsService a = new ProductsService();
 //            String tenmonan ="Cơm gà A Quảng";
 //            int niemyet =60000;
 //            int giaban=12;
@@ -454,6 +490,6 @@ public class ProductsService {
 //            int optionCombo = 0 ;
 //            String optionSize="SIZE1";
 //            a.addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
-//            System.out.println("ok");
+           System.out.println(a.getAllproductSearch("Cơm gà"));
     }
 }

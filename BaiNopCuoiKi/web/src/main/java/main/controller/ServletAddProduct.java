@@ -28,17 +28,7 @@ public class ServletAddProduct extends HttpServlet {
         int niemyet = (int) Integer.parseInt(request.getParameter("niemyet"));
 
         request.setAttribute("1",tenmonan);
-        request.setAttribute("2",optionSize);
-        request.setAttribute("3",giaban);
-        request.setAttribute("4",optionType);
-        request.setAttribute("5",soluong);
-        request.setAttribute("6",optionStatus);
-        request.setAttribute("7",optionCombo);
-        request.setAttribute("8",optionSale);
-        request.setAttribute("9",optionHot);
-        request.setAttribute("10",Mota);
-        request.setAttribute("11",img);
-        request.setAttribute("12",niemyet);
+
         ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
         request.setAttribute("alltype",type);
 
