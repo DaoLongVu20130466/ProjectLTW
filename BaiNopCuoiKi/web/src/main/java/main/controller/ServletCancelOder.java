@@ -9,20 +9,24 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 
-@WebServlet(name = "ServletUIFOder", value = "/getUIFOder")
-public class ServletUIFOder extends HttpServlet {
+@WebServlet(name = "ServletCancelOder", value = "/ServletCancelOder")
+public class ServletCancelOder extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String idOder = request.getParameter("idoder");
         HttpSession session =request.getSession();
         User user0 = (User) session.getAttribute("auth");
         String  iduser = user0.getUserId();
         User usernow = useService.getInstance().getAllUserByID(iduser);
         request.setAttribute("userID",usernow);
-        ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
-        request.setAttribute("alloder", list);
-        request.getRequestDispatcher("Donhang.jsp").forward(request, response);
+        if (user0.getUserId() == usernow.getUserId()){
+            OderService.getInstance().cancelOder(idOder);
+            response.sendRedirect("DangNhap.jsp");
+        }
+        else {
+            response.sendRedirect("DangNhap.jsp");
+        }
 
     }
 

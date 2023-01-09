@@ -160,91 +160,99 @@
       <div class="col-lg-10 col-md-5">
         <%
           ArrayList<TypeProducts> listType = (ArrayList<TypeProducts>) request.getAttribute("alltype");
+
         %>
 
         <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
 
-        <form action="/web_war/AddNewProduct" class="" onSubmit="">
+
+        <form action="/web_war/ServletAddProduct" class="" onSubmit="">
+
           <div class='add-input'>
             Tên món ăn <span>*</span>
-            <input type='text' name='tenmonan' placeholder="Tên món ăn"value=" ">
-          </div>
-          <div class='add-input'>
-            Giá niêm yết
-            <input type='text' name='niemyet' placeholder="Giá niêm yết"value=" ">
-          </div>
-          <div class='add-input'>
-            Giá bán<span>*</span>
-            <input type='text' name='giaban' placeholder="Giá bán"value=" ">
-          </div>
-          <div class='add-input'>
-            Số lượng<span>*</span>
-            <input type='text' name='soluong' placeholder="Số lượng"value=" ">
-          </div>
-          <div class='add-input'>
-            Mô tả<span>*</span>
-            <input type='text' name='Mota' placeholder="Mô tả"value=" ">
+            <input type='text' name='tenmonan' placeholder="Tên món ăn" required>
           </div>
 
           <div class='add-input'>
-            Món ăn hot:<span>*</span>
-            <select name="optionType" >
-              <option value="HOT"> HOT </option>
-              <option value="NORMAL"> NORMAL </option>
+            Size:<span>*</span>
+            <select name="optionSize" >
+              <option value="SIZE1"> SIZE1 </option>
+              <option value="SIZE2"> SIZE2 </option>
             </select>
           </div>
+          <div class='add-input'>
+            Giá niêm yết
+            <input type='text' name='niemyet' placeholder="Giá niêm yết" required>
+          </div>
+          <div class='add-input'>
+            Giá bán<span>*</span>
+            <input type='text' name='giaban' placeholder="Giá bán" required>
+          </div>
+
 
           <div class='add-input'>
             Loại món ăn: <span>*</span>
 
             <form action="" class="typeAdd">
-              <select name="optionType" >
-              <%
-                for ( TypeProducts t : listType
-                     ) {
-              %>
+              <select name="optionType"  >
+                <%
+                  for ( TypeProducts t : listType
+                  ) {
+                %>
                 <option value="<%=t.getNameType()%>"> <%=t.getNameType()%>  </option>
                 <%}%>
               </select>
 
           </div>
 
+
+          <div class='add-input'>
+            Số lượng<span>*</span>
+            <input type='text' name='soluong' placeholder="Số lượng" required>
+          </div>
+
+          <div class='add-input'>
+            Trạng thái: <span>*</span>
+            <input type='text' name='optionStatus' placeholder=" TRẠNG THÁI" required>
+          </div>
+
           <div class='add-input'>
             Món ăn Combo:<span>*</span>
-            <select name="optionType" >
+            <select name="optionCombo" >
               <option value="0"> KHÔNG </option>
               <option value="1"> COMBO </option>
             </select>
           </div>
-
           <div class='add-input'>
-              Món ăn Sale:<span>*</span>
-            <select name="optionType" >
+            Món ăn Sale:<span>*</span>
+            <select name="optionSale" >
               <option value="SALE1"> SALE </option>
               <option value="SALE2"> KHÔNG SALE </option>
             </select>
-            </div>
+          </div>
 
           <div class='add-input'>
-            Size:<span>*</span>
-            <select name="optionType" >
-              <option value="SIZE1"> SIZE1 </option>
-              <option value="SIZE2"> SIZE2 </option>
+            Món ăn hot:<span>*</span>
+            <select name="optionHot" >
+              <option value="HOT"> HOT </option>
+              <option value="NORMAL"> NORMAL </option>
             </select>
           </div>
 
-            <div class='add-input'>
-              Trạng thái: <span>*</span>
-              <input type='text' name='optionStatus' placeholder=" "value=" ">
-            </div>
+          <div class='add-input'>
+            Mô tả<span>*</span>
+            <input type='text' name='Mota' placeholder="Mô tả" required>
+          </div>
+
           <div class='add-input'>
            Hình ảnh:<span>*</span>
-            <input type="file" id="myfile" name="myfile"><br><br>
+            <input type="file" id="myfile" name="myfile" required><br><br>
           </div>
       </div>
       <input class="btn" type="submit" value="Submit">
 
         </form>
+
   </div>
     </div>
 </section>

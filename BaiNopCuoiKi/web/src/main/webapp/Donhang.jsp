@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/index.css"type="text/css">
     <link rel="stylesheet" href="css/User.css"type="text/css">
+    <link rel="stylesheet" href="css/voucher&Oder.css"type="text/css">
 
 </head>
 
@@ -160,9 +161,6 @@
                 </div>
 
                 <div class="col-lg-10 col-md-5" style="height: 340px;">
-                    <!-- Thong tin -->
-                    <!-- Thong tin -->
-                    <!-- Thong tin -->
                     <div class="wrapper">
                         <div class="left">
                             <img src="<%=userID.getAvatar()%>" alt="user" width="100">
@@ -217,42 +215,48 @@
                 </div>
 
 
-    <div class="userr">
-        <div class="TaiKhoan">
-            <h2 style="margin-left: 42%;margin-bottom: 20px;">Đơn Hàng</h2>
-          <table class="cd-table order-table table">
-            <thead>
-            <tr>
-              <th>Mã Đơn</th>
-              <th>Địa Chỉ</th>
-              <th>Số Tiền</th>
-              <th>Trạng Thái</th>
-              <th>Hành Động</th>
-            </tr>
-            </thead>
-            <tbody>
-            <%
-                ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("alloder");
-                for (Order item: list) {
-            %>
-            <tr>
-              <td><%=item.getIdOder()%>></td>
-              <td><%=item.getAddress().getProvine()%></td>
-              <td><%=item.getUserTotalCost()%></td>
-              <td><%=item.getStatus()%>></td>
-              <td><a href="/web_war/ServletUIFOder?isuser=<%="ddd"%>&&idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a>
-                  <a href="/web_war/ServletUDeleteOder?isuser=<%="ddd"%>&&idoder=<%=item.getIdOder()%>" style="color: red;"><i class="fa fa-trash-o" aria-hidden="true"></i>  Hủy</a></td>
-            </tr>
+                <div class="col-lg-10 col-md-5" id="useri4">
+                    <div>
+                        <div class="TaiKhoan">
+                            <table class="cd-table order-table table">
+                                <thead>
+                                <tr>
+                                    <th>Mã Đơn</th>
+                                    <th>Địa Chỉ</th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Trạng Thái</th>
+                                    <th>Hành Động</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <%
+                                    ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("alloder");
+                                    for (Order item: list) {
+                                %>
+                                <tr>
+                                    <td><%=item.getIdOder()%></td>
+                                    <td><%=item.getAddress().getProvine()%></td>
+                                    <td><%=item.getTotalValue()%></td>
+                                    <td><%=item.getStatus()%></td>
+                                    <td>
+                                        <a href="/web_war/ServletGetUserOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
+                                        <a href="/web_war/ServletCancelOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a>
+                                </tr>
+                                <%}%>
+                                </tbody>
+                            </table>
+                            <div class="product__pagination">
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <%}%>
-              </tr>
-            </tbody>
-          </table>
 
-        </div>
-      </div>
-     
-    </div>
+            </div>
 </div>
 </div>
    </section>

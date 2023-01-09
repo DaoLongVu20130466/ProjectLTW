@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class useService {
     private static useService instance;
@@ -139,9 +138,7 @@ public class useService {
         System.out.println( name);
     }
 
-    public static void main(String[] args) {
 
-    }
     public User checkLogin(String username, String password) {
         ArrayList<User> listuser = new ArrayList<User>();
         try {
@@ -180,17 +177,44 @@ public class useService {
             PreparedStatement a= conn.prepareStatement(query);
 
             ResultSet rs=a.executeQuery();
+
             while (rs.next()){
                 b = rs.getInt(1)+1;
 
             }
+            conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
 
+
         return b;
     }
+    public int checkIDFOOD(String type, String size) {
+
+
+        try{
+        Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+
+        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
+
+        );
+        ps.setString(1,type);
+            ps.setString(2,size);
+        ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1) + 1;
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return 5555;
+    }
+
 
 
     public void registry(String username, String password, String email, String phone, String xa, String huyen, String tinh, String ap) {
@@ -348,7 +372,12 @@ public class useService {
         }
 
 
-
     }
+
+    public static void main(String[] args) {
+        useService u = new useService();
+        System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
+    }
+
 }
 

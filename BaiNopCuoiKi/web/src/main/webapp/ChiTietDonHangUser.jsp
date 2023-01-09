@@ -1,14 +1,10 @@
+<%@ page import="main.bean.Order" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.User" %>
-<%@ page import="main.bean.Products" %>
-<%@ page import="java.util.ArrayList" %><%--
-  Created by IntelliJ IDEA.
-  User: thoai
-  Date: 7/01/2023
-  Time: 12:47 am
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="main.bean.OderCart" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -34,11 +30,11 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/index.css"type="text/css">
     <link rel="stylesheet" href="css/User.css"type="text/css">
+    <link rel="stylesheet" href="css/voucher&Oder.css"type="text/css">
 
 </head>
 
 <body>
-
 
 <!-- Header Section Begin -->
 <header class="header">
@@ -70,7 +66,6 @@
                                 String a = (String) session.getAttribute("login");
                                 User user = (User) session.getAttribute("auth");
                                 User userID = (User) request.getAttribute("userID");
-                                ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
                                 String tag2 = (String) request.getAttribute("tag2");
 
                             %>
@@ -167,9 +162,6 @@
                 </div>
 
                 <div class="col-lg-10 col-md-5" style="height: 340px;">
-                    <!-- Thong tin -->
-                    <!-- Thong tin -->
-                    <!-- Thong tin -->
                     <div class="wrapper">
                         <div class="left">
                             <img src="<%=userID.getAvatar()%>" alt="user" width="100">
@@ -224,65 +216,133 @@
                 </div>
 
 
+                <div class="col-lg-10 col-md-5">
+                    <div>
+                        <div class="ChiTietDonHangs">
+                            <div class="infor">
+                                <div class="hed"> <p>Tất Cả Sản Phẩm Được Giao</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                        <tr>
+                                            <th> Sản Phẩm </th>
+                                            <th> Số Lượng </th>
+                                            <th> Giá(đ) </th>
+                                            <th> Thành Tiền(đ)</th>
+                                        </tr>
+                                        </thead>
 
-                    <!-- yeu thich -->
-                    <!-- yeu thich -->
-                    <!-- yeu thich -->
-                    <div class="userr" style="width:80%;">
-                        <div class="TaiKhoan">
-                            <div class="shoping__cart__table">
-                                <table style="width:100%;" >
-                                    <thead>
-                                    <tr>
-                                        <th class="shoping__product">Món</th>
-                                        <th>Giá</th>
-                                        <th>Số lượng đã mua</th>
-                                        <th>Thao tác</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <%
+                                        <tbody>
+                                        <%
+                                            Order oder = (Order) request.getAttribute("inforOder");
+                                            ArrayList<OderCart> list = oder.getAllOderCart();
+                                            for (OderCart item: list) {
+                                        %>
+                                        <tr>
+                                            <td>
+                                                <div class="itin4">
+                                                    <img src="<%=item.getItem().getPath()%>" alt="" >
+                                                    <div class="ittabp">
+                                                        <p class="itemi4"> <%=item.getItem().getFoodName()%></p>
+                                                        <p class="mahang"> <%=item.getItem().getID_food()%></p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <%=item.getValue()%></td>
+                                            <td><%=item.getItem().getLISTED_PRICE()%></td>
+                                            <td><%=item.getItem().getLISTED_PRICE()%></td>
+                                        </tr>
+                                        <%}%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr>
+                                <div class="chitietdonhang">
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="lbin4"><%=oder.getIdOder()%></label>
+                                            <label class="lbdt">Mã Đơn Hàng</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin4"><%=oder.getPbuyName()%></label>
+                                            <label class="lbdt">Tên Người Đặt</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin4"><%=oder.getAddress().toString()%></label>
+                                            <label class="lbdt">Địa Chỉ</label>
+                                        </div>
+                                    </div>
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="Statusdon"><%=oder.getStatus()%></label>
+                                            <label class="lbdt">Tình Trạng</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin4"><%=oder.getPhoneNumber()%></label>
+                                            <label class="lbdt">Số Điện Thoại</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
 
-                                        for (Products p : listP
-                                        ) {
-                                    %>
-                                    <tr>
+                            <div class="ChiTiet">
 
-                                        <td class="shoping__cart__item">
-                                            <img src="<%=p.getPath()%>" alt="" style="max-width: 20%;">
-                                            <h5><%=p.getFoodName()%></h5>
-                                        </td>
-                                        <td class="shoping__cart__price">
-                                            <%=p.getLISTED_PRICE()%> VND
-                                        </td>
-                                        <td class="shoping__cart__quantity">
-                                            <span>1</span>
-                                        </td>
-                                        <td class="shoping__cart__item__close" >
-                                            <div style="  display: flex;">
-                                                <li style="list-style: none;"><a href=""><i class="fa fa-shopping-bag"></i> </a></li>
+                                <div class="chitietdonhang">
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="lbin4"><%=oder.getNote()%></label>
+                                            <label class="lbdt">Ghi Chú</label>
+                                        </div>
+                                        <div>
+                                            <%if (oder.getVoucher().getVoucherName()!= null){%>
+                                            <label class="lbin4"><%=oder.getVoucher().getVoucherName()%></label>
+                                            <%}else {%>
+                                            <label class="lbin4">Không có voucher được áp dụng</label>
+                                            <%}%>
+                                            <label class="lbdt">Voucher</label>
+                                        </div>
 
-                                                <li style="list-style: none;margin-top-1px;margin-left9px;font-size:30px;">
-                                                    <a href="deletaFavourite?idacc=<%=userID.getIdacc()%>&&idf=<%=p.getID_food()%>"><i class="icon_close"></i> </a></li>
-                                            </div>
+                                    </div>
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="lbin41"><%=oder.getAllTotal()%></label>
+                                            <label class="lbdt">Số Lượng Sản Phẩm</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.getTotalValue()%></label>
+                                            <label class="lbdt">Tổng Tiền Hàng</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.getDiscount()%></label>
+                                            <label class="lbdt">Giảm Giá</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.getNewShip()%></label>
+                                            <label class="lbdt">Vận Chuyển</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin42"><%=oder.getTotalAfterVoucher()%></label>
+                                            <label class="lbdt">Tổng Giá Trị Đơn</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.revice()%></label>
+                                            <label class="lbdt">Đã Nhận</label>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        </td>
-                                    </tr>
-                                    <%}%>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
                     </div>
-
-
-
-
                 </div>
+
+
+
             </div>
         </div>
-
     </div>
 </section>
 <!-- Footer Section Begin -->
@@ -347,5 +407,4 @@
 
 </body>
 
-</html>
 </html>
