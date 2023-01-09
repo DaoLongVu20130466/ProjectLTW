@@ -302,8 +302,8 @@
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
-                    <div class="product__item__text">
-                        <h6><a href="detail?fid=<%=list.get(j).getID_food()%>"><%=list.get(j).getFoodName()%></a></h6>
+                    <div class="product__item__text" >
+                        <h6><a href="detail?type=<%=list.get(j).getType()%>&fid=<%=list.get(j).getID_food()%> "><%=list.get(j).getFoodName()%></a></h6>
                         <h5><%=list.get(j).getLISTED_PRICE()%> VND</h5>
                     </div>
                 </div>
