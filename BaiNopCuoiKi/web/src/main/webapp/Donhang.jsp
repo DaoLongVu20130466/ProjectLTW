@@ -1,3 +1,8 @@
+<%@ page import="main.bean.Order" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -134,11 +139,11 @@
                 <div class="sidebar__item">
                     <ul>
                         <li ><a href="user.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                        <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                        <li><a href="Donhang.jsp"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                         <li><a href="yeuthich.html"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                         <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
                       
-                        <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
+                        <li><a href="Voucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,70 +200,35 @@
              
            
     </div>
-    <div class="userr" style="width:80%;">
+    <div class="userr">
         <div class="TaiKhoan">
-            <h2 style="margin-left: 42%;margin-bottom: 20px;">Voucher</h2>
+            <h2 style="margin-left: 42%;margin-bottom: 20px;">Đơn Hàng</h2>
           <table class="cd-table order-table table">
             <thead>
             <tr>
-              <th>STT</th>
-              <th>Mã Voucher</th>
-              <th>Tên Voucher</th>
-              <th>Loại Voucher</th>
-              <th>Giảm</th>
-              <th>Thời hạn</th>
-              
+              <th>Mã Đơn</th>
+              <th>Địa Chỉ</th>
+              <th>Số Tiền</th>
+              <th>Trạng Thái</th>
               <th>Hành Động</th>
             </tr>
             </thead>
             <tbody>
+            <%
+                ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("alloder");
+                for (Order item: list) {
+            %>
             <tr>
-              <td>1.</td>
-              <td>FREESHIP20/10</td>
-              <td>Freeship 20/10</td>
-              <td>Giảm phí ship</td>
-              <td>100%</td>
-              <td>20/11/2022</td>
-              <td><a href=""><i class="fa fa-hand-o-right" aria-hidden="true"></i>Sử dụng</a></td>
+              <td><%=item.getIdOder()%>></td>
+              <td><%=item.getAddress().getProvine()%></td>
+              <td><%=item.getUserTotalCost()%></td>
+              <td><%=item.getStatus()%>></td>
+              <td><a href="/web_war/ServletUIFOder?isuser=<%="ddd"%>&&idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a>
+                  <a href="/web_war/ServletUDeleteOder?isuser=<%="ddd"%>&&idoder=<%=item.getIdOder()%>" style="color: red;"><i class="fa fa-trash-o" aria-hidden="true"></i>  Hủy</a></td>
             </tr>
 
-            <tr>
-              <td>2</td>
-              <td>HALLOWEEN</td>
-              <td>Haloween vui vẻ</td>
-              <td>Giảm phần trăm</td>
-              <td>20%</td>
-              <td>05/11/2022</td>
-              <td><a href=""><i class="fa fa-hand-o-right" aria-hidden="true"></i>Sử dụng</a></td>         
-               </tr>
-            
-            <tr>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td><a href=""> .  <!--<i class="fa fa-hand-o-right" aria-hidden="true"></i></a>  --></td>            
-                  </tr>
-              
-            <tr>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td><a href=""> .  <!--<i class="fa fa-hand-o-right" aria-hidden="true"></i></a>  --></td>            
-                </tr>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-                <td>.</td>
-              <td><a href="">.<!--<i class="fa fa-hand-o-right" aria-hidden="true"></i></a>  --></td>       
-             </tr>
+            <%}%>
+              </tr>
             </tbody>
           </table>
           <div class="product__pagination">

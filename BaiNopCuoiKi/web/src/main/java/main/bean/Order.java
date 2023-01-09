@@ -162,7 +162,9 @@ public class Order {
     public String getTotalValue() {
         return AppService.intToVND(getProfit());
     }
-
+    public String getUserTotalCost() {
+        return getTotalAfterVoucher();
+    }
     public String getTotalAfterVoucher() {
         int rs = getProfit();
         int newShip = ship;
