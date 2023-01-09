@@ -1,5 +1,6 @@
 <%@ page import="main.bean.Order" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -32,174 +33,190 @@
 </head>
 
 <body>
-   
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li><i class="fa fa-envelope"></i> Email: 201*046*</li>
+                            <li>Miễn phí giao hàng trong ngày 20-11</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                        <div class="header__top__right__language">
+                            <img src="img/language.png" alt="">
+                            <div>Việt Nam </div>
+                        </div>
+                        <div class="header__top__right__auth">
+                            <%
+                                String a = (String) session.getAttribute("login");
+                                User user = (User) session.getAttribute("auth");
+                                User userID = (User) request.getAttribute("userID");
+                                String tag2 = (String) request.getAttribute("tag2");
+
+                            %>
+                            <%
+                                if (a == null) {
+                            %>
+                            <a href="DangNhap.jsp"><i class="fa fa-user"></i> Đăng Nhập</a>
+                            <%
+                            }else{
+                            %>
+                            <div class="fa fa-user" role="alert">
+                                <%= a+user.getName() %>
+                            </div>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li ><a href="./index.html">Trang Chủ</a></li>
+                        <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+                        <li><a href="./blog.html">Giới Thiệu</a></li>
+                        <li><a href="./contact.html">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
+                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    </ul>
+                    <div class="header__cart__price"></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
+
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/ad.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>SBE Shop</h2>
+                    <div class="breadcrumb__option">
+                        <a href="./index.html">Trang chủ</a>
+                        <span>User</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<section class="product spad">
+    <div class="userr">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="align-self-start">
+                    <div class="sidebar">
+                        <div class="sidebar__item">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> Email: 201*046*</li>
-                                <li>Miễn phí giao hàng trong ngày 20-11</li>
+                                <li ><a href="getUserInfor"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                                <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                                <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
+                                <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
+
+                                <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>Việt Nam </div>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/a.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li ><a href="./index.html">Trang Chủ</a></li>
-                            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
-<!--                            <li><a href="#">Pages</a>-->
-<!--                                <ul class="header__menu__dropdown">-->
-<!--                                    <li><a href="./shop-details.html">Shop Details</a></li>-->
-<!--                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>-->
-<!--                                    <li><a href="./checkout.html">Check Out</a></li>-->
-<!--                                    <li><a href="./blog-details.html">Blog Details</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
 
-                            <li><a href="./blog.html">Giới Thiệu</a></li>
-                            <li><a href="./contact.html">Liên Hệ</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
-                            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
+                <div class="col-lg-10 col-md-5" style="height: 340px;">
+                    <!-- Thong tin -->
+                    <!-- Thong tin -->
+                    <!-- Thong tin -->
+                    <div class="wrapper">
+                        <div class="left">
+                            <img src="<%=userID.getAvatar()%>" alt="user" width="100">
+                            <h4><%=userID.getUserName()%></h4>
+                            <p></p>
+                        </div>
+                        <div class="right">
+                            <div class="info">
 
-    
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/ad.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>SBE Shop</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Trang chủ</a>
-                            <span>User</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-    <section class="product spad"> 
-        <div class="userr">
-            <div class="container">
-                <div class="row">
+                                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.html" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
 
-             
-        <div class="align-self-start">
-            <div class="sidebar">
-                <div class="sidebar__item">
-                    <ul>
-                        <li ><a href="user.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                        <li><a href="Donhang.jsp"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
-                        <li><a href="yeuthich.html"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
-                        <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
-                      
-                        <li><a href="Voucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-         
-        <div class="col-lg-10 col-md-5" style="height: 340px;">
-            <div class="wrapper">
-                <div class="left">
-                    <img src="https://i.imgur.com/cMy8V5j.png" alt="user" >
-                    <h4>Alex THoại</h4>
-                     <p></p>
-                </div>
-                <div class="right">
-                    <div class="info">
-                        <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.html" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
-                        <div class="info_data"> <div class="data">
-                               <h4>Ngày sinh</h4>
-                                <p>Chiu</p>
-                          </div>
-                             <div class="data">
-                                <h4>Địa CHỉ</h4>
-                                <p>Bến Tre.</p>
-                             </div>
-                            
-                        </div> 
-                        <div class="projects_data">
-                            <div class="data">
-                                <h4>Email</h4>
-                                <p>****@st.hcmuaf.edu.vn</p>
-                             </div>
-                             <div class="data">
-                               <h4>Phone</h4>
-                                <p>+84 965****20</p>
-                          </div>
-                             
+                                <div class="info_data"> <div class="data">
+                                    <h4> Ngày sinh</h4>
+                                    <p> 24/12/2002</p>
+                                </div>
+                                    <div class="data">
+                                        <h4>Địa CHỉ</h4>
+                                        <p><%=userID.getProvine()%></p>
+                                    </div>
+                                </div>
+                                <div class="projects_data">
+                                    <div class="data">
+                                        <h4>Email</h4>
+                                        <p><%=userID.getEmail()%>></p>
+                                    </div>
+                                    <div class="data">
+                                        <h4>Phone</h4>
+                                        <p><%=userID.getPhoneNumber()%></p>
+                                    </div>
+                                </div>
+                                <div class="projects_data">
+                                    <div class="data">
+                                        <h4>Số Đơn Đã Ủng Hộ</h4>
+                                        <p>25</p>
+                                    </div>
+                                    <div class="data">
+                                        <h4>Trạng thoái</h4>
+                                        <p><%=userID.getStatus()%>></p>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="projects_data">
-                            <div class="data">
-                                <h4>Số Đơn Đã Ủng Hộ</h4>
-                                <p>25</p>
-                             </div>
-                             <div class="data">
-                               <h4>Trạng thoái</h4>
-                                <p>Hoạt động</p>
-                          </div>
-                             
-                        </div>
-                  
+
                     </div>
-            </div>
-            
-        </div>
-       
-             
-           
-    </div>
+
+                    <!--  End -->
+
+
+                </div>
+
+
     <div class="userr">
         <div class="TaiKhoan">
             <h2 style="margin-left: 42%;margin-bottom: 20px;">Đơn Hàng</h2>
@@ -231,12 +248,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="product__pagination">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-          </div>
+
         </div>
       </div>
      

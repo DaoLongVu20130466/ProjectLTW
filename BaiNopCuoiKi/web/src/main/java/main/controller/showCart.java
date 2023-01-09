@@ -16,9 +16,10 @@ public class showCart extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         Cart cart=(Cart) request.getSession().getAttribute("cart");
-        session.setAttribute("total", AppService.intToVND((int) cart.getTotal()));
-        if(cart!=null) {
 
+        if(cart!=null) {
+            new Cart();
+            session.setAttribute("total", AppService.intToVND((int) cart.getTotal()));
                 request.getRequestDispatcher("GioHang.jsp").forward(request, response);
             }
         else{

@@ -118,7 +118,9 @@ public class VoucherService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             Statement stmt = conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = stmt.executeQuery("");
+            ResultSet rs = stmt.executeQuery("" +
+                    "" +
+                    "");
             // show data
             while (rs.next()) {
                 Date start = new Date();
