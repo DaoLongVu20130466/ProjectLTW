@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet(name = "getAllProduct", value = "/getAllProduct")
-public class getAllProduct extends HttpServlet {
+public class ServletGetAllProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");

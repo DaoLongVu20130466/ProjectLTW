@@ -10,19 +10,16 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-@WebServlet(name = "getUser", value = "/getUser")
-public class getUser extends HttpServlet {
+@WebServlet(name = "ServletAllFavourite", value = "/getAllFavourite")
+public class ServletAllFavourite extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idser = request.getParameter("iduser");
+        HttpSession session = request.getSession(true);
+        User user0 = (User) session.getAttribute("auth");
+        String  idser = user0.getUserId();
         String tag = request.getParameter("tag");
-        if ( idser == null ){
-            HttpSession session = request.getSession(true);
-            idser = (String) session.getAttribute("idser");
-            tag="yeuthich";
-        }
+
 //
         User user = useService.getInstance().getAllUserByID(idser);
         ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
@@ -30,17 +27,13 @@ public class getUser extends HttpServlet {
         request.setAttribute("product", product);
         request.setAttribute("tag2",tag);
 
-        request.getRequestDispatcher("user.jsp").forward(request, response);
+        request.getRequestDispatcher("yeuthich.jsp").forward(request, response);
 
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idser = request.getParameter("iduser");
-        String tag = request.getParameter("tag");
 
-        HttpSession session = request.getSession(true);
-        session.setAttribute("idser", idser);
     }
-
 }
