@@ -181,10 +181,8 @@
               <td><%=p.getLISTED_PRICE()%></td>
               <td><%=p.getID_food()%></td>
               <td><%=p.getType()%></td>
-
               <td><a href=""><i class="fa fa-eye" aria-hidden="true"></i>Hiển thị</a><br>
                 <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Ẩn</a></td>
-
               <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
                 <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
                 <a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>

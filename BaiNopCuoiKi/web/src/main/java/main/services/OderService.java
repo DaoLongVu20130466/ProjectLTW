@@ -3,10 +3,7 @@ package main.services;
 import main.bean.*;
 import main.db.ConnectMysqlExample;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,7 +116,7 @@ public class OderService {
         }
         return rsl;
     }
-    public ArrayList<Order> getAllUserOder(String idAcc){
+    public ArrayList<Order> getAllUserOder(String idUSer){
         ArrayList<Order> allOder = new ArrayList<>();
         ArrayList<OderCart> orc;
         try {
@@ -129,7 +126,7 @@ public class OderService {
                     "from orders \n" +
                     "JOIN order_account_details \n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE ID_ACCOUNT = ?");
-            statement.setString(1,idAcc);
+            statement.setString(1,idUSer);
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
@@ -156,6 +153,7 @@ public class OderService {
                     "JOIN order_account_details\n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE orders.ID_ORDER =? AND ID_ACCOUNT = ?");
             stmt.setString(1,idOder);
+            stmt.setString(2,user);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Voucher voucher = VoucherService.getInstance().getVcByOderId(idOder);
@@ -176,5 +174,15 @@ public class OderService {
             ex.printStackTrace();
         }
         return rsl;
+    }
+    public void cancelOder(String idoder)  {
+        try {
+        Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+        PreparedStatement statement = conn.prepareStatement("UPDATE orders SET STATUSS = 'Đã hủy' WHERE ID_ORDER = ?");
+        statement.setString(1,idoder);
+        statement.executeQuery();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

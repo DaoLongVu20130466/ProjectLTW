@@ -1,6 +1,7 @@
 <%@ page import="main.bean.Order" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.User" %>
+<%@ page import="main.bean.OderCart" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -215,108 +216,192 @@
                 </div>
 
 
-                <div class="col-lg-10 col-md-5" id="useri4">
+                <div class="col-lg-10 col-md-5">
                     <div>
-                        <div class="TaiKhoan">
-                            <table class="cd-table order-table table">
-                                <thead>
-                                <tr>
-                                    <th>Mã Đơn</th>
-                                    <th>Địa Chỉ</th>
-                                    <th>Tổng Tiền</th>
-                                    <th>Trạng Thái</th>
-                                    <th>Hành Động</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <%
-                                    ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("alloder");
-                                    for (Order item: list) {
-                                %>
-                                <tr>
-                                    <td><%=item.getIdOder()%></td>
-                                    <td><%=item.getAddress().getProvine()%></td>
-                                    <td><%=item.getTotalValue()%></td>
-                                    <td><%=item.getStatus()%></td>
-                                    <td>
-                                        <a href="/web_war/ServletGetUserOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
-                                        <a href="/web_war/ServletCancelOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a>
-                                </tr>
-                                <%}%>
-                                </tbody>
-                            </table>
-                            <div class="product__pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        <div class="ChiTietDonHangs">
+                            <div class="infor">
+                                <div class="hed"> <p>Tất Cả Sản Phẩm Được Giao</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                        <tr>
+                                            <th> Sản Phẩm </th>
+                                            <th> Số Lượng </th>
+                                            <th> Giá(đ) </th>
+                                            <th> Thành Tiền(đ)</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <%
+                                            Order oder = (Order) request.getAttribute("inforOder");
+                                            ArrayList<OderCart> list = oder.getAllOderCart();
+                                            for (OderCart item: list) {
+                                        %>
+                                        <tr>
+                                            <td>
+                                                <div class="itin4">
+                                                    <img src="<%=item.getItem().getPath()%>" alt="" >
+                                                    <div class="ittabp">
+                                                        <p class="itemi4"> <%=item.getItem().getFoodName()%></p>
+                                                        <p class="mahang"> <%=item.getItem().getID_food()%></p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <%=item.getValue()%></td>
+                                            <td><%=item.getItem().getLISTED_PRICE()%></td>
+                                            <td><%=item.getItem().getLISTED_PRICE()%></td>
+                                        </tr>
+                                        <%}%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr>
+                                <div class="chitietdonhang">
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="lbin4"><%=oder.getIdOder()%></label>
+                                            <label class="lbdt">Mã Đơn Hàng</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin4"><%=oder.getPbuyName()%></label>
+                                            <label class="lbdt">Tên Người Đặt</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin4"><%=oder.getAddress().toString()%></label>
+                                            <label class="lbdt">Địa Chỉ</label>
+                                        </div>
+                                    </div>
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="Statusdon"><%=oder.getStatus()%></label>
+                                            <label class="lbdt">Tình Trạng</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin4"><%=oder.getPhoneNumber()%></label>
+                                            <label class="lbdt">Số Điện Thoại</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <div class="ChiTiet">
+
+                                <div class="chitietdonhang">
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="lbin4"><%=oder.getNote()%></label>
+                                            <label class="lbdt">Ghi Chú</label>
+                                        </div>
+                                        <div>
+                                            <%if (oder.getVoucher().getVoucherName()!= null){%>
+                                            <label class="lbin4"><%=oder.getVoucher().getVoucherName()%></label>
+                                            <%}else {%>
+                                            <label class="lbin4">Không có voucher được áp dụng</label>
+                                            <%}%>
+                                            <label class="lbdt">Voucher</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="chitietdonhang-cl1">
+                                        <div>
+                                            <label class="lbin41"><%=oder.getAllTotal()%></label>
+                                            <label class="lbdt">Số Lượng Sản Phẩm</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.getTotalValue()%></label>
+                                            <label class="lbdt">Tổng Tiền Hàng</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.getDiscount()%></label>
+                                            <label class="lbdt">Giảm Giá</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.getNewShip()%></label>
+                                            <label class="lbdt">Vận Chuyển</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin42"><%=oder.getTotalAfterVoucher()%></label>
+                                            <label class="lbdt">Tổng Giá Trị Đơn</label>
+                                        </div>
+                                        <div>
+                                            <label class="lbin41"><%=oder.revice()%></label>
+                                            <label class="lbdt">Đã Nhận</label>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
 
+
             </div>
-</div>
-</div>
-   </section>
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/a.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>
-                            <li>Số điện thoại: +*********</li>
-                            <li>Email: 201*046*</li>
-                        </ul>
+        </div>
+    </div>
+</section>
+<!-- Footer Section Begin -->
+<footer class="footer spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__about">
+                    <div class="footer__about__logo">
+                        <a href="./index.html"><img src="img/a.png" alt=""></a>
                     </div>
+                    <ul>
+                        <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>
+                        <li>Số điện thoại: +*********</li>
+                        <li>Email: 201*046*</li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Liên kết hữu ích</h6>
-                        <ul>
-                            <li ><a href="./index.html">Trang Chủ</a></li>
-                            <li><a href="./shop-grid.html">Gian Hàng</a></li>
-                            <li><a href="./blog.html">Giới Thiệu</a></li>
-                            <li><a href="./contact.html">Liên Hệ</a></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="footer__widget">
+                    <h6>Liên kết hữu ích</h6>
+                    <ul>
+                        <li ><a href="./index.html">Trang Chủ</a></li>
+                        <li><a href="./shop-grid.html">Gian Hàng</a></li>
+                        <li><a href="./blog.html">Giới Thiệu</a></li>
+                        <li><a href="./contact.html">Liên Hệ</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Cập Nhật Thông Tin</h6>
-                        <p>Nhận thông tin cập nhật e-mail về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt của chúng tôi.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Nhập Email">
-                            <button type="submit" class="site-btn">Xác Nhận</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="footer__widget">
+                    <h6>Cập Nhật Thông Tin</h6>
+                    <p>Nhận thông tin cập nhật e-mail về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt của chúng tôi.</p>
+                    <form action="#">
+                        <input type="text" placeholder="Nhập Email">
+                        <button type="submit" class="site-btn">Xác Nhận</button>
+                    </form>
+                    <div class="footer__widget__social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
+    </div>
+</footer>
+<!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+<!-- Js Plugins -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
 
 
 
