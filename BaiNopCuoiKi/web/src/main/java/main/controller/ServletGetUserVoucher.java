@@ -18,11 +18,12 @@ public class ServletGetUserVoucher extends HttpServlet {
         HttpSession session = request.getSession(true);
         User user0 = (User) session.getAttribute("auth");
         String  idser = user0.getUserId();
-
+        User usernow = useService.getInstance().getAllUserByID(idser);
+        request.setAttribute("userID",usernow);
         User user = useService.getInstance().getAllUserByID(idser);
         ArrayList<Voucher> vcher = VoucherService.getInstance().getControlVoucher();
         request.setAttribute("allvoucher", vcher);
-        request.setAttribute("userID", user);
+        request.setAttribute("userID",usernow);
         request.getRequestDispatcher("Voucher.jsp").forward(request, response);
     }
 

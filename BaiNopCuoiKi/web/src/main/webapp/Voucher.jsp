@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/index.css"type="text/css">
     <link rel="stylesheet" href="css/User.css"type="text/css">
+    <link rel="stylesheet" href="css/voucher&Oder.css"type="text/css">
 
 </head>
 
@@ -222,45 +223,50 @@
             </div>
 
         </div>
-    <div class="userr" style="width:80%;">
-        <div class="TaiKhoan">
-            <h2 style="margin-left: 42%;margin-bottom: 20px;">Voucher</h2>
+        <div class="col-lg-10 col-md-5" id="useri5">
+            <div>
+                <div class="TaiKhoan">
+                    <table class="cd-table order-table table">
+                        <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã Voucher</th>
+                            <th>Tên Voucher</th>
+                            <th>Loại Voucher</th>
+                            <th>Giảm</th>
+                            <th>Thời hạn</th>
 
-          <table class="cd-table order-table table">
-            <thead>
-            <tr>
-              <th>STT</th>
-              <th>Mã Voucher</th>
-              <th>Tên Voucher</th>
-              <th>Loại Voucher</th>
-              <th>Giảm</th>
-              <th>Thời hạn</th>
-              
-              <th>Hành Động</th>
-            </tr>
-            </thead>
+                            <th>Hành Động</th>
+                        </tr>
+                        </thead>
 
-              <%
-                  ArrayList<Voucher> list = (ArrayList<Voucher>) request.getAttribute("allvoucher");
-                  for (Voucher item: list) {
-              %>
-              <tbody>
-              <tr>
-                  <td><%=item.getIdVoucher()%></td>
-                  <td><%=item.getVoucherName()%></td>
-                  <td><%=item.getVoucherCode()%></td>
-                  <td><%=item.getType()%></td>
-                  <td><%=item.getDisCount()%></td>
-                  <td><%=item.getIsOutDate()%></td>
-                  <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
-                      <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
-              </tr>
-              <%}%>
-              </tbody>
-          </table>
-
+                        <%
+                            ArrayList<Voucher> list = (ArrayList<Voucher>) request.getAttribute("allvoucher");
+                            for (Voucher item: list) {
+                        %>
+                        <tbody>
+                        <tr>
+                            <td><%=item.getIdVoucher()%></td>
+                            <td><%=item.getVoucherName()%></td>
+                            <td><%=item.getVoucherCode()%></td>
+                            <td><%=item.getType()%></td>
+                            <td><%=item.getDisCount()%></td>
+                            <td><%=item.getIsOutDate()%></td>
+                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
+                                <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+                        </tr>
+                        <%}%>
+                        </tbody>
+                    </table>
+                    <div class="product__pagination">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
      
     </div>
 </div>

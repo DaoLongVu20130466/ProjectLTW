@@ -228,7 +228,11 @@
                     <label class="lbdt">Ghi Chú</label>
                   </div>
                   <div>
-                    <label class="lbin4"><%=oder.getVoucher().getVoucherName()%></label>
+                      <%if (oder.getVoucher().getVoucherName()!= null){%>
+                      <label class="lbin4"><%=oder.getVoucher().getVoucherName()%></label>
+                      <%}else {%>
+                      <label class="lbin4">Không có voucher được áp dụng</label>
+                      <%}%>
                     <label class="lbdt">Voucher</label>
                   </div>
 
