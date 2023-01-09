@@ -404,30 +404,34 @@ public class ProductsService {
         return allProductByFavourite;
     }
     public void addProduct(
-            String tenmonan, String optionSize, int niemyet, String optionType, int soluong, String optionStatus, String optionCombo, String optionSale, String optionHot, String Mota, String img, int giaban
+            String tenmonan, String optionSize, int niemyet,
+            String optionType, int soluong, String optionStatus,
+            int optionCombo, String optionSale,
+            String optionHot, String Mota, String img, int giaban
     ) {
-
+        String a = optionType + useService.getInstance().checkIDFOOD(optionType,optionSize);
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("IINSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG,BASE_PRICE) \n" +
-                    "VALUES (\"aaa\",?,?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setNString(1, tenmonan);
-            ps.setString(2, optionSize);
-            ps.setInt(3,niemyet);
-            ps.setNString(4, optionType);
-            ps.setInt(5,soluong);
-            ps.setNString(6,optionStatus);
-            ps.setString(7,optionCombo);
-            ps.setString(8,optionSale);
-            ps.setString(9,optionHot);
-            ps.setNString(10,Mota);
-            ps.setString(11,img);
-            ps.setInt(12,giaban);
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG,BASE_PRICE) \n" +
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setNString(1,a);
+            ps.setNString(2, tenmonan);
+            ps.setString(3, optionSize);
+            ps.setInt(4,giaban);
+            ps.setNString(5, optionType);
+            ps.setInt(6,soluong);
+            ps.setNString(7,optionStatus);
+            ps.setInt(8,optionCombo);
+            ps.setString(9,optionSale);
+            ps.setString(10,optionHot);
+            ps.setNString(11,Mota);
+            ps.setString(12,img);
+            ps.setInt(13,niemyet);
             ps.executeUpdate();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -435,21 +439,21 @@ public class ProductsService {
 
 
     public static void main(String[] args) {
-            ProductsService a = new ProductsService();
-            String tenmonan ="Cơm gà A Quảng";
-            int niemyet =60000;
-            int giaban=12;
-            int soluong =50;
-            String Mota="Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền \n" +
-                    "Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền";
-            String optionHot="HOT";
-            String optionType="CƠM GÀ";
-            String optionSale="SALE1";
-            String img="img/Data/GiamGia/1comga_aquang-min.jpeg";
-            String optionStatus="CÒN HÀNG";
-            String optionCombo="0";
-            String optionSize="SIZE1";
-            a.addProduct(tenmonan,optionSize,niemyet,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,giaban);
-
-        }
+//            ProductsService a = new ProductsService();
+//            String tenmonan ="Cơm gà A Quảng";
+//            int niemyet =60000;
+//            int giaban=12;
+//            int soluong =50;
+//            String Mota="Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền \n" +
+//                    "Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền";
+//            String optionHot="HOT";
+//            String optionType="CƠM GÀ";
+//            String optionSale="SALE1";
+//            String img="img/Data/GiamGia/1comga_aquang-min.jpeg";
+//            String optionStatus="CÒN HÀNG";
+//            int optionCombo = 0 ;
+//            String optionSize="SIZE1";
+//            a.addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
+//            System.out.println("ok");
+    }
 }

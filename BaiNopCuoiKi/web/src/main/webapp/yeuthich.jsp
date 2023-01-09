@@ -251,7 +251,7 @@
 
                                         <td class="shoping__cart__item">
                                             <img src="<%=p.getPath()%>" alt="" style="max-width: 20%;">
-                                            <h5><%=p.getFoodName()%>n</h5>
+                                            <h5><%=p.getFoodName()%></h5>
                                         </td>
                                         <td class="shoping__cart__price">
                                             <%=p.getLISTED_PRICE()%> VND
