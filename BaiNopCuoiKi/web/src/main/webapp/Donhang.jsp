@@ -1,14 +1,9 @@
+<%@ page import="main.bean.Order" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.User" %>
-<%@ page import="main.bean.Products" %>
-<%@ page import="java.util.ArrayList" %><%--
-  Created by IntelliJ IDEA.
-  User: thoai
-  Date: 7/01/2023
-  Time: 12:47 am
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -38,7 +33,6 @@
 </head>
 
 <body>
-
 
 <!-- Header Section Begin -->
 <header class="header">
@@ -70,7 +64,6 @@
                                 String a = (String) session.getAttribute("login");
                                 User user = (User) session.getAttribute("auth");
                                 User userID = (User) request.getAttribute("userID");
-                                ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
                                 String tag2 = (String) request.getAttribute("tag2");
 
                             %>
@@ -224,128 +217,105 @@
                 </div>
 
 
+    <div class="userr">
+        <div class="TaiKhoan">
+            <h2 style="margin-left: 42%;margin-bottom: 20px;">Đơn Hàng</h2>
+          <table class="cd-table order-table table">
+            <thead>
+            <tr>
+              <th>Mã Đơn</th>
+              <th>Địa Chỉ</th>
+              <th>Số Tiền</th>
+              <th>Trạng Thái</th>
+              <th>Hành Động</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("alloder");
+                for (Order item: list) {
+            %>
+            <tr>
+              <td><%=item.getIdOder()%>></td>
+              <td><%=item.getAddress().getProvine()%></td>
+              <td><%=item.getUserTotalCost()%></td>
+              <td><%=item.getStatus()%>></td>
+              <td><a href="/web_war/ServletUIFOder?isuser=<%="ddd"%>&&idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i> Chi Tiết  </a>
+                  <a href="/web_war/ServletUDeleteOder?isuser=<%="ddd"%>&&idoder=<%=item.getIdOder()%>" style="color: red;"><i class="fa fa-trash-o" aria-hidden="true"></i>  Hủy</a></td>
+            </tr>
 
-                    <!-- yeu thich -->
-                    <!-- yeu thich -->
-                    <!-- yeu thich -->
-                    <div class="userr" style="width:80%;">
-                        <div class="TaiKhoan">
-                            <div class="shoping__cart__table">
-                                <table style="width:100%;" >
-                                    <thead>
-                                    <tr>
-                                        <th class="shoping__product">Món</th>
-                                        <th>Giá</th>
-                                        <th>Số lượng đã mua</th>
-                                        <th>Thao tác</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <%
+            <%}%>
+              </tr>
+            </tbody>
+          </table>
 
-                                        for (Products p : listP
-                                        ) {
-                                    %>
-                                    <tr>
-
-                                        <td class="shoping__cart__item">
-                                            <img src="<%=p.getPath()%>" alt="" style="max-width: 20%;">
-                                            <h5><%=p.getFoodName()%>n</h5>
-                                        </td>
-                                        <td class="shoping__cart__price">
-                                            <%=p.getLISTED_PRICE()%> VND
-                                        </td>
-                                        <td class="shoping__cart__quantity">
-                                            <span>1</span>
-                                        </td>
-                                        <td class="shoping__cart__item__close" >
-                                            <div style="  display: flex;">
-                                                <li style="list-style: none;"><a href=""><i class="fa fa-shopping-bag"></i> </a></li>
-
-                                                <li style="list-style: none;margin-top-1px;margin-left9px;font-size:30px;">
-                                                    <a href="deletaFavourite?idacc=<%=userID.getIdacc()%>&&idf=<%=p.getID_food()%>"><i class="icon_close"></i> </a></li>
-                                            </div>
-
-                                        </td>
-                                    </tr>
-                                    <%}%>
-                                    </tbody>
-                                </table>
-                            </div>
+        </div>
+      </div>
+     
+    </div>
+</div>
+</div>
+   </section>
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/a.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>
+                            <li>Số điện thoại: +*********</li>
+                            <li>Email: 201*046*</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Liên kết hữu ích</h6>
+                        <ul>
+                            <li ><a href="./index.html">Trang Chủ</a></li>
+                            <li><a href="./shop-grid.html">Gian Hàng</a></li>
+                            <li><a href="./blog.html">Giới Thiệu</a></li>
+                            <li><a href="./contact.html">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Cập Nhật Thông Tin</h6>
+                        <p>Nhận thông tin cập nhật e-mail về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt của chúng tôi.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Nhập Email">
+                            <button type="submit" class="site-btn">Xác Nhận</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
                         </div>
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>
+    </footer>
+    <!-- Footer Section End -->
 
-    </div>
-</section>
-<!-- Footer Section Begin -->
-<footer class="footer spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer__about">
-                    <div class="footer__about__logo">
-                        <a href="./index.html"><img src="img/a.png" alt=""></a>
-                    </div>
-                    <ul>
-                        <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>
-                        <li>Số điện thoại: +*********</li>
-                        <li>Email: 201*046*</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                <div class="footer__widget">
-                    <h6>Liên kết hữu ích</h6>
-                    <ul>
-                        <li ><a href="./index.html">Trang Chủ</a></li>
-                        <li><a href="./shop-grid.html">Gian Hàng</a></li>
-                        <li><a href="./blog.html">Giới Thiệu</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="footer__widget">
-                    <h6>Cập Nhật Thông Tin</h6>
-                    <p>Nhận thông tin cập nhật e-mail về cửa hàng mới nhất của chúng tôi và các ưu đãi đặc biệt của chúng tôi.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Nhập Email">
-                        <button type="submit" class="site-btn">Xác Nhận</button>
-                    </form>
-                    <div class="footer__widget__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer Section End -->
-
-<!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/mixitup.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 
 
 
 </body>
 
-</html>
 </html>

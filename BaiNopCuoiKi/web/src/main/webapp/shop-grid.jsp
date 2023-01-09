@@ -258,10 +258,14 @@
     <div class="product__pagination">
       <%
         String type= (String) request.getAttribute("type");
+
         for (int i = 1; i <= numberpage ; i++) {
+          if (type!=null) {}else {
       %>
       <a class href="getAllProduct?type=<%=type%>&page=<%=i%>"><%= i%></a>
-      <%}%>
+      <%
+          }
+        }%>
     </div>
   </div>
 </section>

@@ -156,7 +156,7 @@
                 <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                 <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
-                <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
+                <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
               </ul>
             </div>
           </div>

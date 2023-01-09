@@ -112,6 +112,27 @@ public class VoucherService {
         return vchr;
     }
 
+    public ArrayList<Voucher> getUserVoucher(){
+        ArrayList<Voucher> rsl = new ArrayList<Voucher>();
+        try{
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            Statement stmt = conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = stmt.executeQuery("" +
+                    "" +
+                    "");
+            // show data
+            while (rs.next()) {
+                Date start = new Date();
+                rsl.add(new Voucher(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDate(6),rs.getDate(7)));
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return rsl;
+    }
     public static void main(String[] args) {
         ArrayList<Voucher> s = VoucherService.getInstance().getControlVoucher();
         for (Voucher item: s) {

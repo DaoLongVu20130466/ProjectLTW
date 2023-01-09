@@ -188,14 +188,17 @@
 
           <div class='add-input'>
             Món ăn hot:<span>*</span>
-            <input type='text' name='optionHot' placeholder=" HOT || NORMAL"value=" ">
+            <select name="optionType" >
+              <option value="HOT"> HOT </option>
+              <option value="NORMAL"> NORMAL </option>
+            </select>
           </div>
 
           <div class='add-input'>
             Loại món ăn: <span>*</span>
 
             <form action="" class="typeAdd">
-              <select name="optionType" id="type">
+              <select name="optionType" >
               <%
                 for ( TypeProducts t : listType
                      ) {
@@ -204,145 +207,44 @@
                 <%}%>
               </select>
 
-
           </div>
 
           <div class='add-input'>
             Món ăn Combo:<span>*</span>
-            <input type='text' name='optionCombo' placeholder=" "value=" ">
+            <select name="optionType" >
+              <option value="0"> KHÔNG </option>
+              <option value="1"> COMBO </option>
+            </select>
           </div>
 
           <div class='add-input'>
               Món ăn Sale:<span>*</span>
-              <input type='text' name='optionSale' placeholder=" "value=" ">
+            <select name="optionType" >
+              <option value="SALE1"> SALE </option>
+              <option value="SALE2"> KHÔNG SALE </option>
+            </select>
             </div>
 
           <div class='add-input'>
             Size:<span>*</span>
-            <input type='text' name='optionSize' placeholder=" "value=" ">
+            <select name="optionType" >
+              <option value="SIZE1"> SIZE1 </option>
+              <option value="SIZE2"> SIZE2 </option>
+            </select>
           </div>
 
             <div class='add-input'>
               Trạng thái: <span>*</span>
               <input type='text' name='optionStatus' placeholder=" "value=" ">
             </div>
-
           <div class='add-input'>
            Hình ảnh:<span>*</span>
             <input type="file" id="myfile" name="myfile"><br><br>
           </div>
-
-
-
-
       </div>
-
       <input class="btn" type="submit" value="Submit">
 
         </form>
-<%--        <div class="item">--%>
-<%--          <label for="fname">Tên món ăn<span>*</span></label>--%>
-<%--          <input id="fname" type="text" name="tenmonan" />--%>
-<%--        </div>--%>
-<%--        <div class="item">--%>
-<%--          <label for="fname"> Giá niêm yết<span>*</span></label>--%>
-<%--          <input id="fname" type="text" name="niemyet" />--%>
-<%--        </div>--%>
-<%--        <div class="item">--%>
-<%--          <label for="fname"> Giá bán<span>*</span></label>--%>
-<%--          <input id="fname" type="text" name="giaban" />--%>
-<%--        </div>--%>
-<%--        <div class="item">--%>
-<%--          <label for="fname"> Số lượng<span>*</span></label>--%>
-<%--          <input id="fname" type="text" name="soluong" />--%>
-<%--        </div>--%>
-<%--        <div class="item">--%>
-<%--          <label for="fname"> Mô tả<span>*</span></label>--%>
-<%--          <input id="fname" rows="4" type="text" name="Mota" />--%>
-<%--        </div>--%>
-
-<%--        <div class="question">--%>
-<%--          <label>Món ăn hot:</label>--%>
-<%--          <div class="question-answer">--%>
-<%--            <div>--%>
-<%--              <input type="radio" value="HOT" id="radio_3" name="optionHot"/>--%>
-<%--              <label for="radio_3" class="radio"><span>HOT</span></label>--%>
-<%--            </div>--%>
-<%--            <div>--%>
-<%--              <input  type="radio" value="NORMAL" id="radio_4" name="participants"/>--%>
-<%--              <label for="radio_4" class="radio"><span>NORMAL</span></label>--%>
-<%--            </div>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-
-<%--        <div class="question-2">--%>
-<%--          <label>Loại món ăn:</label>--%>
-<%--          <div class="question-answer">--%>
-<%--            <select id="food" name="optionType">--%>
-<%--              <%--%>
-<%--                for (TypeProducts t : listType--%>
-<%--                     ) {--%>
-<%--              %>--%>
-<%--              <option value="<%=t.getNameType()%>"><%=t.getNameType()%></option>--%>
-<%--             <%}%>--%>
-<%--            </select>--%>
-
-
-<%--          </div>--%>
-<%--        </div>--%>
-<%--        <div class="question-3">--%>
-<%--          <label>Giảm giá:</label>--%>
-<%--          <div class="question-answer">--%>
-<%--            <select id="food" name="optionSale">--%>
-<%--              <option value="SALE1">GIẢM GIÁ</option>--%>
-<%--              <option value="SALE2">KHÔNG GIẢM</option>--%>
-
-<%--            </select>--%>
-
-
-<%--          </div>--%>
-<%--        </div>--%>
-<%--        <div class="question-3">--%>
-<%--          <label>Giảm giá:</label>--%>
-<%--          <div class="question-answer">--%>
-<%--            <select id="food" name="optionStatus">--%>
-<%--                <option value="CÒNHÀNG">CÒN HÀNG</option>--%>
-<%--            </select>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-
-<%--        <div class="question-3">--%>
-<%--          <label>Combo:</label>--%>
-<%--          <div class="question-answer">--%>
-<%--            <select id="food" name="optionCombo">--%>
-<%--              <option value="0">NoCombo</option>--%>
-<%--              <option value="1">Combo</option>--%>
-<%--            </select>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-
-<%--        <div class="question-3">--%>
-<%--          <label>Combo:</label>--%>
-<%--          <div class="question-answer">--%>
-<%--            <select id="food" name="optionSize">--%>
-<%--              <option value="SIZE1">SIZE1</option>--%>
-<%--              <option value="SIZE2">SIZE2</option>--%>
-<%--            </select>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-
-
-<%--        <div action="" class="question-4">--%>
-<%--          <label for="myfile" id="text">Chọn Hình Ảnh : </label><br><br>--%>
-<%--          <input type="file" id="myfile" name="myfile"><br><br>--%>
-<%--        </div>--%>
-<%--        <button class="btn" >Cập Nhật</button>--%>
-<%--        <button class="btn">Xóa</button>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-<%--  </div>--%>
-
-<%--  </div>--%>
   </div>
     </div>
 </section>
