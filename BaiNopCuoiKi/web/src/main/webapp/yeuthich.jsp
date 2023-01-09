@@ -155,12 +155,12 @@
                     <div class="sidebar">
                         <div class="sidebar__item">
                             <ul>
-                                <li ><a href="getUser?iduser=<%=user.getUserId()%>"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                                <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                                <li ><a href="getUserInfor"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                                <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                                 <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                                 <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
-                                <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
+                                <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                             </ul>
                         </div>
                     </div>
@@ -224,7 +224,6 @@
                 </div>
 
 
-                <div class="userr" style="width:80%;">
 
                     <!-- yeu thich -->
                     <!-- yeu thich -->
@@ -265,7 +264,7 @@
                                                 <li style="list-style: none;"><a href=""><i class="fa fa-shopping-bag"></i> </a></li>
 
                                                 <li style="list-style: none;margin-top-1px;margin-left9px;font-size:30px;">
-                                                    <a href="deleteFavourite?idacc=<%=userID.getIdacc()%>&&idf=<%=p.getID_food()%>"><i class="icon_close"></i> </a></li>
+                                                    <a href="deletaFavourite?idacc=<%=userID.getIdacc()%>&&idf=<%=p.getID_food()%>"><i class="icon_close"></i> </a></li>
                                             </div>
 
                                         </td>

@@ -185,7 +185,7 @@
                     <div class="product__discount__percent">-20%</div>
                     <ul class="product__item__pic__hover">
                       <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                      <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                   </div>
                   <div class="product__discount__item__text">
@@ -242,7 +242,7 @@
             <ul class="product__item__pic__hover">
               <li><a href="#"><i class="fa fa-heart"></i></a></li>
 
-              <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+              <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
           </div>
           <div class="product__item__text">
@@ -258,10 +258,14 @@
     <div class="product__pagination">
       <%
         String type= (String) request.getAttribute("type");
+
         for (int i = 1; i <= numberpage ; i++) {
+          if (type!=null) {}else {
       %>
       <a class href="getAllProduct?type=<%=type%>&page=<%=i%>"><%= i%></a>
-      <%}%>
+      <%
+          }
+        }%>
     </div>
   </div>
 </section>
