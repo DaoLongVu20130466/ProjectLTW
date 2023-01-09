@@ -396,36 +396,36 @@ button:hover {
 table {
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  th, td {
+}
+
+th, td {
     text-align: left;
     padding: 8px;
-  }
-  .vouchersearch{
-      display: flex;
-  }
-  .vouchersearch a {
-      background: #007bff;
-      color: white;
-      width: 15%;
-      text-align: center;
-      padding: 1%;
-      margin-left: 1%;
-      border-radius: 5px;
-  }
-  #voucher {
-      column-gap: 1%;
-      row-gap: 13%;
-      display: grid;
-      grid-template-rows: auto;
-      grid-template-columns: 50% 50%;
-  }
-  #voucher div{
-      display: flex;
+}
+.vouchersearch{
+    display: flex;
+}
+.vouchersearch a {
+    background: #007bff;
+    color: white;
+    width: 15%;
+    text-align: center;
+    padding: 1%;
+    margin-left: 1%;
+    border-radius: 5px;
+}
+#voucher {
+    column-gap: 1%;
+    row-gap: 13%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+}
+#voucher div{
+    display: flex;
 
 
-  }
+}
 #voucher div input{
     width: 100%;
 }
@@ -486,7 +486,7 @@ table {
     width: 88%;
     height: 36px;
     padding-bottom: 4px;
-  
+
 }
 .stg {
     height: 35px;
@@ -494,5 +494,17 @@ table {
     margin-left: 1%;
 }
 
- 
 
+.add-input {
+
+    display: flex;
+    padding: 10px;
+    box-shadow: 10px 10px 18px #e6e6e6;
+    flex-direction: column;
+    padding:10px 15px;
+    background: var(--main-color);
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

@@ -11,19 +11,18 @@ import java.io.IOException;
 public class ServletDeleteFavourite extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            String id = request.getParameter("idacc");
-            String idf = request.getParameter("idf");
-            useService.getInstance().deletaFavourite(idf,id);
-        response.sendRedirect("getUser");
+
+        String id = request.getParameter("idacc");
+        String idf = request.getParameter("idf");
+
+        useService.getInstance().deletaFavourite(idf,id);
+     response.sendRedirect("getAllFavourite");
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idser = request.getParameter("iduser");
-        String tag = request.getParameter("tag");
 
-        HttpSession session = request.getSession(true);
-        session.setAttribute("idser", idser);
 
     }
 }

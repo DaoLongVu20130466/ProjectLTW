@@ -69,10 +69,6 @@
               <%
                 String a = (String) session.getAttribute("login");
                 User user = (User) session.getAttribute("auth");
-                User userID = (User) request.getAttribute("userID");
-                ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
-                String tag2 = (String) request.getAttribute("tag2");
-
               %>
               <%
                 if (a == null) {
@@ -155,9 +151,9 @@
           <div class="sidebar">
             <div class="sidebar__item">
               <ul>
-                <li ><a href="getUser?iduser=<%=user.getUserId()%>"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
                 <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
-                <li><a href="getUser?iduser=<%=user.getUserId()%>&&tag=yeuthich"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
+                <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                 <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
                 <li><a href="Voucher.html"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
@@ -170,6 +166,9 @@
           <!-- Thong tin -->
           <!-- Thong tin -->
           <!-- Thong tin -->
+          <%
+            User userID = (User) request.getAttribute("userID");
+          %>
           <div class="wrapper">
             <div class="left">
               <img src="<%=userID.getAvatar()%>" alt="user" width="100">
@@ -193,7 +192,7 @@
                 <div class="projects_data">
                   <div class="data">
                     <h4>Email</h4>
-                    <p><%=userID.getEmail()%>></p>
+                    <p><%=userID.getEmail()%></p>
                   </div>
                   <div class="data">
                     <h4>Phone</h4>
@@ -223,74 +222,8 @@
 
         </div>
 
-        <%
-          if (tag2 == null) {
-        %>
-        <div class="userr" style="width:80%;">
-          <% }
-          else if (tag2.equals("yeuthich")) {
-          %>
-          <!-- yeu thich -->
-          <!-- yeu thich -->
-          <!-- yeu thich -->
-        <div class="userr" style="width:80%;">
-          <div class="TaiKhoan">
-            <div class="shoping__cart__table">
-              <table style="width:100%;" >
-                <thead>
-                <tr>
-                  <th class="shoping__product">Món</th>
-                  <th>Giá</th>
-                  <th>Số lượng đã mua</th>
-                  <th>Thao tác</th>
-                  <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <%
-
-                  for (Products p : listP
-                       ) {
-                %>
-                <tr>
-
-                  <td class="shoping__cart__item">
-                    <img src="<%=p.getPath()%>" alt="" style="max-width: 20%;">
-                    <h5><%=p.getFoodName()%>n</h5>
-                  </td>
-                  <td class="shoping__cart__price">
-                    <%=p.getLISTED_PRICE()%> VND
-                  </td>
-                  <td class="shoping__cart__quantity">
-                    <span>1</span>
-                  </td>
-                  <td class="shoping__cart__item__close" >
-                    <div style="  display: flex;">
-                      <li style="list-style: none;"><a href=""><i class="fa fa-shopping-bag"></i> </a></li>
-
-                      <li style="list-style: none;margin-top-1px;margin-left9px;font-size:30px;">
-                        <a href="deleteFavourite?idacc=<%=userID.getIdacc()%>&&idf=<%=p.getID_food()%>"><i class="icon_close"></i> </a></li>
-                    </div>
-
-                  </td>
-                </tr>
-<%}%>
-                </tbody>
-              </table>
-              <div class="product__pagination">
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <%}%>
 
 
-        </div>
     </div>
   </div>
 
