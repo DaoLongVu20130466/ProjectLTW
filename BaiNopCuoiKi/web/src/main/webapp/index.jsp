@@ -77,7 +77,7 @@
                         <% }else{%>
                         <div   class="fa" role="alert">
 
-                            <a href="getUser?iduser=<%=user.getUserId()%>"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+                            <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
 
                         </div>
                         <%}%>
@@ -111,7 +111,7 @@
                         %>
                         <li> <a href=""> <i class="fa fa-user"></i> </a></li>
                         <% }else{%>
-                        <li> <a href="getUser"> <i class="fa fa-user"></i> </a></li>
+                        <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
 
                         <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
