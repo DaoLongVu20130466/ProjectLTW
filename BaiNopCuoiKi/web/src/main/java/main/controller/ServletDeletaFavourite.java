@@ -16,7 +16,7 @@ public class ServletDeletaFavourite extends HttpServlet {
         String idf = request.getParameter("idf");
 
         useService.getInstance().deletaFavourite(idf,id);
-        response.sendRedirect("/getAllFavourite");
+        response.sendRedirect("getAllFavourite");
 
     }
 
