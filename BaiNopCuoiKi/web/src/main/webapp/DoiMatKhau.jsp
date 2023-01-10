@@ -143,7 +143,7 @@
                     <ul>
                         <li ><a href="user.jsp"><i class="fa fa-tachometer" aria-hidden="true"></i> Thông Tin </a></li>
                         <li><a href="Donhang.jsp"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
-                        <li><a href="yeuthich.html"><i class="fa fa-line-chart" aria-hidden="true"></i> Yêu Thích </a></li>
+                        <li><a href="getAllFavourite"><i class="fa fa-line-chart" aria-hidden="true"></i> Yêu Thích </a></li>
                         <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
 
