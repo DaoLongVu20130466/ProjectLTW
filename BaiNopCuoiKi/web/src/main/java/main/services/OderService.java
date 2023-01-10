@@ -148,7 +148,7 @@ public class OderService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES\n" +
+            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER, NAMES, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES\n" +
                     "from orders\n" +
                     "JOIN order_account_details\n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE orders.ID_ORDER =? AND ID_ACCOUNT = ?");
@@ -180,16 +180,35 @@ public class OderService {
         Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
         PreparedStatement statement = conn.prepareStatement("UPDATE orders SET STATUSS = 'Đã hủy' WHERE ID_ORDER = ?");
         statement.setString(1,idoder);
-        statement.executeUpdate();
-        conn.close();
+        statement.executeQuery();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
+    public String createNewIDOder(){
+        return "OD" + Integer.toString(getintNewIdOder());
+    }
+
+    public int getintNewIdOder(){
+        int rsl = 1;
+        try{
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(("SELECT COUNT(*) FROM orders"));
+
+            while (rs.next()) {
+                rsl+=rs.getInt(1);
+            }
+            conn.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return rsl;
+    }
 
     public static void main(String[] args) {
-        OderService o = new OderService();
-        String idoder = "OD1";
-        o.cancelOder(idoder);
+        System.out.println(OderService.getInstance().createNewIDOder());
     }
 }

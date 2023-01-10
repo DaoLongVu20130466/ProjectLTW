@@ -1,6 +1,8 @@
 package main.bean;
 
-public class Products {
+import java.io.Serializable;
+
+public class Products implements Serializable {
     String ID_food;
     String foodName;
     String size;

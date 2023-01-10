@@ -2,10 +2,11 @@ package main.bean;
 
 import main.services.AppService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable  {
 
     String idOder;
     String pbuyName;
