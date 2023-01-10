@@ -1,9 +1,11 @@
-<%@ page import="main.bean.Products" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="main.bean.TypeProducts" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.User" %>
+<%@ page import="main.bean.Products" %><%--
   Created by IntelliJ IDEA.
   User: thoai
-  Date: 5/01/2023
-  Time: 7:42 pm
+  Date: 8/01/2023
+  Time: 5:57 pm
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -31,7 +33,9 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/admincss.css">
+  <link rel="stylesheet" href="css/admincss.css" type="text/css">
+  <link rel="stylesheet" href="css/addpro.css" type="text/css">
+
   <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
 </head>
 
@@ -71,7 +75,21 @@
               <div>Việt Nam </div>
             </div>
             <div class="header__top__right__auth">
-              <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+              <%
+                String a = (String) session.getAttribute("login");
+                User user = (User) session.getAttribute("auth");
+              %>
+              <%
+                if (a == null) {
+              %>
+              <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+              <% }else{%>
+              <div   class="fa" role="alert">
+
+                <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+              </div>
+              <%}%>
             </div>
           </div>
         </div>
@@ -88,19 +106,27 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <li ><a href="./index.html">Trang Chủ</a></li>
-            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+            <li ><a href="getIndex">Trang Chủ</a></li>
+            <li><a href="getAllProduct">Gian Hàng</a></li>
 
-            <li><a href="./blog.html">Giới Thiệu</a></li>
-            <li><a href="./contact.html">Liên Hệ</a></li>
+            <li><a href="blog.jsp">Giới Thiệu</a></li>
+            <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </nav>
       </div>
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <%
+              if (user.getRole()>=1) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+            <% }else{
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}%>
+            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
@@ -125,8 +151,8 @@
         <div class="breadcrumb__text">
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
-            <a href="./index.html">Admin</a>
-            <span>Sản Phẩm</span>
+            <a href="ServletGetInforDB">Admin</a>
+            <span>Quản lí tài khoản_Thêm Sản Phẩm</span>
           </div>
         </div>
       </div>
@@ -156,75 +182,117 @@
         </div>
       </div>
       <div class="col-lg-10 col-md-5">
-        <h2>Toàn bộ sản phẩm:</h2>
-        <div class="TaiKhoan">
-          <form action="ServletSearchInAd">
-          <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." name="txt" />
-            <button type="submit" class="site-btn">TÌM</button>
-          </form>
-          <table class="cd-table order-table table">
-            <thead>
-            <tr>
-              <th>Tên Món Ăn</th>
-              <th>Giá Món Ăn (VND)</th>
-              <th>ID Món Ăn</th>
-              <th>Loại Món Ăn</th>
+        <%
+          ArrayList<TypeProducts> listType = (ArrayList<TypeProducts>) request.getAttribute("alltype");
+          String ab = (String) request.getAttribute("1");
+          Products pro = (Products) request.getAttribute("pro");
+        %>
 
-              <th>Hành Động</th>
-            </tr>
-            </thead>
-            <tbody>
-            <%
-              ArrayList<Products> list = (ArrayList<Products>) request.getAttribute("allproducts");
-              for (Products p : list)
-              {
-            %>
-            <tr>
-              <td><%=p.getFoodName()%></td>
-              <td><%=p.getLISTED_PRICE()%></td>
-              <td><%=p.getID_food()%></td>
-              <td><%=p.getType()%></td>
+        <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
+        <%
+          if(ab==null){ }else {%>
+        <h2>Cập nhật thành công</h2>
+        <%}%>
 
-              <td><a href="editProduct?fid=<%=p.getID_food()%>&size=<%=p.getSize()%>"><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
-                <a href="deleteF?fid=<%=p.getID_food()%>&size=<%=p.getSize()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
-                <a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
-            </tr>
-              <%}%>
-            </tbody>
-          </table>
-        </div>
-        <div class="product__pagination">
-          <%
-            list = (ArrayList<Products>) request.getAttribute("allproducts2");
-            int n ;
-            if( list.size() % 12 == 0 ){
-              n = list.size()/12;
-            } else {
-              n = list.size()/12 + 1;
-            }
 
-            for (int i = 1 ; i <= n ; i++) {
-          %>
-          <a class href="getPageAD?page=<%= i %>"><%= i%></a>
-          <%}%>
-        </div>
+        <form action="/web_war/updateEditProduct?id=<%=pro.getID_food()%>"  onSubmit="">
+
+          <div class='add-input'>
+            Tên món ăn <span>*</span>
+            <input type='text' name='tenmonan' placeholder="Tên món ăn" value="<%=pro.getFoodName()%>" required>
+          </div>
+
+          <div class='add-input'>
+            Size:<span>*</span>
+            <select name="optionSize" >
+              <option value="SIZE1"> SIZE1 </option>
+              <option value="SIZE2"> SIZE2 </option>
+            </select>
+          </div>
+          <div class='add-input'>
+            Giá niêm yết
+            <input type='text' name='niemyet' placeholder="Giá niêm yết" value="<%=pro.getBasePrice()%>" required>
+          </div>
+          <div class='add-input'>
+            Giá bán<span>*</span>
+            <input type='text' name='giaban' placeholder="Giá bán" value="<%=pro.getLISTED_PRICE()%>" required>
+          </div>
+
+
+          <div class='add-input'>
+            Loại món ăn: <span>*</span>
+
+            <form action="" class="typeAdd">
+              <select name="optionType"  >
+                <%
+                  for ( TypeProducts t : listType
+                  ) {
+                %>
+                <option value="<%=t.getNameType()%>"> <%=t.getNameType()%>  </option>
+                <%}%>
+              </select>
+
+          </div>
+
+
+          <div class='add-input'>
+            Số lượng<span>*</span>
+            <input type='text' name='soluong' placeholder="Số lượng"  value="<%=pro.getQuantity()%>"required>
+          </div>
+
+          <div class='add-input'>
+            Trạng thái: <span>*</span>
+            <input type='text' name='optionStatus' placeholder=" TRẠNG THÁI"  value="<%=pro.getStatus()%>"required>
+          </div>
+
+          <div class='add-input'>
+            Món ăn Combo:<span>*</span>
+            <select name="optionCombo" >
+              <option value="0"> KHÔNG </option>
+              <option value="1"> COMBO </option>
+            </select>
+          </div>
+          <div class='add-input'>
+            Món ăn Sale:<span>*</span>
+            <select name="optionSale" >
+              <option value="SALE1"> SALE </option>
+              <option value="SALE2"> KHÔNG SALE </option>
+            </select>
+          </div>
+
+          <div class='add-input'>
+            Món ăn hot:<span>*</span>
+            <select name="optionHot" >
+              <option value="HOT"> HOT </option>
+              <option value="NORMAL"> NORMAL </option>
+            </select>
+          </div>
+
+          <div class='add-input'>
+            Mô tả<span>*</span>
+            <input type='text' name='Mota' placeholder="Mô tả" value="<%=pro.getDESCRIPTION()%>"required>
+          </div>
+
+          <div class='add-input'>
+            Hình ảnh:<span>*</span>
+            <input type='text' name='myfile' placeholder="Mô tả" value="<%=pro.getPath()%>"required>
+          </div>
       </div>
+      <input class="btn" type="submit" value="Submit">
 
-
+      </form>
 
     </div>
-
-
-  </div>
-  </div>
-
-  </div>
   </div>
 </section>
+<!-- Product Section End -->
 
+<!-- Footer Section Begin -->
+<!-- Footer Section End -->
+
+<!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<style>.product__pagination{margin-left: 0%;}</style>
 <script src="js/jquery.nice-select.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.slicknav.js"></script>
@@ -236,5 +304,4 @@
 </body>
 
 </html>
-
 </html>
