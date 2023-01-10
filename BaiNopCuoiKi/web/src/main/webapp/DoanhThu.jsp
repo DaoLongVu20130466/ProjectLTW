@@ -81,17 +81,17 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="getIndex">Trang Chủ</a></li>
-                        <li class="active"><a href="getAllProduct">Gian Hàng</a></li>
+                        <li ><a href="getIndex">Trang Chủ</a></li>
+                        <li ><a href="getAllProduct">Gian Hàng</a></li>
 
-                        <li><a href="./blog.html">Giới Thiệu</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li><a href="blog.jsp">Giới Thiệu</a></li>
+                        <li><a href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -124,7 +124,7 @@
                 <div class="breadcrumb__text">
                     <h2>Trang Admin</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html">Admin</a>
+                        <a href="">Admin</a>
                         <span>Doanh Thu</span>
                     </div>
                 </div>

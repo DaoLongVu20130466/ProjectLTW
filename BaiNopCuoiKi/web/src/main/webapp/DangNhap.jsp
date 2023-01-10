@@ -93,12 +93,12 @@
                          
                             <li><a href="#">Bạn cần giúp đỡ gì?</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="">Về việc đăng nhập</a></li>
-                                    <li><a href="">Về việc đăng ký</a></li>
-                                    <li><a href="">Về việc quên mật khẩu</a></li>
+                                    <li><a href="contact.jsp">Về việc đăng nhập</a></li>
+                                    <li><a href="contact.jsp">Về việc đăng ký</a></li>
+                                    <li><a href="contact.jsp">Về việc quên mật khẩu</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Liên hệ</a></li>
+                            <li><a href="contact.jsp">Liên hệ</a></li>
                             
                         </ul>
                     </nav>
