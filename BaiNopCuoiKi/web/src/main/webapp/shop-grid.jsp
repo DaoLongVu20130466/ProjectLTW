@@ -240,7 +240,7 @@
         <div class="product__item">
           <div class="product__item__pic set-bg" data-setbg="<%=p.getPath()%>">
             <ul class="product__item__pic__hover">
-              <li><a href="#"><i class="fa fa-heart"></i></a></li>
+              <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
 
               <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
