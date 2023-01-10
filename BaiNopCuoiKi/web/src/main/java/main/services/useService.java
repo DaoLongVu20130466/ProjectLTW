@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class useService {
-    private static useService instance;
-    private useService() {
+    public static useService instance;
+    public useService() {
 
     }
     private List<User> alluser ;
