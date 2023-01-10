@@ -487,8 +487,8 @@ public class ProductsService {
 
 
 
-    public static void main(String[] args) {
-           ProductsService a = new ProductsService();
+//    public static void main(String[] args) {
+//           ProductsService a = new ProductsService();
 //            String tenmonan ="Cơm gà A Quảng";
 //            int niemyet =60000;
 //            int giaban=12;
@@ -503,8 +503,92 @@ public class ProductsService {
 //            int optionCombo = 0 ;
 //            String optionSize="SIZE1";
 //            a.addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
-           System.out.println(a.getAllproductSearch("Cơm gà"));
+//           System.out.println(a.getAllproductSearch("Cơm gà"));
+//    }
+
+
+    public Products getProductByIDSize(String idf, String size) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement( "SELECT ID_FOOD,FOOD_NAME,ID_SIZE,LISTED_PRICE,TYPE_FOOD,QUANTITY,STATUSS,IS_COMBO,ID_SALE,IS_HOT,DESCRIPTION,L_IMG,BASE_PRICE FROM `FOOD`\n" +
+                    "WHERE FOOD.ID_SIZE= ? and FOOD.ID_FOOD = ?"
+            );
+            ps.setString(1,size);
+            ps.setString(2,idf);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                return new Products(
+                        rs.getString(1),
+                        rs.getNString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getNString(5),
+                        rs.getInt(6),
+                        rs.getNString(7),
+                        rs.getBoolean(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getNString(11),
+                        rs.getNString(12),
+                        rs.getInt(13));
+
+            }
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
+    public void updateProduct(String id, String tenmonan, String optionSize, int giaban, String optionType, int soluong, String optionStatus, int optionCombo, String optionSale, String optionHot, String mota, String img, int niemyet) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
+
+            PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
+            stmt.setString(1,tenmonan);
+            stmt.setString(2,optionSize);
+            stmt.setInt(3,giaban);
+            stmt.setString(4,optionType);
+            stmt.setInt(5,soluong);
+            stmt.setString(6,optionStatus);
+            stmt.setInt(7,optionCombo);
+            stmt.setString(8,optionSale);
+            stmt.setString(9,optionHot);
+            stmt.setString(10,mota);
+            stmt.setString(11,img);
+            stmt.setInt(12,niemyet);
+            stmt.setString(13,id);
+            stmt.setString(14,optionSize);
+            stmt.executeUpdate();
+            conn.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+//        ProductsService a = new ProductsService();
+//        String id ="CƠM BÒ1";
+//        String tenmonan ="Cơm gà A Quảng";
+//        int niemyet =60000;
+//        int giaban=12;
+//        int soluong =50;
+//        String Mota="Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền \n" +
+//                "Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền Cơm ngon số 2 không đâu số 1, Ăn là mê cắn là ghiền";
+//        String optionHot="HOT";
+//        String optionType="CƠM GÀ";
+//        String optionSale="SALE1";
+//        String img="img/Data/GiamGia/1comga_aquang-min.jpeg";
+//        String optionStatus="CÒN HÀNG";
+//        int optionCombo = 0 ;
+//        String optionSize="SIZE1";
+//
+//        a.updateProduct(id,tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
+//
+
+    }
 }

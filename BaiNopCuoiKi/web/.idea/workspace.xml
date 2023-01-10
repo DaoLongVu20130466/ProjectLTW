@@ -36,7 +36,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUIFOder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUpdateIF.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/addtoCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/deleteFavourite.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getIndex.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getPageAD.java" afterDir="false" />
@@ -159,7 +158,7 @@
       <recent name="D:\LTWProject\ProjectLTW\BaiNopCuoiKi\web\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AddOderService">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="AddOderService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.AddOderService" />
       <module name="web" />
@@ -341,7 +340,7 @@
       <workItem from="1673228347723" duration="6071000" />
       <workItem from="1673265082709" duration="10544000" />
       <workItem from="1673282062087" duration="674000" />
-      <workItem from="1673354933983" duration="8141000" />
+      <workItem from="1673354933983" duration="13944000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
