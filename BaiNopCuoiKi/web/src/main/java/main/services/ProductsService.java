@@ -469,22 +469,6 @@ public class ProductsService {
         }
         return allProductSearch;
     }
-    public void addFavoutrite(String id, String idacc){
-        try {
-            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
-
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO FAVOURITE(ID_FOOD,ID_ACCOUNT) " +
-                    "VALUES (?,?)"
-
-            );
-            ps.setString(1,id);
-            ps.setString(2,idacc);
-            ResultSet rs = ps.executeQuery();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
 
 
 

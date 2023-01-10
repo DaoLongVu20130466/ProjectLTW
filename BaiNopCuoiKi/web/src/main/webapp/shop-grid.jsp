@@ -246,6 +246,7 @@
                         <ul class="product__item__pic__hover">
                             <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
 
+<<<<<<< HEAD
                             <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
@@ -256,6 +257,31 @@
                 </div>
             </div>
             <%}%>
+=======
+
+
+    </div>
+
+    <div class="row">
+      <%
+        ArrayList<Products> list = (ArrayList<Products>) request.getAttribute("allproducts");
+        for (Products p : list)
+        {
+      %>
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="product__item">
+          <div class="product__item__pic set-bg" data-setbg="<%=p.getPath()%>">
+            <ul class="product__item__pic__hover">
+              <li><a href="#"><i class="fa fa-heart"></i></a></li>
+
+              <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+          </div>
+          <div class="product__item__text">
+            <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
+            <h5><%=p.getLISTED_PRICE()%> VND</h5>
+          </div>
+>>>>>>> parent of b849254 (up)
         </div>
     </div>
 
