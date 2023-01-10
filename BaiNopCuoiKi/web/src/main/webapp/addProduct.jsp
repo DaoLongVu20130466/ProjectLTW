@@ -73,7 +73,21 @@
               <div>Việt Nam </div>
             </div>
             <div class="header__top__right__auth">
-              <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+              <%
+                String a = (String) session.getAttribute("login");
+                User user = (User) session.getAttribute("auth");
+              %>
+              <%
+                if (a == null) {
+              %>
+              <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+              <% }else{%>
+              <div   class="fa" role="alert">
+
+                <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+              </div>
+              <%}%>
             </div>
           </div>
         </div>
@@ -90,8 +104,8 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <li ><a href="./index.html">Trang Chủ</a></li>
-            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+            <li class="active"><a href="getIndex">Trang Chủ</a></li>
+            <li><a href="getAllProduct">Gian Hàng</a></li>
 
             <li><a href="./blog.html">Giới Thiệu</a></li>
             <li><a href="./contact.html">Liên Hệ</a></li>
@@ -101,8 +115,16 @@
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <%
+              if (user.getRole()>=1) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+            <% }else{
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}%>
+            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
