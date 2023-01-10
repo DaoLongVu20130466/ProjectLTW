@@ -25,6 +25,10 @@ public class Cart implements Serializable {
         this.quantity = quantity;
     }
 
+    public HashMap<String, Products> getData() {
+        return data;
+    }
+
     public void put(Products p) {
         if (data.containsKey(p.getID_food())) {
             Products p1 = data.get(p.getID_food());
@@ -32,6 +36,7 @@ public class Cart implements Serializable {
             data.put(p.getID_food(), p1);
         } else {
             data.put(p.getID_food(), p);
+
         }
         updateTotalMoneyAndQuantity();
     }

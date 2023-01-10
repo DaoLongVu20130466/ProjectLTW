@@ -21,6 +21,8 @@ public class FileLocationContextListener implements ServletContextListener, Http
         String rootPath = System.getProperty("catalina.home");
         ServletContext ctx = servletContextEvent.getServletContext();
         String relativePath = ctx.getInitParameter("tempfile.dir");
+
+
         File file = new File(rootPath + File.separator +"webapps"+  File.separator + relativePath);
         if(!file.exists()) file.mkdirs();
         System.out.println("File Directory created to be used for storing files");
