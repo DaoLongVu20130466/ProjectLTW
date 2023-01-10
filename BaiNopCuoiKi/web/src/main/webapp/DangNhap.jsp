@@ -143,7 +143,7 @@
                      <i class="fa fa-registered" aria-hidden="true"> <a href="QuenMK.html">Quên Mật Khẩu</a></i>
                 </div>
             </div>
-            Nếu chưa có tài khoản hay ấn vào đây: <a href="Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web/src/main/webapp/DangKy.jsp">Đăng ký</a>
+            Nếu chưa có tài khoản hay ấn vào đây: <a href="DangKy.jsp">Đăng ký</a>
         </div>
                
     

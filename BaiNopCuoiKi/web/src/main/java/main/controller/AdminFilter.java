@@ -19,11 +19,16 @@ public class AdminFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session=req.getSession();
-        if(session.getAttribute("auth")==null || ((User) session.getAttribute("auth")).getRole()<1){
-
-            ((HttpServletResponse)response).sendRedirect("../getIndex");
-            session.setAttribute("error", "Bạn không có quyền truy cập vào trang này");
+        if(session.getAttribute("auth")==null ){
+            ((HttpServletResponse)response).sendRedirect("http://localhost:8080/web:war/login.jsp");
+            session.setAttribute("error", "Hãy đăng nhập");
         }else{
+            if(
+            ((User) session.getAttribute("auth")).getRole()<1){
+                ((HttpServletResponse)response).sendRedirect("getIndex");
+                session.setAttribute("error", "Bạn không có quyền truy cập vào trang này");
+            }else
+
             chain.doFilter(request, response);
         }
     }
