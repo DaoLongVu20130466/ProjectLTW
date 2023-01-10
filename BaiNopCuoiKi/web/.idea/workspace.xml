@@ -14,11 +14,14 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/DashBoard.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/AdminFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/FileLocationContextListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddFavourite.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddNewProduct.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddProduct.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAllFavourite.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletCancelOder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletDeletaFavourite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletDeleteF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletEditProduct.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetAllProduct.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetAllProductAd.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetInForDBbyM.java" afterDir="false" />
@@ -31,9 +34,11 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserInfor.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserOder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserVoucher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletLogOut.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletSearchControl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletSearchInAd.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUIFOder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUpdateEditProduct.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUpdateIF.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/addtoCart.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
@@ -47,17 +52,22 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/uploadimg.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/AddOderService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/DashBoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/CheckOut.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHangUser.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/Chinhsuathongtin.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/DoanhThu.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/GioHang.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/addProduct.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/attest.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/blog.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/contact.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/addpro.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/dashboard.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/stylle.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/stylle.css.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/voucher&amp;Oder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editProdcut.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/img/avt.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/yeuthich.jsp" afterDir="false" />
@@ -340,7 +350,7 @@
       <workItem from="1673228347723" duration="6071000" />
       <workItem from="1673265082709" duration="10544000" />
       <workItem from="1673282062087" duration="674000" />
-      <workItem from="1673354933983" duration="13944000" />
+      <workItem from="1673354933983" duration="19932000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
