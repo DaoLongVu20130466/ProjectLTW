@@ -34,6 +34,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserInfor.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserOder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserVoucher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletLogOut.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletSearchControl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletSearchInAd.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUIFOder.java" afterDir="false" />
@@ -51,6 +52,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/uploadimg.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/AddOderService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/main/services/DashBoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/CheckOut.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHangUser.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/Chinhsuathongtin.jsp" afterDir="false" />
@@ -348,7 +350,7 @@
       <workItem from="1673228347723" duration="6071000" />
       <workItem from="1673265082709" duration="10544000" />
       <workItem from="1673282062087" duration="674000" />
-      <workItem from="1673354933983" duration="15693000" />
+      <workItem from="1673354933983" duration="19932000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
