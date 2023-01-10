@@ -77,28 +77,26 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="getIndex">Trang Chủ</a></li>
-                        <li class=""><a href="getAllProduct">Gian Hàng</a></li>
+                        <li ><a href="getIndex">Trang Chủ</a></li>
+                        <li class="active"><a href="getAllProduct">Gian Hàng</a></li>
 
-                        <li><a href="./blog.html">Giới Thiệu</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li><a href="blog.jsp">Giới Thiệu</a></li>
+                        <li><a href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <<<<<<< HEAD
+
                         <li><a href="getUser"><i class="fa fa-user"></i> </a></li>
-                        =======
-                        <li><a href="getAllProduct"><i class="fa fa-user"></i> </a></li>
-                        >>>>>>> bc6cafce3904683c2fa679981502884f8f786b6d
+
                         <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
@@ -246,7 +244,7 @@
                         <ul class="product__item__pic__hover">
                             <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
 
-<<<<<<< HEAD
+
                             <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
@@ -257,22 +255,22 @@
                 </div>
             </div>
             <%}%>
-=======
+
 
 
     </div>
 
     <div class="row">
       <%
-        ArrayList<Products> list = (ArrayList<Products>) request.getAttribute("allproducts");
-        for (Products p : list)
+        ArrayList<Products> listPr = (ArrayList<Products>) request.getAttribute("allproducts");
+        for (Products p : listPr)
         {
       %>
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="product__item">
           <div class="product__item__pic set-bg" data-setbg="<%=p.getPath()%>">
             <ul class="product__item__pic__hover">
-              <li><a href="#"><i class="fa fa-heart"></i></a></li>
+              <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
 
               <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
@@ -281,9 +279,10 @@
             <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
             <h5><%=p.getLISTED_PRICE()%> VND</h5>
           </div>
->>>>>>> parent of b849254 (up)
+
         </div>
     </div>
+        <%}%>
 
     <div class="product__pagination">
         <%
@@ -308,7 +307,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__about__logo">
-                        <a href="./index.html"><img src="img/a.png" alt=""></a>
+                        <a href="getIndex"><img src="img/a.png" alt=""></a>
                     </div>
                     <ul>
                         <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>
@@ -321,10 +320,10 @@
                 <div class="footer__widget">
                     <h6>Liên kết hữu ích</h6>
                     <ul>
-                        <li ><a href="./index.html">Trang Chủ</a></li>
-                        <li><a href="./shop-grid.html">Gian Hàng</a></li>
-                        <li><a href="./blog.html">Giới Thiệu</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li ><a href="getIndex">Trang Chủ</a></li>
+                        <li><a href="getAllProduct">Gian Hàng</a></li>
+                        <li><a href="blog.jsp">Giới Thiệu</a></li>
+                        <li><a href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </div>
             </div>

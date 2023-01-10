@@ -1,5 +1,6 @@
 <%@ page import="main.bean.TypeProducts" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.User" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 8/01/2023
@@ -104,11 +105,11 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <li class="active"><a href="getIndex">Trang Chủ</a></li>
+            <li ><a href="getIndex">Trang Chủ</a></li>
             <li><a href="getAllProduct">Gian Hàng</a></li>
 
-            <li><a href="./blog.html">Giới Thiệu</a></li>
-            <li><a href="./contact.html">Liên Hệ</a></li>
+            <li><a href="blog.jsp">Giới Thiệu</a></li>
+            <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </nav>
       </div>
@@ -149,7 +150,7 @@
         <div class="breadcrumb__text">
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
-            <a href="./index.html">Admin</a>
+            <a href="ServletGetInforDB">Admin</a>
             <span>Quản lí tài khoản_Thêm Sản Phẩm</span>
           </div>
         </div>
@@ -182,12 +183,12 @@
       <div class="col-lg-10 col-md-5">
         <%
           ArrayList<TypeProducts> listType = (ArrayList<TypeProducts>) request.getAttribute("alltype");
-          String a = (String) request.getAttribute("1");
+          String ab = (String) request.getAttribute("1");
         %>
 
         <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
         <%
-        if(a==null){ }else {%>
+        if(ab==null){ }else {%>
         <h2>Cập nhật thành công</h2>
         <%}%>
 
