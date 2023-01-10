@@ -15,6 +15,7 @@ public class Products implements Serializable {
     String DESCRIPTION;
     String path;
     String Status;
+    String status;
     int basePrice;
 
     public Products(String ID_food, String foodName, String size, int LISTED_PRICE, String type,  int quantity, String status, boolean isCombo, String idSale,String isHot, String DESCRIPTION, String path) {
@@ -33,6 +34,22 @@ public class Products implements Serializable {
 
     }
 
+    public Products(String ID_food, String foodName, String size, int LISTED_PRICE, String type, int quantity, String status, boolean isCombo, String idSale, String isHot, String DESCRIPTION, String path, int basePrice) {
+        this.ID_food = ID_food;
+        this.foodName = foodName;
+        this.size = size;
+        this.LISTED_PRICE = LISTED_PRICE;
+        this.type = type;
+        this.quantity = quantity;
+        this.Status = status;
+        this.isCombo = isCombo;
+        this.idSale = idSale;
+        this.isHot = isHot;
+        this.DESCRIPTION = DESCRIPTION;
+        this.path = path;
+        this.basePrice = basePrice;
+    }
+
     public Products(String ID_food, int LISTED_PRICE, int basePrice) {
         this.ID_food = ID_food;
         this.LISTED_PRICE = LISTED_PRICE;
@@ -44,6 +61,9 @@ public class Products implements Serializable {
         this.foodName = foodName;
         this.LISTED_PRICE = LISTED_PRICE;
 
+    }
+    public void setBasePrice(int basePrice) {
+        this.basePrice = basePrice;
     }
 
 
