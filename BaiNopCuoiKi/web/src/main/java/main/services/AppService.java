@@ -1,6 +1,8 @@
 package main.services;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -42,9 +44,17 @@ public  class AppService {
             return false;
 
     }
+    public static LocalDate getNowDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date now = new Date();
+        dateFormat.format(now);
+        LocalDate nowDate = LocalDate.parse(dateFormat.format(now));
+        return nowDate;
+
+    }
     public static void main(String[] args) {
         System.out.println(intToVND(100000000));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd ");
-        System.out.println();
+
     }
 }
