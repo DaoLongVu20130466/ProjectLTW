@@ -20,9 +20,9 @@ public class ServletCancelOder extends HttpServlet {
         String  iduser = user0.getUserId();
         User usernow = useService.getInstance().getAllUserByID(iduser);
         request.setAttribute("userID",usernow);
-        if (user0.getUserId() == usernow.getUserId()){
+        if (1==1){
             OderService.getInstance().cancelOder(idOder);
-            response.sendRedirect("DangNhap.jsp");
+            response.sendRedirect("getUIFOder");
         }
         else {
             response.sendRedirect("DangNhap.jsp");
