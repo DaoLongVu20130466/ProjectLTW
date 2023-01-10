@@ -15,7 +15,7 @@ public class ServletGetPageAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");
-        int page2  ;
+        int page2;
         if(page == null ){
             page2 = 1;
         } else {
@@ -32,9 +32,6 @@ public class ServletGetPageAd extends HttpServlet {
         request.setAttribute("alltype", typePro);
         request.setAttribute("page",page2);
         request.setAttribute("productBySale", producBySale);
-
-
-
         request.getRequestDispatcher("SanPham.jsp").forward(request, response);
     }
 
