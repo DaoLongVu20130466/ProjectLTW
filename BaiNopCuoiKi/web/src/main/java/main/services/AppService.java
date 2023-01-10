@@ -35,7 +35,13 @@ public  class AppService {
         SimpleDateFormat formatter = new SimpleDateFormat("MM");
         return formatter.format(date.getMonth());
     }
+    public static boolean checkAdmin(int Role){
+        if (Role >=1){
+            return true;
+        }else
+            return false;
 
+    }
     public static void main(String[] args) {
         System.out.println(intToVND(100000000));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd ");
