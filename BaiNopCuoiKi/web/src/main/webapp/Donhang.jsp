@@ -97,8 +97,9 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li ><a href="./index.html">Trang Chủ</a></li>
-                        <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+                        <li class="active"><a href="getIndex">Trang Chủ</a></li>
+                        <li class="active"><a href="getAllProduct">Gian Hàng</a></li>
+
                         <li><a href="./blog.html">Giới Thiệu</a></li>
                         <li><a href="./contact.html">Liên Hệ</a></li>
                     </ul>
@@ -107,8 +108,8 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
-                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
+                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -130,7 +131,7 @@
                 <div class="breadcrumb__text">
                     <h2>SBE Shop</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html">Trang chủ</a>
+                        <a href="getIndex">Trang chủ</a>
                         <span>User</span>
                     </div>
                 </div>
@@ -170,11 +171,11 @@
                         <div class="right">
                             <div class="info">
 
-                                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.html" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
+                                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
 
                                 <div class="info_data"> <div class="data">
-                                    <h4> Ngày sinh</h4>
-                                    <p> 24/12/2002</p>
+                                    <h4> Tên </h4>
+                                    <p><%=user.getName()%></p>
                                 </div>
                                     <div class="data">
                                         <h4>Địa CHỉ</h4>

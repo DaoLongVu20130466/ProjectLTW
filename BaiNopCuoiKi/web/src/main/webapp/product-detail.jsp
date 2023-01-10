@@ -83,9 +83,8 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li ><a href="./index.html">Trang Chủ</a></li>
-                        <li ><a href="./shop-grid.html">Gian Hàng</a></li>
-
+                        <li class="active"><a href="getIndex">Trang Chủ</a></li>
+                        <li class="active"><a href="getAllProduct">Gian Hàng</a></li>
                         <li><a href="./blog.html">Giới Thiệu</a></li>
                         <li><a href="./contact.html">Liên Hệ</a></li>
                     </ul>
@@ -94,8 +93,8 @@
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
-                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
+                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span></span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -184,8 +183,9 @@
                             </div>
                         </li>
                     </ul>
-                    <button class="btn">Mua món ăn</button>
-                    <button class="btn">Thêm vào giỏ hàng</button>
+                    <a href="./addtoCart?id=<%=pro.getID_food()%>">
+                    <button class="btn"> Mua món ăn</button></a>
+
                 </div>
             </div>
 
