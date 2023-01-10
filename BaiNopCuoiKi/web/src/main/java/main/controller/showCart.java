@@ -18,7 +18,7 @@ public class showCart extends HttpServlet {
         Cart cart=(Cart) request.getSession().getAttribute("cart");
 
         if(cart!=null) {
-            new Cart();
+
             session.setAttribute("total", AppService.intToVND((int) cart.getTotal()));
                 request.getRequestDispatcher("GioHang.jsp").forward(request, response);
             }

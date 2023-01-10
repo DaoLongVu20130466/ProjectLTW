@@ -66,7 +66,7 @@
                                 User user = (User) session.getAttribute("auth");
                                 User userID = (User) request.getAttribute("userID");
                                 String tag2 = (String) request.getAttribute("tag2");
-
+                                ArrayList<Order> list = (ArrayList<Order>) session.getAttribute("alloder");
                             %>
                             <%
                                 if (a == null) {
@@ -194,7 +194,7 @@
                                 <div class="projects_data">
                                     <div class="data">
                                         <h4>Số Đơn Đã Ủng Hộ</h4>
-                                        <p>25</p>
+                                        <p><%=list.size()%></p>
                                     </div>
                                     <div class="data">
                                         <h4>Trạng thoái</h4>
@@ -230,7 +230,7 @@
                                 </thead>
                                 <tbody>
                                 <%
-                                    ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("alloder");
+
                                     for (Order item: list) {
                                 %>
                                 <tr>
