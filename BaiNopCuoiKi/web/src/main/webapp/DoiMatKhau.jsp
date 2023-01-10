@@ -57,7 +57,7 @@
                             </div>
                             <div class="header__top__right__auth">
                                 <%
-                                    User userID = (User) request.getAttribute("userID");
+                                    User userID = (User) session.getAttribute("userID");
                                     String a = (String) session.getAttribute("login");
                                     User user = (User) session.getAttribute("auth");
                                 %>
