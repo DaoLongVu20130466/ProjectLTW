@@ -1,19 +1,17 @@
-<%@ page import="main.bean.Voucher" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.User" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
+<%@ page import="main.bean.User" %>
+<%@ page import="main.bean.Products" %>
+<%@ page import="java.util.ArrayList" %>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SBE-Cơm Trưa</title>
+    <title>SBE-Cơm trưa</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -29,11 +27,11 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/index.css"type="text/css">
     <link rel="stylesheet" href="css/User.css"type="text/css">
-    <link rel="stylesheet" href="css/voucher&Oder.css"type="text/css">
 
 </head>
 
 <body>
+   
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -64,6 +62,10 @@
                                 <%
                                     String a = (String) session.getAttribute("login");
                                     User user = (User) session.getAttribute("auth");
+                                    User userID = (User) session.getAttribute("userID");
+
+                                    String tag2 = (String) request.getAttribute("tag2");
+
                                 %>
                                 <%
                                     if (a == null) {
@@ -78,6 +80,7 @@
                                 <%
                                     }
                                 %>
+
                             </div>
                         </div>
                     </div>
@@ -88,7 +91,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/a.png" alt=""></a>
+                        <a href="getIndex"><img src="img/a.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -96,6 +99,7 @@
                         <ul>
                             <li ><a href="getIndex">Trang Chủ</a></li>
                             <li ><a href="getAllProduct">Gian Hàng</a></li>
+
                             <li><a href="./blog.html">Giới Thiệu</a></li>
                             <li><a href="./contact.html">Liên Hệ</a></li>
                         </ul>
@@ -118,7 +122,7 @@
     </header>
     <!-- Header Section End -->
 
-
+    
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/ad.jpg">
         <div class="container">
@@ -127,7 +131,7 @@
                     <div class="breadcrumb__text">
                         <h2>SBE Shop</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Trang chủ</a>
+                            <a href="getIndex">Trang chủ</a>
                             <span>User</span>
                         </div>
                     </div>
@@ -136,137 +140,145 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-    <section class="product spad">
+    <section class="product spad"> 
         <div class="userr">
             <div class="container">
                 <div class="row">
 
+             
+        <div class="align-self-start">
+            <div class="sidebar">
+                <div class="sidebar__item">
+                    <ul>
+                        <li ><a href="getUserInfor"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                        <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                        <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
+                        <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
-                    <div class="align-self-start">
-                        <div class="sidebar">
-                            <div class="sidebar__item">
-                                <ul>
-                                    <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                                    <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
-                                    <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
-                                    <li><a href="DoiMatKhau.jsp"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
-
-                                    <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
-                                </ul>
-                            </div>
+                            <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         
+        <div class="col-lg-10 col-md-5" style="height: 340px;">
+            <div class="wrapper">
+                <div class="left">
+                    <img src="<%=userID.getAvatar()%>" alt="user" width="100">
+                    <h4><%=user.getUserName()%>%></h4>
+                    <p></p>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
+                        <div class="info_data"> <div class="data">
+                            <h4> Tên </h4>
+                            <p><%=user.getName()%></p>
+                          </div>
+                             <div class="data">
+                                 <h4>Địa CHỉ</h4>
+                                 <p><%=userID.getProvine()%></p>
+                             </div>
+                            
+                        </div> 
+                        <div class="projects_data">
+                            <div class="data">
+                                <h4>Email</h4>
+                                <p><%=userID.getEmail()%></p>
+                             </div>
+                             <div class="data">
+                                 <h4>Phone</h4>
+                                 <p><%=userID.getPhoneNumber()%></p>
+                          </div>
+                             
                         </div>
+                        <div class="projects_data">
+                            <div class="data">
+                                <h4>Số Đơn Đã Ủng Hộ</h4>
+                                <p>25</p>
+                             </div>
+                             <div class="data">
+                               <h4>Trạng thoái</h4>
+                                <p>Hoạt động</p>
+                          </div>
+                             
+                        </div>
+                  
                     </div>
-
-                    <div class="col-lg-10 col-md-5" style="height: 340px;">
-                        <!-- Thong tin -->
-                        <!-- Thong tin -->
-                        <!-- Thong tin -->
-                        <%
-                            User userID = (User) request.getAttribute("userID");
-                        %>
-                        <div class="wrapper">
-                            <div class="left">
-                                <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-                                <h4><%=userID.getUserName()%></h4>
-                                <p></p>
-                            </div>
-                            <div class="right">
-                                <div class="info">
-
-                                    <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
-
-                                    <div class="info_data"> <div class="data">
-                                        <h4> Tên </h4>
-                                        <p><%=user.getName()%></p>
-                                    </div>
-                                        <div class="data">
-                                            <h4>Địa CHỉ</h4>
-                                            <p><%=userID.getProvine()%></p>
-                                        </div>
-                                    </div>
-                                    <div class="projects_data">
-                                        <div class="data">
-                                            <h4>Email</h4>
-                                            <p><%=userID.getEmail()%></p>
-                                        </div>
-                                        <div class="data">
-                                            <h4>Phone</h4>
-                                            <p><%=userID.getPhoneNumber()%></p>
-                                        </div>
-                                    </div>
-                                    <div class="projects_data">
-                                        <div class="data">
-                                            <h4>Số Đơn Đã Ủng Hộ</h4>
-                                            <p>25</p>
-                                        </div>
-                                        <div class="data">
-                                            <h4>Trạng thoái</h4>
-                                            <p><%=userID.getStatus()%>></p>
-                                        </div>
-
-
-                                    </div>
-
+            </div>
+            
+        </div>
+       
+             
+           
+    </div>
+    <div class="userr" style="width: 100%;margin-left: 0px; ">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="container">
+            <div class="view-account">
+                <section class="module">
+                    <div class="module-inner">
+                     
+                        <div class="content-panel">
+                            <h2 class="title">CHỉnh sửa</h2>
+                            <form  class="form-horizontal" action="UploadDownloadFileServlet" enctype="multipart/form-data" method="post">
+                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                    <input type="file" id="img" name="fileName" class="file-uploader pull-left" >
+                                    <input type="submit" value="Upload" class="btn btn-sm btn-default-alt pull-left" style="margin-top: 0px; margin-left: 5px;" >
                                 </div>
-                            </div>
+                            </form>
+                            <form  class="form-horizontal" action="ServletUpdateIF" >
+                                <fieldset class="fieldset">
 
+                                    <div class="form-group avatar">
+
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Tên</label>
+                                        <div class="col-md-10 col-sm-9 col-xs-12">
+                                            <input type="text" name="hoten" class="form-control" value="<%=user.getName()%>">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset">
+                                    <h3 class="fieldset-title">Thông tin liên lạc</h3>
+                                    <div class="form-group">
+                                        <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
+                                        <div class="col-md-10 col-sm-9 col-xs-12">
+                                            <input type="email" name="email"class="form-control" value="<%=userID.getEmail()%>">
+                                    
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
+                                        <div class="col-md-10 col-sm-9 col-xs-12">
+                                            <input type="text"name="sdt"  class="form-control" value="<%=userID.getPhoneNumber()%>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2  col-sm-3 col-xs-12 control-label">Địa chỉ</label>
+                                        <div class="col-md-10 col-sm-9 col-xs-12">
+                                            <input type="text" name="diachi"class="form-control" value="<%=userID.getProvine()%>">
+                                       
+                                        </div>
+                                    </div>
+                                    
+                                </fieldset>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                                        <input class="btn btn-primary"  name="action" type="submit" style="margin-top:5px;" value="SecondServlet">
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-
-                        <!--  End -->
-
-
                     </div>
-
-
-
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-10 col-md-5" id="useri5">
-            <div>
-                <div class="TaiKhoan">
-                    <table class="cd-table order-table table">
-                        <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Mã Voucher</th>
-                            <th>Tên Voucher</th>
-                            <th>Loại Voucher</th>
-                            <th>Giảm</th>
-                            <th>Thời hạn</th>
-
-                            <th>Hành Động</th>
-                        </tr>
-                        </thead>
-
-                        <%
-                            ArrayList<Voucher> list = (ArrayList<Voucher>) request.getAttribute("allvoucher");
-                            for (Voucher item: list) {
-                        %>
-                        <tbody>
-                        <tr>
-                            <td><%=item.getIdVoucher()%></td>
-                            <td><%=item.getVoucherName()%></td>
-                            <td><%=item.getVoucherCode()%></td>
-                            <td><%=item.getType()%></td>
-                            <td><%=item.getDisCount()%></td>
-                            <td><%=item.getIsOutDate()%></td>
-                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
-                                <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
-                        </tr>
-                        <%}%>
-                        </tbody>
-                    </table>
-                    <div class="product__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
+      </div>
      
     </div>
 </div>

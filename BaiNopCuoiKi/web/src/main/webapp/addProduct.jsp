@@ -73,7 +73,21 @@
               <div>Việt Nam </div>
             </div>
             <div class="header__top__right__auth">
-              <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+              <%
+                String a = (String) session.getAttribute("login");
+                User user = (User) session.getAttribute("auth");
+              %>
+              <%
+                if (a == null) {
+              %>
+              <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+              <% }else{%>
+              <div   class="fa" role="alert">
+
+                <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+              </div>
+              <%}%>
             </div>
           </div>
         </div>
@@ -90,8 +104,8 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <li ><a href="./index.html">Trang Chủ</a></li>
-            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+            <li class="active"><a href="getIndex">Trang Chủ</a></li>
+            <li><a href="getAllProduct">Gian Hàng</a></li>
 
             <li><a href="./blog.html">Giới Thiệu</a></li>
             <li><a href="./contact.html">Liên Hệ</a></li>
@@ -101,8 +115,16 @@
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <%
+              if (user.getRole()>=1) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+            <% }else{
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}%>
+            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
@@ -147,12 +169,12 @@
           <div class="sidebar__item">
             <h4>Quản Lý</h4>
             <ul>
-              <li><a href="DoanhThu.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
-              <li><a href="SanPham.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-              <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
-              <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-              <li><a href="Truysuatdonhang.html"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="TangVoucher.html"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+              <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
+              <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
+              <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
+              <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+              <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
@@ -160,91 +182,103 @@
       <div class="col-lg-10 col-md-5">
         <%
           ArrayList<TypeProducts> listType = (ArrayList<TypeProducts>) request.getAttribute("alltype");
+          String a = (String) request.getAttribute("1");
         %>
 
         <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
+        <%
+        if(a==null){ }else {%>
+        <h2>Cập nhật thành công</h2>
+        <%}%>
 
-        <form action="/web_war/AddNewProduct" class="" onSubmit="">
+
+        <form action="/web_war/ServletAddProduct"  onSubmit="">
+
           <div class='add-input'>
             Tên món ăn <span>*</span>
-            <input type='text' name='tenmonan' placeholder="Tên món ăn"value=" ">
+            <input type='text' name='tenmonan' placeholder="Tên món ăn" required>
+          </div>
+
+          <div class='add-input'>
+            Size:<span>*</span>
+            <select name="optionSize" >
+              <option value="SIZE1"> SIZE1 </option>
+              <option value="SIZE2"> SIZE2 </option>
+            </select>
           </div>
           <div class='add-input'>
             Giá niêm yết
-            <input type='text' name='niemyet' placeholder="Giá niêm yết"value=" ">
+            <input type='text' name='niemyet' placeholder="Giá niêm yết" required>
           </div>
           <div class='add-input'>
             Giá bán<span>*</span>
-            <input type='text' name='giaban' placeholder="Giá bán"value=" ">
-          </div>
-          <div class='add-input'>
-            Số lượng<span>*</span>
-            <input type='text' name='soluong' placeholder="Số lượng"value=" ">
-          </div>
-          <div class='add-input'>
-            Mô tả<span>*</span>
-            <input type='text' name='Mota' placeholder="Mô tả"value=" ">
+            <input type='text' name='giaban' placeholder="Giá bán" required>
           </div>
 
-          <div class='add-input'>
-            Món ăn hot:<span>*</span>
-            <select name="optionType" >
-              <option value="HOT"> HOT </option>
-              <option value="NORMAL"> NORMAL </option>
-            </select>
-          </div>
 
           <div class='add-input'>
             Loại món ăn: <span>*</span>
 
             <form action="" class="typeAdd">
-              <select name="optionType" >
-              <%
-                for ( TypeProducts t : listType
-                     ) {
-              %>
+              <select name="optionType"  >
+                <%
+                  for ( TypeProducts t : listType
+                  ) {
+                %>
                 <option value="<%=t.getNameType()%>"> <%=t.getNameType()%>  </option>
                 <%}%>
               </select>
 
           </div>
 
+
+          <div class='add-input'>
+            Số lượng<span>*</span>
+            <input type='text' name='soluong' placeholder="Số lượng" required>
+          </div>
+
+          <div class='add-input'>
+            Trạng thái: <span>*</span>
+            <input type='text' name='optionStatus' placeholder=" TRẠNG THÁI" required>
+          </div>
+
           <div class='add-input'>
             Món ăn Combo:<span>*</span>
-            <select name="optionType" >
+            <select name="optionCombo" >
               <option value="0"> KHÔNG </option>
               <option value="1"> COMBO </option>
             </select>
           </div>
-
           <div class='add-input'>
-              Món ăn Sale:<span>*</span>
-            <select name="optionType" >
+            Món ăn Sale:<span>*</span>
+            <select name="optionSale" >
               <option value="SALE1"> SALE </option>
               <option value="SALE2"> KHÔNG SALE </option>
             </select>
-            </div>
+          </div>
 
           <div class='add-input'>
-            Size:<span>*</span>
-            <select name="optionType" >
-              <option value="SIZE1"> SIZE1 </option>
-              <option value="SIZE2"> SIZE2 </option>
+            Món ăn hot:<span>*</span>
+            <select name="optionHot" >
+              <option value="HOT"> HOT </option>
+              <option value="NORMAL"> NORMAL </option>
             </select>
           </div>
 
-            <div class='add-input'>
-              Trạng thái: <span>*</span>
-              <input type='text' name='optionStatus' placeholder=" "value=" ">
-            </div>
+          <div class='add-input'>
+            Mô tả<span>*</span>
+            <input type='text' name='Mota' placeholder="Mô tả" required>
+          </div>
+
           <div class='add-input'>
            Hình ảnh:<span>*</span>
-            <input type="file" id="myfile" name="myfile"><br><br>
+            <input type="file" id="myfile" name="myfile" required><br><br>
           </div>
       </div>
       <input class="btn" type="submit" value="Submit">
 
         </form>
+
   </div>
     </div>
 </section>

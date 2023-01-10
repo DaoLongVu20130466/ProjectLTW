@@ -36,7 +36,6 @@ public class Products {
         this.LISTED_PRICE = LISTED_PRICE;
         this.basePrice = basePrice;
     }
-
     public Products(String ID_food ,String path, String foodName, int LISTED_PRICE){
         this.ID_food = ID_food;
         this.path = path;
@@ -44,6 +43,7 @@ public class Products {
         this.LISTED_PRICE = LISTED_PRICE;
 
     }
+
 
 
     public Products(String ID_food, String foodName,int basePrice , int LISTED_PRICE, String path, String type) {

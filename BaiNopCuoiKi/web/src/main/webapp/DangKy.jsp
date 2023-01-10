@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/stylle.css" type="text/css">
     <link rel="stylesheet" href="css/admincss.css">
     <style> .container-form {background-image: url(./img/1.png);}</style>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
@@ -110,7 +111,7 @@
          <div class="form_lg">
         <p1>Đăng ký</p1>
 
-        <form action="registry" class="main-form" onSubmit="return checkPw(this)">
+        <form action="registry" class="main-form" id ="main-formm"onSubmit="return checkPw(this)">
 
             <%
                 String error = (String) request.getAttribute("error");
@@ -127,23 +128,23 @@
             %>
             <div class='login-input'>
                 Tài khoản:
-                <input type='text' name='username' placeholder="Sđt hoặc Tên người dùng "value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>">
+                <input type='text' name='username' placeholder="Sđt hoặc Tên người dùng "value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>" required>
             </div>
             <div class='login-input'>
                 Mật khẩu:
-                <input type='password' name='password' placeholder="Mật khẩu">
+                <input type='password' name='password' placeholder="Mật khẩu" required>
             </div>
             <div class='login-input'>
                 Nhập lại mật khẩu:
-                <input type='password' name='passwordag' placeholder="Mật khẩu">
+                <input type='password' name='passwordag' placeholder="Mật khẩu" required>
             </div>
             <div class='login-input'>
                 Email:
-                <input type='email' name='email' placeholder="Email của bạn"value="<%= request.getParameter("email")!=null?request.getParameter("email"):"" %>">
+                <input type='email' name='email' placeholder="Email của bạn"value="<%= request.getParameter("email")!=null?request.getParameter("email"):"" %>" required>
             </div>
             <div class='login-input'>
                 SDT:
-                <input type='text' name='phone' placeholder="SDT của bạn"value="<%= request.getParameter("phone")!=null?request.getParameter("phone"):"" %>">
+                <input type='text' name='phone' placeholder="SDT của bạn"value="<%= request.getParameter("phone")!=null?request.getParameter("phone"):"" %>" required>
             </div>
             <div class='login-input'>
                 Địa chỉ:

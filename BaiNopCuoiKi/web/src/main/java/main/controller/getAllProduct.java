@@ -10,29 +10,30 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getPageAD", value = "/getPageAD")
-public class ServletGetPageAd extends HttpServlet {
+@WebServlet(name = "getAllProduct", value = "/getAllProduct")
+public class getAllProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");
-        int page2;
+        int page2  ;
         if(page == null ){
             page2 = 1;
         } else {
             page2 = Integer.parseInt(page);
         }
+        ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
+        int numberP = products.size()/12 +1 ;
+
         ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
+        ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
         ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
 
-        ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
-        ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
-
-        request.setAttribute("allproducts2", products);
-        request.setAttribute("allproducts", proPage);
+        request.setAttribute("allproducts",proPage);
+        request.setAttribute("numberP",numberP);
         request.setAttribute("alltype", typePro);
-        request.setAttribute("page",page2);
         request.setAttribute("productBySale", producBySale);
-        request.getRequestDispatcher("SanPham.jsp").forward(request, response);
+
+        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
     }
 
     @Override

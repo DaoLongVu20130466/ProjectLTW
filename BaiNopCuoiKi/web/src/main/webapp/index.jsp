@@ -107,14 +107,19 @@
                 <div class="header__cart">
                     <ul>
                         <%
-                            if (a == null) {
+                            if( user == null) {
+                                %>
+                        <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                        <%}else if (user.getRole()>=1) {
                         %>
-                        <li> <a href=""> <i class="fa fa-user"></i> </a></li>
-                        <% }else{%>
+                        <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                        <li> <a href="getPageAD"> <i class="fas fa-user-edit"></i> </a></li>
+                        <% }else{
+                        %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
 
-                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -150,8 +155,8 @@
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
-                            <input type="text" placeholder="Bạn Muốn Ăn Gì ?">
+                        <form action="SearchControl">
+                            <input type="text" placeholder="Bạn Muốn Ăn Gì ?" name="txt">
                             <button type="submit" class="site-btn">TÌM</button>
                         </form>
                     </div>

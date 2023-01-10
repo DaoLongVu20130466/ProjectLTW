@@ -135,8 +135,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li ><a href="./index.html">Trang Chủ</a></li>
-                            <li class="active"><a href="./shop-grid.html">Gian Hàng</a></li>
+                            <li class="active"><a href="getIndex">Trang Chủ</a></li>
+                            <li><a href="getAllProduct">Gian Hàng</a></li>
                             <li><a href="./blog.html">Giới Thiệu</a></li>
                             <li><a href="./contact.html">Liên Hệ</a></li>
                         </ul>
@@ -145,7 +145,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
+                            <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
                             <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price"></div>
@@ -168,19 +168,7 @@
                             <i class="fa fa-bars"></i>
                             <span>Danh Mục</span>
                         </div>
-                        <ul>
-                            <li><a href="#">Cơm Sườn</a></li>
-                            <li><a href="#">Cơm Ba rọi</a></li>
-                            <li><a href="#">Cơm chiên</a></li>
-                            <li><a href="#">Cơm hải sản</a></li>
-                            <li><a href="#">Cơm bò</a></li>
-                            <li><a href="#">Cơm Gà</a></li>
-                            <li><a href="#">Các món cơm khác</a></li>
-                            <li><a href="#">Các món Bún, Phở</a></li>
-                            <li><a href="#">Thức uống</a></li>
-                            <li><a href="#">Món canh</a></li>
-             
-                        </ul>
+
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -267,18 +255,18 @@
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
-                                            <div class="pro-qty">
 
-                                                <input type="text" value="">
 
-                                            </div>
+                                                <span>
+                                                     <%=p.getQuantity()%>
+                                                </span>
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
                                         <%=AppService.intToVND(p.getLISTED_PRICE() * p.getQuantity())%>
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <a href="removeInCart?id=<%=p.getID_food()%>"><span  class="icon_close"></span></a>
                                     </td>
                                 </tr>
 
