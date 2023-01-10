@@ -212,7 +212,7 @@
       <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="footer__about">
           <div class="footer__about__logo">
-            <a href="./index.html"><img src="img/a.png" alt=""></a>
+            <a href="getIndex"><img src="img/a.png" alt=""></a>
           </div>
           <ul>
             <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>

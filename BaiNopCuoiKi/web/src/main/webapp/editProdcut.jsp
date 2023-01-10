@@ -100,7 +100,7 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="header__logo">
-          <a href="./index.html"><img src="img/a.png" alt=""></a>
+          <a href="getIndex"><img src="img/a.png" alt=""></a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -195,12 +195,18 @@
         <%}%>
 
 
-        <form action="/web_war/updateEditProduct?id=<%=pro.getID_food()%>"  onSubmit="">
+        <form action="/web_war/updateEditProduct"  onSubmit="">
+
+          <div class='add-input' style="display: none">
+            ID món ăn
+            <input type='text' name='idmonan' placeholder="ID món ăn" value="<%=pro.getID_food()%>" >
+          </div>
 
           <div class='add-input'>
             Tên món ăn <span>*</span>
             <input type='text' name='tenmonan' placeholder="Tên món ăn" value="<%=pro.getFoodName()%>" required>
           </div>
+
 
           <div class='add-input'>
             Size:<span>*</span>
@@ -277,6 +283,7 @@
             Hình ảnh:<span>*</span>
             <input type='text' name='myfile' placeholder="Mô tả" value="<%=pro.getPath()%>"required>
           </div>
+
       </div>
       <input class="btn" type="submit" value="Submit">
 
