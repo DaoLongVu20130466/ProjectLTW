@@ -129,14 +129,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/a.png" alt=""></a>
+                        <a href="getIndex"><img src="img/a.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="getIndex">Trang Chủ</a></li>
-                            <li><a href="getAllProduct">Gian Hàng</a></li>
+                            <li ><a href="getIndex">Trang Chủ</a></li>
+                            <li class="active"><a href="getAllProduct">Gian Hàng</a></li>
                             <li><a href="./blog.html">Giới Thiệu</a></li>
                             <li><a href="./contact.html">Liên Hệ</a></li>
                         </ul>
@@ -298,6 +298,9 @@
                                         }
 
                                     %>
+                            <%
+
+                            %>
 
 
 
@@ -362,10 +365,10 @@
                     <div class="footer__widget">
                         <h6>Liên kết hữu ích</h6>
                         <ul>
-                            <li ><a href="./index.html">Trang Chủ</a></li>
-                            <li><a href="./shop-grid.html">Gian Hàng</a></li>
-                            <li><a href="./blog.html">Giới Thiệu</a></li>
-                            <li><a href="./contact.html">Liên Hệ</a></li>
+                            <li ><a href="getIndex">Trang Chủ</a></li>
+                            <li ><a href="getAllProduct">Gian Hàng</a></li>
+                            <li><a href="blog.jsp">Giới Thiệu</a></li>
+                            <li><a href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </div>
                 </div>

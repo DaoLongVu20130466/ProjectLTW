@@ -93,9 +93,9 @@
                          
                             <li><a href="#">Bạn cần giúp đỡ gì?</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="https://www.facebook.com/thoaihuu291">Về việc đăng nhập</a></li>
-                                    <li><a href="https://www.facebook.com/thoaihuu291">Về việc đăng ký</a></li>
-                                    <li><a href="https://www.facebook.com/thoaihuu291">Về việc quên mật khẩu</a></li>
+                                    <li><a href="">Về việc đăng nhập</a></li>
+                                    <li><a href="">Về việc đăng ký</a></li>
+                                    <li><a href="">Về việc quên mật khẩu</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">Liên hệ</a></li>
@@ -145,7 +145,6 @@
             </div>
             Nếu chưa có tài khoản hay ấn vào đây: <a href="DangKy.jsp">Đăng ký</a>
         </div>
-               
     
         </form>
         </div>

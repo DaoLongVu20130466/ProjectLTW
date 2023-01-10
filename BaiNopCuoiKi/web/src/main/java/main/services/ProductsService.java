@@ -469,20 +469,17 @@ public class ProductsService {
         }
         return allProductSearch;
     }
-    public void addFavoutrite(String id, String idacc){
+    public void addFavourite(String idf, String idacc) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO FAVOURITE(ID_FOOD,ID_ACCOUNT) " +
-                    "VALUES (?,?)"
-
-            );
-            ps.setString(1,id);
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO favourite(ID_FOOD,ID_ACCOUNT) VALUES " +
+                    "(?,?)");
+            ps.setString(1,idf);
             ps.setString(2,idacc);
-            ResultSet rs = ps.executeQuery();
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            ps.executeUpdate();
+        }catch (Exception e){
+
         }
     }
 
@@ -508,4 +505,6 @@ public class ProductsService {
 //            a.addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
            System.out.println(a.getAllproductSearch("Cơm gà"));
     }
+
+
 }

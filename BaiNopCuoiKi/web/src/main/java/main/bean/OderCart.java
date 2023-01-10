@@ -1,9 +1,10 @@
 package main.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class OderCart {
+public class OderCart implements Serializable {
    Products Item;
    int value;
 

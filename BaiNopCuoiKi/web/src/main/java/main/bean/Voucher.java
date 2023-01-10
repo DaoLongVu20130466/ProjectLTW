@@ -3,13 +3,14 @@ package main.bean;
 
 import main.services.AppService;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class Voucher {
+public class Voucher implements Serializable {
     String idVoucher;
     String voucherName;
     String voucherCode;
@@ -127,7 +128,6 @@ public class Voucher {
     public String getIsOutDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date now = new Date();
-        dateFormat.format(now);
         LocalDate date1 = LocalDate.parse(dayStart.toString());
         LocalDate date2 = LocalDate.parse(dayEnd.toString());
         LocalDate nowd = LocalDate.parse(dateFormat.format(now));

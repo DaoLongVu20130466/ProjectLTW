@@ -143,12 +143,12 @@
           <div class="sidebar__item">
             <h4>Quản Lý</h4>
             <ul>
-              <li><a href="DoanhThu.jsp"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
-              <li><a href="SanPham.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-              <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
-              <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-              <li><a href="Truysuatdonhang.jsp"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="TangVoucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+                <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
+                <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
+                <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
+                <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+                <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
@@ -184,7 +184,7 @@
                 <td><%=item.getType()%></td>
                 <td><%=item.getDisCount()%></td>
                 <td><%=item.getIsOutDate()%></td>
-                <td>
+                <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
                   <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
               </tr>
               <%}%>

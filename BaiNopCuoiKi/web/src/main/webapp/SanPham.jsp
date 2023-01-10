@@ -145,12 +145,12 @@
           <div class="sidebar__item">
             <h4>Quản Lý</h4>
             <ul>
-              <li><a href="DoanhThu.jsp"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
-              <li><a href="SanPham.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-              <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
-              <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-              <li><a href="Truysuatdonhang.html"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="TangVoucher.html"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+              <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
+              <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
+              <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
+              <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+              <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
@@ -169,7 +169,7 @@
               <th>Giá Món Ăn (VND)</th>
               <th>ID Món Ăn</th>
               <th>Loại Món Ăn</th>
-              <th>Trạng Thái</th>
+
               <th>Hành Động</th>
             </tr>
             </thead>
@@ -184,10 +184,9 @@
               <td><%=p.getLISTED_PRICE()%></td>
               <td><%=p.getID_food()%></td>
               <td><%=p.getType()%></td>
-              <td><a href=""><i class="fa fa-eye" aria-hidden="true"></i>Hiển thị</a><br>
-                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Ẩn</a></td>
+
               <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
-                <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                <a href="deleteF?fid=<%=p.getID_food()%>&size=<%=p.getSize()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
                 <a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
             </tr>
               <%}%>

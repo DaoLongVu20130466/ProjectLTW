@@ -1,11 +1,8 @@
-<%@ page import="main.bean.User" %>
-<%@ page import="main.bean.Products" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.Order" %><%--
+<%@ page import="main.bean.User" %><%--
   Created by IntelliJ IDEA.
   User: thoai
-  Date: 7/01/2023
-  Time: 12:47 am
+  Date: 10/01/2023
+  Time: 8:21 pm
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -19,11 +16,13 @@
   <meta name="keywords" content="Ogani, unica, creative, html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SBE-Cơm Trưa</title>
+  <title>Ogani | Template</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+  <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
   <!-- Css Styles -->
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -33,13 +32,13 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/index.css"type="text/css">
-  <link rel="stylesheet" href="css/User.css"type="text/css">
-
 </head>
 
 <body>
-
+<!-- Page Preloder -->
+<div id="preloder">
+  <div class="loader"></div>
+</div>
 
 <!-- Header Section Begin -->
 <header class="header">
@@ -66,26 +65,21 @@
               <img src="img/language.png" alt="">
               <div>Việt Nam </div>
             </div>
-            <div class="header__top__right__auth">
-              <%
-                String a = (String) session.getAttribute("login");
-                User user = (User) session.getAttribute("auth");
-                ArrayList<Order> list = (ArrayList<Order>) session.getAttribute("alloder");
-              %>
-              <%
-                if (a == null) {
-              %>
-              <a href="DangNhap.jsp"><i class="fa fa-user"></i> Đăng Nhập</a>
-              <%
-              }else{
-              %>
-              <div class="fa fa-user" role="alert">
-                <%= a+user.getName() %>
-              </div>
-              <%
-                }
-              %>
+            <%
+              String a = (String) session.getAttribute("login");
+              User user = (User) session.getAttribute("auth");
+            %>
+            <%
+              if (a == null) {
+            %>
+            <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+            <% }else{%>
+            <div   class="fa" role="alert">
+
+              <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
             </div>
+            <%}%>
           </div>
         </div>
       </div>
@@ -95,23 +89,35 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="header__logo">
-          <a href="./index.html"><img src="img/a.png" alt=""></a>
+          <a href="getIndex"><img src="img/a.png" alt=""></a>
         </div>
       </div>
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
             <li ><a href="getIndex">Trang Chủ</a></li>
-            <li ><a href="getAllProduct">Gian Hàng</a></li>
-            <li><a href="./blog.html">Giới Thiệu</a></li>
-            <li><a href="./contact.html">Liên Hệ</a></li>
+            <li><a href="getAllProduct">Gian Hàng</a></li>
+            <li class="active"><a href="blog.jsp">Giới Thiệu</a></li>
+            <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </nav>
       </div>
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
+            <%
+              if( user == null) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}else if (user.getRole()>=1) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <li> <a href="getPageAD"> <i class="fas fa-user-edit"></i> </a></li>
+            <% }else{
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}%>
+
             <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
@@ -125,6 +131,8 @@
 </header>
 <!-- Header Section End -->
 
+<!-- Hero Section Begin -->
+<!-- Hero Section End -->
 
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-section set-bg" data-setbg="img/ad.jpg">
@@ -132,10 +140,10 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <div class="breadcrumb__text">
-          <h2>SBE Shop</h2>
+          <h2>Giới Thiệu</h2>
           <div class="breadcrumb__option">
-            <a href="./index.html">Trang chủ</a>
-            <span>User</span>
+            <a href="getIndex">Trang Chủ</a>
+            <span>Giới Thiệu</span>
           </div>
         </div>
       </div>
@@ -143,94 +151,60 @@
   </div>
 </section>
 <!-- Breadcrumb Section End -->
-<section class="product spad">
-  <div class="userr">
-    <div class="container">
-      <div class="row">
 
-
-        <div class="align-self-start">
-          <div class="sidebar">
-            <div class="sidebar__item">
-              <ul>
-                <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
-                <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
-                <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
-
-                <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
-              </ul>
-            </div>
-          </div>
+<!-- Blog Section Begin -->
+<section class="blog spad">
+  <div class="container">
+    <div class="row">
+      <div id="welcome" class="container">
+        <div class="title">
+          <h2>Xin Chào Đến SBE SHOP</h2>
         </div>
-
-        <div class="col-lg-10 col-md-5" style="height: 340px;">
-          <!-- Thong tin -->
-          <!-- Thong tin -->
-          <!-- Thong tin -->
+        <p>Đây Là <strong>SBE Shop</strong>
+          Chúng tôi cung cấp thực phẩm buổi trưa, Giúp bạn luôn tràn đầy năng lượng và sức khỏe để tiêps tục công việc hằng ngày của mình
+        </p>
+      </div>
+      <div id="three-column" class="container">
+        <div><span class="arrow-down"></span></div>
+        <div id="tbox1">
+          <div class="title">
+            <h2>Đồ ăn sạch</h2>
+          </div>
+          <p>Ở đây, chúng tôi nói không với thực phẩm bẩn, không rõ nguồn gốc, tất cả đồ ăn bán ở đây luôn được tuyển chọn và đảm bảo quy trin
+            vệ sinh an toàn thực phẩm, đảm bảo xuất ăn tốt nhất dành cho bạn, mọi đồ ăn đều sạch</p>
+          <a href="getAllProduct" class="button">Ăn Ngay</a> </div>
+        <div id="tbox2">
+          <div class="title">
+            <h2>Giao Hàng Nhanh</h2>
+          </div>
+          <p>Tất cả đơn hàng của baạn sẽ được sử lý một cách nhanh nhất, đảm bảo xuất ăn của bạn sẽ đến kịp lúc, chúng tôi luôn đề cao sự tiện dụng và trải nghiệm của kha hàng, niềm vui của bạn là vinh hạnh với chúng tôi</p>
+          <a href="showCart" class="button"> Đặt Ngay</a> </div>
+        <div id="tbox3">
+          <div class="title">
+            <h2>Đồ Ăn Rẻ</h2>
+          </div>
+          <p>Chúng tôi luôn muốn đem đến cho bạn xuất ăn ngon nhất với giá phải chăng nhất, đảm bảo xuất ăn luôn ngon và rẻ, cho nên chúng tôi thường xuyên tặng voucher cho những khách hàng đăng kí tài khoản</p>
           <%
-            User userID = (User) session.getAttribute("userID");
+            if( user == null) {
           %>
-          <div class="wrapper">
-            <div class="left">
-              <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-              <h4><%=user.getUserName()%></h4>
-              <p></p>
-            </div>
-            <div class="right">
-              <div class="info">
-
-                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
-
-                <div class="info_data"> <div class="data">
-                  <h4> Tên </h4>
-                  <p><%=user.getName()%></p>
-                </div>
-                  <div class="data">
-                    <h4>Địa CHỉ</h4>
-                    <p><%=userID.getProvine()%></p>
-                  </div>
-                </div>
-                <div class="projects_data">
-                  <div class="data">
-                    <h4>Email</h4>
-                    <p><%=userID.getEmail()%></p>
-                  </div>
-                  <div class="data">
-                    <h4>Phone</h4>
-                    <p><%=userID.getPhoneNumber()%></p>
-                  </div>
-                </div>
-                <div class="projects_data">
-                  <div class="data">
-                    <h4>Số Đơn Đã Ủng Hộ</h4>
-                    <p><%=list.size()%></p>
-                  </div>
-                  <div class="data">
-                    <h4>Trạng thoái</h4>
-                    <p><%=userID.getStatus()%>></p>
-                  </div>
-
-
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-          <!--  End -->
-
+          <a href="DangNhap.jsp" class="button">Đăng Kí Ngay</a>
+          <%}else if (user.getRole()>=1) {
+          %>
+         <a href="GetVoucherUser" class="button">Đăng Kí Ngay</a>
+          <% }else{
+          %>
+        <a href="GetVoucherUser" class="button">Đăng Kí Ngay</a>
+          <%}%>
 
         </div>
-
-
+      </div>
 
     </div>
   </div>
-
   </div>
 </section>
+<!-- Blog Section End -->
+
 <!-- Footer Section Begin -->
 <footer class="footer spad">
   <div class="container">
@@ -251,10 +225,10 @@
         <div class="footer__widget">
           <h6>Liên kết hữu ích</h6>
           <ul>
-            <li ><a href="./index.html">Trang Chủ</a></li>
-            <li><a href="./shop-grid.html">Gian Hàng</a></li>
-            <li><a href="./blog.html">Giới Thiệu</a></li>
-            <li><a href="./contact.html">Liên Hệ</a></li>
+            <li ><a href="getIndex">Trang Chủ</a></li>
+            <li><a href="getAllProduct">Gian Hàng</a></li>
+            <li><a href="blog.jsp">Giới Thiệu</a></li>
+            <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </div>
       </div>

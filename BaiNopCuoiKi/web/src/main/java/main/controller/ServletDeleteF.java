@@ -7,16 +7,15 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ServletDeletaFavourite", value = "/deletaFavourite")
-public class ServletDeletaFavourite extends HttpServlet {
+@WebServlet(name = "ServletDeleteF", value = "/deleteF")
+public class ServletDeleteF extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String idf = request.getParameter("fid");
+        String size = request.getParameter("size");
 
-        String id = request.getParameter("idacc");
-        String idf = request.getParameter("idf");
-
-        useService.getInstance().deletaFavourite(idf,id);
-        response.sendRedirect("/getAllFavourite");
+        useService.getInstance().deletaFood(idf,size);
+        response.sendRedirect("getAllProductByAdmin");
 
     }
 

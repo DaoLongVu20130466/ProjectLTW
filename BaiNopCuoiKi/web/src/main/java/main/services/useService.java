@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class useService {
-    private static useService instance;
-    private useService() {
+    public static useService instance;
+    public useService() {
 
     }
     private List<User> alluser ;
@@ -407,11 +407,51 @@ public class useService {
 
 
     }
+    public void deletaFood(String idf, String size) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM FOOD " +
+                    "WHERE ID_FOOD = ? AND ID_SIZE =?");
+            ps.setString(1,idf);
+            ps.setString(2,size);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
+
+    public User getUserById(String Uid) {
+        User user = new User();
+        {
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+                PreparedStatement a = conn.prepareStatement(
+                        "SELECT account.ID_ACCOUNT, PHONE_NUMBER , USER_NAMES ,ID_ADDRESS FROM  account JOIN user_information ON account.ID_USER = user_information.ID_USER WHERE ID_ACCOUNT = ?");
+                a.setString(1,Uid);
+                ResultSet rs = a.executeQuery();
+                while (rs.next()) {
+                    user.setIdacc(rs.getString(1));
+                    user.setPhoneNumber(rs.getString(2));
+                    user.setName(rs.getString(3));
+                    user.setIDadress(rs.getString(4));
+                }
+                conn.close();
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+
+        }
+        return user;
+    }
 
     public static void main(String[] args) {
         useService u = new useService();
         System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
     }
+
 
 }
 

@@ -71,7 +71,7 @@
                                 User user = (User) session.getAttribute("auth");
                                 User userID = (User) session.getAttribute("userID");
                                 ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
-                                String tag2 = (String) request.getAttribute("tag2");
+
 
                             %>
                             <%
@@ -105,8 +105,8 @@
                     <ul>
                         <li ><a href="getIndex">Trang Chủ</a></li>
                         <li ><a href="getAllProduct">Gian Hàng</a></li>
-                        <li><a href="./blog.html">Giới Thiệu</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li><a href="blog.jsp">Giới Thiệu</a></li>
+                        <li><a href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>
