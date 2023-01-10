@@ -23,6 +23,7 @@ public class ServletGetUserOder extends HttpServlet {
         Order order = OderService.getInstance().getInforOderByUser(idOder,usernow.getIdacc());
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("ChiTietDonHangUser.jsp").forward(request,response) ;
+        System.out.println(usernow.getIdacc());
     }
 
     @Override
