@@ -69,7 +69,7 @@
                             <%
                                 String a = (String) session.getAttribute("login");
                                 User user = (User) session.getAttribute("auth");
-                                User userID = (User) request.getAttribute("userID");
+                                User userID = (User) session.getAttribute("userID");
                                 ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
                                 String tag2 = (String) request.getAttribute("tag2");
 
@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -136,7 +136,7 @@
                 <div class="breadcrumb__text">
                     <h2>SBE Shop</h2>
                     <div class="breadcrumb__option">
-                        <a href="./index.html">Trang chủ</a>
+                        <a href="getIndex">Trang chủ</a>
                         <span>User</span>
                     </div>
                 </div>
@@ -173,17 +173,17 @@
                     <div class="wrapper">
                         <div class="left">
                             <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-                            <h4><%=userID.getUserName()%></h4>
+                            <h4><%=user.getUserName()%>%></h4>
                             <p></p>
                         </div>
                         <div class="right">
                             <div class="info">
 
-                                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.html" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
+                                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
 
                                 <div class="info_data"> <div class="data">
-                                    <h4> Ngày sinh</h4>
-                                    <p> 24/12/2002</p>
+                                    <h4> Tên </h4>
+                                    <p><%=user.getName()%></p>
                                 </div>
                                     <div class="data">
                                         <h4>Địa CHỉ</h4>
@@ -202,8 +202,9 @@
                                 </div>
                                 <div class="projects_data">
                                     <div class="data">
+
                                         <h4>Số Đơn Đã Ủng Hộ</h4>
-                                        <p>25</p>
+                                        <p><%=0%></p>
                                     </div>
                                     <div class="data">
                                         <h4>Trạng thoái</h4>

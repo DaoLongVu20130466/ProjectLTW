@@ -21,7 +21,7 @@ public class ServletUIFOder extends HttpServlet {
         User usernow = useService.getInstance().getAllUserByID(iduser);
         request.setAttribute("userID",usernow);
         ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
-        request.setAttribute("alloder", list);
+        session.setAttribute("alloder", list);
         request.getRequestDispatcher("Donhang.jsp").forward(request, response);
 
     }

@@ -167,12 +167,12 @@
           <!-- Thong tin -->
           <!-- Thong tin -->
           <%
-            User userID = (User) request.getAttribute("userID");
+            User userID = (User) session.getAttribute("userID");
           %>
           <div class="wrapper">
             <div class="left">
               <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-              <h4><%=userID.getUserName()%></h4>
+              <h4><%=user.getUserName()%></h4>
               <p></p>
             </div>
             <div class="right">
@@ -181,8 +181,8 @@
                 <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.html" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
 
                 <div class="info_data"> <div class="data">
-                  <h4> Ngày sinh</h4>
-                  <p> 24/12/2002</p>
+                  <h4> Tên </h4>
+                  <p><%=user.getName()%></p>
                 </div>
                   <div class="data">
                     <h4>Địa CHỉ</h4>
