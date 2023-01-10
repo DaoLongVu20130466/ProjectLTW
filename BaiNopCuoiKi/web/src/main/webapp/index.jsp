@@ -107,10 +107,12 @@
                 <div class="header__cart">
                     <ul>
                         <%
-                            if (a == null) {
+                            if (user.getRole()>=1) {
                         %>
-                        <li> <a href=""> <i class="fa fa-user"></i> </a></li>
-                        <% }else{%>
+                        <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                        <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+                        <% }else{
+                        %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
 

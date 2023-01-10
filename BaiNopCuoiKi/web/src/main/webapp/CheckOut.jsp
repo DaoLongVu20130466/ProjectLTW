@@ -1,7 +1,10 @@
+<%@ page import="main.bean.Cart" %>
+<%@ page import="main.bean.Products" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="main.services.AppService" %>
 <!DOCTYPE html>
 <html lang="zxx">
-
-<head>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
@@ -244,15 +247,18 @@
                                 <h4>Đơn hàng của bạn</h4>
                                 <div class="checkout__order__products">Món ăn <span>Tổng</span></div>
                                 <ul>
+                                   <%
+                                       Cart cart = (Cart)session.getAttribute("cart");
+                                       Collection<Products> list = cart.getListProduct();
+                                       for (Products p : list) {
 
-                                    <li>Cơm chiên <span>70000 VND</span></li>
-                                    <li>Cơm cá mặn <span>100000 VND</span></li>
-                                    <li>Nước suối <span>30000 VND</span></li>
+
+                                       %>
                                 </ul>
-                                <div class="checkout__order__subtotal">Tổng phụ <span>200000 VND</span></div>
+
                                 <div class="checkout__order__total">Thành tiền <span>200000 VND</span></div>
 
-                               
+                                <%}%>
                                 <p>Cảm ơn bạn đã đã đặt hàng, món ăn của bạn sẽ sớm được giao.</p>
                                
                              
