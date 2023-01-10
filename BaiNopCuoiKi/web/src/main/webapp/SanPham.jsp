@@ -1,5 +1,6 @@
 <%@ page import="main.bean.Products" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.User" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 5/01/2023
@@ -71,7 +72,21 @@
               <div>Việt Nam </div>
             </div>
             <div class="header__top__right__auth">
-              <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+              <%
+                String a = (String) session.getAttribute("login");
+                User user = (User) session.getAttribute("auth");
+              %>
+              <%
+                if (a == null) {
+              %>
+              <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+              <% }else{%>
+              <div   class="fa" role="alert">
+
+                <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+              </div>
+              <%}%>
             </div>
           </div>
         </div>
@@ -88,19 +103,27 @@
       <div class="col-lg-6">
         <nav class="header__menu">
           <ul>
-            <li ><a href="./index.html">Trang Chủ</a></li>
-            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+            <li ><a href="getIndex">Trang Chủ</a></li>
+            <li><a href="getAllProduct">Gian Hàng</a></li>
 
-            <li><a href="./blog.html">Giới Thiệu</a></li>
-            <li><a href="./contact.html">Liên Hệ</a></li>
+            <li><a href="blog.jsp">Giới Thiệu</a></li>
+            <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </nav>
       </div>
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <%
+              if (user.getRole()>=1) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+            <% }else{
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}%>
+            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
@@ -125,7 +148,7 @@
         <div class="breadcrumb__text">
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
-            <a href="./index.html">Admin</a>
+            <a href="getIndex">Admin</a>
             <span>Sản Phẩm</span>
           </div>
         </div>

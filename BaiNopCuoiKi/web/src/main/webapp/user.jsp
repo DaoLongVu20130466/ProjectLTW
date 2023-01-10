@@ -71,8 +71,7 @@
                 String a = (String) session.getAttribute("login");
                 User user = (User) session.getAttribute("auth");
                 ArrayList<Order> list = (ArrayList<Order>) session.getAttribute("alloder");
-                ArrayList<Order> list = (ArrayList<Order>) session.getAttribute("alloder");
-                ArrayList<Order> list = (ArrayList<Order>) session.getAttribute("alloder");
+
               %>
               <%
                 if (a == null) {
