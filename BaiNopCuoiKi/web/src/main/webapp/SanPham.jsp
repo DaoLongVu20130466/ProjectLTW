@@ -158,7 +158,10 @@
       <div class="col-lg-10 col-md-5">
         <h2>Toàn bộ sản phẩm:</h2>
         <div class="TaiKhoan">
-          <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
+          <form action="ServletSearchInAd">
+          <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." name="txt" />
+            <button type="submit" class="site-btn">TÌM</button>
+          </form>
           <table class="cd-table order-table table">
             <thead>
             <tr>
