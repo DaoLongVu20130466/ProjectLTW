@@ -409,11 +409,25 @@ public class useService {
 
 
     }
+    public void deletaFood(String idf, String size) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM FOOD " +
+                    "WHERE ID_FOOD = ? AND ID_SIZE =?");
+            ps.setString(1,idf);
+            ps.setString(2,size);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
 
     public static void main(String[] args) {
         useService u = new useService();
         System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
     }
+
 
 }
 

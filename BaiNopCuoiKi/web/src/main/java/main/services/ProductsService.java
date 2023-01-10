@@ -469,6 +469,19 @@ public class ProductsService {
         }
         return allProductSearch;
     }
+    public void addFavourite(String idf, String idacc) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO favourite(ID_FOOD,ID_ACCOUNT) VALUES " +
+                    "(?,?)");
+            ps.setString(1,idf);
+            ps.setString(2,idacc);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
 
 
 
@@ -492,4 +505,6 @@ public class ProductsService {
 //            a.addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
            System.out.println(a.getAllproductSearch("Cơm gà"));
     }
+
+
 }

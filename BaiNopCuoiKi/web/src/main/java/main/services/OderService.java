@@ -148,7 +148,7 @@ public class OderService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER, NAMES, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES\n" +
+            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES\n" +
                     "from orders\n" +
                     "JOIN order_account_details\n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE orders.ID_ORDER =? AND ID_ACCOUNT = ?");
@@ -180,9 +180,16 @@ public class OderService {
         Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
         PreparedStatement statement = conn.prepareStatement("UPDATE orders SET STATUSS = 'Đã hủy' WHERE ID_ORDER = ?");
         statement.setString(1,idoder);
-        statement.executeQuery();
+        statement.executeUpdate();
+        conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        OderService o = new OderService();
+        String idoder = "OD1";
+        o.cancelOder(idoder);
     }
 }
