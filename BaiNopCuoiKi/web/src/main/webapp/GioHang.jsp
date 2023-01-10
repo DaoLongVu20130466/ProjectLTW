@@ -278,7 +278,7 @@
                                         <%=AppService.intToVND(p.getLISTED_PRICE() * p.getQuantity())%>
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <a href="removeInCart?id=<%=p.getID_food()%>"><span  class="icon_close"></span></a>
                                     </td>
                                 </tr>
 

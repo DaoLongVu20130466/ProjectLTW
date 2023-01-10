@@ -119,6 +119,42 @@ public class useService {
             e.printStackTrace();
         }
     }
+    public void updateIF(String uid,String hoten,String email,String sdt,String diachi){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+                PreparedStatement stmt = conn.prepareStatement("UPDATE account SET EMAIL = ? WHERE ID_USER = ?");
+            stmt.setString(1,email);
+
+            stmt.setString(2,uid);
+
+            PreparedStatement stmt2 = conn.prepareStatement("UPDATE user_information us join addresss ad on us.ID_ADDRESS=ad.ID_ADDRESS SET PROVINCE = ? , PHONE_NUMBER= ? , USER_NAMES =? WHERE ID_USER = ?");
+            stmt2.setString(1,diachi);
+            stmt2.setString(2,sdt);
+            stmt2.setString(3,hoten);
+            stmt2.setString(4,uid);
+            stmt2.execute();
+            stmt.execute();
+            conn.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }public void upImg(String uid,String link){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement stmt = conn.prepareStatement("UPDATE account SET AVATAR = ? WHERE ID_USER = ?");
+            stmt.setString(1,link);
+
+            stmt.setString(2,uid);
+
+
+            stmt.execute();
+            conn.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public void UnLockUser(String uid){
         {
             try {

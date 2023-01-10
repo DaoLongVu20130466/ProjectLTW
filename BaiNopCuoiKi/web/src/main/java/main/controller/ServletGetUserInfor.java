@@ -17,7 +17,7 @@ public class ServletGetUserInfor extends HttpServlet {
         String iduser = user.getUserId();
 
         User userinfor = useService.getInstance().getAllUserByID(iduser);
-        request.setAttribute("userID", userinfor);
+        session.setAttribute("userID", userinfor);
         request.getRequestDispatcher("user.jsp").forward(request,response);
 
 
