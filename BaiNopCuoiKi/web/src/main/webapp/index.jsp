@@ -150,8 +150,8 @@
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
-                            <input type="text" placeholder="Bạn Muốn Ăn Gì ?">
+                        <form action="SearchControl">
+                            <input type="text" placeholder="Bạn Muốn Ăn Gì ?" name="txt">
                             <button type="submit" class="site-btn">TÌM</button>
                         </form>
                     </div>

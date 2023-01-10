@@ -160,13 +160,17 @@
       <div class="col-lg-10 col-md-5">
         <%
           ArrayList<TypeProducts> listType = (ArrayList<TypeProducts>) request.getAttribute("alltype");
-
+          String a = (String) request.getAttribute("1");
         %>
 
         <h2>Cập nhật, thêm mới nội dung sản phẩm: </h2>
+        <%
+        if(a==null){ }else {%>
+        <h2>Cập nhật thành công</h2>
+        <%}%>
 
 
-        <form action="/web_war/ServletAddProduct" class="" onSubmit="">
+        <form action="/web_war/ServletAddProduct"  onSubmit="">
 
           <div class='add-input'>
             Tên món ăn <span>*</span>

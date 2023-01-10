@@ -94,8 +94,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li ><a href="./index.html">Trang Chủ</a></li>
-                            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+                            <li ><a href="getIndex">Trang Chủ</a></li>
+                            <li ><a href="getAllProduct">Gian Hàng</a></li>
                             <li><a href="./blog.html">Giới Thiệu</a></li>
                             <li><a href="./contact.html">Liên Hệ</a></li>
                         </ul>
@@ -104,8 +104,8 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
-                            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
+                            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price"></div>
                     </div>
@@ -147,9 +147,9 @@
                             <div class="sidebar__item">
                                 <ul>
                                     <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
-                                    <li><a href="Donhang.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                                    <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                                     <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
-                                    <li><a href="DoiMatKhau.html"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
+                                    <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
                                     <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                                 </ul>
