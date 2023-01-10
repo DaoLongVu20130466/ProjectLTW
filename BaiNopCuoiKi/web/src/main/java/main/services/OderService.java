@@ -185,4 +185,30 @@ public class OderService {
             ex.printStackTrace();
         }
     }
+    public String createNewIDOder(){
+        return "OD" + Integer.toString(getintNewIdOder());
+    }
+
+    public int getintNewIdOder(){
+        int rsl = 1;
+        try{
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery(("SELECT COUNT(*) FROM orders"));
+
+            while (rs.next()) {
+                rsl+=rs.getInt(1);
+            }
+            conn.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return rsl;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(OderService.getInstance().createNewIDOder());
+    }
 }

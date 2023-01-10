@@ -2,10 +2,11 @@ package main.bean;
 
 import main.services.AppService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DashBoard {
+public class DashBoard implements Serializable {
     ArrayList<Order> totalvalue;
 
     HashMap<String, Integer> type = AppService.getTypeMap();

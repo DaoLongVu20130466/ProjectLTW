@@ -1,6 +1,8 @@
 package main.bean;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     String userId;
     String userName;
     String password;
@@ -8,6 +10,7 @@ public class User {
     int numberBuy;
     int status;
 
+    String IDadress;
     String statuss;
     String email;
     String phoneNumber;
@@ -60,6 +63,14 @@ public class User {
         this.email = email;
         this.idacc = idacc;
 
+    }
+
+    public String getIDadress() {
+        return IDadress;
+    }
+
+    public void setIDadress(String IDadress) {
+        this.IDadress = IDadress;
     }
 
     public void setNumberBuy(int numberBuy) {
