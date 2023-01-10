@@ -34,6 +34,11 @@ public class AddOderService {
                     "UPDATE food SET QUANTITY = ? WHERE ID_FOOD = ? and ID_SIZE = 'SIZE1'");
             statement.setInt(1,getAmount(foodid)-quantity);
             statement.setString(2,foodid);
+            if(getAmount(foodid)-quantity <=0){
+                PreparedStatement statement1 = conn.prepareStatement("UPDATE food SET STATUSS = 'Hết Hàng' WHERE ID_FOOD = ? and ID_SIZE = 'SIZE1'");
+                statement1.setString(1,foodid);
+                statement1.execute();
+            }
             statement.execute();
         }
         catch (Exception ex) {
