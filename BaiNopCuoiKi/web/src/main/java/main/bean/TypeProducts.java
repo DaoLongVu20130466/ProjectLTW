@@ -1,6 +1,8 @@
 package main.bean;
 
-public class TypeProducts {
+import java.io.Serializable;
+
+public class TypeProducts implements Serializable {
     String idType;
     String nameType;
 
