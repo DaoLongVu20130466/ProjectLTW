@@ -181,7 +181,7 @@ public class useService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             // crate statement
 
-            String query= "select USERS, PASS, acc.ID_USER, IS_BLOCK,USER_NAMES ,ROLE, ROLE_NAME, ID_ACCOUNT \n" +
+            String query= "select USERS, PASS, acc.ID_USER, IS_BLOCK,USER_NAMES ,ROLE, ROLE_NAME\n" +
                     "FROM account  acc join user_information us on us.ID_USER=acc.ID_USER  join role on role.ID_USER=acc.ID_USER\n" +
                     "WHERE USERS=? AND PASS=?";
             PreparedStatement a= conn.prepareStatement(query);
@@ -189,9 +189,11 @@ public class useService {
             a.setString(2,password);
             ResultSet rs=a.executeQuery();
             while (rs.next()){
-                User use =new User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getInt(6),rs.getString(7),rs.getString(8));
+                User use =new User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getInt(6),rs.getString(7));
                 return use;
             }
+
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }

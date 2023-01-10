@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/stylle.css" type="text/css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -108,11 +107,7 @@
                 <div class="header__cart">
                     <ul>
                         <%
-                            if( user!=null){
-
-                        %>
-                        <%
-                            if (user.getRole()>=1  ) {
+                            if (user.getRole()>=1) {
                         %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
@@ -120,9 +115,7 @@
                         %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
-                        <%}else{ %>
-                        <li> <a href="DangKy.jsp"> <i class="fa fa-user"></i> </a></li>
-                        <%}%>
+
                         <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
@@ -146,18 +139,6 @@
                         <i class="fa fa-bars"></i>
                         <span>Danh Mục</span>
                     </div>
-                    <%
-                        String error = (String) request.getAttribute("error");
-                    %>
-                    <%
-                        if (error != null) {
-                    %>
-                    <SCRIPT >
-                        alert ("<%=error %>")
-                    </script>
-                    <%
-                        }
-                    %>
                     <%
                         ArrayList<TypeProducts> listT = (ArrayList<TypeProducts>) request.getAttribute("alltype");
                         for (TypeProducts item: listT) {

@@ -334,7 +334,7 @@
                             %>
                             <li>Tổng Tiền <span><%= b%></span></li>
                         </ul>
-                        <a href="checkout.jsp" class="primary-btn">Thanh Toán</a>
+                        <a href="checkout.html" class="primary-btn">Thanh Toán</a>
                     </div>
                 </div>
             </div>
