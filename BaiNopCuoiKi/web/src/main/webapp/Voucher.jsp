@@ -149,7 +149,7 @@
                                     <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
                                     <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                                     <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
-                                    <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
+                                    <li><a href="DoiMatKhau.jsp"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
 
                                     <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                                 </ul>

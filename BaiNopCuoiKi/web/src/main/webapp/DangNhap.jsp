@@ -126,11 +126,11 @@
             %>
             <div class='login-input'>
                 Tài khoản:
-                <input type='text'  name='username' value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>" placeholder="Sđt hoặc Tên người dùng ">
+                <input type='text'  name='username' value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>" placeholder="Tên người dùng " required>
             </div>
             <div class='login-input'>
                 Mật khẩu:
-                <input type='password' name='password' placeholder="Mật khẩu">
+                <input type='password' name='password' placeholder="Mật khẩu" required>
             </div>
             <input type="submit"  value="Đăng Nhập" class="btn">
             <div class="signup-or"><span>Hoặc</span></div>

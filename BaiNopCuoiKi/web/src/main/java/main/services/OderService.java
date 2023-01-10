@@ -90,7 +90,7 @@ public class OderService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             PreparedStatement stmt = conn.prepareStatement("\n" +
-                    "SELECT orders.ID_ORDER, NAMES, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES \n" +
+                    "SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES \n" +
                     "from orders \n" +
                     "JOIN order_account_details \n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE orders.ID_ORDER =?");

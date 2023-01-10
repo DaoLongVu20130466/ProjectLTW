@@ -258,10 +258,6 @@
                     <label class="lbin42"><%=oder.getTotalAfterVoucher()%></label>
                     <label class="lbdt">Tổng Giá Trị Đơn</label>
                   </div>
-                  <div>
-                    <label class="lbin41"><%=oder.revice()%></label>
-                    <label class="lbdt">Đã Nhận</label>
-                  </div>
                 </div>
               </div>
 
