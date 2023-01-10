@@ -154,7 +154,7 @@
                         <div class="quantity">
                             Số lượng:
                             <div class="pro-qty">
-                                <input type="text" value="1">
+                                <input name="value" type="text" value="1">
                             </div>
                         </div>
                     </div>
@@ -171,6 +171,7 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
+
                     <ul>
                         <li><b>Tình trạng</b> <span>Còn món ăn</span></li>
                         <li><b>Ghi chú</b> <input id="ghichu" type="text"></li>
@@ -184,7 +185,7 @@
                         </li>
                     </ul>
                     <a href="./addtoCart?id=<%=pro.getID_food()%>">
-                    <button class="btn"> Mua món ăn</button></a>
+                    <button class="btn" href="/web_war/ServletAddOderDirect"> Mua món ăn</button></a>
 
                 </div>
             </div>
