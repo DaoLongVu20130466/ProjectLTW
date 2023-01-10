@@ -127,23 +127,23 @@
             %>
             <div class='login-input'>
                 Tài khoản:
-                <input type='text' name='username' placeholder="Sđt hoặc Tên người dùng "value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>">
+                <input type='text' name='username' placeholder="Sđt hoặc Tên người dùng "value="<%= request.getParameter("username")!=null?request.getParameter("username"):"" %>" required>
             </div>
             <div class='login-input'>
                 Mật khẩu:
-                <input type='password' name='password' placeholder="Mật khẩu">
+                <input type='password' name='password' placeholder="Mật khẩu" required>
             </div>
             <div class='login-input'>
                 Nhập lại mật khẩu:
-                <input type='password' name='passwordag' placeholder="Mật khẩu">
+                <input type='password' name='passwordag' placeholder="Mật khẩu" required>
             </div>
             <div class='login-input'>
                 Email:
-                <input type='email' name='email' placeholder="Email của bạn"value="<%= request.getParameter("email")!=null?request.getParameter("email"):"" %>">
+                <input type='email' name='email' placeholder="Email của bạn"value="<%= request.getParameter("email")!=null?request.getParameter("email"):"" %>" required>
             </div>
             <div class='login-input'>
                 SDT:
-                <input type='text' name='phone' placeholder="SDT của bạn"value="<%= request.getParameter("phone")!=null?request.getParameter("phone"):"" %>">
+                <input type='text' name='phone' placeholder="SDT của bạn"value="<%= request.getParameter("phone")!=null?request.getParameter("phone"):"" %>" required>
             </div>
             <div class='login-input'>
                 Địa chỉ:
