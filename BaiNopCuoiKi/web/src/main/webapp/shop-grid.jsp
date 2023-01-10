@@ -94,8 +94,8 @@
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <li><a href="getUser"><i class="fa fa-user"></i> </a></li>
+            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
@@ -117,7 +117,7 @@
         <div class="breadcrumb__text">
           <h2>SBE Shop</h2>
           <div class="breadcrumb__option">
-            <a href="./index.html">Trang chủ</a>
+            <a href="getIndex">Trang chủ</a>
             <span>Gian Hàng</span>
           </div>
         </div>
