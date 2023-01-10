@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/stylle.css" type="text/css">
     <link rel="stylesheet" href="css/admincss.css">
     <style> .container-form {background-image: url(./img/1.png);}</style>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
@@ -110,7 +111,7 @@
          <div class="form_lg">
         <p1>Đăng ký</p1>
 
-        <form action="registry" class="main-form" onSubmit="return checkPw(this)">
+        <form action="registry" class="main-form" id ="main-formm"onSubmit="return checkPw(this)">
 
             <%
                 String error = (String) request.getAttribute("error");
