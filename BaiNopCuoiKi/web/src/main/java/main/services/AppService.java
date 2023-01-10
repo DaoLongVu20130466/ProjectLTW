@@ -55,6 +55,7 @@ public  class AppService {
     public static void main(String[] args) {
         System.out.println(intToVND(100000000));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd ");
-
+        System.out.println(getNowDate().toString());
+        System.out.println("fvvv");
     }
 }
