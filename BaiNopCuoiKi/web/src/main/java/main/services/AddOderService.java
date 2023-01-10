@@ -6,6 +6,7 @@ import main.db.ConnectMysqlExample;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,56 @@ public class AddOderService {
         return instance;
     }
 
+    public boolean adODer(String usid , HashMap<String, Integer> map,String note ,String voucherCode){
+        if(isleft(map)){
+        addOderByUser(usid, map, note, voucherCode);
+        return true;
+        }
+        else return false;
+
+    }
+    public void deleteAmount(String foodid, int quantity){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement statement = conn.prepareStatement(
+                    "UPDATE food SET QUANTITY = ? WHERE ID_FOOD = ? and ID_SIZE = 'SIZE1'");
+            statement.setInt(1,getAmount(foodid)-quantity);
+            statement.setString(2,foodid);
+            statement.execute();
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+    public boolean isleft(HashMap<String, Integer> map){
+        boolean rs= true;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (getAmount(entry.getKey())-entry.getValue()<=0)
+            rs= false;
+            break;
+        }
+        return rs;
+    }
+
+
+    public int getAmount(String foodID){
+        int rs = 0;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement statement = conn.prepareStatement(
+                    "SELECT QUANTITY FROM food WHERE ID_FOOD =? AND ID_SIZE = 'SIZE1'");
+            statement.setString(1, foodID);
+            ResultSet rsl = statement.executeQuery();
+            while (rsl.next()) {
+                rs = rsl.getInt(1);
+            }
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return rs;
+    }
     public void addOderByUser (String usid , HashMap<String, Integer> map,String note ,String voucherCode){
         User us1 = useService.getInstance().getUserById(usid);
         Order neworder = new Order();
@@ -52,6 +103,7 @@ public class AddOderService {
                     statement3.setString(3,"SIZE1");
                     statement3.setInt(4,entry.getValue());
                     statement3.execute();
+                    deleteAmount(entry.getKey(),entry.getValue());
                 }
                 statement.execute();
                 statement2.execute();
@@ -63,10 +115,12 @@ public class AddOderService {
     }
 
     public static void main(String[] args) {
-
         HashMap<String, Integer> map = new HashMap<>();
-        map.put("COM_GA1",2);
+        map.put("COM_GA1",1);
         map.put("COM_GA4",2);
-        AddOderService.getInstance().addOderByUser("ACC1",map,"none","VOUCHER1");
+        System.out.println(AddOderService.getInstance().getAmount("COM_GA1"));
+        System.out.println(AddOderService.getInstance().isleft(map));
+        AddOderService.getInstance().addOderByUser("ACC1",map," ","");
+
     }
 }

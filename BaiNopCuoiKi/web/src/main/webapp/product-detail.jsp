@@ -189,11 +189,6 @@
                 </div>
             </div>
 
-
-
-
-
-
             <div class="col-lg-12">
                 <div class="product__details__tab">
                     <ul class="nav nav-tabs" role="tablist">
@@ -361,6 +356,7 @@
         </div>
 
     </div>
+
 </footer>
 <!-- Footer Section End -->
 <!-- Js Plugins -->
