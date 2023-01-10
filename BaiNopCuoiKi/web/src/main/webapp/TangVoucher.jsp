@@ -184,7 +184,7 @@
                 <td><%=item.getType()%></td>
                 <td><%=item.getDisCount()%></td>
                 <td><%=item.getIsOutDate()%></td>
-                <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
+                <td>
                   <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
               </tr>
               <%}%>
