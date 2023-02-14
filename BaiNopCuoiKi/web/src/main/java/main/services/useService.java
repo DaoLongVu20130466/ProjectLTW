@@ -11,30 +11,35 @@ import java.util.List;
 
 public class useService {
     public static useService instance;
+
     public useService() {
 
     }
-    private List<User> alluser ;
+
+    private List<User> alluser;
+
     public static useService getInstance() {
         if (instance == null) {
             instance = new useService();
         }
         return instance;
     }
-    public void deletaFavourite(String idf , String id ){
+
+    public void deletaFavourite(String idf, String id) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             PreparedStatement ps = conn.prepareStatement("DELETE FROM favourite " +
                     "WHERE ID_FOOD = ? AND ID_ACCOUNT =?");
-            ps.setString(1,idf);
-            ps.setString(2,id);
+            ps.setString(1, idf);
+            ps.setString(2, id);
             ps.executeUpdate();
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 
     }
+
     public ArrayList<User> getAllUser() {
         ArrayList<User> allusercontronl = new ArrayList<User>();
         try {
@@ -87,7 +92,7 @@ public class useService {
                     "on user_information.ID_ADDRESS = addresss.ID_ADDRESS)  on  " +
                     "account.ID_USER = user_information.ID_USER\n" +
                     "WHERE user_information.ID_USER = ?");
-            ps.setString(1,iduser);
+            ps.setString(1, iduser);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 String userName = rs.getNString(1);
@@ -97,7 +102,7 @@ public class useService {
                 String avatar = rs.getString(5);
                 String email = rs.getString(6);
                 String idacc = rs.getString(7);
-                return new User (userName,provine,phoneNumber, status,avatar,email,idacc);
+                return new User(userName, provine, phoneNumber, status, avatar, email, idacc);
             }
             // close connection
             conn.close();
@@ -107,71 +112,88 @@ public class useService {
         return null;
     }
 
-    public void LockUser(String uid){
+    public void LockUser(String uid) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             PreparedStatement stmt = conn.prepareStatement("UPDATE account SET IS_BLOCK = 1 WHERE ID_ACCOUNT = ?");
-            stmt.setString(1,uid);
+            stmt.setString(1, uid);
             stmt.execute();
             conn.close();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void updateIF(String uid,String hoten,String email,String sdt,String diachi){
+
+    public void updateIF(String uid, String hoten, String email, String sdt, String diachi) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-                PreparedStatement stmt = conn.prepareStatement("UPDATE account SET EMAIL = ? WHERE ID_USER = ?");
-            stmt.setString(1,email);
+            PreparedStatement stmt = conn.prepareStatement("UPDATE account SET EMAIL = ? WHERE ID_USER = ?");
+            stmt.setString(1, email);
 
-            stmt.setString(2,uid);
+            stmt.setString(2, uid);
 
             PreparedStatement stmt2 = conn.prepareStatement("UPDATE user_information us join addresss ad on us.ID_ADDRESS=ad.ID_ADDRESS SET PROVINCE = ? , PHONE_NUMBER= ? , USER_NAMES =? WHERE ID_USER = ?");
-            stmt2.setString(1,diachi);
-            stmt2.setString(2,sdt);
-            stmt2.setString(3,hoten);
-            stmt2.setString(4,uid);
+            stmt2.setString(1, diachi);
+            stmt2.setString(2, sdt);
+            stmt2.setString(3, hoten);
+            stmt2.setString(4, uid);
             stmt2.execute();
             stmt.execute();
             conn.close();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }public void upImg(String uid,String link){
+    }
+
+    public void upImg(String uid, String link) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             PreparedStatement stmt = conn.prepareStatement("UPDATE account SET AVATAR = ? WHERE ID_USER = ?");
-            stmt.setString(1,link);
+            stmt.setString(1, link);
 
-            stmt.setString(2,uid);
+            stmt.setString(2, uid);
 
 
             stmt.execute();
             conn.close();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void UnLockUser(String uid){
+
+    public void upImgProducts(String uid, String link) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement stmt = conn.prepareStatement("UPDATE food SET L_IMG = ? WHERE ID_FOOD = ?");
+            stmt.setString(1, link);
+
+            stmt.setString(2, uid);
+
+
+            stmt.execute();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void UnLockUser(String uid) {
         {
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
                 PreparedStatement stmt = conn.prepareStatement("UPDATE account SET IS_BLOCK = 0 WHERE ID_ACCOUNT = ?");
-                stmt.setString(1,uid);
+                stmt.setString(1, uid);
                 stmt.execute();
                 conn.close();
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
     }
-    public void showid(String name){
-        System.out.println( name);
+
+    public void showid(String name) {
+        System.out.println(name);
     }
 
 
@@ -181,19 +203,17 @@ public class useService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             // crate statement
 
-            String query= "select USERS, PASS, acc.ID_USER, IS_BLOCK,USER_NAMES ,ROLE, ROLE_NAME\n" +
+            String query = "select USERS, PASS, acc.ID_USER, IS_BLOCK,USER_NAMES ,ROLE, ROLE_NAME, ID_ACCOUNT \n" +
                     "FROM account  acc join user_information us on us.ID_USER=acc.ID_USER  join role on role.ID_USER=acc.ID_USER\n" +
                     "WHERE USERS=? AND PASS=?";
-            PreparedStatement a= conn.prepareStatement(query);
-            a.setString(1,username);
-            a.setString(2,password);
-            ResultSet rs=a.executeQuery();
-            while (rs.next()){
-                User use =new User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getInt(6),rs.getString(7));
+            PreparedStatement a = conn.prepareStatement(query);
+            a.setString(1, username);
+            a.setString(2, password);
+            ResultSet rs = a.executeQuery();
+            while (rs.next()) {
+                User use = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8));
                 return use;
             }
-
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -203,19 +223,19 @@ public class useService {
     }
 
     public int checkIDaccount() {
-        int b=0;
+        int b = 0;
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             // crate statement
 
-            String query= "select Count(ID_ACCOUNT)\n" +
+            String query = "select Count(ID_ACCOUNT)\n" +
                     "from account";
-            PreparedStatement a= conn.prepareStatement(query);
+            PreparedStatement a = conn.prepareStatement(query);
 
-            ResultSet rs=a.executeQuery();
+            ResultSet rs = a.executeQuery();
 
-            while (rs.next()){
-                b = rs.getInt(1)+1;
+            while (rs.next()) {
+                b = rs.getInt(1) + 1;
 
             }
             conn.close();
@@ -224,33 +244,32 @@ public class useService {
         }
 
 
-
         return b;
     }
+
     public int checkIDFOOD(String type, String size) {
+        int b = 0;
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-        try{
-        Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
 
-
-        PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
-
-        );
-        ps.setString(1,type);
-            ps.setString(2,size);
-        ResultSet rs = ps.executeQuery();
+            );
+            ps.setString(1, type);
+            ps.setString(2, size);
+            ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                return rs.getInt(1) + 1;
+                 b=rs.getInt(1) + 1;
             }
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return b;
 
-        return 5555;
     }
-
 
 
     public void registry(String username, String password, String email, String phone, String xa, String huyen, String tinh, String ap) {

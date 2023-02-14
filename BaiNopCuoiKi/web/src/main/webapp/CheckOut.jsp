@@ -4,7 +4,7 @@
 <%@ page import="main.services.AppService" %>
 <!DOCTYPE html>
 <html lang="zxx">
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">

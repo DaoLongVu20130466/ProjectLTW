@@ -193,7 +193,7 @@
         <%}%>
 
 
-        <form action="/web_war/ServletAddProduct"  onSubmit="">
+        <form action="/web_war/ServletAddProduct" enctype="multipart/form-data" method="post" onSubmit="">
 
           <div class='add-input'>
             Tên món ăn <span>*</span>

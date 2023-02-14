@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/stylle.css" type="text/css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -90,7 +91,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="getIndex"><img src="img/a.png" alt=""></a>
+                    <a href="./index.html"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -98,8 +99,8 @@
                     <ul>
                         <li class="active"><a href="getIndex">Trang Chủ</a></li>
                         <li><a href="getAllProduct">Gian Hàng</a></li>
-                        <li><a href="blog.jsp">Giới Thiệu</a></li>
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
+                        <li><a href="./blog.html">Giới Thiệu</a></li>
+                        <li><a href="./contact.html">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -107,19 +108,22 @@
                 <div class="header__cart">
                     <ul>
                         <%
-                            if( user == null) {
-                                %>
-                        <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
-                        <%}else if (user.getRole()>=1) {
+                            if( user!=null){
+
+                        %>
+                        <%
+                            if (user.getRole()>=1  ) {
                         %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
-                        <li> <a href="getPageAD"> <i class="fas fa-user-edit"></i> </a></li>
+                        <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
                         <% }else{
                         %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
-
-                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <%}else{ %>
+                        <li> <a href="DangKy.jsp"> <i class="fa fa-user"></i> </a></li>
+                        <%}%>
+                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -142,6 +146,18 @@
                         <i class="fa fa-bars"></i>
                         <span>Danh Mục</span>
                     </div>
+                    <%
+                        String error = (String) request.getAttribute("error");
+                    %>
+                    <%
+                        if (error != null) {
+                    %>
+                    <SCRIPT >
+                        alert ("<%=error %>")
+                    </script>
+                    <%
+                        }
+                    %>
                     <%
                         ArrayList<TypeProducts> listT = (ArrayList<TypeProducts>) request.getAttribute("alltype");
                         for (TypeProducts item: listT) {
@@ -251,7 +267,7 @@
                     <div class="featured__item__pic set-bg" data-setbg="<%=p.getPath()%>">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-bag" aria-hidden="true"> </i> </a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"> </i> </a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
@@ -296,7 +312,7 @@
                     <div class="featured__item__pic set-bg" data-setbg="<%=p.getPath() %>">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
@@ -318,7 +334,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__about__logo">
-                        <a href="getIndex"><img src="img/a.png" alt=""></a>
+                        <a href="./index.html"><img src="img/a.png" alt=""></a>
                     </div>
                     <ul>
                         <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>
@@ -331,10 +347,10 @@
                 <div class="footer__widget">
                     <h6>Liên kết hữu ích</h6>
                     <ul>
-                        <li ><a href="getIndex">Trang Chủ</a></li>
-                        <li><a href="getAllProduct">Gian Hàng</a></li>
-                        <li><a href="blog.jsp">Giới Thiệu</a></li>
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
+                        <li ><a href="./index.html">Trang Chủ</a></li>
+                        <li><a href="./shop-grid.html">Gian Hàng</a></li>
+                        <li><a href="./blog.html">Giới Thiệu</a></li>
+                        <li><a href="./contact.html">Liên Hệ</a></li>
                     </ul>
 
                 </div>
