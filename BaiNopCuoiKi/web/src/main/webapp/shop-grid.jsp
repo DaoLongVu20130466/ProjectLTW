@@ -1,7 +1,9 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Random" %>
-<%@ page import="main.bean.TypeProducts" %><%--
+<%@ page import="main.bean.TypeProducts" %>
+<%@ page import="main.services.AddOderService" %>
+<%@ page import="main.services.AppService" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 4/01/2023
@@ -193,7 +195,7 @@
                                     <div class="product__discount__item__text">
                                         <span><%=p.getType()%></span>
                                         <h5><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h5>
-                                        <div class="product__item__price"><%=p.getLISTED_PRICE()%>VND <span>60000VND</span></div>
+                                        <div class="product__item__price"><%=AppService.intToVND(p.getLISTED_PRICE())%> <span>60000VND</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +252,7 @@
                     </div>
                     <div class="product__item__text">
                         <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
-                        <h5><%=p.getLISTED_PRICE()%> VND</h5>
+                        <h5><%=AppService.intToVND(p.getLISTED_PRICE())%></h5>
                     </div>
                 </div>
             </div>
@@ -277,7 +279,7 @@
           </div>
           <div class="product__item__text">
             <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
-            <h5><%=p.getLISTED_PRICE()%> VND</h5>
+            <h5><%=AppService.intToVND(p.getLISTED_PRICE())%></h5>
           </div>
 
         </div>

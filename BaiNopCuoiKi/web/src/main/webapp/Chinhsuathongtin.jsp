@@ -100,8 +100,8 @@
                             <li ><a href="getIndex">Trang Chủ</a></li>
                             <li ><a href="getAllProduct">Gian Hàng</a></li>
 
-                            <li><a href="./blog.html">Giới Thiệu</a></li>
-                            <li><a href="./contact.html">Liên Hệ</a></li>
+                            <li><a href="blog.jsp">Giới Thiệu</a></li>
+                            <li><a href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -165,7 +165,7 @@
             <div class="wrapper">
                 <div class="left">
                     <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-                    <h4><%=user.getUserName()%>%></h4>
+                    <h4><%=user.getUserName()%></h4>
                     <p></p>
                 </div>
                 <div class="right">

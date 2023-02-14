@@ -90,11 +90,11 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class=""><a href="getIndex">Trang Chủ</a></li>
-                            <li class=""><a href="getAllProduct">Gian Hàng</a></li>
+                            <li ><a href="getIndex">Trang Chủ</a></li>
+                            <li ><a href="getAllProduct">Gian Hàng</a></li>
 
-                            <li><a href="./blog.html">Giới Thiệu</a></li>
-                            <li><a href="./contact.html">Liên Hệ</a></li>
+                            <li><a href="blog.jsp">Giới Thiệu</a></li>
+                            <li><a href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -176,7 +176,7 @@
                         <div class="projects_data">
                             <div class="data">
                                 <h4>Email</h4>
-                                <p><%=userID.getEmail()%>></p>
+                                <p><%=userID.getEmail()%></p>
                              </div>
                              <div class="data">
                                <h4>Phone</h4>
@@ -191,7 +191,7 @@
                              </div>
                              <div class="data">
                                <h4>Trạng thoái</h4>
-                                 <p><%=userID.getStatus()%>></p>
+                                 <p><%=userID.getStatus()%></p>
                           </div>
                              
                         </div>

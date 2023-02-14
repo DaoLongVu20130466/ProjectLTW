@@ -1,7 +1,8 @@
 <%@ page import="main.bean.TypeProducts" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.Products" %>
-<%@ page import="main.bean.User" %><%--
+<%@ page import="main.bean.User" %>
+<%@ page import="main.services.AppService" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 5/01/2023
@@ -97,10 +98,11 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="getIndex">Trang Chủ</a></li>
-                        <li><a href="getAllProduct">Gian Hàng</a></li>
-                        <li><a href="./blog.html">Giới Thiệu</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li class = "active"><a href="getIndex">Trang Chủ</a></li>
+                        <li ><a href="getAllProduct">Gian Hàng</a></li>
+
+                        <li><a href="blog.jsp">Giới Thiệu</a></li>
+                        <li><a href="contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -121,9 +123,9 @@
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
                         <%}else{ %>
-                        <li> <a href="DangKy.jsp"> <i class="fa fa-user"></i> </a></li>
+                        <li> <a href="DangNhap.jsp"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
-                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="DangNhap.jsp"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -266,13 +268,11 @@
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="<%=p.getPath()%>">
                         <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"> </i> </a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
-                        <h5><%=p.getLISTED_PRICE()%> VND</h5>
+                        <h5><%=AppService.intToVND(p.getLISTED_PRICE())%></h5>
                     </div>
                 </div>
             </div>
@@ -317,7 +317,7 @@
                     </div>
                     <div class="featured__item__text">
                         <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
-                        <h5><%=p.getLISTED_PRICE()%> VND</h5>
+                        <h5><%=AppService.intToVND(p.getLISTED_PRICE())%></h5>
                     </div>
                 </div>
             </div>

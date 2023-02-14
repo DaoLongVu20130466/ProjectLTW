@@ -96,8 +96,9 @@
         <nav class="header__menu">
           <ul>
             <li ><a href="getIndex">Trang Chủ</a></li>
-            <li><a href="getAllProduct">Gian Hàng</a></li>
-            <li class="active"><a href="blog.jsp">Giới Thiệu</a></li>
+            <li ><a href="getAllProduct">Gian Hàng</a></li>
+
+            <li class = "active"><a href="blog.jsp">Giới Thiệu</a></li>
             <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </nav>

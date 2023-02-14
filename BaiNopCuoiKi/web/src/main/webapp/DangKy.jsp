@@ -168,7 +168,7 @@
                      <i class="fa fa-commenting-o" aria-hidden="true"> Cảm ơn đã tin tưởng</i>
                 </div>
             </div>
-             <a>Nếu đã chưa có tài khoản hay ấn vào đây: </a> <i> <a href="Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web/src/main/webapp/DangNhap.jsp">Đăng nhập</a></i>
+             <a>Nếu đã chưa có tài khoản hay ấn vào đây: </a> <i> <a href="DangNhap.jsp">Đăng nhập</a></i>
         </div>
                
     
