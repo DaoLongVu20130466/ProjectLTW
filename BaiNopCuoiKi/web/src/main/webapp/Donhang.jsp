@@ -185,7 +185,7 @@
                                 <div class="projects_data">
                                     <div class="data">
                                         <h4>Email</h4>
-                                        <p><%=userID.getEmail()%>></p>
+                                        <p><%=userID.getEmail()%></p>
                                     </div>
                                     <div class="data">
                                         <h4>Phone</h4>
@@ -199,7 +199,7 @@
                                     </div>
                                     <div class="data">
                                         <h4>Trạng thoái</h4>
-                                        <p><%=userID.getStatus()%>></p>
+                                        <p><%=userID.getStatus()%></p>
                                     </div>
 
 

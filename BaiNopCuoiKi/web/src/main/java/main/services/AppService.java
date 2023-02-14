@@ -44,6 +44,13 @@ public  class AppService {
             return false;
 
     }
+    public static boolean checkLog(int Role){
+        if (Role <1){
+            return true;
+        }else
+            return false;
+
+    }
     public static LocalDate getNowDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date now = new Date();

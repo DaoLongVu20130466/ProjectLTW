@@ -44,8 +44,6 @@ public class uploadimg extends HttpServlet {
             if (!file.exists()) {
                 throw new ServletException("File doesn't exists on server.");
             }
-       //response.sendRedirect("/lab7/manage/upload/"+fileName);
-            System.out.println("File location on server::" + file.getAbsolutePath());
             ServletContext ctx = getServletContext();
             InputStream fis = new FileInputStream(file);
             String mimeType = ctx.getMimeType(file.getAbsolutePath());
@@ -64,7 +62,7 @@ public class uploadimg extends HttpServlet {
             os.flush();
             os.close();
             fis.close();
-            System.out.println("File downloaded at client successfully");
+
         }
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
