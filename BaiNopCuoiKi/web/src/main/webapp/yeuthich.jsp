@@ -173,7 +173,7 @@
                     <div class="wrapper">
                         <div class="left">
                             <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-                            <h4><%=user.getUserName()%>%></h4>
+                            <h4><%=user.getUserName()%></h4>
                             <p></p>
                         </div>
                         <div class="right">
@@ -193,7 +193,7 @@
                                 <div class="projects_data">
                                     <div class="data">
                                         <h4>Email</h4>
-                                        <p><%=userID.getEmail()%>></p>
+                                        <p><%=userID.getEmail()%></p>
                                     </div>
                                     <div class="data">
                                         <h4>Phone</h4>
@@ -208,7 +208,7 @@
                                     </div>
                                     <div class="data">
                                         <h4>Trạng thoái</h4>
-                                        <p><%=userID.getStatus()%>></p>
+                                        <p><%=userID.getStatus()%></p>
                                     </div>
 
 
@@ -262,7 +262,7 @@
                                         </td>
                                         <td class="shoping__cart__item__close" >
                                             <div style="  display: flex;">
-                                                <li style="list-style: none;"><a href=""><i class="fa fa-shopping-bag"></i> </a></li>
+                                                <li style="list-style: none;"><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-bag"></i> </a></li>
 
                                                 <li style="list-style: none;margin-top-1px;margin-left9px;font-size:30px;">
                                                     <a href="deletaFavourite?idacc=<%=userID.getIdacc()%>&&idf=<%=p.getID_food()%>"><i class="icon_close"></i> </a></li>

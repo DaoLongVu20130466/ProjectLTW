@@ -37,6 +37,20 @@ public  class AppService {
         SimpleDateFormat formatter = new SimpleDateFormat("MM");
         return formatter.format(date.getMonth());
     }
+    public static boolean checkAdmin(int Role){
+        if (Role >=1){
+            return true;
+        }else
+            return false;
+
+    }
+    public static boolean checkLog(int Role){
+        if (Role <1){
+            return true;
+        }else
+            return false;
+
+    }
     public static LocalDate getNowDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date now = new Date();
@@ -45,9 +59,8 @@ public  class AppService {
         return nowDate;
 
     }
-
     public static void main(String[] args) {
-
+        System.out.println(intToVND(100000000));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd ");
         System.out.println(getNowDate().toString());
         System.out.println("fvvv");

@@ -12,7 +12,7 @@ public class ServletUpdateEditProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("id");
+
         String tenmonan = request.getParameter("tenmonan");
         String optionSize = request.getParameter("optionSize");
         int giaban = (int) Integer.parseInt(request.getParameter("giaban"));
@@ -25,6 +25,7 @@ public class ServletUpdateEditProduct extends HttpServlet {
         String Mota = request.getParameter("Mota");
         String img = request.getParameter("myfile");
         int niemyet = (int) Integer.parseInt(request.getParameter("niemyet"));
+        String idfood = request.getParameter("idmonan");
 
         request.setAttribute("1",tenmonan);
         request.setAttribute("2",optionSize);
@@ -38,12 +39,12 @@ public class ServletUpdateEditProduct extends HttpServlet {
         request.setAttribute("10",Mota);
         request.setAttribute("11",img);
         request.setAttribute("12",niemyet);
-        request.setAttribute("13",id);
+        request.setAttribute("13",idfood);
 
 
-        ProductsService.getInstance().updateProduct(id,tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
-//        response.sendRedirect("getAllProductByAdmin");
-        request.getRequestDispatcher("attest.jsp").forward(request,response);
+        ProductsService.getInstance().updateProduct(idfood,tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
+        response.sendRedirect("getAllProductByAdmin");
+
     }
 
     @Override

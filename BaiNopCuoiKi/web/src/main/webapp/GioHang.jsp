@@ -2,7 +2,9 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="main.services.AppService" %>
-<!DOCTYPE html>
+        <%@ page import="main.bean.User" %>
+        <%@ page import="java.util.HashMap" %>
+        <!DOCTYPE html>
 <html lang="zxx">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
@@ -118,7 +120,21 @@
                                 <div>Việt Nam </div>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+                                <%
+                                    String a = (String) session.getAttribute("login");
+                                    User user = (User) session.getAttribute("auth");
+                                %>
+                                <%
+                                    if (a == null) {
+                                %>
+                                <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+                                <% }else{%>
+                                <div   class="fa" role="alert">
+
+                                    <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+                                </div>
+                                <%}%>
                             </div>
                         </div>
                     </div>
@@ -146,7 +162,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
-                            <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span></span></a></li>
                         </ul>
                         <div class="header__cart__price"></div>
                     </div>
@@ -230,10 +246,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <%
+                                String error = (String) request.getAttribute("error");
+                            %>
+                            <%
+                                if (error != null) {
+                            %>
+                            <SCRIPT >
+                                alert ("<%=error %>")
+                            </script>
+                            <%
+                                }
+                            %>
 
                                     <%
-                                        String a = "0";
+                                        String c = "0";
                                         String b = (String) session.getAttribute("total");
+
                                         if(b!=null){
 
                                         }
@@ -321,7 +350,8 @@
                         <div class="shoping__discount">
                             <h5>Mã giảm giá</h5>
                             <form action="#">
-                                <input type="text" placeholder="Nhập mã giảm giá" name="voucher"  >
+                                <input type="text" placeholder="Nhập mã giảm giá" name="voucher" id="voucher" >
+                                <button type="submit" class="site-btn">Áp Dụng</button>
                             </form>
                         </div>
                     </div>
@@ -332,12 +362,13 @@
                         <ul>
                             <%
                             if(b==null){
-                            b=a;
+
+                            b=c;
                             }
                             %>
                             <li>Tổng Tiền <span><%= b%></span></li>
                         </ul>
-                        <a href="checkout.html" class="primary-btn">Thanh Toán</a>
+                        <a href="ServletCheckout?voucher=<%=request.getParameter("voucher")%>" class="primary-btn">Thanh Toán</a>
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@ public class User implements Serializable {
         this.avatar = avatar;
 
     }
-    public User(String string, String string1,String userId, int anInt, String string2,int role , String roleName) {
+    public User(String string, String string1,String userId, int anInt, String string2,int role , String roleName, String ID_acc) {
         this.userName= string ;
         this.password=string1;
         this.userId= userId;
@@ -52,6 +52,7 @@ public class User implements Serializable {
         this.Name=string2;
         this.role=role;
         this.roleName =roleName;
+        this.idacc= ID_acc;
     }
 
     public  User(String userName, String provine, String phoneNumber, String status, String avatar, String email,String idacc) {

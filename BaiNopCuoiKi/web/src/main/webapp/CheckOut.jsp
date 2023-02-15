@@ -2,9 +2,10 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="main.services.AppService" %>
+<%@ page import="main.bean.User" %>
 <!DOCTYPE html>
 <html lang="zxx">
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
@@ -60,7 +61,21 @@
                                 <div>Việt Nam </div>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+                                <%
+                                    String a = (String) session.getAttribute("login");
+                                    User user = (User) session.getAttribute("auth");
+                                %>
+                                <%
+                                    if (a == null) {
+                                %>
+                                <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+                                <% }else{%>
+                                <div   class="fa" role="alert">
+
+                                    <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+                                </div>
+                                <%}%>
                             </div>
                         </div>
                     </div>

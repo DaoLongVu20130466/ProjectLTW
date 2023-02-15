@@ -1,6 +1,8 @@
 package main.services;
 
+import main.bean.Cart;
 import main.bean.Order;
+import main.bean.Products;
 import main.bean.User;
 import main.db.ConnectMysqlExample;
 
@@ -19,9 +21,9 @@ public class AddOderService {
         return instance;
     }
 
-    public boolean adODer(String usid , HashMap<String, Integer> map,String note ,String voucherCode){
+    public boolean adODer(String usid , Cart map, String voucherCode){
         if(isleft(map)){
-        addOderByUser(usid, map, note, voucherCode);
+        addOderByUser(usid, map, voucherCode);
         return true;
         }
         else return false;
@@ -46,10 +48,11 @@ public class AddOderService {
         }
 
     }
-    public boolean isleft(HashMap<String, Integer> map){
+    public boolean isleft(Cart map){
         boolean rs= true;
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            if (getAmount(entry.getKey())-entry.getValue()<=0)
+
+        for (Map.Entry<String, Products> entry : map.getData().entrySet()) {
+            if (getAmount(entry.getKey())-entry.getValue().getQuantity()<=0)
             rs= false;
             break;
         }
@@ -74,11 +77,10 @@ public class AddOderService {
         }
         return rs;
     }
-    public void addOderByUser (String usid , HashMap<String, Integer> map,String note ,String voucherCode){
+    public void addOderByUser (String usid , Cart map ,String voucherCode){
         User us1 = useService.getInstance().getUserById(usid);
         Order neworder = new Order();
         neworder.setIdOder(OderService.getInstance().createNewIDOder());
-
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
                 PreparedStatement statement = conn.prepareStatement(
@@ -88,7 +90,7 @@ public class AddOderService {
                 statement.setString(2,AppService.getNowDate().toString());
                 statement.setString(3,us1.getPhoneNumber());
                 statement.setString(4,us1.getName());
-                statement.setString(5,note);
+                statement.setString(5,"Đầy đủ");
                 statement.setString(6,voucherCode);
                 statement.setString(7,us1.getIDadress());
                 statement.setString(8,"Đang Giao");
@@ -99,16 +101,16 @@ public class AddOderService {
                 statement2.setString(1,us1.getIdacc());
                 statement2.setString(2,neworder.getIdOder());
 
-                for (Map.Entry<String, Integer> entry : map.entrySet()) {
+                for (Map.Entry<String, Products> entry : map.getData().entrySet()) {
                     PreparedStatement statement3 = conn.prepareStatement(
                             "INSERT INTO order_details(ID_ORDER, ID_FOOD, ID_SIZE , QUANTITY)\n" +
                                     "VALUES (?,?,?,?)");
                     statement3.setString(1,neworder.getIdOder());
                     statement3.setString(2,entry.getKey());
                     statement3.setString(3,"SIZE1");
-                    statement3.setInt(4,entry.getValue());
+                    statement3.setInt(4,entry.getValue().getQuantity());
                     statement3.execute();
-                    deleteAmount(entry.getKey(),entry.getValue());
+                    deleteAmount(entry.getKey(),entry.getValue().getQuantity());
                 }
                 statement.execute();
                 statement2.execute();
@@ -119,13 +121,5 @@ public class AddOderService {
 
     }
 
-    public static void main(String[] args) {
-        HashMap<String, Integer> map = new HashMap<>();
-        map.put("COM_GA1",1);
-        map.put("COM_GA4",2);
-        System.out.println(AddOderService.getInstance().getAmount("COM_GA1"));
-        System.out.println(AddOderService.getInstance().isleft(map));
-        AddOderService.getInstance().addOderByUser("ACC1",map," ","");
 
-    }
 }

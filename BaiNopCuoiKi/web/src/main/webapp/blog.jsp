@@ -96,8 +96,9 @@
         <nav class="header__menu">
           <ul>
             <li ><a href="getIndex">Trang Chủ</a></li>
-            <li><a href="getAllProduct">Gian Hàng</a></li>
-            <li class="active"><a href="blog.jsp">Giới Thiệu</a></li>
+            <li ><a href="getAllProduct">Gian Hàng</a></li>
+
+            <li class = "active"><a href="blog.jsp">Giới Thiệu</a></li>
             <li><a href="contact.jsp">Liên Hệ</a></li>
           </ul>
         </nav>
@@ -212,7 +213,7 @@
       <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="footer__about">
           <div class="footer__about__logo">
-            <a href="./index.html"><img src="img/a.png" alt=""></a>
+            <a href="getIndex"><img src="img/a.png" alt=""></a>
           </div>
           <ul>
             <li>Địa chỉ: Khu Phố 6, Thủ Đức, Thành phố Hồ Chí Minh</li>

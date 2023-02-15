@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.Voucher" %>
+<%@ page import="main.bean.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -69,7 +70,21 @@
                           <div>Việt Nam </div>
                       </div>
                       <div class="header__top__right__auth">
-                        <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+                          <%
+                              String a = (String) session.getAttribute("login");
+                              User user = (User) session.getAttribute("auth");
+                          %>
+                          <%
+                              if (a == null) {
+                          %>
+                          <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+                          <% }else{%>
+                          <div   class="fa" role="alert">
+
+                              <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+                          </div>
+                          <%}%>
                       </div>
                   </div>
               </div>
@@ -86,18 +101,18 @@
           <div class="col-lg-6">
               <nav class="header__menu">
                   <ul>
-                      <li ><a href="./index.html">Trang Chủ</a></li>
-                      <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+                      <li ><a href="getIndex">Trang Chủ</a></li>
+                      <li ><a href="getAllProduct">Gian Hàng</a></li>
 
-                      <li><a href="./blog.html">Giới Thiệu</a></li>
-                      <li><a href="./contact.html">Liên Hệ</a></li>
+                      <li><a href="blog.jsp">Giới Thiệu</a></li>
+                      <li><a href="contact.jsp">Liên Hệ</a></li>
                   </ul>
               </nav>
           </div>
           <div class="col-lg-3">
               <div class="header__cart">
                   <ul>
-                      <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
+                      <li><a href="getUser"><i class="fa fa-user"></i> </a></li>
                       <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                   </ul>
                   <div class="header__cart__price"></div>
@@ -184,7 +199,7 @@
                 <td><%=item.getType()%></td>
                 <td><%=item.getDisCount()%></td>
                 <td><%=item.getIsOutDate()%></td>
-                <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
+                <td>
                   <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
               </tr>
               <%}%>

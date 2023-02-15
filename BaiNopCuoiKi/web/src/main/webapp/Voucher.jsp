@@ -96,8 +96,9 @@
                         <ul>
                             <li ><a href="getIndex">Trang Chủ</a></li>
                             <li ><a href="getAllProduct">Gian Hàng</a></li>
-                            <li><a href="./blog.html">Giới Thiệu</a></li>
-                            <li><a href="./contact.html">Liên Hệ</a></li>
+
+                            <li><a href="blog.jsp">Giới Thiệu</a></li>
+                            <li><a href="contact.jsp">Liên Hệ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -201,7 +202,7 @@
                                         </div>
                                         <div class="data">
                                             <h4>Trạng thoái</h4>
-                                            <p><%=userID.getStatus()%>></p>
+                                            <p><%=userID.getStatus()%></p>
                                         </div>
 
 
@@ -235,8 +236,6 @@
                             <th>Loại Voucher</th>
                             <th>Giảm</th>
                             <th>Thời hạn</th>
-
-                            <th>Hành Động</th>
                         </tr>
                         </thead>
 
@@ -252,8 +251,7 @@
                             <td><%=item.getType()%></td>
                             <td><%=item.getDisCount()%></td>
                             <td><%=item.getIsOutDate()%></td>
-                            <td><a href=""><i class="fa fa-lock" aria-hidden="true"></i>Khóa</a>
-                                <a href="Voucher/ServletDelete?vid=<%=item.getIdVoucher()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+
                         </tr>
                         <%}%>
                         </tbody>
