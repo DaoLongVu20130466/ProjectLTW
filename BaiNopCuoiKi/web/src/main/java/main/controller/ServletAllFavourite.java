@@ -19,7 +19,6 @@ public class ServletAllFavourite extends HttpServlet {
         User user0 = (User) session.getAttribute("auth");
         String  idser = user0.getUserId();
         String tag = request.getParameter("tag");
-
 //
         User user = useService.getInstance().getAllUserByID(idser);
         ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
