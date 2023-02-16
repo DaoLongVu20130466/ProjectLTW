@@ -1,0 +1,510 @@
+.more1 p{
+    float: left;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+.more1{
+    padding: 10px;
+    background-color: #f7f8fc;
+    border-radius: 5px;
+    display: flex;
+}
+.more1 form {
+    margin-top: 2px;
+}
+.more1 a:hover{
+    color: #007bff;
+}
+.align-self-start{
+    height: 100%;
+    margin-right: 6px;
+}
+.menuctner{
+    display: flex;
+    flex-direction: column;
+}
+.doanhthu .doanhthuitem div i{
+    margin-right: 10px;
+}
+.doanhthu{
+    width: 100%;
+    display: flex;
+    gap: 16%;
+    margin-bottom: 50px;
+}
+.doanhthu .doanhthuitem {
+    border-style: solid;
+    border-radius: 5px;
+    border-color: antiquewhite;
+}
+.doanhthuitem .doanhthuctn
+{
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.doanhthuitem strong {
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+.doanhthuitem div div{
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.doanhthuitem div i {
+    padding-left: 25px;
+}
+.menuctner2{
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+.table{
+    margin-left: 3%;
+}
+.cd-table-container{
+    background: #fff;
+    box-shadow: 1px 2px 26px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    max-width: 720px;
+}
+/* Table Design */
+.cd-table{
+    width: 100%;
+    color: #666;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+.cd-table tr,
+.cd-table td{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.cd-table th{
+
+    padding: 10px;
+}
+
+/* Search Box */
+.cd-search{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Search Title */
+.cd-title{
+    color: #666;
+    margin: 15px 0;
+}
+.TaiKhoan a:hover{
+    color: #1b1e21;
+}
+.itin4{
+    display: flex;
+}
+.itin4 img{
+    height: 60px;
+    width: 60px;
+}
+.itemi4 {
+    font-weight: 1000;
+    color: #2962ff;
+    font-size: larger;
+    font-family: math;
+}
+.mahang {
+    margin-bottom: -5px;
+}
+.ittabp{
+    margin-left: 10px;
+}
+.hed {
+    margin-top: 25px;
+    display: flex;
+    margin-left: 4%;
+}
+.hed p {
+    color: #2962ff;
+    font-size: large;
+    font-weight: 500;
+}
+.infor{
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.ChiTietDonHangs{
+    border-radius: 3px;
+    margin-left: 15px;
+    border-style: groove;
+}
+.chitietdonhang {
+    margin-bottom: 25px;
+
+    display: flex;
+    gap: 50px;
+}
+.chitietdonhang-cl1{
+    max-width: 50%;
+    width: 45%;
+    margin-right: -20px;
+}
+.chitietdonhang-cl1 div{
+    margin-bottom: 2%;
+    margin-left: 35px;
+    height: 35px;
+    width: 100%;
+}
+.lbin4{
+    float: right;
+    color: #2962ff;
+}
+.lbin41{
+    float: right;
+}
+.lbin42{
+    float: right;
+    font-weight: 700;
+}
+.lbdt{
+    float: left;
+}
+.Statusdon{
+    background: #2962ff;
+    color: white;
+    float: right;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* ---------------------ThemSP------------------------ */
+//* ---------------------ThemSP------------------------ */
+#
+.btn{
+    background: #2ec791;
+    border: #333333;
+
+    margin-top: 20px;
+    grid-column:1/3;
+}
+
+textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+
+}
+.testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+}
+form {
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 0 8px #006622;
+}
+input, select, textarea {
+    margin-bottom: 10px;
+    border: 1px solid #808080;
+    border-radius: 3px;
+}
+input {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+input[type="date"] {
+    padding: 4px 5px;
+}
+textarea {
+    width: calc(100% - 12px);
+    padding: 5px;
+}
+
+.item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+    color:  #006622;
+}
+.item input:hover, .item select:hover, .item textarea:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 3px 0  #006622;
+    color: #006622;
+}
+.item {
+    position: relative;
+    margin: 10px 0;
+}
+.item span {
+    color: red;
+}
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+.item i, input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    font-size: 20px;
+    color: #00b33c;
+}
+.item i {
+    right: 1%;
+    top: 30px;
+    z-index: 1;
+}
+.list{
+    border: 1px solid #808080;
+}
+.week {
+    display:flex;
+    justfiy-content:space-between;
+}
+.colums {
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.colums div {
+    width:48%;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+    right: 1%;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+input[type=radio], input[type=checkbox]  {
+    display: none;
+}
+label.radio {
+    position: relative;
+    display: inline-block;
+    margin: 5px 20px 15px 0;
+    cursor: pointer;
+}
+.question span {
+    margin-left: 30px;
+
+}
+
+.question-answer label {
+
+    display: block;
+}
+.question-2{
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+.question-3{
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.question-4{
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+.question-2 .nice-select{
+    border: 1px solid #808080;
+    width: calc(100% - 12px);
+    padding-bottom: 20px;
+}
+.question-3 .nice-select{
+    border: 1px solid #808080;
+    width: calc(100% - 12px);
+    padding-bottom: 20px;
+}
+#food{
+    margin-left: 0;
+}
+label.radio:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+input[type=radio]:checked + label:before, label.radio:hover:before {
+    border: 2px solid  #2ec791;
+}
+label.radio:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 8px;
+    height: 4px;
+    border: 3px solid  #006622;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+input[type=radio]:checked + label:after {
+    opacity: 1;
+}
+.flax {
+    display:flex;
+    justify-content:space-around;
+}
+.btn-block {
+    margin-top: 10px;
+    text-align: center;
+}
+button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background:  #006622;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background:  #00b33c;
+}
+@media (min-width: 568px) {
+    .name-item, .city-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .name-item input, .name-item div {
+        width: calc(50% - 20px);
+    }
+    .name-item div input {
+        width:97%;}
+    .name-item div label {
+        display:block;
+        padding-bottom:5px;
+    }
+}
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* -------------------SanPham-------------------------- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+.vouchersearch{
+    display: flex;
+}
+.vouchersearch a {
+    background: #007bff;
+    color: white;
+    width: 15%;
+    text-align: center;
+    padding: 1%;
+    margin-left: 1%;
+    border-radius: 5px;
+}
+#voucher {
+    column-gap: 1%;
+    row-gap: 13%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+}
+#voucher div{
+    display: flex;
+
+
+}
+#voucher div input{
+    width: 100%;
+}
+#voucher div label{
+    width: 30%;;
+}
+.c3 {
+    display: flex;
+    grid-row: 3;
+}
+.day1{
+    grid-column: 1
+}
+.ghichu{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.day1 input{
+    width: auto;
+}
+.day2 input{
+    width: auto;
+}
+.btnacc{
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: white;
+    width: 125px;
+    font-weight: 700;
+    padding: 7px;
+    border-radius: 3px;
+    text-align: center;
+    margin-left: 88%;
+}
+#loaigiam{
+    width: 40%;
+}
+.ghichu input {
+
+}
+.head2 {
+    margin-bottom: 4%;
+    font-size: large;
+    font-weight: 700;
+    color: #1a73e8;
+}
+#themvoucher{
+    border-style: groove;
+    border-radius: 5px;
+    margin-left: 1%;
+}
+.boderform{
+    margin-top: 3%;
+    margin-right: 2%;
+    margin-left: 1%;
+}
+.nice-select{
+    width: 88%;
+    height: 36px;
+    padding-bottom: 4px;
+
+}
+.stg {
+    height: 35px;
+    /* width: 66%; */
+    margin-left: 1%;
+}
+
+
+.add-input {
+
+    display: flex;
+    padding: 10px;
+    box-shadow: 10px 10px 18px #e6e6e6;
+    flex-direction: column;
+    padding:10px 15px;
+    background: var(--main-color);
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

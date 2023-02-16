@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/QuanLyTaiKhoan.jsp" value="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/addProduct.jsp" value="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/editProdcut.jsp" value="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/product-detail.jsp" value="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp/shop-grid.jsp" value="file://$PROJECT_DIR$/BaiNopCuoiKi/web/src/main/webapp" />
+      </map>
+    </option>
+  </component>
+</project>
