@@ -17,22 +17,23 @@ public class ServletGetPageProductByType extends HttpServlet {
         String type = request.getParameter("type");
         String page = request.getParameter("page");
         int p  ;
-        if(page == null ){
-            p = 1;
-        } else {
-            p = Integer.parseInt(page);
-        }
-        ArrayList<Products> allProductByTyp = (ArrayList<Products>) ProductsService.getInstance().getAllproductsByType(type);
-        ArrayList<Products> allProductByType = (ArrayList<Products>) ProductsService.getInstance().getAllproducts2(type,p);
-        int numberP = allProductByTyp.size()/12 +1;
-        ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
-        ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
-        request.setAttribute("allproducts", allProductByType);
-        request.setAttribute("alltype", typePro);
-        request.setAttribute("numberP",numberP);
-        request.setAttribute("productBySale", producBySale);
-        request.setAttribute("type",type);
-        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
+            if (page == null) {
+                p = 1;
+            } else {
+                p = Integer.parseInt(page);
+            }
+            ArrayList<Products> allProductByTyp = (ArrayList<Products>) ProductsService.getInstance().getAllproductsByType(type);
+            ArrayList<Products> allProductByType = (ArrayList<Products>) ProductsService.getInstance().getAllproducts2(type, p);
+            int numberP = allProductByTyp.size() / 12 + 1;
+            ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
+            ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
+            request.setAttribute("allproducts", allProductByType);
+            request.setAttribute("alltype", typePro);
+            request.setAttribute("numberP", numberP);
+            request.setAttribute("productBySale", producBySale);
+            request.setAttribute("type", type);
+            request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
+
     }
 
     @Override
