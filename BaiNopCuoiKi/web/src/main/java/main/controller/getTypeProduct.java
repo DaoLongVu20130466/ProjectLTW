@@ -15,6 +15,8 @@ public class getTypeProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
+        HttpSession session = request.getSession();
+        session.setAttribute("typeSS",type);
 
         ArrayList<Products> allProductByType = (ArrayList<Products>) ProductsService.getInstance().getAllproductsByType(type);
         int numberP = allProductByType.size()/12 +1;
@@ -23,7 +25,6 @@ public class getTypeProduct extends HttpServlet {
 
 
         request.setAttribute("allproducts", allProductByType);
-
         request.setAttribute("alltype", typePro);
         request.setAttribute("numberP",numberP);
         request.setAttribute("productBySale", producBySale);
