@@ -165,44 +165,39 @@
                     <div class="product__details__price"><%=pro.getLISTED_PRICE()%><p>VND</p></div>
                     <p><%=pro.getDESCRIPTION()%>
                     </p>
-                    <div class="product__details__quantity">
+                </div>
+                    <form action="/web_war/test1" enctype="multipart/form-data" method="get" onSubmit="">
+                        <div class='add-input' style="display: none">
+                            <input type='text' name='idfood' value="<%=pro.getID_food()%>">
+                        </div>
                         <div class="quantity">
                             Số lượng:
                             <div class="pro-qty">
-                                <input name="value" type="text" value="1">
+                                <input name="soluong" type="text" value="1">
                             </div>
                         </div>
-                    </div>
-
 
                     <div>
                         <h4>Size:</h4>
                         <label class="size">Thường
-                            <input type="radio" checked="checked" name="radio">
+                            <input type="radio" checked="checked" name="radio" value="SIZE1">
                             <span class="checkmark"></span>
                         </label>
                         <label class="size">Đặc biệt
-                            <input type="radio" name="radio">
+                            <input type="radio" name="radio" value="SIZE2">
                             <span class="checkmark"></span>
                         </label>
                     </div>
 
                     <ul>
-                        <li><b>Tình trạng</b> <span>Còn món ăn</span></li>
-                        <li><b>Ghi chú</b> <input id="ghichu" type="text"></li>
-                        <li><b>Chia sẻ</b>
-                            <div class="share">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </li>
+                        <li><b>Tình trạng</b> <span> Còn món ăn</span></li>
+                        <li><b>Ghi chú</b> <input type='text' name='ghichu' placeholder="Ghi chu" ></li>
+
                     </ul>
                     <a href="./addtoCart?id=<%=pro.getID_food()%>">
-                    <button class="btn" href="/web_war/ServletAddOderDirect"> Mua món ăn</button></a>
+                    <button class="btn" > Mua món ăn</button></a>
 
-                </div>
+            </form>
             </div>
 
             <div class="col-lg-12">
