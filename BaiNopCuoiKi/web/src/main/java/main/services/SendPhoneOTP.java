@@ -30,6 +30,6 @@ public void resetOTP(){
 
 public static void main(String[] args) throws IOException {
     SendPhoneOTP otp = new SendPhoneOTP();
-    otp.sendOTP("0375197880");
+    otp.sendOTP("0965052320");
 }
 }
