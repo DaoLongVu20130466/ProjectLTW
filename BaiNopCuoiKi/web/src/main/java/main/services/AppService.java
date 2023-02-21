@@ -1,10 +1,13 @@
 package main.services;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 
 public  class AppService {
     public static String intToVND(int iput){
@@ -59,10 +62,12 @@ public  class AppService {
         return nowDate;
 
     }
-    public static void main(String[] args) {
-        System.out.println(intToVND(100000000));
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd ");
-        System.out.println(getNowDate().toString());
-        System.out.println("fvvv");
+    public static String getOTP(){
+        RandomStringUtils randomOTP = new RandomStringUtils();
+        return randomOTP.randomAlphanumeric(8);
     }
+    public static void main(String[] args) {
+        System.out.println(getOTP());
+    }
+
 }
