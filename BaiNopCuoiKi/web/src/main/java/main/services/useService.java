@@ -2,11 +2,9 @@ package main.services;
 import main.db.ConnectMysqlExample;
 import main.bean.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class useService {
@@ -374,6 +372,32 @@ public class useService {
         }
         return result;
     }
+    public String getIDfromEmail(String email) {
+        ArrayList<String> allusercontronl = new ArrayList<String>();
+        String result=null;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            // crate statement
+            Statement stmt = conn.createStatement();
+            // get data from table 'student'
+            PreparedStatement ps = conn.prepareStatement("select ID_ACCOUNT\n" +
+                    "from account\n" +
+                    "where EMAIL and ID_SIZE = ?"  );
+            ps.setString(1,  email);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                result=rs.getString(1) ;
+            }
+            conn.close();
+
+            // close connection
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return result;
+    }
     public String chekSDT(String sdt) {
         ArrayList<String> allusercontronl = new ArrayList<String>();
         String result=null;
@@ -468,6 +492,29 @@ public class useService {
         return user;
     }
 
+    public int upReset_password( String ID_ACCOUNT, String hash) {
+        int Y = 0;
+        java.sql.Timestamp  intime = new java.sql.Timestamp(new
+                java.util.Date().getTime());
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(intime.getTime());
+        cal.add(Calendar.MINUTE, 20);
+        java.sql.Timestamp  exptime = new Timestamp(cal.getTime().getTime());
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            Statement stmt = conn.createStatement();
+            String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime,Datetime)Value ("+ID_ACCOUNT+","+hash+","+exptime+","+intime+")" ;
+         
+
+         Y= stmt.executeUpdate(query);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return Y;
+
+    }
     public static void main(String[] args) {
         useService u = new useService();
         System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
