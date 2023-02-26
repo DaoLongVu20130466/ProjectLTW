@@ -22,7 +22,7 @@ public class OderCart implements Serializable {
     }
 
     public int getThisodercartvl(){
-        return Item.LISTED_PRICE * value;
+        return Item.getPrice() * value;
     }
     public OderCart() {
     }
