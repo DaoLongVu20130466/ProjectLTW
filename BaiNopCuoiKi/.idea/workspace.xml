@@ -10,10 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,6 +225,12 @@
       <workItem from="1676554032526" duration="5112000" />
       <workItem from="1676559193825" duration="3574000" />
       <workItem from="1677764669782" duration="3630000" />
+      <workItem from="1678453615395" duration="1190000" />
+      <workItem from="1678801048335" duration="1263000" />
+      <workItem from="1680012583205" duration="5113000" />
+      <workItem from="1680058674538" duration="402000" />
+      <workItem from="1680337108210" duration="5766000" />
+      <workItem from="1680689222864" duration="2584000" />
     </task>
     <servers />
   </component>
@@ -242,5 +247,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
+          <line>357</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
+          <line>295</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
+          <line>329</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
