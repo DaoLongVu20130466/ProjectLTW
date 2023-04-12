@@ -62,28 +62,12 @@ public  class AppService {
         return nowDate;
 
     }
-    public static java.sql.Date getNowdate(){
-        long millis=System.currentTimeMillis();
-        java.sql.Date date = new java.sql.Date(millis);
-        return date;
-    }
     public static String getOTP(){
         RandomStringUtils randomOTP = new RandomStringUtils();
         return randomOTP.randomAlphanumeric(8);
     }
-    public static String getindex(int i){
-        String rs="VALUES (";
-        for (int z =1 ; z==i ; z++){
-            if (z==i){
-                rs+="?)";
-            }
-            rs+="?,";
-        }
-        return rs;
-    }
     public static void main(String[] args) {
-
-        System.out.println(getindex(4));
+        System.out.println(getOTP());
     }
 
 }
