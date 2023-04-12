@@ -93,7 +93,9 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
+
             PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
@@ -101,8 +103,10 @@ public class ProductsService {
                     "LIMIT 7 OFFSET ?"
             );
             //XONG
+
             ps.setString(1, type);
             ps.setInt(2, (page - 1) * 12);
+
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -120,12 +124,11 @@ public class ProductsService {
         return allProductByPage;
     }
 
-    // getTypeProduct đã fix
+    // getTypeProduct Ä‘Ã£ fix
     public ArrayList<TypeProducts> getTypeProduct() {
         ArrayList<TypeProducts> allType = new ArrayList<TypeProducts>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT ID_TYPE , TYPE_FOOD\n" +
                     "FROM type_food");
@@ -143,7 +146,7 @@ public class ProductsService {
         return allType;
     }
 
-    //getAllproductBySale đã fix
+    //getAllproductBySale Ä‘Ã£ fix
     public List<Products> getAllproductBySale() {
         ArrayList<Products> allProductBySale = new ArrayList<Products>();
         try {
@@ -293,6 +296,7 @@ public class ProductsService {
 
     public List<Products> getAllProductByID(String type) {
         ArrayList<Products> allProductByID = new ArrayList<Products>();
+
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
@@ -324,6 +328,7 @@ public class ProductsService {
         return allProductByID;
     }
 
+
         // getAllProductByPage đã fix
         public List<Products> getAllProductByPage ( int page){
             ArrayList<Products> allProductByPage = new ArrayList<Products>();
@@ -351,9 +356,11 @@ public class ProductsService {
                 conn.close();
             } catch (Exception ex) {
                 ex.printStackTrace();
+
             }
             return allProductByPage;
         }
+
 
         public List<Products> getAllproductFavouriteByUser (String iduser){
             ArrayList<Products> allProductByFavourite = new ArrayList<Products>();
@@ -387,6 +394,7 @@ public class ProductsService {
             }
             return allProductByFavourite;
         }
+
 
         public void addProduct
         (String tenmonan,
@@ -427,6 +435,8 @@ public class ProductsService {
                 e.printStackTrace();
             }
         }
+
+
 
         public List<Products> getAllproductSearch(String txt){
             ArrayList<Products> allProductSearch = new ArrayList<Products>();
@@ -516,6 +526,8 @@ public class ProductsService {
             System.out.println(item.getNameType());
         }
 
+
     }
+
 
 }
