@@ -92,8 +92,7 @@ public class ProductsService {
         ArrayList<Products> allProductByPage = new ArrayList<Products>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+            PreparedStatement ps = conn.prepareStatement( "SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
@@ -101,12 +100,13 @@ public class ProductsService {
                     "LIMIT 7 OFFSET ?"
             );
             //XONG
-            ps.setString(1, type);
-            ps.setInt(2, (page - 1) * 12);
+
+            ps.setString(1,type);
+            ps.setInt(2,(page-1 )* 12);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                allProductByPage.add(new Products(
+                allProductByPage.add( new Products(
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
@@ -125,9 +125,8 @@ public class ProductsService {
         ArrayList<TypeProducts> allType = new ArrayList<TypeProducts>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT ID_TYPE , TYPE_FOOD\n" +
+            ResultSet rs = stmt.executeQuery("select SELECT ID_TYPE , TYPE_FOOD\n" +
                     "FROM type_food");
 
             while (rs.next()) {
@@ -191,8 +190,8 @@ public class ProductsService {
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
-                        rs.getNString(4), rs.getInt(4),
-                        rs.getInt(6), rs.getString(5)));
+                        rs.getInt(4),
+                        rs.getString(5)));
                 //XONG
             }
             conn.close();
@@ -220,17 +219,17 @@ public class ProductsService {
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
-                        rs.getNString(4), rs.getInt(4),
-                        rs.getInt(6), rs.getString(5)));
+                        rs.getInt(4),
+                        rs.getString(5)));
             }
             conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
-        }
+//        }
         return allProductByCombo;
     }
 
-    public List<Products> getAllproductsByType(String type){
+    public List<Products> getAllproductsByType( String type) {
         ArrayList<Products> allProductByType = new ArrayList<Products>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
@@ -241,12 +240,12 @@ public class ProductsService {
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
                     "WHERE food.ID_TYPE = ?"
             );
-            ps.setString(1, type);
+            ps.setString(1,type);
             ResultSet rs = ps.executeQuery();
             //Xong
 
             while (rs.next()) {
-                allProductByType.add(new Products(
+                allProductByType.add( new Products(
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
@@ -260,17 +259,17 @@ public class ProductsService {
         return allProductByType;
     }
 
-    public Products getProductByID(String fid){
+    public Products getProductByID(String fid) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE,food.DESCRIPTION, food.IVENTORY, PRICE.PRICE  , image.SRC \n" +
+            PreparedStatement ps = conn.prepareStatement( "SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE,food.DESCRIPTION, food.IVENTORY, PRICE.PRICE  , image.SRC \n" +
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
                     "WHERE food.ID_FOOD = ?"
             );
-            ps.setString(1, fid);
+            ps.setString(1,fid);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -371,15 +370,15 @@ public class ProductsService {
                     "WHERE user_information.ID_USER = ?"
 
             );
-            ps.setString(1, iduser);
+            ps.setString(1,iduser);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 allProductByFavourite.add(new Products(
                         rs.getNString(2),
                         rs.getNString(3),
                         rs.getInt(4),
-                        rs.getInt(4), rs.getString(5),
-                        rs.getString(7)));
+                        rs.getString(5)
+                ));
             }
             conn.close();
         } catch (Exception ex) {
@@ -442,15 +441,15 @@ public class ProductsService {
 
 
             );
-            ps.setString(1, "%" + txt + "%");
+            ps.setString(1,"%"+txt+"%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                allProductSearch.add(new Products(
+                allProductSearch.add( new Products(
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
-                        rs.getNString(4), rs.getInt(4),
-                        rs.getInt(6), rs.getString(5)));
+                        rs.getInt(4),
+                        rs.getString(5)));
             }
             conn.close();
         } catch (Exception ex) {
@@ -474,16 +473,43 @@ public class ProductsService {
     }
 
 
-    public void updateProduct
-            (String id, String
-                    tenmonan, String
-                     optionSize,int giaban, String
-                     optionType,int soluong, String
-                     optionStatus,int optionCombo, String
-                     optionSale, String
-                     optionHot, String
-                     mota, String
-                     img,int niemyet){
+
+//    public Products getProductByIDSize(String idf, String size) {
+////        try {
+////            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+////
+////            PreparedStatement ps = conn.prepareStatement( "SELECT ID_FOOD,FOOD_NAME,ID_SIZE,LISTED_PRICE,TYPE_FOOD,QUANTITY,STATUSS,IS_COMBO,ID_SALE,IS_HOT,DESCRIPTION,L_IMG,BASE_PRICE FROM `FOOD`\n" +
+////                    "WHERE FOOD.ID_SIZE= ? and FOOD.ID_FOOD = ?"
+////            );
+////            ps.setString(1,size);
+////            ps.setString(2,idf);
+////            ResultSet rs = ps.executeQuery();
+////
+////            while (rs.next()) {
+////                return new Products(
+////                        rs.getString(1),
+////                        rs.getNString(2),
+////                        rs.getString(3),
+////                        rs.getInt(4),
+////                        rs.getNString(5),
+////                        rs.getInt(6),
+////                        rs.getNString(7),
+////                        rs.getBoolean(8),
+////                        rs.getString(9),
+////                        rs.getString(10),
+////                        rs.getNString(11),
+////                        rs.getNString(12),
+////                        rs.getInt(13));
+////
+////            }
+////            conn.close();
+////        } catch (Exception ex) {
+////            ex.printStackTrace();
+////        }
+//        return null;
+//    }
+
+    public void updateProduct(String id, String tenmonan, String optionSize, int giaban, String optionType, int soluong, String optionStatus, int optionCombo, String optionSale, String optionHot, String mota, String img, int niemyet) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
@@ -511,11 +537,7 @@ public class ProductsService {
     }
 
     public static void main(String[] args) {
-        ArrayList<TypeProducts> listT = getInstance().getTypeProduct();
-        for (TypeProducts item: listT) {
-            System.out.println(item.getNameType());
-        }
 
-    }
+}
 
 }

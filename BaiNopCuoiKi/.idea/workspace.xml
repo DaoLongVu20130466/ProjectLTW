@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,21 +205,13 @@
       <workItem from="1673289826584" duration="572000" />
       <workItem from="1676554032526" duration="5112000" />
       <workItem from="1676559193825" duration="3574000" />
-      <workItem from="1677079888550" duration="78000" />
-      <workItem from="1677159764746" duration="1676000" />
-      <workItem from="1677292675444" duration="26000" />
-      <workItem from="1678107821032" duration="14000" />
-      <workItem from="1678203930316" duration="121000" />
-      <workItem from="1678205942914" duration="651000" />
-      <workItem from="1678630550010" duration="588000" />
-      <workItem from="1678800615436" duration="1865000" />
-      <workItem from="1679058346373" duration="594000" />
-      <workItem from="1680183394784" duration="743000" />
-      <workItem from="1680228810977" duration="1795000" />
-      <workItem from="1680266997194" duration="1416000" />
-      <workItem from="1681218116118" duration="7647000" />
-      <workItem from="1681264581983" duration="5844000" />
-      <workItem from="1681304803290" duration="525000" />
+      <workItem from="1677764669782" duration="3630000" />
+      <workItem from="1678453615395" duration="1190000" />
+      <workItem from="1678801048335" duration="1263000" />
+      <workItem from="1680012583205" duration="5113000" />
+      <workItem from="1680058674538" duration="402000" />
+      <workItem from="1680337108210" duration="5766000" />
+      <workItem from="1680689222864" duration="2584000" />
     </task>
     <servers />
   </component>
@@ -235,5 +228,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
+          <line>357</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
+          <line>295</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
+          <line>329</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
