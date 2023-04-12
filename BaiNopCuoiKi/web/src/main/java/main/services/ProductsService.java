@@ -154,8 +154,8 @@ public class ProductsService {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT ID_FOOD,FOOD_NAME,ID_SIZE,LISTED_PRICE,TYPE_FOOD,QUANTITY,STATUSS,IS_COMBO,ID_SALE,IS_HOT,DESCRIPTION,L_IMG FROM `food`\n" +
                     "WHERE food.ID_SIZE=\"SIZE1\"\n and food.ID_SALE =\"SALE1\" "
-
             );
+            conn.close();
             while (rs.next()) {
                 allProductBySale.add(new Products(
                         rs.getString(1),
@@ -172,12 +172,12 @@ public class ProductsService {
                         rs.getNString(12)));
 
             }
-            conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return allProductBySale;
     }
+
     public List<Products> getAllproductByHot() {
         ArrayList<Products> allProductByHot = new ArrayList<Products>();
         try {
