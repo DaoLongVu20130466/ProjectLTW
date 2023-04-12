@@ -78,7 +78,7 @@ public class Cart implements Serializable {
         total = 0;
         quantity = 0;
         for (Products p : data.values()) {
-            total += p.getQuantity() * p.getLISTED_PRICE();
+            total += p.getQuantity() * p.getPrice();
             quantity += p.getQuantity();
         }
     }
