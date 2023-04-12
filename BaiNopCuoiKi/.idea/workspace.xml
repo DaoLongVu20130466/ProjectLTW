@@ -10,19 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Logging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/db/DBService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/db/ConnectMysqlExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/db/ConnectMysqlExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +217,8 @@
       <workItem from="1680228810977" duration="1795000" />
       <workItem from="1680266997194" duration="1416000" />
       <workItem from="1681218116118" duration="7647000" />
-      <workItem from="1681264581983" duration="5244000" />
+      <workItem from="1681264581983" duration="5844000" />
+      <workItem from="1681304803290" duration="525000" />
     </task>
     <servers />
   </component>
