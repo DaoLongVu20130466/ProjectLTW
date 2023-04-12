@@ -180,7 +180,7 @@
                 <td><%=item.getSrc()%></td>
                 <td><%=item.getContent()%></td>
                 <td><%=item.getDate()%></td>
-                <td><a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+                <td><a href="ServletDeletelog?LogId=<%=item.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
 
               </tr>
 

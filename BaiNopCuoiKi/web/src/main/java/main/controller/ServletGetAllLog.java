@@ -23,7 +23,7 @@ public class ServletGetAllLog extends HttpServlet {
         if (AppService.checkAdmin(role)) {
             ArrayList<Log> log = LogService.getInstance().getAlllog();
             request.setAttribute("alllog", log);
-            request.getRequestDispatcher("Truysuatdonhang.jsp").forward(request, response);
+            request.getRequestDispatcher("Log.jsp").forward(request, response);
         }else {
             request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
             request.getRequestDispatcher("getIndex").forward(request, response);

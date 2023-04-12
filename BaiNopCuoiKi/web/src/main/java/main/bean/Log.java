@@ -2,6 +2,7 @@ package main.bean;
 
 import main.db.ConnectMysqlExample;
 import main.services.AppService;
+import main.services.OderService;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -16,6 +17,17 @@ public class Log {
     String content;
     Date date;
     String status;
+     private  static Log  instance ;
+    public Log() {
+    }
+    public static Log getInstance() {
+        if (instance == null) {
+            instance = new Log();
+        }
+        return instance;
+    }
+
+
 
     public Log(String id, int level, String id_User, String src, String content, Date date, String status) {
         this.id = id;
@@ -92,5 +104,16 @@ public class Log {
             throw new RuntimeException(e);
         }
 
+
+    }
+    public void DeleteLog(String LogID){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM log WHERE ID_LOG = ?");
+            ps.setString(1, LogID);
+            ps.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
