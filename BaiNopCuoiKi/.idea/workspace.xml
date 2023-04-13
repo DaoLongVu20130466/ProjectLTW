@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditProduct.java" afterDir="false" />
@@ -18,11 +19,72 @@
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebRelease/ChitietSanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/../WebRelease/ChitietSanpham.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WebRelease/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebRelease/css/style.css" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,6 +121,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -77,6 +140,7 @@
   }
 }</component>
   <component name="RunManager" selected="Application.AppService">
+
     <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.AppService" />
       <module name="web" />
@@ -113,7 +177,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="33c48a7a-9273-406f-a536-8153ed5ee649" />
+        <option name="BASE_DIRECTORY_NAME" value="e63000ac-0835-4aa2-b67d-7ec15e7b98e2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -121,7 +185,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50719" />
+        <option name="DEBUG_PORT" value="56700" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -190,6 +254,11 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AppService" />
+      <item itemvalue="Application.SendPhoneOTP" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AppService" />
@@ -210,6 +279,7 @@
       <workItem from="1673289826584" duration="572000" />
       <workItem from="1676554032526" duration="5112000" />
       <workItem from="1676559193825" duration="3574000" />
+
       <workItem from="1677764669782" duration="3630000" />
       <workItem from="1678453615395" duration="1190000" />
       <workItem from="1678801048335" duration="1263000" />
@@ -219,6 +289,7 @@
       <workItem from="1680689222864" duration="2584000" />
       <workItem from="1681219987448" duration="2419000" />
       <workItem from="1681294586003" duration="4774000" />
+
     </task>
     <servers />
   </component>
