@@ -9,5 +9,10 @@
         <module name="web" />
       </profile>
     </annotationProcessing>
+
+    <bytecodeTargetLevel>
+      <module name="web" target="19" />
+    </bytecodeTargetLevel>
+
   </component>
 </project>

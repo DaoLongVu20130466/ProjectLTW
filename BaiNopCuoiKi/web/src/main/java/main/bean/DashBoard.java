@@ -99,7 +99,7 @@ public class DashBoard implements Serializable {
 
     public HashMap<String, Integer> increaseType(Order e) {
         for (OderCart pr : e.getAllOderCart()) {
-            switch (pr.getItem().getType()) {
+            switch (pr.getItem().getIdType()) {
                 case "TYPE1":
                     type.replace("Cơm gà", type.get("Cơm gà") + pr.getValue());
                     break;

@@ -13,9 +13,9 @@
 apply plugin: 'org.hidetake.ssh'
 remotes {
     host {
-        host = '192.168.1.100'
+        host = '192.168.245.100'
         user = 'root'
-        password = 1
+        password = '123'
     }
 }
 ssh.settings {
@@ -26,8 +26,8 @@ task docker_app_start {
         println 'begin docker_app_start'
         ssh.run {
             session(remotes.host) {
-                execute 'docker stop tomcat9', ignoreError: true
-                execute 'docker run -it --rm -d ' +
+                execute ' docker stop tomcat9', ignoreError: true
+                execute 'sudo docker run -it --rm -d ' +
                         '--name tomcat9 ' +
                         '-v /usr/deploy:/usr/local/tomcat/webapps ' +
                         '-p 80:8080 ' +
@@ -41,11 +41,11 @@ task docker_upload_file_to_server {
         println 'begin docker_upload_file_to_server'
         ssh.run {
             session(remotes.host) {
-                remove '/usr/deploy/lab.war'
-                remove '/usr/deploy/lab/'
+                remove '/usr/deploy/BaiNopCuoiKi.war'
+                remove '/usr/deploy/BaiNopCuoiKi/'
                 remove '/usr/deploy/lab5-1/'
-                put from: "${project.projectDir}/build/libs/lab5-1-1.0-SNAPSHOT.war",
-                        into: "/usr/deploy/lab.war"
+                put from: "${project.projectDir}/build/libs/BaiNopCuoiKi.war",
+                        into: "/usr/deploy/BaiNopCuoiKi.war"
             }
         }
     }
