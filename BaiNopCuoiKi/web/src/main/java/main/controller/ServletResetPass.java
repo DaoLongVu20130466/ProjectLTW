@@ -22,13 +22,13 @@ import java.util.Properties;
 
 @WebServlet(name = "ServletResetPass", value = "/ServletResetPass")
 public class ServletResetPass extends HttpServlet {
-    String ID_ACCOUNT = "";
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String smail = request.getParameter("email");
         if (smail != null && smail!="") {
-
+            String ID_ACCOUNT = "";
             String rs1 = useService.getInstance().chekemail(smail);
         if(rs1!=null) {
             ID_ACCOUNT = useService.getInstance().getIDfromEmail(smail);
