@@ -17,9 +17,9 @@ public class getAllProduct extends HttpServlet {
         String page = request.getParameter("page");
         int page2  ;
         if(page == null ){
-            page2 = 1;
+            page2 = 0;
         } else {
-            page2 = Integer.parseInt(page);
+            page2 = Integer.parseInt(page)*12;
         }
         ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
         int numberP = products.size()/12 +1 ;
