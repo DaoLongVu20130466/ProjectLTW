@@ -10,20 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/LogOut.java" afterDir="false" />
-
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getActivate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BaiNopCuoiKi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/../WebRelease/ChitietSanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/../WebRelease/ChitietSanpham.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WebRelease/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../WebRelease/css/style.css" afterDir="false" />
-
-
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/SanPham.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/SanPham.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,47 +39,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -93,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -125,7 +81,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -143,10 +98,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
-
-  <component name="RunManager" selected="Application.AppService">
-
-
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.AppService" />
       <module name="web" />
@@ -285,7 +237,6 @@
       <workItem from="1673289826584" duration="572000" />
       <workItem from="1676554032526" duration="5112000" />
       <workItem from="1676559193825" duration="3574000" />
-
       <workItem from="1677764669782" duration="3630000" />
       <workItem from="1678453615395" duration="1190000" />
       <workItem from="1678801048335" duration="1263000" />
@@ -294,12 +245,11 @@
       <workItem from="1680337108210" duration="5766000" />
       <workItem from="1680689222864" duration="2584000" />
       <workItem from="1681219987448" duration="2419000" />
-
-     
-
       <workItem from="1681294586003" duration="4774000" />
-
-
+      <workItem from="1681482732938" duration="151000" />
+      <workItem from="1681483763211" duration="3000" />
+      <workItem from="1681647896322" duration="640000" />
+      <workItem from="1681649744332" duration="7094000" />
     </task>
     <servers />
   </component>
