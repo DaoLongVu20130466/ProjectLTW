@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.Log;
 import main.bean.User;
 import main.services.useService;
 
@@ -29,6 +30,12 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("auth", user);
              session.setAttribute("login","Xin chào ");
+             int level = 0;
+             String user0 = username;
+             String src ="Login";
+             String content = "Đã đăng nhập vào hệ thống";
+             String status = "Hoàn thành";
+             Log.writeLog(level, user0,src,content,status);
          response.sendRedirect("getIndex");
         }
     }
