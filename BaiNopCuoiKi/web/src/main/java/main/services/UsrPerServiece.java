@@ -17,4 +17,9 @@ public class UsrPerServiece {
     public UserPemission getInforbyUid( String UID){
         return new UserPemission(UID);
     }
+    public void upDaterole(String roleId , String targetID){
+        UserPemission target = new UserPemission(targetID);
+        target.updateRole(roleId);
+
+    }
 }

@@ -304,10 +304,12 @@
 
                 <tr>
                   <select id="Role" name="Role">
-                    <option value="Admin">Admin</option>
-                    <option value="Editor">Editor</option>
-                    <option value="Viewer">Viewer</option>
-                    <option value="User">User</option>
+                    <option value="0">Người Dùng</option>
+                    <option value="1">Quản Lý Sản Phẩm</option>
+                    <option value="2">Admin</option>
+                    <option value="3">Quản Lý Tài Khoản</option>
+                    <option value="4">Quản Lý Voucher</option>
+                    <option value="5">Quản Lý Log</option>
                   </select>
                   <label for="Role">Set Role:</label>
                 </tr>

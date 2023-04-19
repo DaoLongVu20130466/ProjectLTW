@@ -52,6 +52,18 @@ public class UserPemission implements Serializable {
             throw new RuntimeException(e);
         }
     }
+    public void updateRole(String roleID){
+        try {
+        Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+        PreparedStatement ps = conn.prepareStatement("UPDATE role SET ROLE = ? WHERE CustomerID = ?;");
+        ps.setString(1,roleID);
+        ps.setString(2,this.UID);
+        ps.executeUpdate();
+        }
+     catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
+    }
     public boolean canWatchproduct(){
         if(this.productLevel > 0)
             return true;

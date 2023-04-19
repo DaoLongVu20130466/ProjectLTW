@@ -10,20 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetUPermis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/UsrPerServiece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietNhapHang.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/css/404Style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/UsrPerServiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/UsrPerServiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +230,7 @@
       <workItem from="1681697934607" duration="654000" />
       <workItem from="1681739438567" duration="5404000" />
       <workItem from="1681822801519" duration="1048000" />
-      <workItem from="1681872193775" duration="11694000" />
+      <workItem from="1681872193775" duration="13516000" />
     </task>
     <servers />
   </component>
