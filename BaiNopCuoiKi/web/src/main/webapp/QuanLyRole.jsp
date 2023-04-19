@@ -1,8 +1,13 @@
-<%@ page import="main.bean.Order" %>
+<%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.Log" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="java.util.Random" %><%--
+  Created by IntelliJ IDEA.
+  User: thoai
+  Date: 5/01/2023
+  Time: 4:02 pm
+  To change this template use File | Settings | File Templates.
+--%><%@ page import="main.bean.User" %>
+<%@ page import="main.bean.UserPemission" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -121,7 +126,7 @@
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
             <a href="./index.html">Admin</a>
-            <span>Quản Lý Log</span>
+            <span>Quản Lý Tài Khoản - Quản Lý Role</span>
           </div>
         </div>
       </div>
@@ -145,54 +150,180 @@
               <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
               <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="Truysuatdonhang.jsp"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="Log.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
-              <li><a href="TangVoucher.jsp"><i class="fa fa-file" aria-hidden="true"></i> Log</a></li>
+              <li><a href="TangVoucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-10 col-md-5">
-        <div>
-          <div class="TaiKhoan">
-            <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
-            <table class="cd-table order-table table">
-              <thead>
-              <tr>
-                <th>ID</th>
-                <th>Id User</th>
-                <th>Mức độ</th>
-                <th>Src</th>
-                <th>Content</th>
-                <th>Thời điểm</th>
-                <th>Status</th>
-                <th>Hành Động</th>
-              </tr>
-              </thead>
-              <tbody>
-              <%
-                ArrayList<Log> list = (ArrayList<Log>) request.getAttribute("alllog");
-                for (Log item: list) {
-              %>
-              <tr>
-                <td><%=item.getId()%></td>
-                <td><%=item.getId_User()%></td>
-                <td><%=item.getLevel()%></td>
-                <td><%=item.getSrc()%></td>
-                <td><%=item.getContent()%></td>
-                <td><%=item.getDate()%></td>
-                <td><a href="ServletDeletelog?LogId=<%=item.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
 
-              </tr>
+        <%UserPemission thisper = (UserPemission) session.getAttribute("userper");%>
+          <div class="card mb-4">
+            <div class="card-body">
+              <table class="table user-view-table m-0">
+                <tbody>
+                <tr>
+                  <td>UserID</td>
+                  <td><%thisper.getUID();%></td>
+                </tr>
+                <tr>
+                  <td>Registered:</td>
+                  <td>01/23/2017</td>
+                </tr>
+                <tr>
+                  <td>Role:</td>
+                  <td><%thisper.getRoleName();%></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr class="border-light m-0">
+            <div class="table-responsive">
+              <table class="table card-table m-0">
+                <tbody>
+                <tr>
+                  <th>Quyền</th>
+                  <th>Xem</th>
+                  <th>Thêm</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+                <tr>
+                  <td>Sản Phẩm</td>
+                  <%if (thisper.canWatchproduct()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canAdEditproduct()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canRemoveproduct()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
 
-              </tbody>
-            </table>
-            <div class="product__pagination">
-              <a href="#">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </tr>
+                <tr>
+                  <td>Account</td>
+                  <%if (thisper.canWatchAcc()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canEditRole()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%if (thisper.canRemoveAcc()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+
+                </tr>
+                <tr>
+                  <td>Log</td>
+                  <%if (thisper.canWatchLog()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <td><span class="fa fa-times"></span></td>
+                  <td><span class="fa fa-times"></span></td>
+                  <%if (thisper.canRemoveLog()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                </tr>
+                <tr>
+                  <td>Voucher</td>
+                  <%if (thisper.canWatchVoucher()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canEditAddVoucher()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canRemoveVoucher()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                </tr>
+                <tr>
+                  <td>Đơn Hàng</td>
+                  <%if (thisper.canWatchTran()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canEditAddTran()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  <%if (thisper.canRemoveTran()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                </tr>
+
+                </tbody>
+              </table>
             </div>
           </div>
+
+        <%
+          User user = (User) session.getAttribute("auth");
+          UserPemission actor = new UserPemission(user.getUserId());
+          if (actor.canEditRole()){%>
+          <div class="card">
+            <hr class="border-light m-0">
+            <div class="card-body">
+
+              <table class="table user-view-table m-0">
+                <tbody>
+                <form action="ServletEditRole"  method="post" id="RoleEdit">
+
+                <tr>
+                  <select id="Role" name="Role">
+                    <option value="Admin">Admin</option>
+                    <option value="Editor">Editor</option>
+                    <option value="Viewer">Viewer</option>
+                    <option value="User">User</option>
+                  </select>
+                  <label for="Role">Set Role:</label>
+                </tr>
+                <tr>
+                  <input type="hidden" id="custId" name="targetUID" value=<%thisper.getUID();%>>
+                  <input type="submit" value="Submit">
+                </tr>
+                </form>
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+        <%}%>
+
         </div>
       </div>
     </div>

@@ -10,14 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetUPermis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/UsrPerServiece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietNhapHang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/css/404Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteF.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Class" />
       </list>
@@ -67,6 +74,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/LTWProject/BaiNopCuoiKi&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -224,7 +232,14 @@
       <workItem from="1680266997194" duration="1416000" />
       <workItem from="1681218116118" duration="7647000" />
       <workItem from="1681264581983" duration="5844000" />
-      <workItem from="1681304803290" duration="3921000" />
+      <workItem from="1681304803290" duration="4542000" />
+      <workItem from="1681375213839" duration="3608000" />
+      <workItem from="1681482781358" duration="1190000" />
+      <workItem from="1681649455229" duration="31000" />
+      <workItem from="1681697934607" duration="654000" />
+      <workItem from="1681739438567" duration="5404000" />
+      <workItem from="1681822801519" duration="1048000" />
+      <workItem from="1681872193775" duration="11694000" />
     </task>
     <servers />
   </component>

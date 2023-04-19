@@ -1,9 +1,3 @@
-<%@ page import="main.bean.Order" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.Log" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,10 +11,8 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <!-- Css Styles -->
-
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -29,18 +21,13 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/admincss.css">
+  <link rel="stylesheet" href="css/index.css"type="text/css">
+  <link rel="stylesheet" href="css/User.css"type="text/css">
+
 </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-  <div class="loader"></div>
-</div>
 
-<!-- Humberger Begin -->
-
-<!-- Humberger End -->
 
 <!-- Header Section Begin -->
 <header class="header">
@@ -86,7 +73,7 @@
         <nav class="header__menu">
           <ul>
             <li ><a href="./index.html">Trang Chủ</a></li>
-            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+            <li><a href="./shop-grid.html">Gian Hàng</a></li>
 
             <li><a href="./blog.html">Giới Thiệu</a></li>
             <li><a href="./contact.html">Liên Hệ</a></li>
@@ -108,9 +95,10 @@
     </div>
   </div>
 </header>
-<!-- Hero Section Begin -->
+<!-- Header Section End -->
 
-<!-- Hero Section End -->
+
+<!-- Breadcrumb Section Begin -->
 
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-section set-bg" data-setbg="img/ad.jpg">
@@ -121,7 +109,7 @@
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
             <a href="./index.html">Admin</a>
-            <span>Quản Lý Log</span>
+            <span>Truy Suất Đơn Hàng</span>
           </div>
         </div>
       </div>
@@ -140,64 +128,144 @@
           <div class="sidebar__item">
             <h4>Quản Lý</h4>
             <ul>
-              <li><a href="DoanhThu.jsp"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+              <li><a href="DoanhThu.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
               <li><a href="SanPham.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
               <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
               <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-              <li><a href="Truysuatdonhang.jsp"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="Log.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
-              <li><a href="TangVoucher.jsp"><i class="fa fa-file" aria-hidden="true"></i> Log</a></li>
+              <li><a href="Truysuatdonhang.html"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+              <li><a href="TangVoucher.html"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-10 col-md-5">
         <div>
-          <div class="TaiKhoan">
-            <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
-            <table class="cd-table order-table table">
-              <thead>
-              <tr>
-                <th>ID</th>
-                <th>Id User</th>
-                <th>Mức độ</th>
-                <th>Src</th>
-                <th>Content</th>
-                <th>Thời điểm</th>
-                <th>Status</th>
-                <th>Hành Động</th>
-              </tr>
-              </thead>
-              <tbody>
-              <%
-                ArrayList<Log> list = (ArrayList<Log>) request.getAttribute("alllog");
-                for (Log item: list) {
-              %>
-              <tr>
-                <td><%=item.getId()%></td>
-                <td><%=item.getId_User()%></td>
-                <td><%=item.getLevel()%></td>
-                <td><%=item.getSrc()%></td>
-                <td><%=item.getContent()%></td>
-                <td><%=item.getDate()%></td>
-                <td><a href="ServletDeletelog?LogId=<%=item.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+          <div class="ChiTietDonHangs">
+            <div class="infor">
+              <div class="hed"> <p>Tất Cả Sản Phẩm Được Giao</p>
+              </div>
+              <hr>
+              <div>
+                <table class="table table-borderless">
+                  <thead>
+                  <tr>
+                    <th> Sản Phẩm </th>
+                    <th> Số Lượng </th>
+                    <th> Giá(đ) </th>
+                    <th> Thuế(đ)</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="itin4">
+                        <img src="img/cart/2comga_dagion-min.jpeg" alt="" >
+                        <div class="ittabp">
+                          <p class="itemi4"> Cơm gà da giòn</p>
+                          <p class="mahang"> CM-001</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td> 1</td>
+                    <td>45.000 đ</td>
+                    <td>45.000 đ</td>
+                  </tr>
+                  <tr>
+                    <td><div class="itin4">
+                      <img src="img/cart/5haisan_chacuongcatrich-min.jpeg" alt="" >
+                      <div class="ittabp">
+                        <p class="itemi4"> Gỏi cuốn cá trích</p>
+                        <p class="mahang"> CN-001</p>
+                      </div>
+                    </div></td>
+                    <td>1</td>
+                    <td>120.000 đ</td>
+                    <td>120.000 đ</td>
+                  </tr>
+                  <tr>
+                    <td><div class="itin4">
+                      <img src="img/cart/1bun_bovien-min.jpeg" alt="" >
+                      <div class="ittabp">
+                        <p class="itemi4"> Bún bò viên</p>
+                        <p class="mahang"> CK-001</p>
+                      </div>
+                    </div></td>
+                    <td>1</td>
+                    <td>57.000 đ</td>
+                    <td>57.000 đ</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <hr>
+              <div class="chitietdonhang">
+                <div class="chitietdonhang-cl1">
+                  <div>
+                    <label class="lbin4">DH001</label>
+                    <label class="lbdt">Mã Đơn Hàng</label>
+                  </div>
+                  <div>
+                    <label class="lbin4">Công Ty ABC</label>
+                    <label class="lbdt">Nơi Gửi</label>
+                  </div>
+                </div>
+                <div class="chitietdonhang-cl1">
+                  <div>
+                    <label class="Statusdon">Đã Giao</label>
+                    <label class="lbdt">Tình Trạng</label>
+                  </div>
+                  <div>
+                    <label class="lbin4">Công Ty Vận Chuyển xyz</label>
+                    <label class="lbdt">Nhà Vận Chuyển</label>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
 
-              </tr>
+            <div class="ChiTiet">
 
-              </tbody>
-            </table>
-            <div class="product__pagination">
-              <a href="#">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+              <div class="chitietdonhang">
+                <div class="chitietdonhang-cl1">
+                  <div>
+                    <label class="lbin4">Cơm gà không da em nhé</label>
+                    <label class="lbdt">Ghi Chú</label>
+                  </div>
+                  <div>
+                  </div>
+
+                </div>
+                <div class="chitietdonhang-cl1">
+                  <div>
+                    <label class="lbin41">3</label>
+                    <label class="lbdt">Số Lượng Sản Phẩm</label>
+                  </div>
+                  <div>
+                    <label class="lbin41">210.000 đ</label>
+                    <label class="lbdt">Tổng Tiền </label>
+                  </div>
+                  <div>
+                    <label class="lbin41">20.000 đ</label>
+                    <label class="lbdt">Vận Chuyển</label>
+                  </div>
+                  <div>
+                    <label class="lbin41">10.000 đ</label>
+                    <label class="lbdt">Thuế</label>
+                  </div>
+                  <div>
+                    <label class="lbin42">230.000 đ</label>
+                    <label class="lbdt">Tổng Giá Trị Đơn</label>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
   </div>
 </section>
 <!-- Product Section End -->
@@ -247,47 +315,7 @@
 <!--    </table>-->
 
 
-<script>
-  (function() {
-    'use strict';
 
-    var TableFilter = (function() {
-      var Arr = Array.prototype;
-      var input;
-
-      function onInputEvent(e) {
-        input = e.target;
-        var table1 = document.getElementsByClassName(input.getAttribute('data-table'));
-        Arr.forEach.call(table1, function(table) {
-          Arr.forEach.call(table.tBodies, function(tbody) {
-            Arr.forEach.call(tbody.rows, filter);
-          });
-        });
-      }
-
-      function filter(row) {
-        var text = row.textContent.toLowerCase();
-        //console.log(text);
-        var val = input.value.toLowerCase();
-        //console.log(val);
-        row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-      }
-
-      return {
-        init: function() {
-          var inputs = document.getElementsByClassName('table-filter');
-          Arr.forEach.call(inputs, function(input) {
-            input.oninput = onInputEvent;
-          });
-        }
-      };
-
-    })();
-
-
-    TableFilter.init();
-  })();
-</script>
 
 </body>
 
