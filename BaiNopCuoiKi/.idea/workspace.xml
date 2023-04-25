@@ -10,16 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getActivate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BaiNopCuoiKi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/uploadFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/SanPham.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/SanPham.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/test2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/test2.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +45,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -105,6 +100,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Image" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.bean.Image" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.bean.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -213,12 +221,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Image" />
       <item itemvalue="Application.AppService" />
       <item itemvalue="Application.SendPhoneOTP" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Image" />
         <item itemvalue="Application.AppService" />
         <item itemvalue="Application.SendPhoneOTP" />
       </list>
@@ -250,6 +260,9 @@
       <workItem from="1681483763211" duration="3000" />
       <workItem from="1681647896322" duration="640000" />
       <workItem from="1681649744332" duration="7094000" />
+      <workItem from="1681985822967" duration="11782000" />
+      <workItem from="1682258786234" duration="617000" />
+      <workItem from="1682259570012" duration="94000" />
     </task>
     <servers />
   </component>
