@@ -25,6 +25,6 @@ public class ServletGetInForDBbyM extends HttpServlet {
         DashBoard db = new DashBoard(DashBoardService.getInstance().getOderByYear(nowYear));
         request.setAttribute("dashBoard", db);
         request.setAttribute("dbm",request.getParameter("dbmo"));
-        request.getRequestDispatcher("DoanhThu.jsp").forward(request,response) ;
+        request.getRequestDispatcher("/DoanhThu.jsp").forward(request,response) ;
     }
 }

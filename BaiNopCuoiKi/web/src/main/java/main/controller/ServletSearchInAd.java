@@ -20,7 +20,7 @@ public class ServletSearchInAd extends HttpServlet {
         request.setAttribute("allproducts", products);
         request.setAttribute("allproducts2", products2);
 
-        request.getRequestDispatcher("SanPham.jsp").forward(request, response);
+        request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
 
     }
 

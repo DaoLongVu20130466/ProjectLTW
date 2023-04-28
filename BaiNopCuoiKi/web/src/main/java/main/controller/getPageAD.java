@@ -35,7 +35,7 @@ public class getPageAD extends HttpServlet {
 
 
 
-        request.getRequestDispatcher("SanPham.jsp").forward(request, response);
+        request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
     }
 
     @Override

@@ -43,7 +43,7 @@ public class ServletUpdateEditProduct extends HttpServlet {
 
 
         ProductsService.getInstance().updateProduct(idfood,tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
-        response.sendRedirect("getAllProductByAdmin");
+        response.sendRedirect("/getAllProductByAdmin");
 
     }
 
