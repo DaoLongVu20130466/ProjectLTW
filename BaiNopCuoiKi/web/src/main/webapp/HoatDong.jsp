@@ -1,6 +1,7 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.User" %><%--
+<%@ page import="main.bean.User" %>
+<%@ page import="main.bean.Log" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 5/01/2023
@@ -166,53 +167,48 @@
               <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
               <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
-              <li><a href="getActivate"><i class="fa fa-gift" aria-hidden="true"></i> Hoạt Động</a></li>
-
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-10 col-md-5">
-        <h2>Toàn bộ sản phẩm:</h2>
+        <h2>Toàn bộ hoạt động:</h2>
         <div class="TaiKhoan">
-          <form action="ServletSearchInAd">
-          <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." name="txt" />
-            <button type="submit" class="site-btn">TÌM</button>
-          </form>
+
           <table class="cd-table order-table table">
             <thead>
             <tr>
-              <th>Tên Món Ăn</th>
-              <th>Giá Món Ăn (VND)</th>
-              <th>ID Món Ăn</th>
-              <th>Loại Món Ăn</th>
+              <th>Tên người dùng</th>
+              <th>Nội dung</th>
+              <th>Vào lúc</th>
+              <th>Trạng thái</th>
 
               <th>Hành Động</th>
             </tr>
             </thead>
             <tbody>
             <%
-              ArrayList<Products> list = (ArrayList<Products>) request.getAttribute("allproducts");
-              for (Products p : list)
+              ArrayList<Log> list = (ArrayList<Log>) request.getAttribute("allLog");
+              for (Log p : list)
               {
             %>
             <tr>
-              <td><%=p.getFoodName()%></td>
-              <td><%=p.getPrice()%></td>
-              <td><%=p.getID_food()%></td>
-              <td><%=p.getIdType()%></td>
+              <td><%=p.getId_User()%></td>
+              <td><%=p.getContent()%></td>
+              <td><%=p.getDate()%></td>
+              <td><%=p.getStatus()%></td>
 
-              <td><a href="editProduct?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
-                <a href="deleteF?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
-                <a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
+              <td>
+                <a href="deleteF?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+
             </tr>
-              <%}%>
+            <%}%>
             </tbody>
           </table>
         </div>
         <div class="product__pagination">
           <%
-            list = (ArrayList<Products>) request.getAttribute("allproducts2");
+            list = (ArrayList<Log>) request.getAttribute("allLog");
             int n ;
             if( list.size() % 12 == 0 ){
               n = list.size()/12;
