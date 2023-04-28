@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.User;
 import main.services.useService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -17,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.Iterator;
 import java.util.List;
-import main.bean.User;
 
 
 @WebServlet(name = "UploadDownloadFileServlet", value = "/UploadDownloadFileServlet")
@@ -86,7 +86,7 @@ public class uploadimg extends HttpServlet {
                     useService.getInstance().upImg(user.getUserId(), "img"+File.separator+"IMG"+File.separator+fileItem.getName());
                     User userinfor = useService.getInstance().getAllUserByID(user.getUserId());
                     session.setAttribute("userID", userinfor);
-                    request.getRequestDispatcher("Chinhsuathongtin.jsp").forward(request,response);
+                    request.getRequestDispatcher("/Chinhsuathongtin.jsp").forward(request,response);
                 }
             } catch (FileUploadException e) {
               e.printStackTrace();

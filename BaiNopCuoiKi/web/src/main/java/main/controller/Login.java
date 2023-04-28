@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("DangNhap.jsp").forward(request, response);
+        request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);
 
     }
 
@@ -24,12 +24,12 @@ public class Login extends HttpServlet {
         User user = useService.getInstance().checkLogin(username, password);
         if(user==null){
             request.setAttribute("error", "Username or password is incorrect");
-            request.getRequestDispatcher("DangNhap.jsp").forward(request, response);
+            request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);
         }else{
             HttpSession session = request.getSession(true);
             session.setAttribute("auth", user);
              session.setAttribute("login","Xin chào");
-         response.sendRedirect("getIndex");
+         response.sendRedirect("/getIndex");
         }
     }
     }

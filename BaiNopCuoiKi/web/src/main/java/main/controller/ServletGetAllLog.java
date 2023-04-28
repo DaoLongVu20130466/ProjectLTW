@@ -26,7 +26,7 @@ public class ServletGetAllLog extends HttpServlet {
             request.getRequestDispatcher("Truysuatdonhang.jsp").forward(request, response);
         }else {
             request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-            request.getRequestDispatcher("getIndex").forward(request, response);
+            request.getRequestDispatcher("/getIndex").forward(request, response);
         }
     }
 
