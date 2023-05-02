@@ -18,11 +18,9 @@ public class ServletAddProduct extends HttpServlet {
         String optionSize = request.getParameter("optionSize");
         int giaban = (int) Integer.parseInt(request.getParameter("giaban"));
         String optionType = request.getParameter("optionType");
-        int soluong = (int) Integer.parseInt(request.getParameter("soluong"));
-        String optionStatus = request.getParameter("optionStatus");
         int optionCombo = (int) Integer.parseInt(request.getParameter("optionCombo"));
-        String optionSale = request.getParameter("optionSale");
-        String optionHot = request.getParameter("optionHot");
+        int optionSale = request.getParameter("optionSale");
+        int optionHot = request.getParameter("optionHot");
         String Mota = request.getParameter("Mota");
         String img = request.getParameter("myfile");
         int niemyet = (int) Integer.parseInt(request.getParameter("niemyet"));
@@ -33,7 +31,7 @@ public class ServletAddProduct extends HttpServlet {
         request.setAttribute("alltype",type);
 
 
-        ProductsService.getInstance().addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
+        ProductsService.getInstance().addProduct(tenmonan,optionSize,giaban,optionType,optionCombo,optionSale,optionHot,Mota,img,niemyet);
 
 
         response.sendRedirect("/ServletAddNewProduct");

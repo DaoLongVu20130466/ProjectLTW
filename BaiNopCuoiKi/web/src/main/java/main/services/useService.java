@@ -246,18 +246,18 @@ public class useService {
         return b;
     }
 
-    public int checkIDFOOD(String type, String size) {
+    public int checkIDFOOD(String type) {
         int b = 0;
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ?"
 
             );
             ps.setString(1, type);
-            ps.setString(2, size);
+
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                  b=rs.getInt(1) + 1;

@@ -232,17 +232,6 @@
 
           </div>
 
-
-          <div class='add-input'>
-            Số lượng<span>*</span>
-            <input type='text' name='soluong' placeholder="Số lượng" required>
-          </div>
-
-          <div class='add-input'>
-            Trạng thái: <span>*</span>
-            <input type='text' name='optionStatus' placeholder=" TRẠNG THÁI" required>
-          </div>
-
           <div class='add-input'>
             Món ăn Combo:<span>*</span>
             <select name="optionCombo" >
@@ -253,19 +242,17 @@
           <div class='add-input'>
             Món ăn Sale:<span>*</span>
             <select name="optionSale" >
-              <option value="SALE1"> SALE </option>
-              <option value="SALE2"> KHÔNG SALE </option>
+              <option value="1"> SALE </option>
+              <option value="0"> KHÔNG SALE </option>
             </select>
           </div>
-
           <div class='add-input'>
             Món ăn hot:<span>*</span>
             <select name="optionHot" >
-              <option value="HOT"> HOT </option>
-              <option value="NORMAL"> NORMAL </option>
+              <option value="1"> HOT </option>
+              <option value="0"> NORMAL </option>
             </select>
           </div>
-
           <div class='add-input'>
             Mô tả<span>*</span>
             <input type='text' name='Mota' placeholder="Mô tả" required>
