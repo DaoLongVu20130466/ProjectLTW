@@ -10,100 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f6a5316-14e0-4e75-96c4-2096cc9699bf" name="Changes" comment="add lai">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/bean/DashBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/AdminFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/FileLocationContextListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddFavourite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddNewProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAddProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletAllFavourite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletCancelOder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletDeletaFavourite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletDeleteF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletEditProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetAllProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetAllProductAd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetInForDBbyM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetInforDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetPageAd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetPageProductByType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetTypeProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserInfor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserOder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletGetUserVoucher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletLogOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletSearchControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletSearchInAd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUIFOder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUpdateEditProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/ServletUpdateIF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/addtoCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getAllProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getPageAD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getTypeProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/getUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/removeInCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/showCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/controller/uploadimg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/AddOderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/DashBoardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/services/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/CheckOut.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHangUser.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Chinhsuathongtin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/DoanhThu.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/GioHang.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addProduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/attest.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/blog.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/contact.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/addpro.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/stylle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/stylle.css.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/voucher&amp;Oder.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/editProdcut.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/avt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/yeuthich.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Bun_Pho.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CheckOut.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ChiTietDonHang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Chinhsuathongtin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Chinhsuathongtin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ChitietSanpham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ComBo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ComChien.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ComGa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ComMon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Comsuon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/DoanhThu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/DoiMatKhau.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DoiMatKhau.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Donhang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Donhang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Haisan.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/MonCanh.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/QuanLyTaiKhoan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/SanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/TangVoucher.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ThemSanPham.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ThemVoucher.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ThucUong.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Truysuatdonhang.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Voucher.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/admincss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/shop-grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/yeuthich.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +27,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -140,26 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/LTWProject",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="main.bean" />
@@ -351,6 +259,7 @@
       <workItem from="1673265082709" duration="10544000" />
       <workItem from="1673282062087" duration="674000" />
       <workItem from="1673354933983" duration="19932000" />
+      <workItem from="1682918431336" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>

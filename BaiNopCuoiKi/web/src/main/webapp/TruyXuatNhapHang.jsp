@@ -1,3 +1,9 @@
+<%@ page import="main.bean.Order" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.Trans" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -163,16 +169,22 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <%
+                                ArrayList<Trans> list = (ArrayList<Trans>) request.getAttribute("alltran");
+                                for (Trans item: list) {
+                            %>
                             <tr>
-                                <td>assdasd.</td>
-                                <td>Easeasdas</td>
-                                <td>HCM.</td>
-                                <td>11233.</td>
-                                <td>12</td>
+                                <td><%=item.getId()%></td>
+                                <td><%=item.getDayImport()%></td>
+                                <td><%=item.getPlace()%></td>
+                                <td><%=item.getTotalProduct()%></td>
+                                <td><%item.getStatus()%></td>
                                 <td>13.</td>
                                 <td><a href=""><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
-                                    <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+                                    <a href="/ServletDeleteTran?Tranid=<%=item.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
                             </tr>
+                            </tr>
+                            <%}%>
                             </tbody>
                         </table>
                         <div class="product__pagination">

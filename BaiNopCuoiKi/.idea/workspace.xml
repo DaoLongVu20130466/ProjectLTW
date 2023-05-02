@@ -10,11 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Trans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteTran.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllTrans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/TransServiece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/UsrPerServiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/UsrPerServiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddVoucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddVoucher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletaFavourite.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletaFavourite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/DashBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/DashBoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +35,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -75,7 +86,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.AppService">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.AppService" />
       <module name="web" />
@@ -230,7 +241,13 @@
       <workItem from="1681697934607" duration="654000" />
       <workItem from="1681739438567" duration="5404000" />
       <workItem from="1681822801519" duration="1048000" />
-      <workItem from="1681872193775" duration="13516000" />
+      <workItem from="1681872193775" duration="15144000" />
+      <workItem from="1682085012648" duration="17000" />
+      <workItem from="1682303093486" duration="150000" />
+      <workItem from="1682393359544" duration="394000" />
+      <workItem from="1682918807960" duration="330000" />
+      <workItem from="1682919181594" duration="9224000" />
+      <workItem from="1683001004625" duration="2384000" />
     </task>
     <servers />
   </component>
