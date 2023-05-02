@@ -30,7 +30,7 @@ public class getUser extends HttpServlet {
         request.setAttribute("product", product);
         request.setAttribute("tag2",tag);
 
-        request.getRequestDispatcher("user.jsp").forward(request, response);
+        request.getRequestDispatcher("/user.jsp").forward(request, response);
 
     }
 

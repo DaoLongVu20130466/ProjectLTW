@@ -20,11 +20,7 @@ public class removeInCart extends HttpServlet {
         cart.remove(id_F);
 
         session.setAttribute("cart",cart);
-        request.getRequestDispatcher("showCart").forward(request, response);
-
-
-
-
+        request.getRequestDispatcher("/showCart").forward(request, response);
 
     }
 

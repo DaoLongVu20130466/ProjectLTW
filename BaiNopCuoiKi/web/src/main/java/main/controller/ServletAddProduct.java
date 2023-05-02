@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "Servlet", value = "/ServletAddProduct")
+@WebServlet(name = "ServletAddProduct", value = "/ServletAddProduct")
 public class ServletAddProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +34,7 @@ public class ServletAddProduct extends HttpServlet {
         ProductsService.getInstance().addProduct(tenmonan,optionSize,giaban,optionType,optionCombo,optionSale,optionHot,Mota,img,niemyet);
 
 
-        response.sendRedirect("ServletAddNewProduct");
+        response.sendRedirect("/ServletAddNewProduct");
     }
 
     @Override
