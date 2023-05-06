@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
 
-
       <change afterPath="$PROJECT_DIR$/.idea/modules/lib/BaiNopCuoiKi.lib.test.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules/plugin/BaiNopCuoiKi.plugin.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
@@ -223,24 +222,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
 
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-
     "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web/src/main/webapp/.idea/libraries",
-
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -288,7 +282,6 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
-
     </configuration>
     <configuration name="BaiNopCuoiKi [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -600,7 +593,6 @@
       <workItem from="1680689222864" duration="2584000" />
       <workItem from="1681219987448" duration="2419000" />
       <workItem from="1681294586003" duration="4774000" />
-
 
       <workItem from="1681579372755" duration="46000" />
       <workItem from="1681579623189" duration="615000" />

@@ -404,26 +404,33 @@ public class ProductsService {
          int soluong,
          String optionStatus,
          int optionCombo,
-         int optionSale,
-         int optionHot,
+         String optionSale,
+         String optionHot,
          String Mota,
          String img,
          int giaban
         ){
-            String Idfood = optionType + useService.getInstance().checkIDFOOD(optionType);
+            String a = optionType + useService.getInstance().checkIDFOOD(optionType, optionSize);
 
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-                PreparedStatement ps1 = conn.prepareStatement(" INSERT INTO FOOD(ID_FOOD, FOOD_NAME,STATUSS, IS_COMBO, IS_HOT, IS_SALE,IVENTORY,DESCRIPTION,ID_TYPE) \n" +
-                        " VALUES(?,?,?,?,?,?,?,?)");
-                ps1.setString(1,Idfood);
-                ps1.setNString(2,tenmonan);
-
-
-
-
-                ps1.executeUpdate();
+                PreparedStatement ps = conn.prepareStatement("INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG,BASE_PRICE) \n" +
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                ps.setNString(1, a);
+                ps.setNString(2, tenmonan);
+                ps.setString(3, optionSize);
+                ps.setInt(4, giaban);
+                ps.setNString(5, optionType);
+                ps.setInt(6, soluong);
+                ps.setNString(7, optionStatus);
+                ps.setInt(8, optionCombo);
+                ps.setString(9, optionSale);
+                ps.setString(10, optionHot);
+                ps.setNString(11, Mota);
+                ps.setString(12, img);
+                ps.setInt(13, niemyet);
+                ps.executeUpdate();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -512,9 +519,6 @@ public class ProductsService {
                 e.printStackTrace();
             }
         }
-    public void addComment(String id, String cmt){
-
-    }
 
     public static void main(String[] args) {
        ArrayList<TypeProducts> listT = getInstance().getTypeProduct();
