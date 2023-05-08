@@ -13,11 +13,8 @@ package main.services;
 //import java.util.Date;
 //import java.util.Properties;
 
-import main.bean.Log;
+    public class Main {
 
-public class Main {
-        public static void main(String[] args){
-        }
 //        public static void main(String[] args) throws MessagingException, UnsupportedEncodingException {
 //
 //            final String fromEmail = "123issuejavamail@gmail.com";

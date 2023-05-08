@@ -1,6 +1,6 @@
 package main.controller;
 
-import main.services.*;
+import main.services.VoucherService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getAllProductByAdmin", value = "/getAllProductByAdmin")
+@WebServlet(name = "ServletGetAllProductAd", value = "/getAllProductByAdmin")
 public class ServletGetAllProductAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

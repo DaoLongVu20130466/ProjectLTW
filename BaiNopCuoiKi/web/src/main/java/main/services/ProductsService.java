@@ -93,7 +93,9 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
+
             PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
@@ -101,8 +103,10 @@ public class ProductsService {
                     "LIMIT 7 OFFSET ?"
             );
             //XONG
+
             ps.setString(1, type);
             ps.setInt(2, (page - 1) * 12);
+
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -125,7 +129,6 @@ public class ProductsService {
         ArrayList<TypeProducts> allType = new ArrayList<TypeProducts>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT ID_TYPE , TYPE_FOOD\n" +
                     "FROM type_food");
@@ -161,7 +164,7 @@ public class ProductsService {
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
-                        rs.getInt(4),
+                         rs.getInt(4),
                         rs.getString(5)));
 
             }
@@ -173,80 +176,50 @@ public class ProductsService {
         return allProductBySale;
     }
 
-//    public List<Products> getAllproductByHot() {
-//        ArrayList<Products> allProductByHot = new ArrayList<Products>();
-//        try {
-//            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-//
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
-//                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-//                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-//                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
-//                    "WHERE food.IS_HOT = 1 "
-//
-//            );
-//            while (rs.next()) {
-//                allProductByHot.add(new Products(
-//                        rs.getString(1),
-//                        rs.getNString(2),
-//                        rs.getString(3),
-//                        rs.getNString(4), rs.getInt(4),
-//                        rs.getInt(6), rs.getString(5)));
-//                //XONG
-//            }
-//            conn.close();
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//        return allProductByHot;
-//    }
-
-//    public List<Products> getAllproductByCombo() {
-//        ArrayList<Products> allProductByCombo = new ArrayList<Products>();
-//        try {
-//            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-//
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
-//                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-//                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-//                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
-//                    "WHERE food.IS_COMBO = 1 "
-//
-//            );
-//            while (rs.next()) {
-//                allProductByCombo.add(new Products(
-//                        rs.getString(1),
-//                        rs.getNString(2),
-//                        rs.getString(3),
-//                        rs.getNString(4), rs.getInt(4),
-//                        rs.getInt(6), rs.getString(5)));
-//            }
-//            conn.close();
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//        return allProductByCombo;
-//    }
-
-    public List<Products> getAllproductsByType(String type){
-        ArrayList<Products> allProductByType = new ArrayList<Products>();
+    public List<Products> getAllproductByHot() {
+        ArrayList<Products> allProductByHot = new ArrayList<Products>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
-                    "WHERE food.ID_TYPE = ?"
-            );
-            ps.setString(1, type);
-            ResultSet rs = ps.executeQuery();
-            //Xong
+                    "WHERE food.IS_HOT = 1 "
 
+            );
             while (rs.next()) {
-                allProductByType.add(new Products(
+                allProductByHot.add(new Products(
+                        rs.getString(1),
+                        rs.getNString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getString(5)));
+                //XONG
+            }
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return allProductByHot;
+    }
+
+    public List<Products> getAllproductByCombo() {
+        ArrayList<Products> allProductByCombo = new ArrayList<Products>();
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
+                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
+                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
+                    "WHERE food.IS_COMBO = 1 "
+
+            );
+            while (rs.next()) {
+                allProductByCombo.add(new Products(
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
@@ -257,42 +230,73 @@ public class ProductsService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return allProductByType;
-    }
+            return allProductByCombo;
+        }
 
-//    public Products getProductByID(String fid){
-//        try {
-//            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-//
-//            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE,food.DESCRIPTION, food.IVENTORY, PRICE.PRICE  , image.SRC \n" +
-//                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-//                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-//                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
-//                    "WHERE food.ID_FOOD = ?"
-//            );
-//            ps.setString(1, fid);
-//            ResultSet rs = ps.executeQuery();
-//
-//            while (rs.next()) {
-//                return new Products(
-//                        rs.getString(1),
-//                        rs.getNString(2),
-//                        rs.getString(3),
-//                        rs.getNString(4),
-//                        rs.getInt(5),
-//                        rs.getInt(6),
-//                        rs.getString(7));
-//                //Xong
-//            }
-//            conn.close();
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//        return null;
-//    }
+        public List<Products> getAllproductsByType(String type){
+            ArrayList<Products> allProductByType = new ArrayList<Products>();
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+                PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+                        "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
+                        " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
+                        " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
+                        "WHERE food.ID_TYPE = ?"
+                );
+                ps.setString(1, type);
+                ResultSet rs = ps.executeQuery();
+                //Xong
+
+                while (rs.next()) {
+                    allProductByType.add(new Products(
+                            rs.getString(1),
+                            rs.getNString(2),
+                            rs.getString(3),
+                            rs.getInt(4),
+                            rs.getString(5)));
+                }
+                conn.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return allProductByType;
+        }
+
+        public Products getProductByID(String fid){
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+                PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE,food.DESCRIPTION, food.IVENTORY, PRICE.PRICE  , image.SRC \n" +
+                        "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
+                        " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
+                        " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
+                        "WHERE food.ID_FOOD = ?"
+                );
+                ps.setString(1, fid);
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    return new Products(
+                            rs.getString(1),
+                            rs.getNString(2),
+                            rs.getString(3),
+                            rs.getNString(4),
+                            rs.getInt(5),
+                            rs.getInt(6),
+                            rs.getString(7));
+                    //Xong
+                }
+                conn.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return null;
+        }
 
     public List<Products> getAllProductByID(String type) {
         ArrayList<Products> allProductByID = new ArrayList<Products>();
+
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
@@ -324,85 +328,72 @@ public class ProductsService {
         return allProductByID;
     }
 
-    // getAllProductByPage Ä‘Ã£ fix
-    public List<Products> getAllProductByPage ( int page){
-        ArrayList<Products> allProductByPage = new ArrayList<Products>();
-        try {
-            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("select  food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
-                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
-                    "\t\t\t\t\t\t\t\t\t\tLIMIT 12 OFFSET ?"
+        // getAllProductByPage đã fix
+        public List<Products> getAllProductByPage ( int page){
+            ArrayList<Products> allProductByPage = new ArrayList<Products>();
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            );
-            ps.setInt(1, (page - 1));
-            ResultSet rs = ps.executeQuery();
+                PreparedStatement ps = conn.prepareStatement("select  food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+                        "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
+                        " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
+                        " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
+                        "\t\t\t\t\t\t\t\t\t\tLIMIT 12 OFFSET ?"
 
-            while (rs.next()) {
-                allProductByPage.add(new Products(
-                        rs.getString(1),
-                        rs.getNString(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getString(5)));
+                );
+                ps.setInt(1, (page));
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    allProductByPage.add(new Products(
+                            rs.getString(1),
+                            rs.getNString(2),
+                            rs.getString(3),
+                            rs.getInt(4),
+                            rs.getString(5)));
+                }
+                conn.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+
             }
-            conn.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            return allProductByPage;
         }
-        return allProductByPage;
-    }
-
-    public List<Products> getAllproductFavouriteByUser (String iduser){
-        ArrayList<Products> allProductByFavourite = new ArrayList<Products>();
-        try {
-            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT  user_information.ID_USER ,food.ID_FOOD , food.FOOD_NAME, PRICE.PRICE  , image.SRC\n" +
-                    "FROM user_information  JOIN accounts ON user_information.ID_USER = accounts.ID_USER\n" +
-                    "JOIN favourites ON accountS.ID_ACCOUNT = favourites.ID_ACCOUNT\n" +
-                    "JOIN food ON  favourites.ID_FOOD  = food.ID_FOOD\n" +
-                    "JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD \n" +
-                    "JOIN image on image_detail.ID_IMG = image.ID_IMG \n" +
-                    "JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
-                    "WHERE user_information.ID_USER = ?"
+        public List<Products> getAllproductFavouriteByUser (String iduser){
+            ArrayList<Products> allProductByFavourite = new ArrayList<Products>();
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            );
-            ps.setString(1, iduser);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                allProductByFavourite.add(new Products(
-                        rs.getNString(2),
-                        rs.getNString(3),
-                        rs.getInt(4),
-                        rs.getInt(4), rs.getString(5),
-                        rs.getString(7)));
+
+                PreparedStatement ps = conn.prepareStatement("SELECT  user_information.ID_USER ,food.ID_FOOD , food.FOOD_NAME, PRICE.PRICE  , image.SRC\n" +
+                        "FROM user_information  JOIN accounts ON user_information.ID_USER = accounts.ID_USER\n" +
+                        "JOIN favourites ON accountS.ID_ACCOUNT = favourites.ID_ACCOUNT\n" +
+                        "JOIN food ON  favourites.ID_FOOD  = food.ID_FOOD\n" +
+                        "JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD \n" +
+                        "JOIN image on image_detail.ID_IMG = image.ID_IMG \n" +
+                        "JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
+                        "WHERE user_information.ID_USER = ?"
+
+                );
+                ps.setString(1, iduser);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    allProductByFavourite.add(new Products(
+                            rs.getNString(2),
+                            rs.getNString(3),
+                            rs.getInt(4),
+                            rs.getInt(4), rs.getString(5),
+                            rs.getString(7)));
+                }
+                conn.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-            conn.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            return allProductByFavourite;
         }
-        return allProductByFavourite;
-    }
-
-    public void addProduct
-            (String tenmonan,
-             String optionSize,
-             int niemyet,
-             String optionType,
-             int soluong,
-             String optionStatus,
-             int optionCombo,
-             String optionSale,
-             String optionHot,
-             String Mota,
-             String img,
-             int giaban
-            ){
-        String a = optionType + useService.getInstance().checkIDFOOD(optionType, optionSize);
 
 
         public void addProduct
@@ -443,100 +434,100 @@ public class ProductsService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-        }
-    }
-
-//    public List<Products> getAllproductSearch(String txt){
-//        ArrayList<Products> allProductSearch = new ArrayList<Products>();
-//        try {
-//            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-//
-//
-//            PreparedStatement ps = conn.prepareStatement(" SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
-//                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-//                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-//                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
-//                    "WHERE food.FOOD_NAME LIKE ?"
-//
-//
-//            );
-//            ps.setString(1, "%" + txt + "%");
-//            ResultSet rs = ps.executeQuery();
-//            while (rs.next()) {
-//                allProductSearch.add(new Products(
-//                        rs.getString(1),
-//                        rs.getNString(2),
-//                        rs.getString(3),
-//                        rs.getNString(4), rs.getInt(4),
-//                        rs.getInt(6), rs.getString(5)));
-//            }
-//            conn.close();
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//        return allProductSearch;
-//    }
-
-    public void addFavourite(String idf, String idacc){
-        try {
-            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO favourites(ID_FOOD,ID_ACCOUNT)\n" +
-                    "VALUES(?,?)");
-            ps.setString(1, idf);
-            ps.setString(2, idacc);
-            ps.executeUpdate();
-        } catch (Exception e) {
-
-        }
-    }
-
-
-    public void updateProduct
-            (String id, String
-                    tenmonan, String
-                     optionSize,int giaban, String
-                     optionType,int soluong, String
-                     optionStatus,int optionCombo, String
-                     optionSale, String
-                     optionHot, String
-                     mota, String
-                     img,int niemyet){
-        try {
-            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-
-
-            PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
-            stmt.setString(1, tenmonan);
-            stmt.setString(2, optionSize);
-            stmt.setInt(3, giaban);
-            stmt.setString(4, optionType);
-            stmt.setInt(5, soluong);
-            stmt.setString(6, optionStatus);
-            stmt.setInt(7, optionCombo);
-            stmt.setString(8, optionSale);
-            stmt.setString(9, optionHot);
-            stmt.setString(10, mota);
-            stmt.setString(11, img);
-            stmt.setInt(12, niemyet);
-            stmt.setString(13, id);
-            stmt.setString(14, optionSize);
-            stmt.executeUpdate();
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-    }
 
+
+        public List<Products> getAllproductSearch(String txt){
+            ArrayList<Products> allProductSearch = new ArrayList<Products>();
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+
+                PreparedStatement ps = conn.prepareStatement(" SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+                        "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
+                        " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
+                        " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
+                        "WHERE food.FOOD_NAME LIKE ?"
+
+
+                );
+                ps.setString(1, "%" + txt + "%");
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    allProductSearch.add(new Products(
+                            rs.getString(1),
+                            rs.getNString(2),
+                            rs.getString(3),
+                            rs.getNString(4), rs.getInt(4),
+                            rs.getInt(6), rs.getString(5)));
+                }
+                conn.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return allProductSearch;
+        }
+
+        public void addFavourite(String idf, String idacc){
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+                PreparedStatement ps = conn.prepareStatement("INSERT INTO favourites(ID_FOOD,ID_ACCOUNT)\n" +
+                        "VALUES(?,?)");
+                ps.setString(1, idf);
+                ps.setString(2, idacc);
+                ps.executeUpdate();
+            } catch (Exception e) {
+
+            }
+        }
+
+
+        public void updateProduct
+        (String id, String
+        tenmonan, String
+        optionSize,int giaban, String
+        optionType,int soluong, String
+        optionStatus,int optionCombo, String
+        optionSale, String
+        optionHot, String
+        mota, String
+        img,int niemyet){
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+
+                PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
+                stmt.setString(1, tenmonan);
+                stmt.setString(2, optionSize);
+                stmt.setInt(3, giaban);
+                stmt.setString(4, optionType);
+                stmt.setInt(5, soluong);
+                stmt.setString(6, optionStatus);
+                stmt.setInt(7, optionCombo);
+                stmt.setString(8, optionSale);
+                stmt.setString(9, optionHot);
+                stmt.setString(10, mota);
+                stmt.setString(11, img);
+                stmt.setInt(12, niemyet);
+                stmt.setString(13, id);
+                stmt.setString(14, optionSize);
+                stmt.executeUpdate();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
     public static void main(String[] args) {
-        ArrayList<TypeProducts> listT = getInstance().getTypeProduct();
+       ArrayList<TypeProducts> listT = getInstance().getTypeProduct();
         for (TypeProducts item: listT) {
             System.out.println(item.getNameType());
         }
 
+
     }
+
 
 }

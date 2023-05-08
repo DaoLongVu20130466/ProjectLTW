@@ -8,7 +8,6 @@
 <%@ page import="main.bean.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.UserPemission" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -81,7 +80,6 @@
                             <%
                                 String a = (String) session.getAttribute("login");
                                 User user = (User) session.getAttribute("auth");
-                                UserPemission per = new UserPemission(user.getUserId());
                             %>
                             <%
                                 if (a == null) {
@@ -209,9 +207,6 @@
                                         else if(item.getStatusInt() == 0) {
                                     %>
                                     <a href="ServletLock?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
-                                <%}%>
-                                <%if (per.canEditRole()){%>
-                                    <a href="ServletGetRole?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
                                 <%}%>
                             </tr>
                             </tbody>
