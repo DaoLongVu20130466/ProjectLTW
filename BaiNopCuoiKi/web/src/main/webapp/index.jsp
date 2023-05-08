@@ -79,7 +79,8 @@
                         <% }else{%>
                         <div   class="fa" role="alert">
 
-                            <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+                            <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a +  user.getName()%></a>
+                            <a href="getLogOut"><i class="fa fa-sign-out" ></i> Thoát</a>
 
                         </div>
                         <%}%>
@@ -220,9 +221,9 @@
                     for (Products p : listP) {
                 %>
                 <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="<%=p.getPath()%>">
+                    <div class="categories__item set-bg" data-setbg="<%=p.getIdImg()%>">
                         <label>-20%</label>
-                        <h5><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h5>
+                        <h5><a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h5>
                     </div>
                 </div>
                 <%}%>
@@ -266,13 +267,13 @@
             %>
             <div class="col-lg-3 col-md-4 col-sm-6 ">
                 <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="<%=p.getPath()%>">
+                    <div class="featured__item__pic set-bg" data-setbg="<%=p.getIdImg()%>">
                         <ul class="featured__item__pic__hover">
                         </ul>
                     </div>
                     <div class="featured__item__text">
-                        <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
-                        <h5><%=AppService.intToVND(p.getLISTED_PRICE())%></h5>
+                        <h6><a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
+                        <h5><%=AppService.intToVND(p.getPrice())%></h5>
                     </div>
                 </div>
             </div>
@@ -309,15 +310,15 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mix ">
                 <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="<%=p.getPath() %>">
+                    <div class="featured__item__pic set-bg" data-setbg="<%=p.getIdImg() %>">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
-                        <h6><a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
-                        <h5><%=AppService.intToVND(p.getLISTED_PRICE())%></h5>
+                        <h6><a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h6>
+                        <h5><%=AppService.intToVND(p.getPrice())%></h5>
                     </div>
                 </div>
             </div>

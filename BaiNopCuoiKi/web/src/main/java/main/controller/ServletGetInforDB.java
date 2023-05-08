@@ -28,10 +28,10 @@ public class ServletGetInforDB extends HttpServlet {
             DashBoard db = new DashBoard(DashBoardService.getInstance().getOderByYear(nowYear));
             request.setAttribute("dashBoard", db);
             request.setAttribute("dbm", "all");
-            request.getRequestDispatcher("DoanhThu.jsp").forward(request, response);
+            request.getRequestDispatcher("/DoanhThu.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Bạn không có quền truy cập va trang này");
-            request.getRequestDispatcher("getIndex").forward(request, response);
+            request.getRequestDispatcher("/getIndex").forward(request, response);
         }
     }
     @Override

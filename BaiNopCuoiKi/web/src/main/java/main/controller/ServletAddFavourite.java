@@ -31,7 +31,7 @@ public class ServletAddFavourite extends HttpServlet {
         request.setAttribute("product", product);
 
 
-        response.sendRedirect("getAllFavourite");
+        response.sendRedirect("/getAllFavourite");
 
     }
 
