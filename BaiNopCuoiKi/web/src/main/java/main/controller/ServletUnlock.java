@@ -14,7 +14,7 @@ public class ServletUnlock extends HttpServlet {
 
         String LockId =  request.getParameter("uid");
         useService.getInstance().UnLockUser(LockId);
-        response.sendRedirect("/getUserControl");
+        response.sendRedirect("/web_war/getUserControl");
     }
 
     @Override

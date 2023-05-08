@@ -28,15 +28,15 @@ public class ServletCheckout extends HttpServlet {
             if (AddOderService.getInstance().adODer(user.getIdacc(), cart, vouch)) {
                 request.setAttribute("error", "Thanh toán thành công");
                 session.setAttribute("cart", new Cart());
-                request.getRequestDispatcher("/showCart").forward(request, response);
+                request.getRequestDispatcher("showCart").forward(request, response);
 
             } else {
                 request.setAttribute("error", "Thanh toán thất bại");
-                request.getRequestDispatcher("/showCart").forward(request, response);
+                request.getRequestDispatcher("showCart").forward(request, response);
             }
         }else{
                 request.setAttribute("error", "Vui lòng đang nhập để thanh toán");
-                request.getRequestDispatcher("/getIndex").forward(request, response);
+                request.getRequestDispatcher("getIndex").forward(request, response);
 
     }
     }

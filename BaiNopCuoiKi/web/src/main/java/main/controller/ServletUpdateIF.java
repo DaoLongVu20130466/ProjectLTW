@@ -19,7 +19,7 @@ public class ServletUpdateIF extends HttpServlet {
         String sdt = request.getParameter("sdt");
         String diachi = request.getParameter("sdt");
         useService.getInstance().updateIF(id,hoten,email,sdt,diachi);
-        request.getRequestDispatcher("/Chinhsuathongtin.jsp").forward(request,response);
+        request.getRequestDispatcher("Chinhsuathongtin.jsp").forward(request,response);
 
     }
 

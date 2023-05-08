@@ -22,7 +22,7 @@ public class ServletUIFOder extends HttpServlet {
         request.setAttribute("userID",usernow);
         ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
         session.setAttribute("alloder", list);
-        request.getRequestDispatcher("/Donhang.jsp").forward(request, response);
+        request.getRequestDispatcher("Donhang.jsp").forward(request, response);
 
     }
 

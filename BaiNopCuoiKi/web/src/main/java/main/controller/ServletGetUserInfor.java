@@ -24,7 +24,7 @@ public class ServletGetUserInfor extends HttpServlet {
         session.setAttribute("userID", userinfor);
         ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
         session.setAttribute("alloder", list);
-        request.getRequestDispatcher("/user.jsp").forward(request,response);
+        request.getRequestDispatcher("user.jsp").forward(request,response);
 
 
     }

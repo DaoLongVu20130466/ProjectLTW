@@ -79,8 +79,7 @@
                         <% }else{%>
                         <div   class="fa" role="alert">
 
-                            <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a +  user.getName()%></a>
-                            <a href="getLogOut"><i class="fa fa-sign-out" ></i> Thoát</a>
+                            <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
 
                         </div>
                         <%}%>

@@ -13,7 +13,7 @@ public class ServletLock extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        String LockId =  request.getParameter("uid");
         useService.getInstance().LockUser(LockId);
-        response.sendRedirect("/getUserControl");
+        response.sendRedirect("/web_war/getUserControl");
 
     }
 

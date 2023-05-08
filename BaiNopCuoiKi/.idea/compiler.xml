@@ -6,18 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BaiNopCuoiKi.main" />
+        <module name="web" />
       </profile>
     </annotationProcessing>
 
     <bytecodeTargetLevel>
-      <module name="BaiNopCuoiKi.lib" target="17" />
-      <module name="BaiNopCuoiKi.lib.main" target="17" />
-      <module name="BaiNopCuoiKi.lib.test" target="17" />
-      <module name="BaiNopCuoiKi.plugin" target="19" />
-      <module name="BaiNopCuoiKi.plugin.functionalTest" target="19" />
-      <module name="BaiNopCuoiKi.plugin.main" target="19" />
-      <module name="BaiNopCuoiKi.plugin.test" target="19" />
       <module name="web" target="19" />
     </bytecodeTargetLevel>
 

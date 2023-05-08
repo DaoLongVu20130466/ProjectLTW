@@ -22,10 +22,10 @@ public class ServletCancelOder extends HttpServlet {
         request.setAttribute("userID",usernow);
         if (1==1){
             OderService.getInstance().cancelOder(idOder);
-            response.sendRedirect("/getUIFOder");
+            response.sendRedirect("getUIFOder");
         }
         else {
-            response.sendRedirect("/DangNhap.jsp");
+            response.sendRedirect("DangNhap.jsp");
         }
 
     }
