@@ -36,7 +36,7 @@ public class ServletAddProduct extends HttpServlet {
         ProductsService.getInstance().addProduct(tenmonan,optionSize,giaban,optionType,soluong,optionStatus,optionCombo,optionSale,optionHot,Mota,img,niemyet);
 
 
-        response.sendRedirect("ServletAddNewProduct");
+        response.sendRedirect("/ServletAddNewProduct");
     }
 
     @Override
