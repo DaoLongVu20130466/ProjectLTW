@@ -1,9 +1,8 @@
 package main.services;
-
-import com.telerivet.Message;
-import com.telerivet.Project;
 import com.telerivet.TelerivetAPI;
 import com.telerivet.Util;
+import com.telerivet.Message;
+import com.telerivet.Project;
 
 import java.io.IOException;
 

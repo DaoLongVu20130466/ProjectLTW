@@ -24,7 +24,7 @@ public class showCart extends HttpServlet {
             }
         else{
 
-            request.getRequestDispatcher("/GioHang.jsp").forward(request, response);
+            request.getRequestDispatcher("GioHang.jsp").forward(request, response);
         }
 
 

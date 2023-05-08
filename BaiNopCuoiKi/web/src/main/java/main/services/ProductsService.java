@@ -194,8 +194,8 @@ public class ProductsService {
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
-                        rs.getInt(4),
-                        rs.getString(5)));
+                        rs.getNString(4), rs.getInt(4),
+                        rs.getInt(6), rs.getString(5)));
                 //XONG
             }
             conn.close();
@@ -223,8 +223,8 @@ public class ProductsService {
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
-                        rs.getInt(4),
-                        rs.getString(5)));
+                        rs.getNString(4), rs.getInt(4),
+                        rs.getInt(6), rs.getString(5)));
             }
             conn.close();
         } catch (Exception ex) {
@@ -342,7 +342,7 @@ public class ProductsService {
                         "\t\t\t\t\t\t\t\t\t\tLIMIT 12 OFFSET ?"
 
                 );
-                ps.setInt(1, (page));
+                ps.setInt(1, (page - 1));
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {

@@ -26,7 +26,7 @@ public class ServletAllFavourite extends HttpServlet {
         request.setAttribute("product", product);
         request.setAttribute("tag2",tag);
 
-        request.getRequestDispatcher("/yeuthich.jsp").forward(request, response);
+        request.getRequestDispatcher("yeuthich.jsp").forward(request, response);
 
     }
 
