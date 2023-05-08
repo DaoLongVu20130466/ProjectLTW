@@ -10,22 +10,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Trans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteTran.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllTrans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/TransServiece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/artifacts/web_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIDistrictRespone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APILeadtimerp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIprovineRespone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIwardRespone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APTcostRP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletLockThisUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ServResetPass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/NhapOtpSdt.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMatKhauSDT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddVoucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddVoucher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletaFavourite.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletaFavourite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/DashBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/DashBoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchInAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchInAd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/addtoCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/addtoCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +48,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="package.json" />
         <option value="HTML File" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -63,13 +76,16 @@
     </option>
   </component>
   <component name="ProjectId" id="2IadZx8x6b4JU8JsuWaOiRb2mQf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -81,12 +97,31 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.bean" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ApiController">
+    <configuration name="ApiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.bean.ApiController" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.bean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.AppService" />
       <module name="web" />
@@ -202,6 +237,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ApiController" />
         <item itemvalue="Application.AppService" />
         <item itemvalue="Application.SendPhoneOTP" />
       </list>
@@ -247,7 +283,13 @@
       <workItem from="1682393359544" duration="394000" />
       <workItem from="1682918807960" duration="330000" />
       <workItem from="1682919181594" duration="9224000" />
-      <workItem from="1683001004625" duration="2384000" />
+      <workItem from="1683001004625" duration="10006000" />
+      <workItem from="1683021054565" duration="6743000" />
+      <workItem from="1683091020903" duration="1659000" />
+      <workItem from="1683115984966" duration="2716000" />
+      <workItem from="1683176358638" duration="1278000" />
+      <workItem from="1683381598355" duration="2607000" />
+      <workItem from="1683431512246" duration="21348000" />
     </task>
     <servers />
   </component>
@@ -264,5 +306,28 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java</url>
+          <line>99</line>
+          <properties class="main.bean.ApiController" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

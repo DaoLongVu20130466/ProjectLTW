@@ -267,6 +267,13 @@ input[type="date"]::-webkit-inner-spin-button {
     display:flex;
     justfiy-content:space-between;
 }
+#formreset{
+    box-shadow: none;
+}
+#formreset #xacnhanreset{
+    background: #1a73e8;
+    color: white;
+}
 .colums {
     display:flex;
     justify-content:space-between;
