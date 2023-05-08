@@ -19,10 +19,12 @@ public class Products implements Serializable {
     int price;
     int basePrice;
 
-    public Products(String idFood, String foodName, String idType, int price, String idImg) {
+    public Products(String idFood, String foodName, String idType, String idDes, int quantity, int price, String idImg) {
         this.idFood = idFood;
         this.foodName = foodName;
         this.idType = idType;
+        this.idDes = idDes;
+        this.quantity = quantity;
         this.price = price;
         this.idImg = idImg;
     }
@@ -37,12 +39,16 @@ public class Products implements Serializable {
         this.price = price;
     }
 
-    public Products(String idFood, String foodName, int price, String idImg) {
+    public Products(String idFood, String foodName,String idType, int price, String idImg) {
         this.idFood = idFood;
         this.foodName = foodName;
+        this.idType = idType;
         this.price = price;
         this.idImg = idImg;
 
+    }
+
+    public Products(String string, String string1, int anInt, int anInt1, String string2, String string3) {
     }
 
 

@@ -154,16 +154,29 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
-                        <img class="product__details__pic__item--large"
-                             src="<%=pro.getPath()%>">
+
+                        <div class="display-container">
+                            <img class="mySlides"  src="img/Data/Giamgia/1comga_aquang-min.jpeg">
+                            <img class="mySlides"  src="https://img5.thuthuatphanmem.vn/uploads/2021/12/06/anh-avatar-goku-ban-nang-vo-cuc_011149230.jpg">
+                            <img class="mySlides" src="img/Data/Giamgia/1comga_aquang-min.jpeg">
+                            <img class="mySlides" src="https://img5.thuthuatphanmem.vn/uploads/2021/12/06/anh-avatar-goku-ban-nang-vo-cuc_011149230.jpg">
+
+                            <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+                            <div class="badge" style="width:100%">
+                                <span class="image-badge" onclick="currentDiv(1)"></span>
+                                <span class="image-badge" onclick="currentDiv(2)"></span>
+                                <span class="image-badge" onclick="currentDiv(3)"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__text">
                     <h3><%=pro.getFoodName()%></h3>
-                    <div class="product__details__price"><%=pro.getLISTED_PRICE()%><p>VND</p></div>
-                    <p><%=pro.getDESCRIPTION()%>
+                    <div class="product__details__price"><%=pro.getPrice()%><p>VND</p></div>
+                    <p><%=pro.getIdDes()%>
                     </p>
                 </div>
                     <form action="/web_war/test1" enctype="multipart/form-data" method="get" onSubmit="">
@@ -247,29 +260,18 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="media mb-3">
-                                        <div class="mr-2">
-                                            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <p>Cơm gà xé trộn với rau răm và rau quế, ăn cùng với đu đủ, hành chua, cà rốt ngâm, tương ớt… Nhưng điểm khác biệt lớn nhất, tạo nên sự độc đáo của thương hiệu Nhung Cơm Gà nằm ở những gia vị được dùng để tẩm ướp gà.</p>
-                                            <small class="text-muted">Đăng Bởi Hữu Thoại chưa làm nhận xét ngày 30/11/2022 </small>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="media mb-3">
-                                        <div class="mr-2">
-                                            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <p>Theo cảm nhận của mình thì cơm thơm mùi bơ rất vừa ăn, gà mắm tỏi thì hơi khô nhưng vị vẫn 👌, ko mặn như nhiều người nói
-                                                Đặc biệt là lạp xưởng rất rất ngon, mng nên thử nha
-                                                Có dịp vẫn sẽ ủng hộ quán   .</p>
-                                            <small class="text-muted">Đăng bởi WB God ngày 11/11/2022</small>
-                                        </div>
-                                    </div>
-                                    <hr>
+
                                     <a href="#" class="btn hvr-hover">Xem Thêm</a>
+                                    <hr>
+                                    <div class="search__form">
+
+                                        <form action="AddCommentServlet">
+                                            <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
+
+                                            <input type="text" placeholder="Nhận xét" style="width: 800px;" name="cmt">
+                                            <button type="submit" class="site-btn">Gửi</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -201,9 +201,10 @@ public class useService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             // crate statement
 
-            String query = "select USERS, PASS, acc.ID_USER, IS_BLOCK,USER_NAMES ,ROLE, ROLE_NAME, ID_ACCOUNT \n" +
-                    "FROM account  acc join user_information us on us.ID_USER=acc.ID_USER  join role on role.ID_USER=acc.ID_USER\n" +
-                    "WHERE USERS=? AND PASS=?";
+            String query = "select acc.USERS, acc.PASS, acc.ID_USER, IS_BLOCK,USER_NAMES ,ROLE, ROLE_NAME, ID_ACCOUNT \n" +
+                    " FROM accounts  acc  join user_information us on us.ID_USER=acc.ID_USER  \n" +
+                    " join role on role.ID_USER = acc.ID_USER\n" +
+                    " WHERE acc.USERS=? AND acc.PASS=?";
             PreparedStatement a = conn.prepareStatement(query);
             a.setString(1, username);
             a.setString(2, password);
@@ -245,18 +246,18 @@ public class useService {
         return b;
     }
 
-    public int checkIDFOOD(String type, String size) {
+    public int checkIDFOOD(String type) {
         int b = 0;
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ?"
 
             );
             ps.setString(1, type);
-            ps.setString(2, size);
+
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                  b=rs.getInt(1) + 1;

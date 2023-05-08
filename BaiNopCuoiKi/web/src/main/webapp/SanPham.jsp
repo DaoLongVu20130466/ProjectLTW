@@ -166,6 +166,8 @@
               <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
               <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="getActivate"><i class="fa fa-gift" aria-hidden="true"></i> Hoạt Động</a></li>
+
             </ul>
           </div>
         </div>
@@ -196,13 +198,13 @@
             %>
             <tr>
               <td><%=p.getFoodName()%></td>
-              <td><%=p.getLISTED_PRICE()%></td>
+              <td><%=p.getPrice()%></td>
               <td><%=p.getID_food()%></td>
-              <td><%=p.getType()%></td>
+              <td><%=p.getIdType()%></td>
 
-              <td><a href="editProduct?fid=<%=p.getID_food()%>&size=<%=p.getSize()%>"><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
-                <a href="deleteF?fid=<%=p.getID_food()%>&size=<%=p.getSize()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
-                <a href="detail?type=<%=p.getType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
+              <td><a href="editProduct?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
+                <a href="deleteF?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                <a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
             </tr>
               <%}%>
             </tbody>

@@ -19,9 +19,9 @@ public class ServletEditProduct extends HttpServlet {
         ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
         request.setAttribute("alltype",type);
 
-        Products pro = ProductsService.getInstance().getProductByIDSize(idf,size);
-        request.setAttribute("pro",pro);
-        request.getRequestDispatcher("editProdcut.jsp").forward(request,response);
+//        Products pro = ProductsService.getInstance().getProductByIDSize(idf,size);
+//        request.setAttribute("pro",pro);
+        request.getRequestDispatcher("/editProdcut.jsp").forward(request,response);
 
 
     }

@@ -4,9 +4,14 @@ import main.bean.Products;
 import main.bean.TypeProducts;
 import main.services.ProductsService;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -23,11 +28,11 @@ public class getIndex extends HttpServlet {
         request.setAttribute("productBySale", producBySale);
         request.setAttribute("productByHot", producByHot);
         request.setAttribute("productByCombo", producByCombo);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

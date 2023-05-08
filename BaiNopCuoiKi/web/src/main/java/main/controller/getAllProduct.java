@@ -17,23 +17,22 @@ public class getAllProduct extends HttpServlet {
         String page = request.getParameter("page");
         int page2  ;
         if(page == null ){
-            page2 = 1;
+            page2 = 0;
         } else {
-            page2 = Integer.parseInt(page);
+            page2 = Integer.parseInt(page)*12;
         }
         ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
         int numberP = products.size()/12 +1 ;
-
-        ArrayList<TypeProducts> typePro = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
-        ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
+        ArrayList<TypeProducts> typeProD = (ArrayList<TypeProducts>) ProductsService.getInstance().getTypeProduct();
+        ArrayList<Products> proDPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
         ArrayList<Products> producBySale = (ArrayList<Products>) ProductsService.getInstance().getAllproductBySale();
 
-        request.setAttribute("allproducts",proPage);
+        request.setAttribute("allproducts",proDPage);
         request.setAttribute("numberP",numberP);
-        request.setAttribute("alltype", typePro);
+        request.setAttribute("alltype", typeProD);
         request.setAttribute("productBySale", producBySale);
 
-        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
+        request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
     }
 
     @Override

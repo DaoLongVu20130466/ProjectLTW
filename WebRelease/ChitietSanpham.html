@@ -125,8 +125,21 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
-                            <img class="product__details__pic__item--large"
-                                src="img/Data/Giamgia/1comga_aquang-min.jpeg"> 
+                      
+                                <div class="display-container">
+                                    <img class="mySlides"  src="img/Data/Giamgia/1comga_aquang-min.jpeg"> 
+                                    <img class="mySlides"  src="https://img5.thuthuatphanmem.vn/uploads/2021/12/06/anh-avatar-goku-ban-nang-vo-cuc_011149230.jpg"> 
+                                    <img class="mySlides" src="img/Data/Giamgia/1comga_aquang-min.jpeg"> 
+                                    <img class="mySlides" src="https://img5.thuthuatphanmem.vn/uploads/2021/12/06/anh-avatar-goku-ban-nang-vo-cuc_011149230.jpg"> 
+                                  
+                                    <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                                    <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+                                    <div class="badge" style="width:100%">
+                                        <span class="image-badge" onclick="currentDiv(1)"></span>
+                                        <span class="image-badge" onclick="currentDiv(2)"></span>
+                                        <span class="image-badge" onclick="currentDiv(3)"></span>
+                                      </div>
+                                  </div>
                         </div>
                     </div>
                 </div>
@@ -245,6 +258,19 @@
                                         </div>
                                         <hr>
                                         <a href="#" class="btn hvr-hover">Xem Thêm</a>
+                                        <hr>
+                                        
+                                        <div class="search__form">
+                                           
+                                               
+                                            <form action="#">
+                                                <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
+                                           
+                                                <input type="text" placeholder="Nhận xét" style="width: 800px;">
+                                                <button type="submit" class="site-btn">Gửi</button>
+                                            </form>
+                                        </div>
+
                                     </div>
                                   </div>
                             </div>
@@ -387,6 +413,33 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        function currentDiv(n) {
+        showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("image-badge");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" badge-white", "");
+                }
+          x[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " badge-white";
+        }
+        </script>
 
 
 </body>

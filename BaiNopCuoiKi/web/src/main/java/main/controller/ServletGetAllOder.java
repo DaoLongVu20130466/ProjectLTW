@@ -23,10 +23,10 @@ public class ServletGetAllOder extends HttpServlet {
         if (AppService.checkAdmin(role)) {
         ArrayList<Order> oder = OderService.getInstance().getAllOder();
         request.setAttribute("alloder", oder);
-        request.getRequestDispatcher("Truysuatdonhang.jsp").forward(request, response);
+        request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
     }else {
         request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-        request.getRequestDispatcher("getIndex").forward(request, response);
+        request.getRequestDispatcher("/getIndex").forward(request, response);
     }
 }
 
