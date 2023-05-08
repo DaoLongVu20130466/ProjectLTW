@@ -17,9 +17,9 @@ public class getAllProduct extends HttpServlet {
         String page = request.getParameter("page");
         int page2  ;
         if(page == null ){
-            page2 = 0;
+            page2 = 1;
         } else {
-            page2 = Integer.parseInt(page)*12;
+            page2 = Integer.parseInt(page);
         }
         ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
         int numberP = products.size()/12 +1 ;
@@ -32,7 +32,7 @@ public class getAllProduct extends HttpServlet {
         request.setAttribute("alltype", typeProD);
         request.setAttribute("productBySale", producBySale);
 
-        request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
+        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
     }
 
     @Override

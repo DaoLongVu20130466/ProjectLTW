@@ -52,7 +52,7 @@ public class ServletResetPass extends HttpServlet {
 
 
             //-----------------------------------------------
-            request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);
+            request.getRequestDispatcher("DangNhap.jsp").forward(request, response);
 
         }
         }

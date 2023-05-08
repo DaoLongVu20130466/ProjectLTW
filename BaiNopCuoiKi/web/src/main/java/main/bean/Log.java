@@ -3,11 +3,13 @@ package main.bean;
 import main.db.ConnectMysqlExample;
 import main.services.AppService;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Log {
-    int id;
+    String id;
     int level;
     String Id_User;
     String src;
@@ -15,7 +17,7 @@ public class Log {
     Date date;
     String status;
 
-    public Log(int id, int level, String id_User, String src, String content, Date date, String status) {
+    public Log(String id, int level, String id_User, String src, String content, Date date, String status) {
         this.id = id;
         this.level = level;
         Id_User = id_User;
@@ -33,9 +35,7 @@ public class Log {
         this.status = status;
     }
 
-
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -76,7 +76,7 @@ public class Log {
         return status;
     }
 
-    public static void writeLog( int level,String user, String src, String content, String status) {
+    public void WriteLog(String user, int level, String src, String content, String status){
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             PreparedStatement ps = conn.prepareStatement("INSERT INTO log (LEVEL_LOG, ID_USER, SRC_LOG, CONTENT,CREATE_AT, STATUS_LOG)" +
@@ -91,6 +91,6 @@ public class Log {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
 
+    }
 }

@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Doimk extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/DoiMatKhau.jsp").forward(request, response);
+        request.getRequestDispatcher("DoiMatKhau.jsp").forward(request, response);
     }
 
     @Override
@@ -25,11 +25,11 @@ public class Doimk extends HttpServlet {
 
         if(!auth.getPassword().equals(currentpassword)){
             request.setAttribute("error", "Mật khẩu không chính xác");
-            request.getRequestDispatcher("/DoiMatKhau.jsp").forward(request, response);
+            request.getRequestDispatcher("DoiMatKhau.jsp").forward(request, response);
         }else{
             useService.getInstance().doimk(auth.getUserId(),newpassword);
             request.setAttribute("error", "Đổi mật khẩu thành công");
-            request.getRequestDispatcher("/DoiMatKhau.jsp").forward(request, response);
+            request.getRequestDispatcher("DoiMatKhau.jsp").forward(request, response);
         }
 
     }

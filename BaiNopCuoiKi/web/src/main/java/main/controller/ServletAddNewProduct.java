@@ -22,11 +22,11 @@ public class ServletAddNewProduct extends HttpServlet {
         if (AppService.checkAdmin(role)) {
         ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
         request.setAttribute("alltype",type);
-        request.getRequestDispatcher("/addProduct.jsp").forward(request,response);
+        request.getRequestDispatcher("addProduct.jsp").forward(request,response);
 
     }else {
         request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-        request.getRequestDispatcher("/getIndex").forward(request, response);
+        request.getRequestDispatcher("getIndex").forward(request, response);
     }
 }
 

@@ -29,7 +29,7 @@ public class getTypeProduct extends HttpServlet {
         request.setAttribute("numberP",numberP);
         request.setAttribute("productBySale", producBySale);
 
-        request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
+        request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
 
 
     }
