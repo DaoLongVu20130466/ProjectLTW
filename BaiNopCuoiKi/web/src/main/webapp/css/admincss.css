@@ -209,7 +209,7 @@ textarea {
 }
 form {
     width: 100%;
-    padding: 20px;
+    /*padding: 20px;*/
     border-radius: 6px;
     background: #fff;
     box-shadow: 0 0 8px #006622;
@@ -266,6 +266,13 @@ input[type="date"]::-webkit-inner-spin-button {
 .week {
     display:flex;
     justfiy-content:space-between;
+}
+#formreset{
+    box-shadow: none;
+}
+#formreset #xacnhanreset{
+    background: #1a73e8;
+    color: white;
 }
 .colums {
     display:flex;

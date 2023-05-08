@@ -1,19 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Long Vu
-  Date: 2/1/2023
-  Time: 9:04 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page import="main.bean.User" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.UserPemission" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -78,22 +62,7 @@
                             <div>Việt Nam </div>
                         </div>
                         <div class="header__top__right__auth">
-                            <%
-                                String a = (String) session.getAttribute("login");
-                                User user = (User) session.getAttribute("auth");
-                                UserPemission per = new UserPemission(user.getUserId());
-                            %>
-                            <%
-                                if (a == null) {
-                            %>
-                            <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
-                            <% }else{%>
-                            <div   class="fa" role="alert">
-
-                                <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
-
-                            </div>
-                            <%}%>
+                            <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
                         </div>
                     </div>
                 </div>
@@ -110,19 +79,19 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li ><a href="getIndex">Trang Chủ</a></li>
-                        <li ><a href="getAllProduct">Gian Hàng</a></li>
+                        <li ><a href="./index.html">Trang Chủ</a></li>
+                        <li ><a href="./shop-grid.html">Gian Hàng</a></li>
 
-                        <li><a href="blog.jsp">Giới Thiệu</a></li>
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
+                        <li><a href="./blog.html">Giới Thiệu</a></li>
+                        <li><a href="./contact.html">Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="getUser"><i class="fa fa-user"></i></a></li>
-                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
+                        <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -165,12 +134,14 @@
                     <div class="sidebar__item">
                         <h4>Quản Lý</h4>
                         <ul>
-                            <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
-                            <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-                            <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
-                            <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-                            <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-                            <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                            <li><a href="DoanhThu.jsp"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+                            <li><a href="SanPham.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
+                            <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
+                            <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
+                            <li><a href="Truysuatdonhang.jsp"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+                            <li><a href="Log.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                            <li><a href="TangVoucher.jsp"><i class="fa fa-file" aria-hidden="true"></i> Log</a></li>
+                            <li><a href="TruyXuatNhapHang.jsp"><i class="fa fa-suitcase" aria-hidden="true"></i>Truy Xuất Nhập Hàng</a></li>
                         </ul>
                     </div>
                 </div>
@@ -183,39 +154,26 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Tên Tài Khoản</th>
-                                <th>Số Điện Thoại</th>
-                                <th>Địa chỉ</th>
-                                <th>Số Đơn Mua</th>
+                                <th>Ngày Nhập</th>
+                                <th>Nhà Cung Cấp</th>
+                                <th>Số lượng</th>
                                 <th>Trạng Thái</th>
+                                <th>Tổng Giá Tiền</th>
                                 <th>Hành Động</th>
                             </tr>
                             </thead>
-                            <%
-                                ArrayList<User> list = (ArrayList<User>) request.getAttribute("alluser");
-                                for (User item: list) {
-                            %>
                             <tbody>
                             <tr>
-                                <td><%=item.getUserId()%></td>
-                                <td><%=item.getUserName()%></td>
-                                <td><%=item.getPhoneNumber()%></td>
-                                <td><%=item.getProvine()%></td>
-                                <td><%=item.getNumberBuy()%></td>
-                                <td><%=item.getStatus()%></td>
-                                <td><%if(item.getStatusInt() == 1) {%>
-                                    <a href="ServletUnlock?uid=<%=item.getUserId()%>"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Mở Khóa</a>
-                                    <%}
-                                        else if(item.getStatusInt() == 0) {
-                                    %>
-                                    <a href="ServletLock?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
-                                <%}%>
-                                <%if (per.canEditRole()){%>
-                                    <a href="ServletGetRole?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
-                                <%}%>
+                                <td>assdasd.</td>
+                                <td>Easeasdas</td>
+                                <td>HCM.</td>
+                                <td>11233.</td>
+                                <td>12</td>
+                                <td>13.</td>
+                                <td><a href=""><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
+                                    <a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
                             </tr>
                             </tbody>
-                            <%}%>
                         </table>
                         <div class="product__pagination">
                             <a href="#">1</a>

@@ -1,23 +1,20 @@
 package main.controller;
 
-import main.services.*;
+import main.bean.Log;
+import main.services.useService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ServletDeletaFavourite", value = "/deletaFavourite")
-public class ServletDeletaFavourite extends HttpServlet {
+@WebServlet(name = "ServletDeletelog", value = "/ServletDeletelog")
+public class ServletDeletelog extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String id = request.getParameter("idacc");
-        String idf = request.getParameter("idf");
-
-        useService.getInstance().deletaFavourite(idf,id);
-        response.sendRedirect("/getAllFavourite");
-
+        String logId = request.getParameter("LogId");
+        Log.getInstance().DeleteLog(logId);
+        response.sendRedirect("Log.jsp");
     }
 
     @Override
