@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class ServletEditProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String idf = request.getParameter("fid");
-//        String size = request.getParameter("size");
-//        ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
-//        request.setAttribute("alltype",type);
-//
+        String idf = request.getParameter("fid");
+        String size = request.getParameter("size");
+        ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
+        request.setAttribute("alltype",type);
+
 //        Products pro = ProductsService.getInstance().getProductByIDSize(idf,size);
 //        request.setAttribute("pro",pro);
-//        request.getRequestDispatcher("editProdcut.jsp").forward(request,response);
+        request.getRequestDispatcher("/editProdcut.jsp").forward(request,response);
 
 
     }

@@ -13,14 +13,14 @@ import java.util.ArrayList;
 public class ServletSearchInAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        request.setCharacterEncoding("UTF-8");
-//        String txt = (String) request.getParameter("txt");
-//        ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproductSearch(txt);
-//        ArrayList<Products> products2 = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
-//        request.setAttribute("allproducts", products);
-//        request.setAttribute("allproducts2", products2);
-//
-//        request.getRequestDispatcher("SanPham.jsp").forward(request, response);
+        request.setCharacterEncoding("UTF-8");
+        String txt = (String) request.getParameter("txt");
+        ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproductSearch(txt);
+        ArrayList<Products> products2 = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
+        request.setAttribute("allproducts", products);
+        request.setAttribute("allproducts2", products2);
+
+        request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
 
     }
 

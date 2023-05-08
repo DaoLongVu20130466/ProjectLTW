@@ -145,7 +145,7 @@
               <li><a href="ThemSanPham.html"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
               <li><a href="QuanLyTaiKhoan.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="Truysuatdonhang.jsp"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-              <li><a href="Log.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="TangVoucher.jsp"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
               <li><a href="TangVoucher.jsp"><i class="fa fa-file" aria-hidden="true"></i> Log</a></li>
             </ul>
           </div>
@@ -180,7 +180,7 @@
                 <td><%=item.getSrc()%></td>
                 <td><%=item.getContent()%></td>
                 <td><%=item.getDate()%></td>
-                <td><a href="ServletDeletelog?LogId=<%=item.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
+                <td><a href=""> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a></td>
 
               </tr>
 
