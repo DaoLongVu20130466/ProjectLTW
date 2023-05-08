@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getProduct", value = "/detail")
+@WebServlet(name = "ServletGetProduct", value = "/detail")
 public class ServletGetProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,7 +20,7 @@ public class ServletGetProduct extends HttpServlet {
 
         request.setAttribute("product", pro);
         request.setAttribute("allProductByID", allProductByID);
-        request.getRequestDispatcher("product-detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/product-detail.jsp").forward(request, response);
     }
 
     @Override

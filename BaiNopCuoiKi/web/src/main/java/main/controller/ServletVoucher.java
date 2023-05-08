@@ -23,10 +23,10 @@ public class ServletVoucher extends HttpServlet {
 
         if (AppService.checkAdmin(role)) {
             request.setAttribute("allvoucher", vcher);
-            request.getRequestDispatcher("TangVoucher.jsp").forward(request, response);
+            request.getRequestDispatcher("/TangVoucher.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-            request.getRequestDispatcher("getIndex").forward(request, response);
+            request.getRequestDispatcher("/getIndex").forward(request, response);
         }
     }
     @Override

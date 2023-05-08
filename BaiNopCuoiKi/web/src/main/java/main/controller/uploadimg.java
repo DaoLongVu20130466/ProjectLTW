@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.User;
 import main.services.useService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -17,13 +18,13 @@ import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.Iterator;
 import java.util.List;
-import main.bean.User;
 
 
 @WebServlet(name = "uploadimg", value = "/UploadDownloadFileServlet")
 public class uploadimg extends HttpServlet {
         private static final long serialVersionUID = 1L;
         private ServletFileUpload uploader = null;
+
         @Override
         public void init() throws ServletException {
             DiskFileItemFactory fileFactory = new DiskFileItemFactory();
@@ -31,6 +32,7 @@ public class uploadimg extends HttpServlet {
             fileFactory.setRepository(filesDir);
             this.uploader = new ServletFileUpload(fileFactory);
         }
+
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String fileName = request.getParameter("fileName");
 
@@ -84,7 +86,7 @@ public class uploadimg extends HttpServlet {
                     useService.getInstance().upImg(user.getUserId(), "img"+File.separator+"IMG"+File.separator+fileItem.getName());
                     User userinfor = useService.getInstance().getAllUserByID(user.getUserId());
                     session.setAttribute("userID", userinfor);
-                    request.getRequestDispatcher("Chinhsuathongtin.jsp").forward(request,response);
+                    request.getRequestDispatcher("/Chinhsuathongtin.jsp").forward(request,response);
                 }
             } catch (FileUploadException e) {
               e.printStackTrace();

@@ -25,10 +25,10 @@ public class ServletGetAllProductAd extends HttpServlet {
 
         request.setAttribute("allproducts", proPage);
         request.setAttribute("allproducts2", products);
-        request.getRequestDispatcher("SanPham.jsp").forward(request, response);
+        request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
     } else {
             request.setAttribute("error", "Bạn không có quền truy cập va trang này");
-            request.getRequestDispatcher("getIndex").forward(request, response);
+            request.getRequestDispatcher("/getIndex").forward(request, response);
         }
     }
 

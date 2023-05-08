@@ -29,6 +29,6 @@ public class ServletAddVoucher extends HttpServlet {
         String dateStart =request.getParameter("dateStart");
         String dateEnd =request.getParameter("dateStart");
         VoucherService.getInstance().addVoucher(ma,name,type,discount,dateStart,dateEnd);
-        response.sendRedirect("/web_war/ServletVoucher");
+        response.sendRedirect("/ServletVoucher");
     }
 }
