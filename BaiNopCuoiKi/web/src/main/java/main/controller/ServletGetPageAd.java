@@ -12,7 +12,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ServletGetPageAd", value = "/getPageAD")
+@WebServlet(name = "getPageAD", value = "/getPageAD")
 public class ServletGetPageAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,10 +40,10 @@ public class ServletGetPageAd extends HttpServlet {
             request.setAttribute("alltype", typePro);
             request.setAttribute("page", page2);
             request.setAttribute("productBySale", producBySale);
-            request.getRequestDispatcher("SanPham.jsp").forward(request, response);
+            request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
         }else{
             request.setAttribute("error","Bạn không có quền truy cập va trang này");
-            request.getRequestDispatcher("getIndex").forward(request, response);
+            request.getRequestDispatcher("/getIndex").forward(request, response);
         }
     }
     @Override

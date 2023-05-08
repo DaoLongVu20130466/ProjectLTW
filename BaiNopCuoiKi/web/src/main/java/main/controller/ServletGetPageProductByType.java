@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ServletGetPageProductByType", value = "/getPageProductByType")
+@WebServlet(name = "getPageProductByType", value = "/getPageProductByType")
 public class ServletGetPageProductByType extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class ServletGetPageProductByType extends HttpServlet {
             request.setAttribute("numberP", numberP);
             request.setAttribute("productBySale", producBySale);
             request.setAttribute("type", type);
-            request.getRequestDispatcher("shop-grid.jsp").forward(request, response);
+            request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
 
     }
 

@@ -27,22 +27,22 @@ public class registry extends HttpServlet {
         String rs2 = useService.getInstance().chekSDT(phone);
         if (rs!=null){
             request.setAttribute("error", rs);
-            request.getRequestDispatcher("DangKy.jsp").forward(request, response);
+            request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
         }if(rs1!=null) {
             request.setAttribute("error", rs1);
-            request.getRequestDispatcher("DangKy.jsp").forward(request, response);
+            request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
         }
 
         if(rs2!=null) {
         request.setAttribute("error", rs2);
-        request.getRequestDispatcher("DangKy.jsp").forward(request, response);
+        request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
     } if(rs==null && rs2==null && rs1==null) {
             useService.getInstance().registry(username, password, email, phone, Xa, Huyen, Tinh, Ap);
-            response.sendRedirect("DangNhap.jsp");
+            response.sendRedirect("/DangNhap.jsp");
         }
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("DangKy.jsp").forward(request, response);
+        request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
     }
 }

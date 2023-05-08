@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class LogController {
     ArrayList<Log> log =getAllLog();
-    public ArrayList<Log> getAllLog(){
+    public static ArrayList<Log> getAllLog(){
         ArrayList<Log> rsl = new ArrayList<>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
@@ -21,7 +21,7 @@ public class LogController {
             ResultSet rs = stmt.executeQuery("SELECT ID_LOG, LEVEL_LOG, ID_USER, SRC_LOG, CONTENT,CREATE_AT,STATUS_LOG FROM log ");
             while (rs.next()) {
                 rsl.add(new Log(
-                        rs.getString(1),
+                        rs.getInt(1),
                         rs.getInt(2),
                         rs.getString(3),
                         rs.getString(4),
