@@ -9,18 +9,18 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getProduct", value = "/detail")
+@WebServlet(name = "ServletGetProduct", value = "/detail")
 public class ServletGetProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String fid = request.getParameter("fid");
-//        String type = request.getParameter("type");
-//        Products pro = ProductsService.getInstance().getProductByID(fid);
-//        ArrayList<Products> allProductByID = (ArrayList<Products>) ProductsService.getInstance().getAllProductByID(type);
-//
-//        request.setAttribute("product", pro);
-//        request.setAttribute("allProductByID", allProductByID);
-//        request.getRequestDispatcher("product-detail.jsp").forward(request, response);
+        String fid = request.getParameter("fid");
+        String type = request.getParameter("type");
+        Products pro = ProductsService.getInstance().getProductByID(fid);
+        ArrayList<Products> allProductByID = (ArrayList<Products>) ProductsService.getInstance().getAllProductByID(type);
+
+        request.setAttribute("product", pro);
+        request.setAttribute("allProductByID", allProductByID);
+        request.getRequestDispatcher("/product-detail.jsp").forward(request, response);
     }
 
     @Override

@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-@WebServlet(name = "UploadDownloadFileServlet", value = "/UploadDownloadFileServlet")
+@WebServlet(name = "uploadimg", value = "/UploadDownloadFileServlet")
 public class uploadimg extends HttpServlet {
         private static final long serialVersionUID = 1L;
         private ServletFileUpload uploader = null;
