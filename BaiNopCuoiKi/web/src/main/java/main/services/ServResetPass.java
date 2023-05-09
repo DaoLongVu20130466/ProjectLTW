@@ -14,8 +14,8 @@ public class ServResetPass extends HttpServlet {
         HttpSession session = request.getSession(true);
         User user = (User) session.getAttribute("auth");
         SendPhoneOTP otp = (SendPhoneOTP) session.getAttribute("otp");
-        otp.sendNewPass(user.getPhoneNumber());
-       useService.getInstance().doimk(user.getUserId(),otp.getNewpass());
+//        otp.sendNewPass(user.getPhoneNumber());
+//       useService.getInstance().doimk(user.getUserId(),otp.getNewpass());
         session.invalidate();
         response.sendRedirect("DangNhap.jsp");
     }
