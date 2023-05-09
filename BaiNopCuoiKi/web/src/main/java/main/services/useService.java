@@ -517,8 +517,8 @@ public class useService {
 
     }
     public static void main(String[] args) {
-        useService u = new useService();
-        System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
+//        useService u = new useService();
+//        System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
     }
 
 

@@ -10,39 +10,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIDistrictRespone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APILeadtimerp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIprovineRespone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIwardRespone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APTcostRP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/province.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletLockThisUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ServResetPass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/NhapOtpSdt.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMatKhauSDT.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchInAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchInAd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/addtoCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/addtoCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/AddCommentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/AddCommentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/web">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -100,7 +140,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -108,7 +148,7 @@
       <recent name="main.bean" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApiController">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="ApiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.bean.ApiController" />
       <module name="web" />
@@ -291,6 +331,9 @@
       <workItem from="1683381598355" duration="2607000" />
       <workItem from="1683431512246" duration="21348000" />
       <workItem from="1683524554954" duration="843000" />
+      <workItem from="1683536721240" duration="1205000" />
+      <workItem from="1683553326415" duration="3784000" />
+      <workItem from="1683605986101" duration="63000" />
     </task>
     <servers />
   </component>
@@ -316,17 +359,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java</url>
-          <line>35</line>
+          <line>34</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java</url>
-          <line>99</line>
+          <line>98</line>
           <properties class="main.bean.ApiController" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

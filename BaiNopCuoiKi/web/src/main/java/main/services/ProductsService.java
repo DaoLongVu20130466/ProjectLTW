@@ -230,7 +230,7 @@ public class ProductsService {
 //        return allProductByCombo;
 //    }
 
-    public List<Products> getAllproductsByType(String type){
+    public List<Products> getAllproductsByType(String type) {
         ArrayList<Products> allProductByType = new ArrayList<Products>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
@@ -310,7 +310,7 @@ public class ProductsService {
 
 
             while (rs.next()) {
-                allProductByID.add( new Products(
+                allProductByID.add(new Products(
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getString(3),
@@ -325,7 +325,7 @@ public class ProductsService {
     }
 
     // getAllProductByPage Ä‘Ã£ fix
-    public List<Products> getAllProductByPage ( int page){
+    public List<Products> getAllProductByPage(int page) {
         ArrayList<Products> allProductByPage = new ArrayList<Products>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
@@ -355,7 +355,7 @@ public class ProductsService {
         return allProductByPage;
     }
 
-    public List<Products> getAllproductFavouriteByUser (String iduser){
+    public List<Products> getAllproductFavouriteByUser(String iduser) {
         ArrayList<Products> allProductByFavourite = new ArrayList<Products>();
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
@@ -401,15 +401,15 @@ public class ProductsService {
              String Mota,
              String img,
              int giaban
-            ){
-        String a = optionType + useService.getInstance().checkIDFOOD(optionType, optionSize);
+            ) {
+//        String a = optionType + useService.getInstance().checkIDFOOD(optionType, optionSize);
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             PreparedStatement ps = conn.prepareStatement("INSERT INTO FOOD(ID_FOOD, FOOD_NAME, ID_SIZE, LISTED_PRICE, TYPE_FOOD, QUANTITY,STATUSS,IS_COMBO, ID_SALE,IS_HOT, DESCRIPTION,L_IMG,BASE_PRICE) \n" +
                     "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setNString(1, a);
+//            ps.setNString(1, a);
             ps.setNString(2, tenmonan);
             ps.setString(3, optionSize);
             ps.setInt(4, giaban);
@@ -459,7 +459,7 @@ public class ProductsService {
 //        return allProductSearch;
 //    }
 
-    public void addFavourite(String idf, String idacc){
+    public void addFavourite(String idf, String idacc) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
@@ -477,13 +477,13 @@ public class ProductsService {
     public void updateProduct
             (String id, String
                     tenmonan, String
-                     optionSize,int giaban, String
-                     optionType,int soluong, String
-                     optionStatus,int optionCombo, String
+                     optionSize, int giaban, String
+                     optionType, int soluong, String
+                     optionStatus, int optionCombo, String
                      optionSale, String
                      optionHot, String
                      mota, String
-                     img,int niemyet){
+                     img, int niemyet) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
@@ -512,10 +512,9 @@ public class ProductsService {
 
     public static void main(String[] args) {
         ArrayList<TypeProducts> listT = getInstance().getTypeProduct();
-        for (TypeProducts item: listT) {
+        for (TypeProducts item : listT) {
             System.out.println(item.getNameType());
         }
-
     }
 
 }

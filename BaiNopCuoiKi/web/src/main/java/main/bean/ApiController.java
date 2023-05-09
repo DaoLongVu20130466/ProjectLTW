@@ -25,7 +25,6 @@ public class ApiController {
         conn.setRequestProperty("Content-Type", "application/json");
         conn.setRequestMethod("POST");
         String string = IOUtils.toString(conn.getInputStream(), StandardCharsets.UTF_8);
-        System.out.println( IOUtils.toString(conn.getInputStream(), StandardCharsets.UTF_8));
         Gson gson = new Gson();
         JsonObject jsonObject = gson.fromJson(string, JsonObject.class);
         return jsonObject.get("access_token").getAsString();
