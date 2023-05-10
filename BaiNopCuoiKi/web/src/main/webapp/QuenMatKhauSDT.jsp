@@ -1,3 +1,11 @@
+<%@ page import="main.bean.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.services.SendPhoneOTP" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zxx" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
@@ -116,6 +124,7 @@
       <p class="card-text py-2">
         Xin mời nhập số điện thoại của bạn vào
       </p>
+
       <form onsubmit="return cheking()" name="formreset" id="formreset" method="post"action="ServletSendReset">
       <div class="form-outline">
         <input name="name" type="text"  />
@@ -123,6 +132,15 @@
       </div>
 
       </form>
+      <%
+        if (request.getAttribute("otp")!=null){
+        SendPhoneOTP newotp = (SendPhoneOTP) request.getAttribute("otp");
+        if (!newotp.isHaveUser()){
+      %>
+      <p class="card-text py-2" style="color:red;">
+        Không tồn tại tài khoản với số điện thoại !
+      </p>
+      <%}}%>
       <div class="d-flex justify-content-between mt-4">
         <a class="" href="#">Login</a>
         <a class="" href="#">Register</a>
