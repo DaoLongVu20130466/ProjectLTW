@@ -20,7 +20,7 @@ public class ServletEditRole extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         User user = (User) session.getAttribute("auth");
-        Log.getInstance().WriteLog(user.getUserId(),1,this.getClass().getName(),"a","a");
+//        Log.getInstance().WriteLog(user.getUserId(),1,this.getClass().getName(),"a","a");
         String roleId = request.getParameter("Role");
         String targetID = request.getParameter("targetUID");
         UsrPerServiece.getInstance().upDaterole( roleId , targetID);

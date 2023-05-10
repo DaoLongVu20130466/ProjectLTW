@@ -13,7 +13,7 @@ public class ServletDeletelog extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String logId = request.getParameter("LogId");
-        Log.getInstance().DeleteLog(logId);
+//        Log.getInstance().DeleteLog(logId);
         response.sendRedirect("Log.jsp");
     }
 

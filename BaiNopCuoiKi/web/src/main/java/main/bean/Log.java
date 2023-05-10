@@ -2,6 +2,7 @@ package main.bean;
 
 import main.db.ConnectMysqlExample;
 import main.services.AppService;
+import main.services.OderService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,6 +15,12 @@ public class Log {
     String content;
     Date date;
     String status;
+    static Log instance;
+
+    public Log() {
+
+    }
+
 
     public Log(int id, int level, String id_User, String src, String content, Date date, String status) {
         this.id = id;
