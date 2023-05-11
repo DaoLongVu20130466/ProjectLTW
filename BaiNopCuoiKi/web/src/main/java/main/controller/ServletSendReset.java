@@ -19,12 +19,15 @@ public class ServletSendReset extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        User user = (User) session.getAttribute("auth");
-        UserPemission actor = new UserPemission(user.getUserId());
-        SendPhoneOTP newotp = new SendPhoneOTP();
-        newotp.sendOTP(request.getParameter("name"));
-        request.setAttribute("otp", newotp);
-        request.getRequestDispatcher("nhapOtpSdt.jsp").forward(request, response);
+        SendPhoneOTP newotp = new SendPhoneOTP(request.getParameter("name"));
+        if (newotp.isHaveUser()) {
+            newotp.sendOTP();
+            request.setAttribute("otp", newotp);
+            request.getRequestDispatcher("/NhapOtpSdt.jsp").forward(request, response);
+        }
+        else {
+            request.setAttribute("otp",newotp);
+            request.getRequestDispatcher("/QuenMatKhauSDT.jsp").forward(request,response);
+        }
     }
 }

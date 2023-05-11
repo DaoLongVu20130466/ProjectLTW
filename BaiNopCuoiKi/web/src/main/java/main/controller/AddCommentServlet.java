@@ -15,11 +15,13 @@ public class AddCommentServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user  = (User) session.getAttribute("auth");
 
+
         String iduser = user.getIdacc();
 
         String idf = (String) session.getAttribute("fid2");
         String text = request.getParameter("cmt");
         ProductsService.getInstance().addComment(idf,iduser,text);
+
         response.sendRedirect("detail");
 
     }

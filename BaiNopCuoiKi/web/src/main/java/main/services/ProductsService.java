@@ -332,6 +332,7 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
+
             PreparedStatement ps = conn.prepareStatement("select  food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
@@ -341,6 +342,7 @@ public class ProductsService {
             );
             ps.setInt(1, (page));
             ResultSet rs = ps.executeQuery();
+
 
             while (rs.next()) {
                 allProductByPage.add(new Products(
@@ -488,6 +490,7 @@ public class ProductsService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
+
             PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
             stmt.setString(1, tenmonan);
             stmt.setString(2, optionSize);
@@ -524,6 +527,27 @@ public class ProductsService {
             e.printStackTrace();
         }
 
+
+            PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
+            stmt.setString(1, tenmonan);
+            stmt.setString(2, optionSize);
+            stmt.setInt(3, giaban);
+            stmt.setString(4, optionType);
+            stmt.setInt(5, soluong);
+            stmt.setString(6, optionStatus);
+            stmt.setInt(7, optionCombo);
+            stmt.setString(8, optionSale);
+            stmt.setString(9, optionHot);
+            stmt.setString(10, mota);
+            stmt.setString(11, img);
+            stmt.setInt(12, niemyet);
+            stmt.setString(13, id);
+            stmt.setString(14, optionSize);
+            stmt.executeUpdate();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
