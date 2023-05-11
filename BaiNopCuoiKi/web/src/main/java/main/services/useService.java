@@ -1,4 +1,5 @@
 package main.services;
+import main.bean.Products;
 import main.db.ConnectMysqlExample;
 import main.bean.User;
 
@@ -246,21 +247,21 @@ public class useService {
         return b;
     }
 
-    public int checkIDFOOD(String type, String size) {
+    public int checkIDFOOD(String type) {
         int b = 0;
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ?"
 
             );
             ps.setString(1, type);
-            ps.setString(2, size);
+
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                 b=rs.getInt(1) + 1;
+                b=rs.getInt(1) + 1;
             }
 
         } catch (Exception ex) {
@@ -492,6 +493,37 @@ public class useService {
         }
         return user;
     }
+    public ArrayList<User> getComment(String idf) {
+        ArrayList<User> cmt = new ArrayList<User>();
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            // crate statement
+            Statement stmt = conn.createStatement();
+            // get data from table 'student'
+            PreparedStatement ps = conn.prepareStatement("SELECT accounts.AVATAR, user_information.USER_NAMES, `comment`.CMT\n" +
+                    "FROM `comment` JOIN ( accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER)\n" +
+                    " ON `comment`.ID_ACCOUNT = accounts.ID_ACCOUNT\n" +
+                    "WHERE `comment`.ID_FOOD =?"  );
+            ps.setString(1,  idf);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                cmt.add(new User(
+                        rs.getString(1),
+                        rs.getNString(2),
+                        rs.getNString(3))
+                );
+            }
+            conn.close();
+
+            // close connection
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return cmt;
+    }
 
     public int upReset_password( String ID_ACCOUNT, String hash) {
         int Y = 0;
@@ -506,9 +538,9 @@ public class useService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             Statement stmt = conn.createStatement();
             String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime,Datetime)Value ("+ID_ACCOUNT+","+hash+","+exptime+","+intime+")" ;
-         
 
-         Y= stmt.executeUpdate(query);
+
+            Y= stmt.executeUpdate(query);
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -517,8 +549,8 @@ public class useService {
 
     }
     public static void main(String[] args) {
-//        useService u = new useService();
-//        System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
+        useService u = new useService();
+        System.out.println(u.getComment("CG7"));
     }
 
 

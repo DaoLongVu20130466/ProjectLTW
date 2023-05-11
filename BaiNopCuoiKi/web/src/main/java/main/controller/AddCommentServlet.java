@@ -13,10 +13,13 @@ public class AddCommentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        User user  = session.getAttribute("auth");
-        String iduser == user.getIdacc();
+        User user  = (User) session.getAttribute("auth");
+
+        String iduser = user.getIdacc();
+
+        String idf = (String) session.getAttribute("fid2");
         String text = request.getParameter("cmt");
-        ProductsService.getInstance().addComment(iduser,text);
+        ProductsService.getInstance().addComment(idf,iduser,text);
         response.sendRedirect("detail");
 
     }

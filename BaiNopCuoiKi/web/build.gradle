@@ -44,7 +44,7 @@ dependencies {
 group = 'vn.nhom37.web'
 
 description = 'web Maven Webapp'
-java.sourceCompatibility = JavaVersion.VERSION_1_4
+java.sourceCompatibility = JavaVersion.VERSION_1_5
 
 publishing {
     publications {
@@ -102,3 +102,4 @@ task docker_deploy {
     docker_deploy.dependsOn build
     tasks.getByName('docker_app_start').mustRunAfter docker_upload_file_to_server
 }
+targetCompatibility = JavaVersion.VERSION_1_5
