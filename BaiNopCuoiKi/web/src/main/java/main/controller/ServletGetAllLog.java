@@ -3,6 +3,7 @@ package main.controller;
 import main.bean.Log;
 import main.bean.Order;
 import main.bean.User;
+import main.bean.UserPemission;
 import main.services.AppService;
 import main.services.LogService;
 import main.services.OderService;
@@ -19,14 +20,19 @@ public class ServletGetAllLog extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
-        int role = user.getRole();
-        if (AppService.checkAdmin(role)) {
-            ArrayList<Log> log = LogService.getInstance().getAlllog();
-            request.setAttribute("alllog", log);
-            request.getRequestDispatcher("Truysuatdonhang.jsp").forward(request, response);
-        }else {
-            request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-            request.getRequestDispatcher("/getIndex").forward(request, response);
+        UserPemission userPemission = new UserPemission(user.getUserId());
+        session.setAttribute("permission",userPemission);
+        if (user != null) {
+            int role = user.getRole();
+            if (AppService.checkAdmin(role)&&userPemission.canWatchLog()) {
+                ArrayList<Log> log = LogService.getInstance().getAlllog();
+                request.setAttribute("alllog", log);
+                request.getRequestDispatcher("/TruySuatLog.jsp").forward(request, response);
+            } else {
+                response.sendRedirect("/web_war/404Page.html");
+            }
+        } else {
+            response.sendRedirect("/web_war/404Page.html");
         }
     }
 
