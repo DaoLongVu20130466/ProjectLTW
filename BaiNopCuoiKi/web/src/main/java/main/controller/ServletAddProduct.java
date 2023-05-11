@@ -19,8 +19,10 @@ public class ServletAddProduct extends HttpServlet {
         int giaban = (int) Integer.parseInt(request.getParameter("giaban"));
         String optionType = request.getParameter("optionType");
         int optionCombo = (int) Integer.parseInt(request.getParameter("optionCombo"));
-//        int optionSale = request.getParameter("optionSale");
-//        int optionHot = request.getParameter("optionHot");
+
+        int optionSale = Integer.parseInt(request.getParameter("optionSale"));
+        int optionHot = Integer.parseInt(request.getParameter("optionHot"));
+
         String Mota = request.getParameter("Mota");
         String img = request.getParameter("myfile");
         int niemyet = (int) Integer.parseInt(request.getParameter("niemyet"));
