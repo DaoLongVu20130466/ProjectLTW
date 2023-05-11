@@ -229,7 +229,7 @@ public class useService {
             // crate statement
 
             String query = "select Count(ID_ACCOUNT)\n" +
-                    "from account";
+                    "from accounts";
             PreparedStatement a = conn.prepareStatement(query);
 
             ResultSet rs = a.executeQuery();
@@ -439,7 +439,7 @@ public class useService {
             String idacconut="ACC"+useService.getInstance().checkIDaccount();
             String idUSER="USER"+useService.getInstance().checkIDaccount();
             String idadres="ADD"+useService.getInstance().checkIDaccount();
-            String query= "UPDATE account\n" +
+            String query= "UPDATE accounts\n" +
                     "SET PASS = ? \n" +
                     "WHERE ID_USER = ?";
             PreparedStatement a= conn.prepareStatement(query);

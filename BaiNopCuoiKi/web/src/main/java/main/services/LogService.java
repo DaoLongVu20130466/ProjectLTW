@@ -21,4 +21,7 @@ public class LogService {
         LogController logController = new LogController();
         return logController.getLog();
     }
+    public void clearLog(String id){
+        Log.getInstance().DeleteLog(id);
+    }
 }

@@ -21,31 +21,33 @@ public class ServletCheckOTP extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession(true);
         String input = request.getParameter("name1");
-        SendPhoneOTP otp = (SendPhoneOTP) request.getAttribute("otp");
+        SendPhoneOTP otp = (SendPhoneOTP) session.getAttribute("otp");
         if (otp==null){
             response.sendRedirect("/404Page.html");
         }
-        if(otp.checkOtp(input)){
-            try {
-                String newpassencrypt = Utils.getInstance().toSHA1(otp.getNewpass());
-                useService.getInstance().doimk(otp.getTargetID(),newpassencrypt);
-                otp.sendNewPass();
-                request.removeAttribute("otp");
-                request.removeAttribute("arlertw");
-                response.sendRedirect("/DangNhap.jsp");
-            } catch (NoSuchAlgorithmException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
         else {
-            if (otp.isOverTime()) {
-                request.setAttribute("arlertw","lock");
-                useService.getInstance().LockUser(otp.getTargetID());
+            if (otp.checkOtp(input)) {
+                try {
+                    String newpassencrypt = Utils.getInstance().toSHA1(otp.getNewpass());
+                    useService.getInstance().doimk(otp.getID_user(), newpassencrypt);
+                    otp.sendNewPass();
+                    session.removeAttribute("otp");
+                    request.removeAttribute("arlertw");
+                    response.sendRedirect("/web_war/DangNhap.jsp");
+                } catch (NoSuchAlgorithmException e) {
+                    throw new RuntimeException(e);
+                }
+
             } else {
-                request.setAttribute("arlertw", "wrong");
-                request.getRequestDispatcher("/NhapOtpSdt.jsp").forward(request, response);
+                if (otp.isOverTime()) {
+                    request.setAttribute("arlertw", "lock");
+                    useService.getInstance().LockUser(otp.getTargetID());
+                } else {
+                    request.setAttribute("arlertw", "wrong");
+                    request.getRequestDispatcher("/NhapOtpSdt.jsp").forward(request, response);
+                }
             }
         }
     }

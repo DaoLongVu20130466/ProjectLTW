@@ -10,14 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteAllLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/TruySuatLog.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/web/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/NhapOtpSdt.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/NhapOtpSdt.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuenMatKhauSDT.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMatKhauSDT.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/admincss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +81,20 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+  <component name="RunManager" selected="Application.AppService">
+    <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.services.AppService" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SendPhoneOTP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.SendPhoneOTP" />
       <module name="web" />
@@ -265,12 +283,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AppService" />
       <item itemvalue="Application.SendPhoneOTP" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
       <item itemvalue="TomEE Server.TomEE 10.0.27" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AppService" />
         <item itemvalue="Application.SendPhoneOTP" />
       </list>
     </recent_temporary>
@@ -285,7 +305,9 @@
       <updated>1683632974217</updated>
       <workItem from="1683632984195" duration="2571000" />
       <workItem from="1683696996524" duration="9904000" />
-      <workItem from="1683722854259" duration="4364000" />
+      <workItem from="1683722854259" duration="5319000" />
+      <workItem from="1683778454064" duration="5186000" />
+      <workItem from="1683806432255" duration="4638000" />
     </task>
     <servers />
   </component>
@@ -308,8 +330,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java</url>
-          <line>130</line>
+          <line>131</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/AppService.java</url>
+          <line>91</line>
+          <properties class="main.services.AppService" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

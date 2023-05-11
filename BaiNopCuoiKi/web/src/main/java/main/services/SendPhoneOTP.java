@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class SendPhoneOTP {
     static private String apiKey = "dx3sa_1Lnsoog5tKR2glw00hbrKsgKZS3O7A";
     static private String projectID = "PJb0397c716cac5a51";
+
     private String otp = AppService.getOTP();
     private LocalDateTime time = LocalDateTime.now();
 
@@ -133,5 +134,9 @@ public class SendPhoneOTP {
 //        LocalDateTime checkTime = LocalDateTime.now();
 //        LocalDateTime toDateTime = LocalDateTime.of(2014, 9, 10, 6, 40, 45);
 //        System.out.println(otp.getmin(checkTime, toDateTime));
+    }
+
+    public String getID_user() {
+        return this.ID_user;
     }
 }
