@@ -3,8 +3,10 @@ package main.services;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
@@ -81,9 +83,15 @@ public  class AppService {
         }
         return rs;
     }
-    public static void main(String[] args) {
 
-        System.out.println(getindex(4));
+    public static String getNow() {
+
+
+        return new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());;
+    }
+    public static void main(String[] args) throws ParseException {
+       String out =  new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());
+       System.out.println(out);
     }
 
 }
