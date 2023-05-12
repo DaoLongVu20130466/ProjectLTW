@@ -98,8 +98,9 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #ffffff;
+	color: black;
 }
+
 
 ul,
 ol {
@@ -3659,5 +3660,6 @@ ol {
 .badge-white{color:#000!important;background-color:#fff!important}
 .image-badge {display:inline-block;border-radius:50%;height:14px;width:14px; border:1px solid #ccc;}
 .image-badge:hover{background:#fff;}
+
 
 

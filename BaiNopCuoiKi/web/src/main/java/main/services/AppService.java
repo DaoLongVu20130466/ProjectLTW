@@ -87,7 +87,7 @@ public  class AppService {
     public static String getNow() {
 
 
-        return new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());;
+        return new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());
     }
     public static void main(String[] args) throws ParseException {
        String out =  new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());
