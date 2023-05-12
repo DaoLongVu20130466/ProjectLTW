@@ -247,18 +247,34 @@ public class useService {
         return b;
     }
 
-    public int checkIDFOOD(String type) {
+    public int checkIDFOOD() {
         int b = 0;
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ?"
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD"
 
             );
-            ps.setString(1, type);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b=rs.getInt(1) + 1;
+            }
 
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return b;
+
+    }
+    public int checkIDIMG() {
+        int b = 0;
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_IMG) FROM image "
+            );
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 b=rs.getInt(1) + 1;
@@ -501,9 +517,9 @@ public class useService {
             // crate statement
             Statement stmt = conn.createStatement();
             // get data from table 'student'
-            PreparedStatement ps = conn.prepareStatement("SELECT accounts.AVATAR, user_information.USER_NAMES, `comment`.CMT\n" +
-                    "FROM `comment` JOIN ( accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER)\n" +
-                    " ON `comment`.ID_ACCOUNT = accounts.ID_ACCOUNT\n" +
+            PreparedStatement ps = conn.prepareStatement("SELECT accounts.AVATAR, user_information.USER_NAMES, `comment`.CMT,image.SRC\n" +
+                    "FROM (`comment` JOIN ( accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER)\n" +
+                    " ON `comment`.ID_ACCOUNT = accounts.ID_ACCOUNT ) LEFT JOIN image ON `comment`.ID_IMG = image.ID_IMG\n" +
                     "WHERE `comment`.ID_FOOD =?"  );
             ps.setString(1,  idf);
 
@@ -512,7 +528,8 @@ public class useService {
                 cmt.add(new User(
                         rs.getString(1),
                         rs.getNString(2),
-                        rs.getNString(3))
+                        rs.getNString(3),
+                        rs.getNString(4))
                 );
             }
             conn.close();

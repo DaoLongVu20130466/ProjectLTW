@@ -260,6 +260,17 @@
                                         </div>
                                         <div class="media-body">
                                             <p><%=c.getCmt()%></p>
+                                            <%
+                                                if (c.getImg_cmt() == null){
+                                                    %>
+                                            <img src="<%=c.getImg_cmt()%>" style="width: 470px;height:266px;display: none" id="image_comment" >
+                                            <%
+                                                } else {
+                                            %>
+                                            <img src="<%=c.getImg_cmt()%>" style="width: 470px;height:266px;" id="image_comment" >
+                                            <%}%>
+
+                                            <br>
                                             <small class="text-muted">Đăng bởi <%=c.getUserName()%> ngày 10/11/2022</small>
                                         </div>
                                     </div>
@@ -267,7 +278,7 @@
                                     <%}
                                     %>
 
-                                    <a href="#" class="btn hvr-hover">Xem Thêm</a>
+                                    <a href="#" class="xemt" >Xem Thêm...</a>
                                     <hr>
                                     <div class="search__form">
                                         <%
@@ -276,16 +287,30 @@
 
                                         <form action="DangNhap.jsp">
                                             <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
-
                                             <input type="text" placeholder="Nhận xét" style="width: 800px;" name="cmt">
-                                            <button type="submit" class="site-btn">Gửi</button>
+
+
+
+                                            <input type="file" id="upload_custom" name="img_cmt" style="display: none" onchange="chooseFile()" accept=".jpg, .jpeg, .png" >
+                                            <label for="upload_custom"><i class="fa fa-picture-o fa-2x" aria-hidden="true" style="padding-right: 15px"></i></label>
+                                            <button type="submit" class="site-btn">Gửi</button>  <br>
+
+                                            <img src="" id="image_pre" style="width: 470px;height: 266px;margin-left: 80px;display: none">
                                         </form>
-                                        <%  }else {%>
-                                        <form action="AddCommentServlet">
-                                            <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
 
+
+                                        <%  }else {%>
+
+                                        <form action="AddCommentServlet" enctype="multipart/form-data" method="post" onSubmit="">
+                                            <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
                                             <input type="text" placeholder="Nhận xét" style="width: 800px;" name="cmt">
-                                            <button type="submit" class="site-btn">Gửi</button>
+
+
+                                            <input type="file" id="upload_custom" name="img_cmt" style="display: none" onchange="chooseFile()" accept=".jpg, .jpeg, .png">
+                                            <label for="upload_custom"><i class="fa fa-picture-o fa-2x" aria-hidden="true" style="padding-right: 15px" ></i></label>
+                                            <button type="submit" class="site-btn">Gửi</button><br>
+
+                                            <img src="" id="image_pre" style="width: 470px;height: 266px;margin-left: 80px; display: none">
                                         </form>
                                         <%}%>
                                     </div>
@@ -398,34 +423,7 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
-<script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
-    }
-    function currentDiv(n) {
-        showDivs(slideIndex = n);
-    }
-
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("image-badge");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" badge-white", "");
-        }
-        x[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " badge-white";
-    }
-</script>
-
+<script src="js/detail-p.js"></script>
 
 </body>
 

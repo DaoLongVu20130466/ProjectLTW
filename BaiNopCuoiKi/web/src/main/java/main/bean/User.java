@@ -21,6 +21,7 @@ public class User implements Serializable {
     String roleName;
     String idacc;
     String cmt;
+    String img_cmt;
 
 
     public User(){
@@ -47,11 +48,12 @@ public class User implements Serializable {
 
     }
 
-    public User(String avatar,String userName,  String cmt) {
+
+    public User(String avatar,String userName,  String cmt ,   String img_cmt) {
         this.avatar = avatar;
         this.userName = userName;
-
         this.cmt = cmt;
+        this.img_cmt = img_cmt;
     }
 
     public User(String string, String string1, String userId, int anInt, String string2, int role , String roleName, String ID_acc) {
@@ -74,6 +76,14 @@ public class User implements Serializable {
         this.email = email;
         this.idacc = idacc;
 
+    }
+
+    public String getImg_cmt() {
+        return img_cmt;
+    }
+
+    public void setImg_cmt(String img_cmt) {
+        this.img_cmt = img_cmt;
     }
 
     public String getIDadress() {

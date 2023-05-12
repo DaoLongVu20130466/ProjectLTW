@@ -1,5 +1,8 @@
 package main.controller;
 
+import main.bean.User;
+import main.services.ProductsService;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -38,9 +41,18 @@ public class uploadFile extends HttpServlet {
             String abc = "img/Data/"+filename;
             request.setAttribute("a",abc);
             request.setAttribute("b",realPath);
+            ProductsService.getInstance().addImg(abc);
+            request.setCharacterEncoding("UTF-8");
+            HttpSession session = request.getSession();
+            User user  = (User) session.getAttribute("auth");
+            String iduser = user.getIdacc();
+
+            String idf = (String) session.getAttribute("fid2");
+            String text = request.getParameter("cmt");
+//            ProductsService.getInstance().addComment(idf,iduser,text,text);
         }
         catch (Exception e){}
-        request.getRequestDispatcher("test2.jsp").forward(request,response);
+       request.getRequestDispatcher("test2.jsp").forward(request,response);
     }
 
 }

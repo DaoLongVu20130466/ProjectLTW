@@ -400,8 +400,6 @@ public class ProductsService {
              String optionSize,
              int niemyet,
              String optionType,
-             int soluong,
-             String optionStatus,
              int optionCombo,
              int optionSale,
              int optionHot,
@@ -409,20 +407,45 @@ public class ProductsService {
              String img,
              int giaban
             ){
-        String Idfood = optionType + useService.getInstance().checkIDFOOD(optionType);
+        String Idfood = "CGG" + useService.getInstance().checkIDFOOD();
+        String id = "IMG"+useService.getInstance().checkIDIMG();
+        String query1 ="INSERT INTO food (ID_FOOD,FOOD_NAME,IS_COMBO,IS_HOT,IS_SALE,DESCRIPTION,ID_TYPE ) VALUES (?,?,?,?,?,?,?)";
+        String query2="INSERT INTO price (ID_FOOD,LISTED_PRICE,PRICE) VALUES (?,?,?)";
+        String query3="INSERT INTO image_detail(ID_IMG,ID_FOOD) VALUES (?,?)";
+        String query4 = "INSERT INTO image(ID_IMG ,SRC) VALUES(?,?)";
+        String query5="INSERT INTO size_details(ID_FOOD,ID_SIZE) VALUES (?,?)";
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps1 = conn.prepareStatement(" INSERT INTO FOOD(ID_FOOD, FOOD_NAME,STATUSS, IS_COMBO, IS_HOT, IS_SALE,IVENTORY,DESCRIPTION,ID_TYPE) \n" +
-                    " VALUES(?,?,?,?,?,?,?,?)");
+            PreparedStatement ps1 = conn.prepareStatement(query1);
             ps1.setString(1,Idfood);
             ps1.setNString(2,tenmonan);
-
-
-
-
+            ps1.setInt(3,optionCombo);
+            ps1.setInt(4,optionHot);
+            ps1.setInt(5,optionSale);
+            ps1.setNString(6,Mota);
+            ps1.setString(7,optionType);
             ps1.executeUpdate();
+            PreparedStatement ps2 = conn.prepareStatement(query2);
+            ps2.setString(1,Idfood);
+            ps2.setInt(2,niemyet);
+            ps2.setInt(3,giaban);
+            ps2.executeUpdate();
+            PreparedStatement ps3 = conn.prepareStatement(query3);
+            ps3.setString(1,id);
+            ps3.setString(2,Idfood);
+            ps3.executeUpdate();
+            PreparedStatement ps4 = conn.prepareStatement(query4);
+            ps4.setString(1,id);
+            ps4.setString(2,img);
+            ps4.executeUpdate();
+            PreparedStatement ps5 = conn.prepareStatement(query5);
+            ps5.setString(1,Idfood);
+            ps5.setString(2,optionSize);
+            ps5.executeUpdate();
+
+            conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -512,9 +535,11 @@ public class ProductsService {
             e.printStackTrace();
         }
     }
-    public void addComment(String idf,String idu, String cmt)  {
+    public void addComment(String idf,String idu, String cmt , String src) {
+        String id = "IMG"+useService.getInstance().checkIDIMG();
+        String query2 = "INSERT INTO image(ID_IMG ,SRC) VALUES(?,?)";
 
-        String query = "INSERT INTO `comment`(ID_FOOD,ID_ACCOUNT,CMT) VALUES(?,?,?)";
+        String query = "INSERT INTO `comment`(ID_FOOD,ID_ACCOUNT,CMT,ID_IMG) VALUES(?,?,?,?)";
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
@@ -522,33 +547,57 @@ public class ProductsService {
             ps.setString(1, idf);
             ps.setString(2, idu);
             ps.setString(3, cmt);
+            ps.setString(4, id);
             ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-            PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
-            stmt.setString(1, tenmonan);
-            stmt.setString(2, optionSize);
-            stmt.setInt(3, giaban);
-            stmt.setString(4, optionType);
-            stmt.setInt(5, soluong);
-            stmt.setString(6, optionStatus);
-            stmt.setInt(7, optionCombo);
-            stmt.setString(8, optionSale);
-            stmt.setString(9, optionHot);
-            stmt.setString(10, mota);
-            stmt.setString(11, img);
-            stmt.setInt(12, niemyet);
-            stmt.setString(13, id);
-            stmt.setString(14, optionSize);
-            stmt.executeUpdate();
+            PreparedStatement ps2 = conn.prepareStatement(query2);
+            ps2.setString(1, id);
+            ps2.setString(2, src);
+            ps2.executeUpdate();
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    public void addImg(String src) {
+        String id = "IMG"+useService.getInstance().checkIDIMG();
+        String query = "\n" +
+                "INSERT INTO image(ID_IMG ,SRC)\n" +
+                "VALUES(?,?)";
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            ps.setString(2, src);
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+//            PreparedStatement stmt = conn.prepareStatement("UPDATE FOOD SET FOOD_NAME = ?, ID_SIZE= ?, LISTED_PRICE=?, TYPE_FOOD=?, QUANTITY=?,STATUSS = ? , IS_COMBO = ?,ID_SALE = ? , IS_HOT = ?, DESCRIPTION = ?, L_IMG=?, BASE_PRICE = ? WHERE FOOD.ID_FOOD = ? AND FOOD.ID_SIZE=? ");
+//            stmt.setString(1, tenmonan);
+//            stmt.setString(2, optionSize);
+//            stmt.setInt(3, giaban);
+//            stmt.setString(4, optionType);
+//            stmt.setInt(5, soluong);
+//            stmt.setString(6, optionStatus);
+//            stmt.setInt(7, optionCombo);
+//            stmt.setString(8, optionSale);
+//            stmt.setString(9, optionHot);
+//            stmt.setString(10, mota);
+//            stmt.setString(11, img);
+//            stmt.setInt(12, niemyet);
+//            stmt.setString(13, id);
+//            stmt.setString(14, optionSize);
+//            stmt.executeUpdate();
+//            conn.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static void main(String[] args) {
         ArrayList<TypeProducts> listT = getInstance().getTypeProduct();
