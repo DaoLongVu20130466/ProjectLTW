@@ -27,6 +27,7 @@ public class addtoCart extends HttpServlet {
 
         session.setAttribute("cart",cart);
         request.getRequestDispatcher("/getAllProduct").forward(request,response);
+
     }
 
 

@@ -32,6 +32,7 @@ public class getUser extends HttpServlet {
 
         request.getRequestDispatcher("/user.jsp").forward(request, response);
 
+
     }
 
     @Override

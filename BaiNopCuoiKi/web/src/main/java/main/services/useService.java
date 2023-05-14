@@ -2,6 +2,7 @@ package main.services;
 import main.db.ConnectMysqlExample;
 import main.bean.User;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -352,8 +353,8 @@ public class useService {
             // crate statement
             Statement stmt = conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = stmt.executeQuery("select EMAIL\n" +
-                    "from account");
+            ResultSet rs = stmt.executeQuery("select EMAIL \n" +
+                    "from accounts");
             // show data
             while (rs.next()) {
 
@@ -366,13 +367,14 @@ public class useService {
                 result = "Email này đã đăng kí tài khoản";
 
             }
-            // close connection
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
     }
+
+
     public String getIDfromEmail(String email) {
         ArrayList<String> allusercontronl = new ArrayList<String>();
         String result=null;
@@ -382,8 +384,8 @@ public class useService {
             Statement stmt = conn.createStatement();
             // get data from table 'student'
             PreparedStatement ps = conn.prepareStatement("select ID_ACCOUNT\n" +
-                    "from account\n" +
-                    "where EMAIL and ID_SIZE = ?"  );
+                    "from accounts \n" +
+                    "where EMAIL = ?"  );
             ps.setString(1,  email);
 
             ResultSet rs = ps.executeQuery();
@@ -495,20 +497,18 @@ public class useService {
 
     public int upReset_password( String ID_ACCOUNT, String hash) {
         int Y = 0;
-        java.sql.Timestamp  intime = new java.sql.Timestamp(new
-                java.util.Date().getTime());
-        Calendar cal = Calendar.getInstance();
-        cal.setTimeInMillis(intime.getTime());
-        cal.add(Calendar.MINUTE, 20);
-        java.sql.Timestamp  exptime = new Timestamp(cal.getTime().getTime());
+        long expiryTime = System.currentTimeMillis() + 15 * 60 * 1000;
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             Statement stmt = conn.createStatement();
-            String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime,Datetime)Value ("+ID_ACCOUNT+","+hash+","+exptime+","+intime+")" ;
-         
+            String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime)Values (?,?,?)" ;
 
-         Y= stmt.executeUpdate(query);
+            PreparedStatement a= conn.prepareStatement(query);
+            a.setString(1,ID_ACCOUNT);
+            a.setString(2,hash);
+            a.setLong(3,expiryTime);
+         Y= a.executeUpdate();
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -516,11 +516,42 @@ public class useService {
         return Y;
 
     }
-    public static void main(String[] args) {
-        useService u = new useService();
-        System.out.println(u.checkIDFOOD("CƠM GÀ","SIZE1"));
+    public  boolean isWithin15Minutes(long savedTimeMillis) {
+        long currentTimeMillis = System.currentTimeMillis();
+        long difference = currentTimeMillis - savedTimeMillis;
+        long fifteenMinutesMillis = 15 * 60 * 1000;
+        return difference <= fifteenMinutesMillis;
+    }
+    public static void main(String[] args) {;
+        String a= useService.getInstance().checkRSP("e68780f26a13e3fe6b1a815271813f18");
+        System.out.println(a);
     }
 
 
+    public String checkRSP(String hash) {
+        String result=null;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            Statement stmt = conn.createStatement();
+            // get data from table 'student'
+            PreparedStatement ps = conn.prepareStatement("SELECT ID_ACCOUNT,Exptime FROM reset_password WHERE Hash_Code=?;"  );
+            ps.setString(1,hash);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                String id = rs.getString(1);
+                long exptime = rs.getLong(2);
+                if(useService.getInstance().isWithin15Minutes(exptime)){
+                   result=id ;
+                }
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return result;
+    }
 }
 

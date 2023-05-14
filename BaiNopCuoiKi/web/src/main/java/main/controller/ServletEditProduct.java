@@ -24,6 +24,7 @@ public class ServletEditProduct extends HttpServlet {
         request.getRequestDispatcher("/editProdcut.jsp").forward(request,response);
 
 
+
     }
 
     @Override

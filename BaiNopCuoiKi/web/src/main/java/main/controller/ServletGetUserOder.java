@@ -24,6 +24,7 @@ public class ServletGetUserOder extends HttpServlet {
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("/ChiTietDonHangUser.jsp").forward(request,response) ;
         System.out.println(usernow.getIdacc());
+
     }
 
     @Override

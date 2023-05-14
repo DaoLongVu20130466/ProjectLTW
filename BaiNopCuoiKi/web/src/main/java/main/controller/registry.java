@@ -40,6 +40,7 @@ public class registry extends HttpServlet {
             useService.getInstance().registry(username, password, email, phone, Xa, Huyen, Tinh, Ap);
             response.sendRedirect("/DangNhap.jsp");
         }
+
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

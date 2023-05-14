@@ -34,6 +34,7 @@ public class ServletGetPageProductByType extends HttpServlet {
             request.setAttribute("type", type);
             request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
 
+
     }
 
     @Override

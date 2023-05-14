@@ -24,6 +24,7 @@ public class ServletUIFOder extends HttpServlet {
         session.setAttribute("alloder", list);
         request.getRequestDispatcher("/Donhang.jsp").forward(request, response);
 
+
     }
 
     @Override

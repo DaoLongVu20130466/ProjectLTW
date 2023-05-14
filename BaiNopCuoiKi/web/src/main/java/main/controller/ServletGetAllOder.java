@@ -28,7 +28,8 @@ public class ServletGetAllOder extends HttpServlet {
         request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
         request.getRequestDispatcher("/getIndex").forward(request, response);
     }
-}
+
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

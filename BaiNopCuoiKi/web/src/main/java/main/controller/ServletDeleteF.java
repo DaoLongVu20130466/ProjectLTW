@@ -17,6 +17,7 @@ public class ServletDeleteF extends HttpServlet {
         useService.getInstance().deletaFood(idf,size);
         response.sendRedirect("/getAllProductByAdmin");
 
+
     }
 
     @Override

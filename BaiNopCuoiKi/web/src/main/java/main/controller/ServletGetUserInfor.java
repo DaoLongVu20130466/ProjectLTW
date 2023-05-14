@@ -27,6 +27,7 @@ public class ServletGetUserInfor extends HttpServlet {
         request.getRequestDispatcher("/user.jsp").forward(request,response);
 
 
+
     }
 
     @Override

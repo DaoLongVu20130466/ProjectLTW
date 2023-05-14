@@ -37,6 +37,7 @@ public class ServletAddProduct extends HttpServlet {
 
 
         response.sendRedirect("/ServletAddNewProduct");
+
     }
 
     @Override

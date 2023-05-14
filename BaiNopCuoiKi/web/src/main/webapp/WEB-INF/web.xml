@@ -364,5 +364,13 @@
     <servlet-name>uploadimg</servlet-name>
     <url-pattern>/UploadDownloadFileServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>reset_password</servlet-name>
+    <servlet-class>main.controller.reset_password</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reset_password</servlet-name>
+    <url-pattern>/reset_password</url-pattern>
+  </servlet-mapping>
 
 </web-app>

@@ -77,7 +77,7 @@ public class Utils {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+  Utils.getInstance().sendMail("quangvutran249@gmail.com","Dat com","tesst");
 
-        System.out.println(  Utils.getInstance().toSHA1("123456"));
     }
 }

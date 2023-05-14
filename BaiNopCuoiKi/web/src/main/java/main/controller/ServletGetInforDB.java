@@ -33,6 +33,7 @@ public class ServletGetInforDB extends HttpServlet {
             request.setAttribute("error", "Bạn không có quền truy cập va trang này");
             request.getRequestDispatcher("/getIndex").forward(request, response);
         }
+
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -22,6 +22,7 @@ public class ServletSearchInAd extends HttpServlet {
 
         request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
 
+
     }
 
     @Override

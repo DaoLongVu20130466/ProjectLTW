@@ -13,6 +13,7 @@ public class LogOut extends HttpServlet {
         session.invalidate();
         response.sendRedirect("DangNhap.jsp");
 
+
     }
 
     @Override

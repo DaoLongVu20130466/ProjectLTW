@@ -21,6 +21,7 @@ public class ServletGetProduct extends HttpServlet {
         request.setAttribute("product", pro);
         request.setAttribute("allProductByID", allProductByID);
         request.getRequestDispatcher("/product-detail.jsp").forward(request, response);
+
     }
 
     @Override

@@ -24,6 +24,7 @@ public class ServletGetIndex extends HttpServlet {
         request.setAttribute("productByHot", producByHot);
         request.setAttribute("productByCombo", producByCombo);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
+
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

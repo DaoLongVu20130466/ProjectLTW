@@ -29,6 +29,7 @@ public class getIndex extends HttpServlet {
         request.setAttribute("productByHot", producByHot);
         request.setAttribute("productByCombo", producByCombo);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
+
     }
 
     @Override

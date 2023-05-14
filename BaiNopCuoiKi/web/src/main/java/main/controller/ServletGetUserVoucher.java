@@ -25,6 +25,7 @@ public class ServletGetUserVoucher extends HttpServlet {
         request.setAttribute("allvoucher", vcher);
         request.setAttribute("userID",usernow);
         request.getRequestDispatcher("/Voucher.jsp").forward(request, response);
+
     }
 
     @Override

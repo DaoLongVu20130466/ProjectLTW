@@ -33,6 +33,7 @@ public class ServletAddFavourite extends HttpServlet {
 
         response.sendRedirect("/getAllFavourite");
 
+
     }
 
     @Override

@@ -17,6 +17,7 @@ public class ServletInforOder extends HttpServlet {
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("/ChiTietDonHang.jsp").forward(request,response) ;
 
+
     }
 
     @Override
