@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f6a5316-14e0-4e75-96c4-2096cc9699bf" name="Changes" comment="add lai" />
+    <list default="true" id="6f6a5316-14e0-4e75-96c4-2096cc9699bf" name="Changes" comment="add lai">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -302,7 +304,8 @@
       <workItem from="1683811572686" duration="5148000" />
       <workItem from="1684085894570" duration="3913000" />
       <workItem from="1684090287438" duration="6732000" />
-      <workItem from="1686581750864" duration="200000" />
+      <workItem from="1686581750864" duration="1067000" />
+      <workItem from="1686583107130" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>
