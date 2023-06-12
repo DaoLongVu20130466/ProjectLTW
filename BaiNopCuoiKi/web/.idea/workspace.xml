@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f6a5316-14e0-4e75-96c4-2096cc9699bf" name="Changes" comment="add lai">
-      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/web_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/web_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" />
-    </list>
+    <list default="true" id="6f6a5316-14e0-4e75-96c4-2096cc9699bf" name="Changes" comment="add lai" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +119,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi",
+    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -162,7 +148,7 @@
       <recent name="main.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.useService">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.services.Utils" />
       <module name="web" />
@@ -190,6 +176,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="18" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Gradle___vn_nhom37_web___BaiNopCuoiKi_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : vn.nhom37.web : BaiNopCuoiKi.war">
@@ -276,6 +263,11 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.useService" />
+      <item itemvalue="Application.Utils" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.useService" />
@@ -310,6 +302,7 @@
       <workItem from="1683811572686" duration="5148000" />
       <workItem from="1684085894570" duration="3913000" />
       <workItem from="1684090287438" duration="6732000" />
+      <workItem from="1686581750864" duration="200000" />
     </task>
     <task id="LOCAL-00001" summary="add lai">
       <created>1669800542611</created>

@@ -217,8 +217,6 @@ public class useService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-
         return null;
     }
 
@@ -521,10 +519,6 @@ public class useService {
         long difference = currentTimeMillis - savedTimeMillis;
         long fifteenMinutesMillis = 15 * 60 * 1000;
         return difference <= fifteenMinutesMillis;
-    }
-    public static void main(String[] args) {;
-        String a= useService.getInstance().checkRSP("e68780f26a13e3fe6b1a815271813f18");
-        System.out.println(a);
     }
 
 

@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class ConnectMysqlExample {
     private static String DB_URL = "jdbc:mysql://localhost:3306/shopdoan";
     private static String USER_NAME = "root";
-    private static String PASSWORD = "";
+    private static String PASSWORD = "12345";
 
     public static String getDbUrl() {
         return DB_URL;
