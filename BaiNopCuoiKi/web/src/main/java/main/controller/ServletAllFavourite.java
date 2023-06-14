@@ -28,7 +28,6 @@ public class ServletAllFavourite extends HttpServlet {
 
         request.getRequestDispatcher("/yeuthich.jsp").forward(request, response);
 
-
     }
 
 

@@ -28,7 +28,6 @@ public class getUserControl extends HttpServlet {
             request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
             request.getRequestDispatcher("/getIndex").forward(request, response);
         }
-
     }
 
     @Override

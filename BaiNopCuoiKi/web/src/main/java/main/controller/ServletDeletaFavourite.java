@@ -18,7 +18,6 @@ public class ServletDeletaFavourite extends HttpServlet {
         useService.getInstance().deletaFavourite(idf,id);
         response.sendRedirect("/getAllFavourite");
 
-
     }
 
     @Override

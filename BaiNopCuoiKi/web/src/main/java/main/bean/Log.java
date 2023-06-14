@@ -1,7 +1,9 @@
 package main.bean;
 
 import main.db.ConnectMysqlExample;
+import main.services.AdressService;
 import main.services.AppService;
+import main.services.OderService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,6 +16,18 @@ public class Log {
     String content;
     Date date;
     String status;
+    static Log instance;
+
+    public static Log getInstance() {
+        if (instance == null) {
+            instance = new Log();
+        }
+        return instance;
+    }
+    public Log() {
+
+    }
+
 
     public Log(int id, int level, String id_User, String src, String content, Date date, String status) {
         this.id = id;
@@ -73,7 +87,10 @@ public class Log {
     }
 
     public String getStatus() {
-        return status;
+        if(status.equals(1))
+        return "Đã hoàn thành";
+        else
+            return "Chưa Hoàn Thành";
     }
 
     public static void writeLog( int level,String user, String src, String content, String status) {
@@ -85,12 +102,25 @@ public class Log {
             ps.setString(2, user);
             ps.setString(3, src);
             ps.setString(4, content);
-            ps.setDate(5, AppService.getNowdate());
+            ps.setDate(5, java.sql.Date.valueOf(AppService.getNow()));
             ps.setString(6, status);
             ps.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void DeleteLog(String id){
+        {
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+               PreparedStatement prmt = conn.prepareStatement("DELETE FROM log WHERE ID_LOG = ?");
+                prmt.setString(1,id);
+                prmt.execute();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
 }

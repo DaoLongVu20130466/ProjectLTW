@@ -33,7 +33,6 @@ public class getAllProduct extends HttpServlet {
         request.setAttribute("productBySale", producBySale);
 
         request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
-
     }
 
     @Override

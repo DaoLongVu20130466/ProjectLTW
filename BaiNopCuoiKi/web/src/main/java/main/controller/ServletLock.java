@@ -15,7 +15,6 @@ public class ServletLock extends HttpServlet {
         useService.getInstance().LockUser(LockId);
         response.sendRedirect("/getUserControl");
 
-
     }
 
     @Override

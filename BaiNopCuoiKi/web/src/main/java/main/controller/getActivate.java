@@ -17,7 +17,6 @@ public class getActivate extends HttpServlet {
         request.setAttribute("allLog", allLog);
         request.getRequestDispatcher("HoatDong.jsp").forward(request, response);
 
-
     }
 
     @Override

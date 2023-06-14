@@ -20,6 +20,9 @@ public class User implements Serializable {
     String Name;
     String roleName;
     String idacc;
+    String cmt;
+    String img_cmt;
+
 
     public User(){
 
@@ -44,7 +47,16 @@ public class User implements Serializable {
         this.avatar = avatar;
 
     }
-    public User(String string, String string1,String userId, int anInt, String string2,int role , String roleName, String ID_acc) {
+
+
+    public User(String avatar,String userName,  String cmt ,   String img_cmt) {
+        this.avatar = avatar;
+        this.userName = userName;
+        this.cmt = cmt;
+        this.img_cmt = img_cmt;
+    }
+
+    public User(String string, String string1, String userId, int anInt, String string2, int role , String roleName, String ID_acc) {
         this.userName= string ;
         this.password=string1;
         this.userId= userId;
@@ -64,6 +76,14 @@ public class User implements Serializable {
         this.email = email;
         this.idacc = idacc;
 
+    }
+
+    public String getImg_cmt() {
+        return img_cmt;
+    }
+
+    public void setImg_cmt(String img_cmt) {
+        this.img_cmt = img_cmt;
     }
 
     public String getIDadress() {
@@ -124,6 +144,14 @@ public class User implements Serializable {
 
     public int getRole() {
         return role;
+    }
+
+    public String getCmt() {
+        return cmt;
+    }
+
+    public void setCmt(String cmt) {
+        this.cmt = cmt;
     }
 
     public int getIsblock() {

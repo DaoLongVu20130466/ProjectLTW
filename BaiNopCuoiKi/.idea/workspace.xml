@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="BaiNopCuoiKi.main:war" />
-      <artifact name="web:war exploded" />
+      <artifact name="web:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -11,16 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteAllLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/TruySuatLog.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/web/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -30,69 +37,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="documentation" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -102,9 +49,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Jsp File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -121,17 +66,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2IadZx8x6b4JU8JsuWaOiRb2mQf" />
+  <component name="ProjectId" id="2PYTJxjaJR2WVBTOHweUDLtK6Df" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -139,245 +74,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\webapp\.idea\libraries" />
-      <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\.idea\modules\lib" />
-      <recent name="C:\Users\vu\Documents\GitHub\ProjectLTW\BaiNopCuoiKi\web\src\main\webapp" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="gradle --debug" />
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="docker-deploy" />
-      </set>
-    </option>
-  </component>
-  <component name="RunManager" selected="Gradle.BaiNopCuoiKi [docker_deploy]">
-    <configuration name="BaiNopCuoiKi [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildDependents" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="BaiNopCuoiKi [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="BaiNopCuoiKi [docker_deploy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="docker_deploy" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="BaiNopCuoiKi [war]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="war" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="BaiNopCuoiKi [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="wrapper" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="BaiNopCuoiKi.main:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/BaiNopCuoiKi_main_war" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e63000ac-0835-4aa2-b67d-7ec15e7b98e2" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56700" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
+}</component>
+  <component name="RunManager" selected="Application.AppService">
+    <configuration name="AppService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.services.AppService" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="BaiNopCuoiKi.main:war" />
-        </option>
       </method>
     </configuration>
-    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="SendPhoneOTP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.services.SendPhoneOTP" />
+      <module name="web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TomEE 10.0.27" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="web:war">
@@ -385,14 +116,9 @@
             <option name="CONTEXT_PATH" value="/web_war" />
           </settings>
         </artifact>
-        <artifact name="web:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/web_war_exploded" />
-          </settings>
-        </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="2ff173c6-c5a1-4707-93c1-7881590ac56e" />
+        <option name="BASE_DIRECTORY_NAME" value="cb682e59-70b7-47f9-88e2-f64222eb4b0c" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -400,7 +126,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50245" />
+        <option name="DEBUG_PORT" value="56282" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -465,27 +191,107 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="BaiNopCuoiKi.main:war" />
-          <artifact name="web:war exploded" />
+          <artifact name="web:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="web:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/web_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="1aedd1b4-0377-4ee7-998e-89f913264cf6" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56946" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="web:war" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.BaiNopCuoiKi [buildDependents]" />
-      <item itemvalue="Gradle.BaiNopCuoiKi [wrapper]" />
-      <item itemvalue="Gradle.BaiNopCuoiKi [docker_deploy]" />
-      <item itemvalue="Gradle.BaiNopCuoiKi [build]" />
-      <item itemvalue="Gradle.BaiNopCuoiKi [war]" />
-      <item itemvalue="Tomcat Server.Tomcat" />
+      <item itemvalue="Application.AppService" />
+      <item itemvalue="Application.SendPhoneOTP" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
+      <item itemvalue="TomEE Server.TomEE 10.0.27" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BaiNopCuoiKi [docker_deploy]" />
-        <item itemvalue="Gradle.BaiNopCuoiKi [build]" />
-        <item itemvalue="Gradle.BaiNopCuoiKi [war]" />
-        <item itemvalue="Gradle.BaiNopCuoiKi [wrapper]" />
-        <item itemvalue="Gradle.BaiNopCuoiKi [buildDependents]" />
+        <item itemvalue="Application.AppService" />
+        <item itemvalue="Application.SendPhoneOTP" />
       </list>
     </recent_temporary>
   </component>
@@ -493,43 +299,15 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="" />
-      <created>1670423686761</created>
+      <created>1683632974217</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670423686761</updated>
-      <workItem from="1670423688251" duration="267000" />
-      <workItem from="1670726474232" duration="4602000" />
-      <workItem from="1673289826584" duration="572000" />
-      <workItem from="1676554032526" duration="5112000" />
-      <workItem from="1676559193825" duration="3574000" />
-      <workItem from="1677764669782" duration="3630000" />
-      <workItem from="1678453615395" duration="1190000" />
-      <workItem from="1678801048335" duration="1263000" />
-      <workItem from="1680012583205" duration="5113000" />
-      <workItem from="1680058674538" duration="402000" />
-      <workItem from="1680337108210" duration="5766000" />
-      <workItem from="1680689222864" duration="2584000" />
-      <workItem from="1681219987448" duration="2419000" />
-      <workItem from="1681294586003" duration="4774000" />
-      <workItem from="1681579372755" duration="46000" />
-      <workItem from="1681579623189" duration="615000" />
-      <workItem from="1681580255902" duration="14237000" />
-      <workItem from="1681651623468" duration="207000" />
-      <workItem from="1681652012934" duration="6165000" />
-      <workItem from="1681659611251" duration="273000" />
-      <workItem from="1681659954229" duration="325000" />
-      <workItem from="1681660325249" duration="3677000" />
-      <workItem from="1681666849771" duration="3828000" />
-      <workItem from="1681739859058" duration="4034000" />
-      <workItem from="1681744464670" duration="1254000" />
-      <workItem from="1681824846462" duration="9399000" />
-      <workItem from="1681902532108" duration="9803000" />
-      <workItem from="1681917698065" duration="1518000" />
-      <workItem from="1681919254190" duration="19963000" />
-      <workItem from="1682043581479" duration="3202000" />
-      <workItem from="1684090098372" duration="187000" />
-      <workItem from="1684095614729" duration="99000" />
-      <workItem from="1686582930262" duration="174000" />
+      <updated>1683632974217</updated>
+      <workItem from="1683632984195" duration="2571000" />
+      <workItem from="1683696996524" duration="9904000" />
+      <workItem from="1683722854259" duration="5319000" />
+      <workItem from="1683778454064" duration="5186000" />
+      <workItem from="1683806432255" duration="4638000" />
     </task>
     <servers />
   </component>
@@ -547,30 +325,24 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java</url>
-          <line>299</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/SendPhoneOTP.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/web/src/main/java/main/bean/Order.java</url>
-          <line>225</line>
-          <properties class="bean.Order" method="revice">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/services/AppService.java</url>
+          <line>91</line>
+          <properties class="main.services.AppService" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BaiNopCuoiKi$Tomcat.ic" NAME="Tomcat Coverage Results" MODIFIED="1681664148069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

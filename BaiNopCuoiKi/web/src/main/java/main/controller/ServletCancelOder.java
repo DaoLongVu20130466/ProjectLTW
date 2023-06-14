@@ -28,7 +28,6 @@ public class ServletCancelOder extends HttpServlet {
             response.sendRedirect("/DangNhap.jsp");
         }
 
-
     }
 
     @Override

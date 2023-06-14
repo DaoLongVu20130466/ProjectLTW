@@ -22,7 +22,6 @@ public class removeInCart extends HttpServlet {
         session.setAttribute("cart",cart);
         request.getRequestDispatcher("/showCart").forward(request, response);
 
-
     }
 
     @Override

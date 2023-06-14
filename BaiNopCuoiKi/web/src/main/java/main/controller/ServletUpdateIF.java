@@ -21,7 +21,6 @@ public class ServletUpdateIF extends HttpServlet {
         useService.getInstance().updateIF(id,hoten,email,sdt,diachi);
         request.getRequestDispatcher("/Chinhsuathongtin.jsp").forward(request,response);
 
-
     }
 
     @Override

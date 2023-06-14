@@ -32,7 +32,6 @@ public class getTypeProduct extends HttpServlet {
         request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
 
 
-
     }
 
     @Override

@@ -39,7 +39,6 @@ public class ServletCheckout extends HttpServlet {
                 request.getRequestDispatcher("/getIndex").forward(request, response);
 
     }
-
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

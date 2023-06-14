@@ -15,7 +15,6 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);
 
-
     }
 
     @Override
@@ -37,7 +36,7 @@ public class Login extends HttpServlet {
              String src ="Login";
              String content = "Đã đăng nhập vào hệ thống";
              String status = "Hoàn thành";
-             Log.writeLog(level, user0,src,content,status);
+//             Log.WriteLog(level, user0,src,content,status);
          response.sendRedirect("getIndex");
 
         }

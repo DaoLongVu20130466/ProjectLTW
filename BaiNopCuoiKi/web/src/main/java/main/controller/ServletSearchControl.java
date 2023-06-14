@@ -28,7 +28,6 @@ public class ServletSearchControl extends HttpServlet {
         request.setAttribute("alltype", typePro);
         request.setAttribute("productBySale", producBySale);
         request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
-
     }
 
     @Override

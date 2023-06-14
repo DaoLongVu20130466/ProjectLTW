@@ -29,9 +29,10 @@ public class ServletResetPass extends HttpServlet {
         String smail = request.getParameter("email");
         if (smail != null && smail!="") {
             String ID_ACCOUNT = "";
+            String rs1 = useService.getInstance().chekemail(smail);
+        if(rs1!=null) {
             ID_ACCOUNT = useService.getInstance().getIDfromEmail(smail);
-        if(ID_ACCOUNT!=null) {
-            long intime = System.currentTimeMillis();
+            java.sql.Timestamp intime = new java.sql.Timestamp(new java.util.Date().getTime());
             int rand_num = (int) (Math.random() * 1000000);
             String rand = Integer.toString(rand_num);
             String finale = (rand + "" + intime); //
@@ -42,17 +43,20 @@ public class ServletResetPass extends HttpServlet {
                 throw new RuntimeException(e);
             }
             int saved = useService.getInstance().upReset_password(ID_ACCOUNT, hash);
-            if(saved==1) {
-                String link = null;
-                link = request.getRequestURL().toString().replace("ServletResetPass", "reset_password") + "?hash=" + hash;
-                String messageText = " Click <a href=" + link + "?key=" + hash + ">Here</a> To Reset your Password. You must reset your password within 20 minutes.";
-                Utils.getInstance().sendMail(smail, "Đặt Cơm", messageText);
-                //-----------------------------------------------
-                request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);
-            }
-            request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
+            String link = null;
+            link = "http://localhost:8080/web_war/reset_password.jsp";
+
+
+            String messageText = " Click <a href=" + link + "?key=" + hash + ">Here</a> To Reset your Password. You must reset your password within 20 minutes.";
+            Utils.getInstance().sendMail(smail, "Đặt Cơm", messageText);
+
+
+            //-----------------------------------------------
+            request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);
+
         }
         }
+
     }
 
     @Override

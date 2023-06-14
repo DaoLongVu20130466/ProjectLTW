@@ -1,8 +1,8 @@
 package main.services;
+import main.bean.Products;
 import main.db.ConnectMysqlExample;
 import main.bean.User;
 
-import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -229,7 +229,7 @@ public class useService {
             // crate statement
 
             String query = "select Count(ID_ACCOUNT)\n" +
-                    "from account";
+                    "from accounts";
             PreparedStatement a = conn.prepareStatement(query);
 
             ResultSet rs = a.executeQuery();
@@ -247,21 +247,37 @@ public class useService {
         return b;
     }
 
-    public int checkIDFOOD(String type, String size) {
+    public int checkIDFOOD() {
         int b = 0;
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD WHERE TYPE_FOOD = ? and ID_SIZE = ?"
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM FOOD"
 
             );
-            ps.setString(1, type);
-            ps.setString(2, size);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                 b=rs.getInt(1) + 1;
+                b=rs.getInt(1) + 1;
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return b;
+
+    }
+    public int checkIDIMG() {
+        int b = 0;
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_IMG) FROM image "
+            );
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b=rs.getInt(1) + 1;
             }
 
         } catch (Exception ex) {
@@ -353,8 +369,8 @@ public class useService {
             // crate statement
             Statement stmt = conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = stmt.executeQuery("select EMAIL \n" +
-                    "from accounts");
+            ResultSet rs = stmt.executeQuery("select EMAIL\n" +
+                    "from account");
             // show data
             while (rs.next()) {
 
@@ -367,14 +383,13 @@ public class useService {
                 result = "Email này đã đăng kí tài khoản";
 
             }
+            // close connection
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
     }
-
-
     public String getIDfromEmail(String email) {
         ArrayList<String> allusercontronl = new ArrayList<String>();
         String result=null;
@@ -384,8 +399,8 @@ public class useService {
             Statement stmt = conn.createStatement();
             // get data from table 'student'
             PreparedStatement ps = conn.prepareStatement("select ID_ACCOUNT\n" +
-                    "from accounts \n" +
-                    "where EMAIL = ?"  );
+                    "from account\n" +
+                    "where EMAIL and ID_SIZE = ?"  );
             ps.setString(1,  email);
 
             ResultSet rs = ps.executeQuery();
@@ -440,7 +455,7 @@ public class useService {
             String idacconut="ACC"+useService.getInstance().checkIDaccount();
             String idUSER="USER"+useService.getInstance().checkIDaccount();
             String idadres="ADD"+useService.getInstance().checkIDaccount();
-            String query= "UPDATE account\n" +
+            String query= "UPDATE accounts\n" +
                     "SET PASS = ? \n" +
                     "WHERE ID_USER = ?";
             PreparedStatement a= conn.prepareStatement(query);
@@ -494,21 +509,55 @@ public class useService {
         }
         return user;
     }
+    public ArrayList<User> getComment(String idf) {
+        ArrayList<User> cmt = new ArrayList<User>();
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            // crate statement
+            Statement stmt = conn.createStatement();
+            // get data from table 'student'
+            PreparedStatement ps = conn.prepareStatement("SELECT accounts.AVATAR, user_information.USER_NAMES, `comment`.CMT,image.SRC\n" +
+                    "FROM (`comment` JOIN ( accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER)\n" +
+                    " ON `comment`.ID_ACCOUNT = accounts.ID_ACCOUNT ) LEFT JOIN image ON `comment`.ID_IMG = image.ID_IMG\n" +
+                    "WHERE `comment`.ID_FOOD =?"  );
+            ps.setString(1,  idf);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                cmt.add(new User(
+                        rs.getString(1),
+                        rs.getNString(2),
+                        rs.getNString(3),
+                        rs.getNString(4))
+                );
+            }
+            conn.close();
+
+            // close connection
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return cmt;
+    }
 
     public int upReset_password( String ID_ACCOUNT, String hash) {
         int Y = 0;
-        long expiryTime = System.currentTimeMillis() + 15 * 60 * 1000;
+        java.sql.Timestamp  intime = new java.sql.Timestamp(new
+                java.util.Date().getTime());
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(intime.getTime());
+        cal.add(Calendar.MINUTE, 20);
+        java.sql.Timestamp  exptime = new Timestamp(cal.getTime().getTime());
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             Statement stmt = conn.createStatement();
-            String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime)Values (?,?,?)" ;
+            String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime,Datetime)Value ("+ID_ACCOUNT+","+hash+","+exptime+","+intime+")" ;
 
-            PreparedStatement a= conn.prepareStatement(query);
-            a.setString(1,ID_ACCOUNT);
-            a.setString(2,hash);
-            a.setLong(3,expiryTime);
-         Y= a.executeUpdate();
+
+            Y= stmt.executeUpdate(query);
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -516,42 +565,11 @@ public class useService {
         return Y;
 
     }
-    public  boolean isWithin15Minutes(long savedTimeMillis) {
-        long currentTimeMillis = System.currentTimeMillis();
-        long difference = currentTimeMillis - savedTimeMillis;
-        long fifteenMinutesMillis = 15 * 60 * 1000;
-        return difference <= fifteenMinutesMillis;
-    }
-    public static void main(String[] args) {;
-        String a= useService.getInstance().checkRSP("e68780f26a13e3fe6b1a815271813f18");
-        System.out.println(a);
+    public static void main(String[] args) {
+        useService u = new useService();
+        System.out.println(u.getComment("CG7"));
     }
 
 
-    public String checkRSP(String hash) {
-        String result=null;
-        try {
-            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            Statement stmt = conn.createStatement();
-            // get data from table 'student'
-            PreparedStatement ps = conn.prepareStatement("SELECT ID_ACCOUNT,Exptime FROM reset_password WHERE Hash_Code=?;"  );
-            ps.setString(1,hash);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-
-                String id = rs.getString(1);
-                long exptime = rs.getLong(2);
-                if(useService.getInstance().isWithin15Minutes(exptime)){
-                   result=id ;
-                }
-            }
-            conn.close();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return result;
-    }
 }
 
