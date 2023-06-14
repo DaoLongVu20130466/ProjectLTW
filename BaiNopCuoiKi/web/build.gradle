@@ -55,9 +55,9 @@ publishing {
 }
 remotes {
     host {
-        host = '103.179.188.111'
+        host = '192.168.245.100'
         user = 'root'
-        password = 'D5K80pEEn3eCVU6T'
+        password = '123'
     }
 }
 ssh.settings {
