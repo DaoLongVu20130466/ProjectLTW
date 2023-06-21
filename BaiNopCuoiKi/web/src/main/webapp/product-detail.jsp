@@ -154,28 +154,41 @@
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
-                        <img class="product__details__pic__item--large"
-                             src="<%=pro.getPath()%>">
+
+                        <div class="display-container">
+                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
+                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
+                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
+                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
+
+                            <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+                            <div class="badge" style="width:100%">
+                                <span class="image-badge" onclick="currentDiv(1)"></span>
+                                <span class="image-badge" onclick="currentDiv(2)"></span>
+                                <span class="image-badge" onclick="currentDiv(3)"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__text">
                     <h3><%=pro.getFoodName()%></h3>
-                    <div class="product__details__price"><%=pro.getLISTED_PRICE()%><p>VND</p></div>
-                    <p><%=pro.getDESCRIPTION()%>
+                    <div class="product__details__price"><%=pro.getPrice()%><p>VND</p></div>
+                    <p><%=pro.getIdDes()%>
                     </p>
                 </div>
-                    <form action="/web_war/test1" enctype="multipart/form-data" method="get" onSubmit="">
-                        <div class='add-input' style="display: none">
-                            <input type='text' name='idfood' value="<%=pro.getID_food()%>">
+                <form action="/web_war/test1" enctype="multipart/form-data" method="get" onSubmit="">
+                    <div class='add-input' style="display: none">
+                        <input type='text' name='idfood' value="<%=pro.getID_food()%>">
+                    </div>
+                    <div class="quantity">
+                        Số lượng:
+                        <div class="pro-qty">
+                            <input name="soluong" type="text" value="1">
                         </div>
-                        <div class="quantity">
-                            Số lượng:
-                            <div class="pro-qty">
-                                <input name="soluong" type="text" value="1">
-                            </div>
-                        </div>
+                    </div>
 
                     <div>
                         <h4>Size:</h4>
@@ -195,9 +208,9 @@
 
                     </ul>
                     <a href="./addtoCart?id=<%=pro.getID_food()%>">
-                    <button class="btn" > Mua món ăn</button></a>
+                        <button class="btn" > Mua món ăn</button></a>
 
-            </form>
+                </form>
             </div>
 
             <div class="col-lg-12">
@@ -205,15 +218,16 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
-                               aria-selected="true">Mô tả</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
                                aria-selected="false">Nhận xét</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-toggle="tab" href="#tabs-2" role="tab"
+                               aria-selected="true">Mô tả</a>
+                        </li>
+
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                        <div class="tab-pane " id="tabs-2" role="tabpanel">
                             <div class="product__details__tab__desc">
                                 <h6>
                                     Thông tin
@@ -228,48 +242,78 @@
                                     làm việc liên tục, vì vậy dù chỉ đặt có 1 hộp thì vẫn ship bình thường.</p>
                             </div>
                         </div>
-                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="card card-outline-secondary my-4">
                                 <div class="card-header">
                                     <h3>Nhận xét</h3>
                                 </div>
                                 <div class="card-body">
+                                <%
+                                    ArrayList<User> cmt = (ArrayList<User>) request.getAttribute("cmt");
+                                    for (User c : cmt) {
+                                %>
+
                                     <div class="media mb-3">
                                         <div class="mr-2">
-                                            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
+                                            <img class="rounded-circle border p-1" src="<%=c.getAvatar()%>" alt="Generic placeholder image" style="width:74px;height:74px;">
+
                                         </div>
                                         <div class="media-body">
-                                            <p>Cơm gà ở đây được nấu và chế biến thơm ngon và hấp dẫn với
-                                                nguyên liệu thịt gà ta được chọn lọc kỹ, là loại gà tơ và
-                                                nuôi thả vườn nên đảm bảo thịt mềm mà chắc, vị thơm ngon rất dễ nhận biết.
-                                                Cơm gà cũng khá cầu kỳ ở khâu chọn gạo nấu để bên ngoài khô bên trong dẻo thơm.</p>
-                                            <small class="text-muted">Đăng bởi QVux ngày 10/11/2022</small>
+                                            <p><%=c.getCmt()%></p>
+                                            <%
+                                                if (c.getImg_cmt() == null){
+                                                    %>
+                                            <img src="<%=c.getImg_cmt()%>" style="width: 470px;height:266px;display: none" id="image_comment" >
+                                            <%
+                                                } else {
+                                            %>
+                                            <img src="<%=c.getImg_cmt()%>" style="width: 470px;height:266px;" id="image_comment" >
+                                            <%}%>
+
+                                            <br>
+                                            <small class="text-muted">Đăng bởi <%=c.getUserName()%> ngày 10/11/2022</small>
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="media mb-3">
-                                        <div class="mr-2">
-                                            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <p>Cơm gà xé trộn với rau răm và rau quế, ăn cùng với đu đủ, hành chua, cà rốt ngâm, tương ớt… Nhưng điểm khác biệt lớn nhất, tạo nên sự độc đáo của thương hiệu Nhung Cơm Gà nằm ở những gia vị được dùng để tẩm ướp gà.</p>
-                                            <small class="text-muted">Đăng Bởi Hữu Thoại chưa làm nhận xét ngày 30/11/2022 </small>
-                                        </div>
-                                    </div>
+                                    <%}
+                                    %>
+
+                                    <a href="#" class="xemt" >Xem Thêm...</a>
                                     <hr>
-                                    <div class="media mb-3">
-                                        <div class="mr-2">
-                                            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                                        </div>
-                                        <div class="media-body">
-                                            <p>Theo cảm nhận của mình thì cơm thơm mùi bơ rất vừa ăn, gà mắm tỏi thì hơi khô nhưng vị vẫn 👌, ko mặn như nhiều người nói
-                                                Đặc biệt là lạp xưởng rất rất ngon, mng nên thử nha
-                                                Có dịp vẫn sẽ ủng hộ quán   .</p>
-                                            <small class="text-muted">Đăng bởi WB God ngày 11/11/2022</small>
-                                        </div>
+                                    <div class="search__form">
+                                        <%
+                                            if (a == null) {
+                                        %>
+
+                                        <form action="DangNhap.jsp">
+                                            <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
+                                            <input type="text" placeholder="Nhận xét" style="width: 800px;" name="cmt">
+
+
+
+                                            <input type="file" id="upload_custom" name="img_cmt" style="display: none" onchange="chooseFile()" accept=".jpg, .jpeg, .png" >
+                                            <label for="upload_custom"><i class="fa fa-picture-o fa-2x" aria-hidden="true" style="padding-right: 15px"></i></label>
+                                            <button type="submit" class="site-btn">Gửi</button>  <br>
+
+                                            <img src="" id="image_pre" style="width: 470px;height: 266px;margin-left: 80px;display: none">
+                                        </form>
+
+
+                                        <%  }else {%>
+
+                                        <form action="AddCommentServlet" enctype="multipart/form-data" method="post" onSubmit="">
+                                            <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
+                                            <input type="text" placeholder="Nhận xét" style="width: 800px;" name="cmt">
+
+
+                                            <input type="file" id="upload_custom" name="img_cmt" style="display: none" onchange="chooseFile()" accept=".jpg, .jpeg, .png">
+                                            <label for="upload_custom"><i class="fa fa-picture-o fa-2x" aria-hidden="true" style="padding-right: 15px" ></i></label>
+                                            <button type="submit" class="site-btn">Gửi</button><br>
+
+                                            <img src="" id="image_pre" style="width: 470px;height: 266px;margin-left: 80px; display: none">
+                                        </form>
+                                        <%}%>
                                     </div>
-                                    <hr>
-                                    <a href="#" class="btn hvr-hover">Xem Thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -301,7 +345,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="<%=list.get(j).getPath()%>">
+                    <div class="product__item__pic set-bg" data-setbg="<%=list.get(j).getIdImg()%>">
                         <ul class="product__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -309,13 +353,13 @@
                         </ul>
                     </div>
                     <div class="product__item__text" >
-                        <h6><a href="detail?type=<%=list.get(j).getType()%>&fid=<%=list.get(j).getID_food()%> "><%=list.get(j).getFoodName()%></a></h6>
-                        <h5><%=list.get(j).getLISTED_PRICE()%> VND</h5>
+                        <h6><a href="detail?type=<%=list.get(j).getIdType()%>&fid=<%=list.get(j).getID_food()%> "><%=list.get(j).getFoodName()%></a></h6>
+                        <h5><%=list.get(j).getPrice()%> VND</h5>
                     </div>
                 </div>
             </div>
-        <%
-            }%>
+            <%
+                }%>
         </div>
     </div>
 </section>
@@ -379,7 +423,7 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
-
+<script src="js/detail-p.js"></script>
 
 </body>
 

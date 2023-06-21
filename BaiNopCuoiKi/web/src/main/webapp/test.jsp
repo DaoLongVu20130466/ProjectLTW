@@ -3,7 +3,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/web_war/uploadFile" enctype="multipart/form-data" method="post" onSubmit="">
+    <form action="uploadFile" enctype="multipart/form-data" method="post" onSubmit="">
     <div class='add-input'>
     Hình ảnh:<span>*</span>
     <input type="file" id="myfile" name="myfile" required><br><br>
