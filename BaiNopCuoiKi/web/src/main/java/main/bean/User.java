@@ -1,6 +1,12 @@
 package main.bean;
 
+import main.db.ConnectMysqlExample;
+import main.services.AppService;
+
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class User implements Serializable {
     String userId;
@@ -25,6 +31,28 @@ public class User implements Serializable {
 
 
     public User(){
+
+    }
+    public User(String id){
+
+    }
+    public void getById(String id){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement stmt = conn.prepareStatement("SELECT accounts.ID_USER, USER_NAMES, PASS, STATUSS,EMAIL,PHONE_NUMBER,AVATAR,IS_BLOCK FROM accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                this.setUserId(rs.getString(1));
+                this.setUserName(rs.getString(2));
+                this.setPassword(rs.getString(3));
+                this.statuss = rs.getString(4);
+                this.setEmail(rs.getString(5));
+                this.setAvatar(rs.getString(6));
+            }
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
     }
 
@@ -230,6 +258,7 @@ public class User implements Serializable {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
+
 
 
     @Override
