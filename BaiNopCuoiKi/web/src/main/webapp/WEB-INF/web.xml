@@ -146,7 +146,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletAllFavourite</servlet-name>
-    <url-pattern>/ServletAllFavourite</url-pattern>
+    <url-pattern>/getAllFavourite</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletCancelOder</servlet-name>

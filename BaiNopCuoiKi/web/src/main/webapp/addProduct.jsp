@@ -135,6 +135,7 @@
       <i class="fa fa-bars"></i>
     </div>
   </div>
+
 </header>
 <!-- Header Section End -->
 
@@ -193,7 +194,7 @@
         <%}%>
 
 
-        <form action="/vn_nhom37_web_BaiNopCuoiKi_war/ServletAddProduct" enctype="multipart/form-data" method="post" onSubmit="">
+        <form action="/BaiNopCuoiKi_war/ServletAddProduct" enctype="multipart/form-data" method="post" onSubmit="return submitForm(this);">
 
           <div class='add-input'>
             Tên món ăn <span>*</span>
@@ -220,7 +221,7 @@
           <div class='add-input'>
             Loại món ăn: <span>*</span>
 
-            <form action="" class="typeAdd">
+            <div action="" class="typeAdd">
               <select name="optionType"  >
                 <%
                   for ( TypeProducts t : listType
@@ -229,7 +230,9 @@
                 <option value="<%=t.getIdType()%>"> <%=t.getNameType()%>  </option>
                 <%}%>
               </select>
+            </div>
           </div>
+
 
 
           <div class='add-input'>
@@ -262,14 +265,93 @@
 
           <div class='add-input'>
            Hình ảnh:<span>*</span>
-            <input type="file" id="myfile" name="myfile" required><br><br>
-          </div>
+<%--            <input type="file" id="myfile" name="myfile" required><br><br>--%>
+<%--            <input type="file" id="myfile2" name="myfile2" required><br><br>--%>
+<%--            <input type="file" id="myfile3" name="myfile3" required><br><br>--%>
+<%--            <input type="file" id="myfile4" name="myfile4" required><br><br>--%>
+            <div class="img-list">
+              <div class="file-upload">
+                <button class="file-upload-btn"  type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+                <div class="image-upload-wrap">
+                  <input class="file-upload-input" id="myfile" name="myfile" type='file' onchange="readURL(this);" accept="image/*" required/>
+                  <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                  </div>
+                </div>
+                <div class="file-upload-content">
+                  <img class="file-upload-image" src="#" alt="your image" />
+                  <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="file-upload">
+                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input2').trigger( 'click' )">Add Image</button>
+
+                <div class="image-upload-wrap2">
+                  <input class="file-upload-input2"  id="myfile2" name="myfile2" type='file' onchange="readURL2(this);" accept="image/*" required/>
+                  <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                  </div>
+                </div>
+                <div class="file-upload-content2">
+                  <img class="file-upload-image2" src="#" alt="your image" />
+                  <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title2">Uploaded Image</span></button>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="file-upload">
+                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input3').trigger( 'click' )">Add Image</button>
+
+                <div class="image-upload-wrap3">
+                  <input class="file-upload-input3" id="myfile3" name="myfile3" type='file' onchange="readURL3(this);" accept="image/*" required/>
+                  <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                  </div>
+                </div>
+                <div class="file-upload-content3">
+                  <img class="file-upload-image3" src="#" alt="your image" />
+                  <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title3">Uploaded Image</span></button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="file-upload">
+                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input4').trigger( 'click' )">Add Image</button>
+
+                <div class="image-upload-wrap4">
+                  <input class="file-upload-input4" id="myfile4"  name="myfile4"  type='file' onchange="readURL4(this);" accept="image/*" required/>
+                  <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                  </div>
+                </div>
+                <div class="file-upload-content4">
+                  <img class="file-upload-image4" src="#" alt="your image" />
+                  <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title4">Uploaded Image</span></button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
       </div>
-      <input class="btn" type="submit" value="Submit">
+      <input class="btn" type="submit"  value="Submit">
 
         </form>
 
-  </div>
+        </div>
+     </div>
     </div>
 </section>
 <!-- Product Section End -->
@@ -286,6 +368,23 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  function submitForm(form) {
+    swal({
+      title: "Bạn chắc chắn chứ?",
+      text: "Hãy chắc là bạn đã thêm đúng thông tin",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then(function (isOkay) {
+              if (isOkay) {
+                form.submit();
+              }
+            });
+    return false;
+  }
+</script>
 
 
 </body>

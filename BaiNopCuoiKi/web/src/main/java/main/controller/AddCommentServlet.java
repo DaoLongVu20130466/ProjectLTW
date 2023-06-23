@@ -35,7 +35,11 @@ public class AddCommentServlet extends HttpServlet {
             if (!Files.exists(Paths.get(realPath))) {
                 Files.createDirectories(Paths.get(realPath));
             }
-            part.write(realPath + "/" + filename);
+            if(!Files.exists(Paths.get(realPath + "/" + filename))){
+                part.write(realPath + "/" + filename);
+
+            }
+
 
             String src = "img/Data/"+filename;
 

@@ -48,9 +48,37 @@ public class Products implements Serializable {
 
     }
 
-    public Products(String string, String string1, int anInt, int anInt1, String string2, String string3) {
+
+    public Products(String idFood, String foodName, int price, String idImg) {
+        this.idFood = idFood;
+        this.foodName = foodName;
+        this.price = price;
+        this.idImg = idImg;
     }
 
+    public Products(String idFood, String foodName, boolean isCombo, boolean isHot, boolean idSale , String idDes, String idType, int price, int basePrice) {
+        this.idFood = idFood;
+        this.foodName = foodName;
+        this.isCombo = isCombo;
+        this.isHot = isHot;
+        this.idSale = idSale;
+        this.idDes = idDes;
+        this.idType = idType;
+        this.price = price;
+        this.basePrice = basePrice;
+    }
+    public Products(String idFood, String foodName, boolean isCombo, boolean isHot, boolean idSale ,String idDes, String idType, int price, int basePrice,String idImg) {
+        this.idFood = idFood;
+        this.foodName = foodName;
+        this.isCombo = isCombo;
+        this.isHot = isHot;
+        this.idSale = idSale;
+        this.idDes = idDes;
+        this.idType = idType;
+        this.price = price;
+        this.basePrice = basePrice;
+        this.idImg = idImg;
+    }
 
     public String getID_food() {
         return idFood;
