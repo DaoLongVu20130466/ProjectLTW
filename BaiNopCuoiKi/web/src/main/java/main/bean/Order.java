@@ -194,6 +194,9 @@ public class Order implements Serializable  {
         return AppService.intToVND(rs);
     }
 
+    public void getAll(){
+
+    }
     public int getNewShip() {
         int newShip = ship;
         int voucherValue = voucher.getIntDiscount();
