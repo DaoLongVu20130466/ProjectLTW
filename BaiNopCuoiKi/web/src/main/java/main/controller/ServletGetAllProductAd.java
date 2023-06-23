@@ -15,21 +15,30 @@ import java.util.ArrayList;
 public class ServletGetAllProductAd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Products> products = (ArrayList<Products>) ProductsService.getInstance().getAllproducts();
-        ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(1);
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("auth");
-        int role= user.getRole();
+        String page = request.getParameter("page");
+        int page2 ;
+        int left;
+        int right;
+        if(page == null ){
+            page2 = 0;
+            left = 0;
+            right = 1;
+        } else {
+            page2 = Integer.parseInt(page)*12;
+            left = Integer.parseInt(page) - 1 ;
+            right = Integer.parseInt(page) +1;
+        }
 
-        if (AppService.checkAdmin(role)) {
+        ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
+        int pagee = ProductsService.getInstance().getPageAllPro();
+        HttpSession session = request.getSession();
 
         request.setAttribute("allproducts", proPage);
-        request.setAttribute("allproducts2", products);
+        request.setAttribute("page", pagee);
+        request.setAttribute("left", left);
+        request.setAttribute("right", right);
         request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
-    } else {
-            request.setAttribute("error", "Bạn không có quền truy cập va trang này");
-            request.getRequestDispatcher("/getIndex").forward(request, response);
-        }
+
     }
 
     @Override

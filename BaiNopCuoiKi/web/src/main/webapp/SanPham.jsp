@@ -31,6 +31,8 @@
   <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        rel="stylesheet"  type='text/css'>
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <link rel="stylesheet" href="css/admincss.css">
   <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
@@ -114,8 +116,16 @@
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <%
+              if (user.getRole()>=1) {
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+            <% }else{
+            %>
+            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+            <%}%>
+            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
@@ -192,18 +202,24 @@
             </thead>
             <tbody>
             <%
+              int left = (int) request.getAttribute("left");
+              int right = (int) request.getAttribute("right");
+              int n =(int) request.getAttribute("page");
+              if( n % 12 == 0 )
+              {n = n/12;}
+              else {n = n/12 + 1;}
               ArrayList<Products> list = (ArrayList<Products>) request.getAttribute("allproducts");
               for (Products p : list)
               {
             %>
             <tr>
               <td><%=p.getFoodName()%></td>
-              <td><%=p.getPrice()%></td>
+              <td><%=p.getBasePrice()%></td>
               <td><%=p.getID_food()%></td>
               <td><%=p.getIdType()%></td>
 
               <td><a href="editProduct?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
-                <a href="deleteF?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                <a href="deleteF?fid=<%=p.getID_food()%>"> <i class="fa fa-trash-o aria-hidden="true"></i> Xóa</a><br>
                 <a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
             </tr>
               <%}%>
@@ -211,19 +227,22 @@
           </table>
         </div>
         <div class="product__pagination">
-          <%
-            list = (ArrayList<Products>) request.getAttribute("allproducts2");
-            int n ;
-            if( list.size() % 12 == 0 ){
-              n = list.size()/12;
-            } else {
-              n = list.size()/12 + 1;
-            }
+          <a class href="getAllProductByAdmin?page=<%= left %>"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <%if(n >8) {
+          %>
+          <a class href="getAllProductByAdmin?page=<%=0%>"><%=1%> </a>
+          <a class href="getAllProductByAdmin?page=<%= left+2 %>"><%= left+2%> </a>
+          <a class href="getAllProductByAdmin?page=<%= left+3 %>"><%= left+3%> </a>
+          <a class href="getAllProductByAdmin?page=<%= left+4 %>"><%= left+4%> </a>
+          <a class href="#">...</a>
+          <a class href="getAllProductByAdmin?page=<%= left+7 %>"><%= left+7%> </a>
 
+        <%}else{
             for (int i = 1 ; i <= n ; i++) {
           %>
-          <a class href="getPageAD?page=<%= i %>"><%= i%></a>
-          <%}%>
+          <a class href="getAllProductByAdmin?page=<%= i-1 %>"><%= i%> </a>
+          <%} }%>
+          <a class href="getAllProductByAdmin?page=<%=right%>"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -248,6 +267,7 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+
 
 
 </body>

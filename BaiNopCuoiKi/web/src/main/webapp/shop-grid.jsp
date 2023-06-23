@@ -1,6 +1,7 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Random" %>
+<%@ page import="main.bean.User" %>
 <%@ page import="main.bean.TypeProducts" %>
 <%@ page import="main.services.AddOderService" %>
 <%@ page import="main.services.AppService" %><%--
@@ -68,6 +69,21 @@
                             <div>Việt Nam </div>
                         </div>
                         <div class="header__top__right__auth">
+                            <%
+                                String a = (String) session.getAttribute("login");
+                                User user = (User) session.getAttribute("auth");
+                            %>
+                            <%
+                                if (a == null) {
+                            %>
+                            <a href="DangNhap.jsp"><i class="fa fa-user" ></i> Đăng Nhập</a>
+                            <% }else{%>
+                            <div   class="fa" role="alert">
+
+                                <a href="getUserInfor"><i class="fa fa-user" ></i> <%= a+  user.getName()%></a>
+
+                            </div>
+                            <%}%>
 
                         </div>
                     </div>
@@ -140,8 +156,6 @@
                     <div class="sidebar__item">
                         <h4>Danh Mục</h4>
                         <%
-                            int numberpage = (int) request.getAttribute("numberP");
-
                             ArrayList<TypeProducts> listT = (ArrayList<TypeProducts>) request.getAttribute("alltype");
                             for (TypeProducts item: listT) {
 
@@ -236,6 +250,12 @@
 
         <div class="row">
             <%
+                int left = (int) request.getAttribute("left");
+                int right = (int) request.getAttribute("right");
+                int n =(int) request.getAttribute("page");
+                if( n % 12 == 0 )
+                {n = n/12;}
+                else {n = n/12 + 1;}
                 ArrayList<Products> list = (ArrayList<Products>) request.getAttribute("allproducts");
                 for (Products p : list)
                 {
@@ -244,10 +264,18 @@
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="<%=p.getIdImg()%>">
                         <ul class="product__item__pic__hover">
+                            <%
+                                if (a != null) {
+                            %>
                             <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
 
-
                             <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
+                            <% }else{%>
+                            <li><a href="DangNhap.jsp"><i class="fa fa-heart"></i></a></li>
+
+                            <li><a href="DangNhap.jsp"><i class="fa fa-shopping-cart"></i></a></li>
+                            <%}%>
+
                         </ul>
                     </div>
                     <div class="product__item__text">
@@ -264,22 +292,22 @@
 
 
     <div class="product__pagination">
-        <%
-            String typeSS= (String) session.getAttribute("typeSS");
-
-            for (int i = 1; i <= numberpage ; i++) {
-                if (typeSS!=null) {
+        <a class href="getAllProduct?page=<%= left %>"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <%if(n >8) {
         %>
+        <a class href="getAllProduct?page=<%=0%>"><%=1%> </a>
+        <a class href="getAllProduct?page=<%= left+2 %>"><%= left+2%> </a>
+        <a class href="getAllProduct?page=<%= left+3 %>"><%= left+3%> </a>
+        <a class href="getAllProduct?page=<%= left+4 %>"><%= left+4%> </a>
+        <a class href="#">...</a>
+        <a class href="getAllProduct?page=<%= left+7 %>"><%= left+7%> </a>
 
-        <a class href="getPageProductByType?type=<%=typeSS%>&page=<%=i%>"><%= i%></a>
-
-        <%
-                }else {
+        <%}else{
+            for (int i = 1 ; i <= n ; i++) {
         %>
-        <a class href="getAllProduct?type=<%=typeSS%>&page=<%=i%>"><%= i%></a>
-        <%
-                }
-            }%>
+        <a class href="getAllProduct?page=<%= i-1 %>"><%= i%> </a>
+        <%} }%>
+        <a class href="getAllProduct?page=<%=right%>"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     </div>
     </div>
 </section>

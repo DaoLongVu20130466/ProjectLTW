@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.Image;
 import main.bean.Products;
 import main.bean.User;
 import main.services.ProductsService;
@@ -28,10 +29,13 @@ public class ServletGetProduct extends HttpServlet {
         Products pro = ProductsService.getInstance().getProductByID(fid);
         ArrayList<Products> allProductByID = (ArrayList<Products>) ProductsService.getInstance().getAllProductByID(type);
         ArrayList<User> cmt = useService.getInstance().getComment(fid);
+        ArrayList<Image> imageArrayList = ProductsService.getInstance().getImgEdit(fid);
 
         request.setAttribute("product", pro);
         request.setAttribute("allProductByID", allProductByID);
         request.setAttribute("cmt",cmt);
+        request.setAttribute("imageArrayList",imageArrayList);
+
         request.getRequestDispatcher("/product-detail.jsp").forward(request, response);
     }
 

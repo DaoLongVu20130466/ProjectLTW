@@ -3,6 +3,7 @@ package main.bean;
 import java.io.Serializable;
 
 public class User implements Serializable {
+    int idcmt;
     String userId;
     String userName;
     String password;
@@ -49,11 +50,13 @@ public class User implements Serializable {
     }
 
 
-    public User(String avatar,String userName,  String cmt ,   String img_cmt) {
+    public User(String avatar,String userName,  String cmt ,   String img_cmt ,int idcmt ,String userId) {
         this.avatar = avatar;
         this.userName = userName;
         this.cmt = cmt;
         this.img_cmt = img_cmt;
+        this.idcmt = idcmt;
+        this.userId = userId;
     }
 
     public User(String string, String string1, String userId, int anInt, String string2, int role , String roleName, String ID_acc) {
@@ -76,6 +79,14 @@ public class User implements Serializable {
         this.email = email;
         this.idacc = idacc;
 
+    }
+
+    public int getIdcmt() {
+        return idcmt;
+    }
+
+    public void setIdcmt(int idcmt) {
+        this.idcmt = idcmt;
     }
 
     public String getImg_cmt() {
