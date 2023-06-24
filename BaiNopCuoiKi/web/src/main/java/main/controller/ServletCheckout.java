@@ -19,13 +19,15 @@ public class ServletCheckout extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
         Cart cart = (Cart) session.getAttribute("cart");
+        String adrs1 = request.getParameter("diachi1");
+        String adrs2 = request.getParameter("diachi2");
         String vouch = (String) request.getParameter("voucher");
 
 
 
         if (user!=null) {
 
-            if (AddOderService.getInstance().adODer(user.getIdacc(), cart, vouch)) {
+            if (AddOderService.getInstance().adODer(user.getIdacc(), cart, vouch,adrs1,adrs2)) {
                 request.setAttribute("error", "Thanh toán thành công");
                 session.setAttribute("cart", new Cart());
                 request.getRequestDispatcher("/showCart").forward(request, response);
@@ -37,8 +39,7 @@ public class ServletCheckout extends HttpServlet {
         }else{
                 request.setAttribute("error", "Vui lòng đang nhập để thanh toán");
                 request.getRequestDispatcher("/getIndex").forward(request, response);
-
-    }
+        }
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,8 +1,15 @@
 package main.bean;
 
+import main.db.ConnectMysqlExample;
+import main.services.AppService;
+
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class User implements Serializable {
+    int idcmt;
     String userId;
     String userName;
     String password;
@@ -27,6 +34,28 @@ public class User implements Serializable {
     public User(){
 
     }
+    public User(String id){
+
+    }
+    public void getById(String id){
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement stmt = conn.prepareStatement("SELECT accounts.ID_USER, USER_NAMES, PASS, STATUSS,EMAIL,PHONE_NUMBER,AVATAR,IS_BLOCK FROM accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                this.setUserId(rs.getString(1));
+                this.setUserName(rs.getString(2));
+                this.setPassword(rs.getString(3));
+                this.statuss = rs.getString(4);
+                this.setEmail(rs.getString(5));
+                this.setAvatar(rs.getString(6));
+            }
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
 
     public User(String userId, String userName, String phoneNumber, String provine ,int numberBuy, int status) {
         this.userId = userId;
@@ -49,11 +78,13 @@ public class User implements Serializable {
     }
 
 
-    public User(String avatar,String userName,  String cmt ,   String img_cmt) {
+    public User(String avatar,String userName,  String cmt ,   String img_cmt ,int idcmt ,String userId) {
         this.avatar = avatar;
         this.userName = userName;
         this.cmt = cmt;
         this.img_cmt = img_cmt;
+        this.idcmt = idcmt;
+        this.userId = userId;
     }
 
     public User(String string, String string1, String userId, int anInt, String string2, int role , String roleName, String ID_acc) {
@@ -76,6 +107,14 @@ public class User implements Serializable {
         this.email = email;
         this.idacc = idacc;
 
+    }
+
+    public int getIdcmt() {
+        return idcmt;
+    }
+
+    public void setIdcmt(int idcmt) {
+        this.idcmt = idcmt;
     }
 
     public String getImg_cmt() {
@@ -230,6 +269,7 @@ public class User implements Serializable {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
+
 
 
     @Override

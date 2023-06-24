@@ -7,6 +7,7 @@
   Time: 4:02 pm
   To change this template use File | Settings | File Templates.
 --%><%@ page import="main.bean.User" %>
+<%@ page import="main.bean.Image" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <!DOCTYPE html>
@@ -156,10 +157,14 @@
                     <div class="product__details__pic__item">
 
                         <div class="display-container">
-                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
-                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
-                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
-                            <img class="mySlides"  src="<%=pro.getIdImg()%>">
+                            <%
+                            ArrayList<Image> imageArrayList = (ArrayList<Image>) request.getAttribute("imageArrayList");
+                                for (Image img1:imageArrayList
+                                     ) {
+                            %>
+                            <img class="mySlides"  src="<%=img1.getSrc()%>">
+
+                            <%}%>
 
                             <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
                             <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
@@ -250,35 +255,41 @@
                                 <div class="card-body">
                                 <%
                                     ArrayList<User> cmt = (ArrayList<User>) request.getAttribute("cmt");
-                                    for (User c : cmt) {
+                                    for (User cmt1 : cmt) {
                                 %>
 
                                     <div class="media mb-3">
                                         <div class="mr-2">
-                                            <img class="rounded-circle border p-1" src="<%=c.getAvatar()%>" alt="Generic placeholder image" style="width:74px;height:74px;">
+                                            <img class="rounded-circle border p-1" src="<%=cmt1.getAvatar()%>" alt="Generic placeholder image" style="width:74px;height:74px;">
 
                                         </div>
                                         <div class="media-body">
-                                            <p><%=c.getCmt()%></p>
+                                            <p><%=cmt1.getCmt()%></p>
                                             <%
-                                                if (c.getImg_cmt() == null){
+                                                if (cmt1.getImg_cmt() == null || cmt1.getImg_cmt().equals("img/Data/")){
                                                     %>
-                                            <img src="<%=c.getImg_cmt()%>" style="width: 470px;height:266px;display: none" id="image_comment" >
+                                            <img src="<%=cmt1.getImg_cmt()%>" style="width: 470px;height:266px;display: none" id="image_comment" >
                                             <%
                                                 } else {
                                             %>
-                                            <img src="<%=c.getImg_cmt()%>" style="width: 470px;height:266px;" id="image_comment" >
+                                            <img src="<%=cmt1.getImg_cmt()%>" style="width: 470px;height:266px;" id="image_comment" >
                                             <%}%>
 
                                             <br>
-                                            <small class="text-muted">Đăng bởi <%=c.getUserName()%> ngày 10/11/2022</small>
+                                            <small class="text-muted">Đăng bởi <%=cmt1.getUserName()%></small>
+                                            <br>
+                                            <%
+                                                if (a != null) {
+                                                    if (cmt1.getUserId().equals(user.getUserId())){
+                                            %>
+                                            <a href="deleteCmt?id=<%=cmt1.getIdcmt()%>" class="xemt" >Xóa</a><%}else{%>
+                                            <a href="#" class="xemt" >Xóa</a><%} }%>
                                         </div>
                                     </div>
                                     <hr>
                                     <%}
                                     %>
 
-                                    <a href="#" class="xemt" >Xem Thêm...</a>
                                     <hr>
                                     <div class="search__form">
                                         <%

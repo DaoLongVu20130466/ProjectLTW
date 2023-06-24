@@ -85,13 +85,16 @@ public  class AppService {
     }
 
     public static String getNow() {
-
-
-        return new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());
+        return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+    }
+    public static String date_to_fomat(String fotmat, Date date){
+        SimpleDateFormat myFormat = new SimpleDateFormat(fotmat);
+        Date dateFromUser = date;
+        return  myFormat.format(dateFromUser);
     }
     public static void main(String[] args) throws ParseException {
        String out =  new SimpleDateFormat("yyyy/MMd/d HH:mm:ss").format(Calendar.getInstance().getTime());
-       System.out.println(out);
+       System.out.println(getNow());
     }
 
 }

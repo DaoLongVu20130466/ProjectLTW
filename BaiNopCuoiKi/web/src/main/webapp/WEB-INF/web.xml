@@ -52,10 +52,6 @@
     <servlet-name>ServletGetPageAd</servlet-name>
     <url-pattern>/getPageAD</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>getProduct</servlet-name>
-    <servlet-class>main.controller.getProduct</servlet-class>
-  </servlet>
   <servlet-mapping>
     <servlet-name>getProduct</servlet-name>
     <url-pattern>/getProduct</url-pattern>
@@ -146,7 +142,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletAllFavourite</servlet-name>
-    <url-pattern>/ServletAllFavourite</url-pattern>
+    <url-pattern>/getAllFavourite</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletCancelOder</servlet-name>

@@ -16,10 +16,15 @@ public class ServletAddFavourite extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+        if ( (User) session.getAttribute("auth") == null){
+            response.sendRedirect("DangNhap.jsp");
+        }
         User user = (User) session.getAttribute("auth");
+
         String  idser = user.getUserId();
         User user1 = useService.getInstance().getAllUserByID(idser);
         String idacc = user1.getIdacc();
+
         String idf = request.getParameter("idf");
         ProductsService.getInstance().addFavourite(idf,idacc);
 
@@ -31,7 +36,7 @@ public class ServletAddFavourite extends HttpServlet {
         request.setAttribute("product", product);
 
 
-        response.sendRedirect("/getAllFavourite");
+        response.sendRedirect("getAllFavourite");
 
     }
 

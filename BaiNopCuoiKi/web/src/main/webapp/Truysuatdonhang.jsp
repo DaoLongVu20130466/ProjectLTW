@@ -1,5 +1,7 @@
 <%@ page import="main.bean.Order" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.UserPemission" %>
+<%@ page import="main.bean.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -171,6 +173,11 @@
                             <td><%=item.getTotalValue()%></td>
                             <td><%=item.getStatus()%></td>
                             <td><a href="/web_war/ServletInforOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
+                            <%
+                            UserPemission p = (UserPemission) request.getAttribute("permission");
+                            if (p.canEditAddTran()&&item.getStatus().equals("Đang chờ xử lý")){%>
+                            <a href="/web_war/ServletAcceptOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Xác nhận đơn</a>
+                            <%}%>
                         </tr>
                         <%}%>
                         </tbody>

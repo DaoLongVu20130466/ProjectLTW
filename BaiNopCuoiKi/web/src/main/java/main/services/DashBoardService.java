@@ -59,6 +59,37 @@ public class DashBoardService {
         }
         return order;
     }
+    public ArrayList<Order> getOderByYearMouth(String year , String m) {
+        ArrayList<Order> order = new ArrayList<>();
+        ArrayList<OderCart> orc ;
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER , ORDER_DATE, STATUSS , DELIVERY_CHARGES \n" +
+                    "from orders\n" +
+                    "JOIN order_account_details\n" +
+                    "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE  YEAR(ORDER_DATE) = ? AND MONTH(ORDER_DATE)= ?");
+            stmt.setString(1,year);
+            stmt.setString(2,m);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Order rsl  = new Order();
+                String oderId = rs.getString(1);
+                orc = ProductsService.getInstance().getProductByOderID(oderId);
+                rsl.setIdOder(oderId);
+                rsl.setDayCrate(rs.getDate(2));
+                rsl.setStatus(rs.getString(3));
+                rsl.setShip(rs.getInt(4));
+                rsl.setAllOderCart(orc);
+                order.add(rsl);
+            }
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return order;
+    }
 
     public static void main(String[] args) throws ParseException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
