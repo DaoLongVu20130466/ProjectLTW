@@ -2,6 +2,7 @@ package main.controller;
 
 import main.bean.Log;
 import main.bean.User;
+import main.bean.UserPemission;
 import main.services.UsrPerServiece;
 
 import javax.servlet.*;
@@ -18,11 +19,17 @@ public class ServletEditRole extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        User user = (User) session.getAttribute("auth");
+        HttpSession session = request.getSession();
+        if (session.getAttribute("auth")!=null) {
+            User user = (User) session.getAttribute("auth");
 //        Log.getInstance().WriteLog(user.getUserId(),1,this.getClass().getName(),"a","a");
-        String roleId = request.getParameter("Role");
-        String targetID = request.getParameter("targetUID");
-        UsrPerServiece.getInstance().upDaterole( roleId , targetID);
+            String roleId = request.getParameter("Role");
+            System.out.println(roleId);
+            String targetID = (String) request.getParameter("targetUID");
+            System.out.println(targetID);
+            UsrPerServiece.getInstance().upDaterole(roleId, targetID);
+            response.sendRedirect("/web_war/getUserControl");
+        }
+        else response.sendRedirect("404Page.html");
     }
 }

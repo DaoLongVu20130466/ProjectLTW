@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.ApiController;
 import main.bean.Cart;
 import main.bean.Products;
 import main.services.AppService;
@@ -18,12 +19,13 @@ public class showCart extends HttpServlet {
         Cart cart=(Cart) request.getSession().getAttribute("cart");
 
         if(cart!=null) {
-
+            ApiController control = new ApiController();
+            request.setAttribute("listdiachi1", control.getDistrictbyPvID("202"));
+            request.setAttribute("stage",0);
             session.setAttribute("total", AppService.intToVND((int) cart.getTotal()));
                 request.getRequestDispatcher("GioHang.jsp").forward(request, response);
             }
         else{
-
             request.getRequestDispatcher("/GioHang.jsp").forward(request, response);
         }
 

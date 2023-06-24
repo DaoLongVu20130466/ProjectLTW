@@ -50,17 +50,17 @@ public class useService {
             // get data from table 'student'
             ResultSet rs = stmt.executeQuery("SELECT id,userid , phone,pro,sodon,sts\n" +
                     "from (\n" +
-                    "(SELECT account.ID_ACCOUNT as id, \n" +
+                    "(SELECT accounts.ID_USER as id, \n" +
                     "USER_NAMES as userid , \n" +
                     "PHONE_NUMBER as phone,\n" +
                     "PROVINCE as pro,\n" +
                     "IS_BLOCK as sts\n" +
-                    "FROM account\n" +
+                    "FROM accounts\n" +
                     "join user_information \n" +
-                    "join addresss \n" +
-                    "on addresss.ID_ADDRESS = user_information.ID_ADDRESS\n" +
-                    "on user_information.ID_USER = account.ID_USER\n" +
-                    ") as bangtam) join\n" +
+                    "join addresses \n" +
+                    "on addresses.ID_ADDRESS = user_information.ID_ADDRESS\n" +
+                    "on user_information.ID_USER = accounts.ID_USER\n" +
+                    ") as bangtam) left join\n" +
                     "((SELECT ID_ACCOUNT as acc, COUNT(ID_ACCOUNT) as sodon from order_account_details)\n" +
                     "as bangphu)\n" +
                     "on bangtam.id = bangphu.acc");
@@ -93,7 +93,13 @@ public class useService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement(query);
+
+            PreparedStatement ps = conn.prepareStatement("SELECT user_information.USER_NAMES , " +
+                    "addresses.PROVINCE , user_information.PHONE_NUMBER, accounts.STATUSS, accounts.AVATAR,accounts.EMAIL, accounts.ID_ACCOUNT \n" +
+                    "FROM  accounts join  (user_information JOIN addresses " +
+                    "on user_information.ID_ADDRESS = addresses.ID_ADDRESS)  on  " +
+                    "accounts.ID_USER = user_information.ID_USER\n" +
+                    "WHERE user_information.ID_USER = ?");
             ps.setString(1, iduser);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -597,7 +603,7 @@ public class useService {
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
                 PreparedStatement a = conn.prepareStatement(
-                        "SELECT account.ID_ACCOUNT, PHONE_NUMBER , USER_NAMES ,ID_ADDRESS FROM  account JOIN user_information ON account.ID_USER = user_information.ID_USER WHERE ID_ACCOUNT = ?");
+                        "SELECT accounts.ID_ACCOUNT, PHONE_NUMBER , USER_NAMES ,ID_ADDRESS FROM  accounts JOIN user_information ON accounts.ID_USER = user_information.ID_USER WHERE ID_ACCOUNT = ?");
                 a.setString(1,Uid);
                 ResultSet rs = a.executeQuery();
                 while (rs.next()) {

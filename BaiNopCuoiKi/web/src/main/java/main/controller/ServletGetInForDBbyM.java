@@ -22,9 +22,10 @@ public class ServletGetInForDBbyM extends HttpServlet {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy");
         LocalDateTime now = LocalDateTime.now();
         String nowYear = dtf.format(now);
-        DashBoard db = new DashBoard(DashBoardService.getInstance().getOderByYear(nowYear));
-        request.setAttribute("dashBoard", db);
+
         request.setAttribute("dbm",request.getParameter("dbmo"));
+        DashBoard db = new DashBoard(DashBoardService.getInstance().getOderByYearMouth(nowYear,request.getParameter("dbmo")));
+        request.setAttribute("dashBoard", db);
         request.getRequestDispatcher("/DoanhThu.jsp").forward(request,response) ;
     }
 }

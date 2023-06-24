@@ -164,7 +164,7 @@
                 <tbody>
                 <tr>
                   <td>UserID</td>
-                  <td><%thisper.getUID();%></td>
+                  <td><%=thisper.getUID()%></td>
                 </tr>
                 <tr>
                   <td>Registered:</td>
@@ -172,7 +172,7 @@
                 </tr>
                 <tr>
                   <td>Role:</td>
-                  <td><%thisper.getRoleName();%></td>
+                  <td><%=thisper.getRoleName()%></td>
                 </tr>
                 </tbody>
               </table>
@@ -218,10 +218,11 @@
                   <%}%>
                   <%if (thisper.canEditRole()){%>
                   <td><span class="fa fa-check text-primary"></span></td>
+                  <td><span class="fa fa-check text-primary"></span></td>
                   <%} else {%>
                   <td><span class="fa fa-times"></span></td>
-                  <%}%>
                   <td><span class="fa fa-times"></span></td>
+                  <%}%>
                   <%if (thisper.canRemoveAcc()){%>
                   <td><span class="fa fa-check text-primary"></span></td>
                   <%} else {%>
@@ -233,14 +234,17 @@
                   <td>Log</td>
                   <%if (thisper.canWatchLog()){%>
                   <td><span class="fa fa-check text-primary"></span></td>
-                  <%} else {%>
-                  <td><span class="fa fa-times"></span></td>
-                  <%}%>
-                  <td><span class="fa fa-times"></span></td>
-                  <td><span class="fa fa-times"></span></td>
-                  <%if (thisper.canRemoveLog()){%>
                   <td><span class="fa fa-check text-primary"></span></td>
                   <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
+                  <td><span class="fa fa-times"></span></td>
+                  <%}%>
+                  +
+                  <%if (thisper.canRemoveLog()){%>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <td><span class="fa fa-check text-primary"></span></td>
+                  <%} else {%>
+                  <td><span class="fa fa-times"></span></td>
                   <td><span class="fa fa-times"></span></td>
                   <%}%>
                 </tr>
@@ -300,7 +304,7 @@
 
               <table class="table user-view-table m-0">
                 <tbody>
-                <form action="ServletEditRole"  method="post" id="RoleEdit">
+                <form action="ServletEditRole?targetUID=<%=thisper.getUID()%>"  method="post" id="RoleEdit">
 
                 <tr>
                   <select id="Role" name="Role">
@@ -314,7 +318,6 @@
                   <label for="Role">Set Role:</label>
                 </tr>
                 <tr>
-                  <input type="hidden" id="custId" name="targetUID" value=<%thisper.getUID();%>>
                   <input type="submit" value="Submit">
                 </tr>
                 </form>
