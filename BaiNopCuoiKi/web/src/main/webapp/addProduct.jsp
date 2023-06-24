@@ -194,7 +194,7 @@
         <%}%>
 
 
-        <form action="/BaiNopCuoiKi_war/ServletAddProduct" enctype="multipart/form-data" method="post" onSubmit="return submitForm(this);">
+        <form action="ServletAddProduct" enctype="multipart/form-data" method="post" onSubmit="return submitForm(this);">
 
           <div class='add-input'>
             Tên món ăn <span>*</span>
