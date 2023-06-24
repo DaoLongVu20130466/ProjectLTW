@@ -1,10 +1,9 @@
-        <%@ page import="main.bean.Cart" %>
-<%@ page import="main.bean.Products" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="main.services.AppService" %>
-        <%@ page import="main.bean.User" %>
-        <%@ page import="java.util.HashMap" %>
-        <!DOCTYPE html>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.*" %>
+<!DOCTYPE html>
 <html lang="zxx">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
@@ -26,6 +25,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/formoder.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
@@ -279,7 +279,7 @@
                                         <h5>    <%=p.getFoodName()%></h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        <%=AppService.intToVND(p.getLISTED_PRICE())%>
+                                        <%=AppService.intToVND(p.getLISTED_PRICE2())%>
 
                                     </td>
                                     <td class="shoping__cart__quantity">
@@ -292,7 +292,7 @@
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                        <%=AppService.intToVND(p.getLISTED_PRICE() * p.getQuantity())%>
+                                        <%=AppService.intToVND(p.getLISTED_PRICE2() * p.getQuantity())%>
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <a href="removeInCart?id=<%=p.getID_food()%>"><span  class="icon_close"></span></a>
@@ -358,17 +358,49 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
+                        <%int stage = (int) request.getAttribute("stage");
+                        System.out.println(stage);
+                        %>
+                        <form id="form1" method="post" action="/web_war/ServletResetFormoder">
+                            <input type="hidden" id="stage" name="stage" value=<%=request.getAttribute("stage")%>>
                         <h5>Tổng Đơn Hàng</h5>
                         <ul>
                             <%
                             if(b==null){
-
                             b=c;
                             }
                             %>
                             <li>Tổng Tiền <span><%= b%></span></li>
-                        </ul>
-                        <a href="ServletCheckout?voucher=<%=request.getParameter("voucher")%>" class="primary-btn">Thanh Toán</a>
+                            <select name="diachi1" id="diachi1">
+                                <option value="999" disabled selected="selected" >Mời nhập địa chỉ của bạn</option>
+                                <% ArrayList<APIDistrictRespone.data> rs = (ArrayList<APIDistrictRespone.data>) request.getAttribute("listdiachi1");
+                                    for ( APIDistrictRespone.data az:rs) {
+                                %>
+                                <option value=<%=az.getDistrictID()%> ><%=az.getDistrictName()%></option>
+                                <%};%>
+                            </select>
+                                <%if (stage==0){%>
+                            <ul>
+                                <button type="submit" form="form1" value="Submit">Chọn</button>
+                            </ul>
+                                <%}%>
+                            <%
+                            if(stage==1){%>
+                                <select name="diachi2" id="diachi2">
+                                    <option value="999" disabled selected="selected" >Mời nhập địa chỉ của bạn</option>
+                                    <% ArrayList<APIwardRespone.data> rs1 = (ArrayList<APIwardRespone.data>) request.getAttribute("listdiachi2");
+                                        for ( APIwardRespone.data az1:rs1) {
+                                    %>
+                                    <option value=<%=az1.getWardCode()%> ><%=az1.getWardName()%></option>
+                                    <%};%>
+                                </select>
+                                <ul>
+                                    <button type="submit style="
+                                            margin-top: 5%;
+                                            width: 100% form="form1" value="Submit">Xác nhận</button>
+                                </ul>
+                            <%}%>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -421,9 +453,13 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
 
+    </footer>
+    <!-- Footer Section End -->>
+
+    <script>
+
+    </script>
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -435,6 +471,8 @@
     <script src="js/main.js"></script>
 
 
+
 </body>
+
 
 </html>

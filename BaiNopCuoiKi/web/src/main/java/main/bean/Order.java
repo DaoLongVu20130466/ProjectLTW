@@ -20,6 +20,10 @@ public class Order implements Serializable  {
     int net;
     int total;
     Address address;
+
+    String wardID;
+
+    String districtID;
     Voucher voucher;
     ArrayList<OderCart> allOderCart;
 
@@ -50,6 +54,22 @@ public class Order implements Serializable  {
 
     public void setDayCrate(Date dayCrate) {
         this.dayCrate = dayCrate;
+    }
+
+    public String getWardID() {
+        return wardID;
+    }
+
+    public void setWardID(String wardID) {
+        this.wardID = wardID;
+    }
+
+    public String getDistrictID() {
+        return districtID;
+    }
+
+    public void setDistrictID(String districtID) {
+        this.districtID = districtID;
     }
 
     public Order(String idOder) {

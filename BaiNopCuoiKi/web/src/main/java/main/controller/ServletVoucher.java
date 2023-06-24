@@ -20,7 +20,6 @@ public class ServletVoucher extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
         int role = user.getRole();
-
         if (AppService.checkAdmin(role)) {
             request.setAttribute("allvoucher", vcher);
             request.getRequestDispatcher("/TangVoucher.jsp").forward(request, response);

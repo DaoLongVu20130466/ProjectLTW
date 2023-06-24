@@ -31,21 +31,22 @@ public class ProductsService {
 
                     PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD, FOOD_NAME,  BASE_PRICE , LISTED_PRICE , L_IMG , order_details.QUANTITY , type_food.ID_TYPE\n" +
                             "FROM order_details \n" +
-                            "join TYPE_FOOD\n" +
+                            "join type_food\n" +
                             "JOIN food \n" +
-                            "on TYPE_FOOD.TYPE_FOOD = food.TYPE_FOOD\n" +
-                            "on food.ID_FOOD = order_details.ID_FOOD  AND food.ID_SIZE = order_details.ID_SIZE \n" +
-                            " WHERE ID_ORDER = ?");
+                            "on type_food.ID_TYPE = food.ID_TYPE\n" +
+                            "on food.ID_FOOD = order_details.ID_FOOD  \n" +
+                            "AND food.ID_SIZE = order_details.ID_SIZE\n" +
+                            "WHERE ID_ORDER = ?");
 
                     ps.setString(1, oderId);
                     int temp = 1;
                     ResultSet rs = ps.executeQuery();
 
                     while (rs.next()) {
-//                        OderCart rsl = new OderCart();
-//                        rsl.setItem(new Products(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getString(7)));
-//                        rsl.setValue(rs.getInt(6));
-//                        orc.add(rsl);
+                        OderCart rsl = new OderCart();
+                        rsl.setItem(new Products(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getString(7)));
+                        rsl.setValue(rs.getInt(6));
+                        orc.add(rsl);
                     }
                     conn.close();
                 } catch (Exception ex) {

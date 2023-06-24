@@ -1,5 +1,7 @@
 package main.bean;
 
+import main.services.AppService;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -15,6 +17,7 @@ public class Products implements Serializable {
     boolean isHot;
     String idDes;
     String idImg;
+    String img;
     ArrayList<String> listImg;
     int price;
     int basePrice;
@@ -48,12 +51,21 @@ public class Products implements Serializable {
 
     }
 
+    public Products(String string, String string1, int anInt, int anInt1, String string2, String string3) {
+        this.idFood = string;
+        this.foodName = string1;
+        this.price = anInt;
+        this.basePrice = anInt1;
+        this.img = string2;
+        this.idType = string3;
+
 
     public Products(String idFood, String foodName, int price, String idImg) {
         this.idFood = idFood;
         this.foodName = foodName;
         this.price = price;
         this.idImg = idImg;
+
     }
 
     public Products(String idFood, String foodName, boolean isCombo, boolean isHot, boolean idSale , String idDes, String idType, int price, int basePrice) {
@@ -190,5 +202,16 @@ public class Products implements Serializable {
 
     public void setBasePrice(int basePrice) {
         this.basePrice = basePrice;
+    }
+
+    public String getPath() {
+        return "img/Data/ComGa/2comga_dagion-min.jpeg";
+    }
+
+    public String getLISTED_PRICE() {
+        return AppService.intToVND(basePrice);
+    }
+    public int getLISTED_PRICE2() {
+        return price;
     }
 }

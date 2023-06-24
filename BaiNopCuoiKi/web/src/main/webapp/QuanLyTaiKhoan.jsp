@@ -8,6 +8,7 @@
 <%@ page import="main.bean.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="main.bean.UserPemission" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -201,13 +202,21 @@
                                 <td><%=item.getProvine()%></td>
                                 <td><%=item.getNumberBuy()%></td>
                                 <td><%=item.getStatus()%></td>
-                                <td><%if(item.getStatusInt() == 1) {%>
+                                <td>
+                                    <%
+                                        User userr = (User) session.getAttribute("auth");
+                                        UserPemission actor = new UserPemission(userr.getUserId());
+                                        if (actor.canEditRole()){%>
+                                    <a href="ServletGetRole?uid=<%=item.getUserId()%>"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Chỉnh role</a>
+                                    <%}%>
+                                    <%if(item.getStatusInt() == 1) {%>
                                     <a href="ServletUnlock?uid=<%=item.getUserId()%>"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Mở Khóa</a>
                                     <%}
                                         else if(item.getStatusInt() == 0) {
                                     %>
                                     <a href="ServletLock?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
                                 <%}%>
+
                             </tr>
                             </tbody>
                             <%}%>
