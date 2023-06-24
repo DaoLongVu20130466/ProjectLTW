@@ -1,11 +1,9 @@
 package main.services;
 
-import main.bean.Cart;
-import main.bean.Order;
-import main.bean.Products;
-import main.bean.User;
+import main.bean.*;
 import main.db.ConnectMysqlExample;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,9 +19,9 @@ public class AddOderService {
         return instance;
     }
 
-    public boolean adODer(String usid , Cart map, String voucherCode){
+    public boolean adODer(String usid , Cart map, String voucherCode, String ads1, String ads2){
         if(isleft(map)){
-        addOderByUser(usid, map, voucherCode);
+        addOderByUser(usid, map, voucherCode,ads1,ads2);
         return true;
         }
         else return false;
@@ -77,15 +75,16 @@ public class AddOderService {
         }
         return rs;
     }
-    public void addOderByUser (String usid , Cart map ,String voucherCode){
+    public void addOderByUser (String usid , Cart map ,String voucherCode, String ads1, String ads2)  {
         User us1 = useService.getInstance().getUserById(usid);
         Order neworder = new Order();
+        ApiController control = new ApiController();
         neworder.setIdOder(OderService.getInstance().createNewIDOder());
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
                 PreparedStatement statement = conn.prepareStatement(
-                        "INSERT INTO orders (ID_ORDER, ORDER_DATE, PHONE_NUMBER, NAMEUSER, NOTE, ID_VOUCHER,ID_ADDRESS,STATUSS, DELIVERY_CHARGES)\n" +
-                        "VALUES (?,?,?,?,?,?,?,?,?);");
+                        "INSERT INTO orders (ID_ORDER, ORDER_DATE, PHONE_NUMBER, NAMEUSER, NOTE, ID_VOUCHER,ID_ADDRESS,STATUSS, DELIVERY_CHARGES,districtID,wardID)\n" +
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?);");
                 statement.setString(1,neworder.getIdOder());
                 statement.setString(2,AppService.getNowDate().toString());
                 statement.setString(3,us1.getPhoneNumber());
@@ -93,8 +92,10 @@ public class AddOderService {
                 statement.setString(5,"Đầy đủ");
                 statement.setString(6,voucherCode);
                 statement.setString(7,us1.getIDadress());
-                statement.setString(8,"Đang Giao");
-                statement.setInt(9,20000);
+                statement.setString(8,"Đang chờ xử lý");
+                statement.setInt(9,control.getCostdeliver("3695","90750",ads1,ads2));
+                statement.setInt(10,Integer.parseInt(ads1));
+                statement.setInt(11,Integer.parseInt(ads2));
                 PreparedStatement statement2 = conn.prepareStatement(
                         "INSERT INTO order_account_details (ID_ACCOUNT, ID_ORDER)\n" +
                                 "VALUES (?,?);");

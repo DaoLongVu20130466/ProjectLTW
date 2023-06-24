@@ -6,6 +6,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 
+import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
@@ -16,9 +17,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class ApiController {
-    String username = "thanh@1234";
+    String username = "daolongvu86@123";
     String password = "123456";
 
+//    ArrayList<APIwardRespone.data> gward = this.getWardbyDTid(from_district_id);
+
+    public ApiController() {
+
+
+    }
     public String getAuthorization() throws IOException {
         URL url = new URL("http://140.238.54.136/api/auth/login?email=" + username + "&password=" + password);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -54,6 +61,34 @@ public class ApiController {
         ArrayList<APIwardRespone.data> rs = (ArrayList<APIwardRespone.data>) response.getOriginal().getData();
         return rs;
     }
+    public ApiAllOderReponse[] getAllOder() throws IOException {
+        URL url = new URL("http://140.238.54.136/api/allTransports");
+        Gson gson = new Gson();
+        ApiAllOderReponse[] response = gson.fromJson(StringAPTtoString(url), ApiAllOderReponse[].class);
+        return response;
+    }
+    public String getLocation(String from_district_id , String from_ward_id ) throws IOException {
+        ArrayList<APIDistrictRespone.data> gDistrict = this.getDistrictbyPvID("202");
+
+        String name= " TP.Hồ Chí Minh,";
+
+        for (APIDistrictRespone.data data: gDistrict
+        ) {
+            if (data.getDistrictID()==Integer.parseInt(from_district_id)) {
+                name += data.getDistrictName() + ",";
+                ArrayList<APIwardRespone.data> gward = this.getWardbyDTid(from_district_id);
+                for (APIwardRespone.data data2: gward
+                ) {
+                    if (data2.getWardCode()==Integer.parseInt(from_ward_id)) {
+                        name += data2.getWardName() ;
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        return name;
+    }
     public Date getTimedeliver(String fdistrictID , String fwardID ,String tdistrictID , String twardID) throws IOException, ParseException {
         URL url = new URL("http://140.238.54.136/api/leadTime?from_district_id=" +fdistrictID+"&from_ward_id="+fwardID +
                 "&to_district_id="+tdistrictID+"&to_ward_id="+twardID+"&height=100&length=100&width=100&weight=100");
@@ -68,17 +103,17 @@ public class ApiController {
         return ex;
     }
     public int getCostdeliver(String fdistrictID , String fwardID ,String tdistrictID , String twardID) throws IOException, ParseException {
-        URL url = new URL("http://140.238.54.136/api/calculateFee?from_district_id=" +fdistrictID+"&from_ward_id="+fwardID +
-                "&to_district_id="+tdistrictID+"&to_ward_id="+twardID+"&height=100&length=100&width=100&weight=100");
-        Gson gson = new Gson();
-        APTcostRP response = gson.fromJson(StringAPTtoStringPOST(url), APTcostRP.class);
-        ArrayList<APTcostRP.data> rs = (ArrayList<APTcostRP.data>) response.getData();
-        int ex = 0;
-        for ( APTcostRP.data e: rs
-        ) {
-            ex += e.getService_fee();
-        }
-        return ex;
+//        URL url = new URL("http://140.238.54.136/api/calculateFee?from_district_id=" +fdistrictID+"&from_ward_id="+fwardID +
+//                "&to_district_id="+tdistrictID+"&to_ward_id="+twardID+"&height=100&length=100&width=100&weight=100");
+//        Gson gson = new Gson();
+//        APTcostRP response = gson.fromJson(StringAPTtoStringPOST(url), APTcostRP.class);
+//        ArrayList<APTcostRP.data> rs = (ArrayList<APTcostRP.data>) response.getData();
+//        int ex = 0;
+//        for ( APTcostRP.data e: rs
+//        ) {
+//            ex += e.getService_fee();
+//        }
+        return 50000;
     }
     public String StringAPTtoString(URL url)  throws IOException{
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -96,7 +131,15 @@ public class ApiController {
         String json = IOUtils.toString(conn.getInputStream(), StandardCharsets.UTF_8);
         return json;
     }
-
+    public void saveOder(Order oder) throws IOException {
+        URL url  = new URL("http://140.238.54.136/api/registerTransport?from_district_id=" +"3695"+"&from_ward_id="+"90755" +
+                "&to_district_id="+oder.getDistrictID()+"&to_ward_id="+oder.getWardID()+"&height=100&length=100&width=100&weight=100");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestProperty("Authorization"," bearer "+ getAuthorization());
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setRequestMethod("POST");
+        conn.getInputStream();
+    }
     public static void main(String[] args) throws Exception {
         ApiController controller = new ApiController();
 //        controller.getProvince();
@@ -105,6 +148,11 @@ public class ApiController {
 //        SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 //        Date date1=formatter1.parse(a);
 //        System.out.println(date1.toString());
-        System.out.println(controller.getCostdeliver("2264","90816","2270","231013"));
+//        ApiAllOderReponse[] rp = controller.getAllOder();
+//        for (ApiAllOderReponse info : rp) {
+//            System.out.println(info.toString());
+//        }
+
+        System.out.println(controller.getLocation("3695","90764"));
     }
 }

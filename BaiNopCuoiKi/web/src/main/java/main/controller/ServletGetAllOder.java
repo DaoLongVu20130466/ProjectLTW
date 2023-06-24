@@ -2,6 +2,7 @@ package main.controller;
 
 import main.bean.Order;
 import main.bean.User;
+import main.bean.UserPemission;
 import main.bean.Voucher;
 import main.services.AppService;
 import main.services.OderService;
@@ -19,15 +20,22 @@ public class ServletGetAllOder extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
-        int role = user.getRole();
-        if (AppService.checkAdmin(role)) {
-        ArrayList<Order> oder = OderService.getInstance().getAllOder();
-        request.setAttribute("alloder", oder);
-        request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
-    }else {
-        request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-        request.getRequestDispatcher("/getIndex").forward(request, response);
-    }
+        if(user!=null) {
+            int role = user.getRole();
+            if (AppService.checkAdmin(role)) {
+                ArrayList<Order> oder = OderService.getInstance().getAllOder();
+                request.setAttribute("alloder", oder);
+                UserPemission userPemission = new UserPemission(user.getUserId());
+                request.setAttribute("permission", userPemission);
+                request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
+                request.getRequestDispatcher("/getIndex").forward(request, response);
+            }
+        }
+        else {
+            response.sendRedirect("404Page.html");
+        }
 }
 
     @Override

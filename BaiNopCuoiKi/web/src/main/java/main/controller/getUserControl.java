@@ -18,16 +18,17 @@ public class getUserControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<User> user = useService.getInstance().getAllUser();
         HttpSession session = request.getSession();
-        User userr = (User) session.getAttribute("auth");
-        int role = userr.getRole();
-
-        if (AppService.checkAdmin(role)) {
-        request.setAttribute("alluser", user);
-        request.getRequestDispatcher("QuanLyTaiKhoan.jsp").forward(request, response);
-    }else {
-            request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-            request.getRequestDispatcher("/getIndex").forward(request, response);
-        }
+        if (session.getAttribute("auth")!=null) {
+            User userr = (User) session.getAttribute("auth");
+            int role = userr.getRole();
+            if (AppService.checkAdmin(role)) {
+                request.setAttribute("alluser", user);
+                request.getRequestDispatcher("QuanLyTaiKhoan.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
+                request.getRequestDispatcher("/getIndex").forward(request, response);
+            }
+        }else response.sendRedirect("404Page.html");
     }
 
     @Override

@@ -90,7 +90,7 @@ public class OderService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             PreparedStatement stmt = conn.prepareStatement("\n" +
-                    "SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES \n" +
+                    "SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES,districtID,wardID \n" +
                     "from orders \n" +
                     "JOIN order_account_details \n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE orders.ID_ORDER =?");
@@ -106,6 +106,8 @@ public class OderService {
                 rsl.setNote(rs.getString(4));
                 rsl.setStatus(rs.getString(6));
                 rsl.setShip(rs.getInt(7));
+                rsl.setDistrictID(Integer.toString(rs.getInt(8)));
+                rsl.setWardID(Integer.toString(rs.getInt(9)));
                 rsl.setVoucher(voucher);
                 rsl.setAddress(ad);
                 rsl.setAllOderCart(orc);
@@ -181,6 +183,16 @@ public class OderService {
         PreparedStatement statement = conn.prepareStatement("UPDATE orders SET STATUSS = 'Đã hủy' WHERE ID_ORDER = ?");
         statement.setString(1,idoder);
         statement.executeUpdate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public void AcceptlOder(String idoder)  {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement statement = conn.prepareStatement("UPDATE orders SET STATUSS = 'Đang Giao' WHERE ID_ORDER = ?");
+            statement.setString(1,idoder);
+            statement.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

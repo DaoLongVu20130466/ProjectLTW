@@ -28,7 +28,7 @@ public class AdressService {
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-                PreparedStatement ps = conn.prepareStatement("SELECT addresss.ID_ADDRESS , COMMUNE , DISTRICT , PROVINCE , ADDRESS_DETAILS from addresss JOIN orders on orders.ID_ADDRESS = addresss.ID_ADDRESS WHERE ID_ORDER = ?");
+                PreparedStatement ps = conn.prepareStatement("SELECT addresses.ID_ADDRESS , COMMUNE , DISTRICT , PROVINCE , ADDRESS_DETAILS from addresses JOIN orders on orders.ID_ADDRESS = addresses.ID_ADDRESS WHERE ID_ORDER = ?");
 
                 ps.setString(1,oderId);
                 ResultSet rs = ps.executeQuery();
