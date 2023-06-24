@@ -100,26 +100,26 @@ public class DashBoard implements Serializable {
     public HashMap<String, Integer> increaseType(Order e) {
         for (OderCart pr : e.getAllOderCart()) {
             switch (pr.getItem().getIdType()) {
-                case "TYPE1":
+                case "CG":
                     type.replace("Cơm gà", type.get("Cơm gà") + pr.getValue());
                     break;
-                case "TYPE2":
+                case "CB":
                     type.replace("Cơm bò", type.get("Cơm bò") + +pr.getValue());
                     break;
-                case "TYPE3":
+                case "CM":
                     type.replace("Cơm Món", type.get("Cơm Món") + +pr.getValue());
                     break;
-                case "TYPE4":
+                case "CC":
                     type.replace("Cơm chiên", type.get("Cơm chiên") + +pr.getValue());
                     break;
-                case "TYPE5":
+                case "HS":
                     type.replace("Hải sản", type.get("Hải sản") + pr.getValue());
                     break;
-                case "TYPE7":
-                    type.replace("Bún phở", type.get("Bún phở") + pr.getValue());
+                case "MC":
+                    type.replace("Bún phở", type.get("MÓN CANH") + pr.getValue());
                     break;
-                case "TYPE9":
-                    type.replace("Cơm Sườn", type.get("Cơm Sườn") + pr.getValue());
+                case "TU":
+                    type.replace("Cơm Sườn", type.get("THỨC UỐNG") + pr.getValue());
                     break;
                 default:
             }

@@ -170,7 +170,7 @@
 
           <div class="boderform">
           <label class="head2">Thêm Voucher Mới</label>
-          <form action="ServletAddVoucher"  method="post" id="voucher">
+          <form action="/web_war/ServletAddVoucher"  method="post" id="voucher">
             <div>
             <label>Tên Voucher:</label>
               <input name="Names" type="text">

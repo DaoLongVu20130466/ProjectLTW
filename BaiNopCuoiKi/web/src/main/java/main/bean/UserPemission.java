@@ -55,7 +55,7 @@ public class UserPemission implements Serializable {
     public void updateRole(String roleID){
         try {
         Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-        PreparedStatement ps = conn.prepareStatement("UPDATE role SET ROLE = ? WHERE CustomerID = ?;");
+        PreparedStatement ps = conn.prepareStatement("UPDATE role SET ROLE = ? WHERE ID_USER = ?");
         ps.setString(1,roleID);
         ps.setString(2,this.UID);
         ps.executeUpdate();
@@ -144,7 +144,7 @@ public class UserPemission implements Serializable {
             return false;
     }
     public boolean canRemoveLog(){
-        if(this.logLevel > 3)
+        if(this.logLevel >= 3)
             return true;
         else
             return false;

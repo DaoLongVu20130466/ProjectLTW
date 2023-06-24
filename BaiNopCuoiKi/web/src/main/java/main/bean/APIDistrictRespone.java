@@ -41,7 +41,7 @@ public class APIDistrictRespone {
             return data;
         }
     }
-    class data{
+    public class data{
         int ProvinceID;
         int DistrictID;
         String DistrictName;

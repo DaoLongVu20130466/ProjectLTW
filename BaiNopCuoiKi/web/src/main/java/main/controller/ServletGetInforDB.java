@@ -19,16 +19,14 @@ public class ServletGetInforDB extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
         int role = user.getRole();
-
         if (AppService.checkAdmin(role)) {
-
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy");
             LocalDateTime now = LocalDateTime.now();
             String nowYear = dtf.format(now);
             DashBoard db = new DashBoard(DashBoardService.getInstance().getOderByYear(nowYear));
             request.setAttribute("dashBoard", db);
             request.setAttribute("dbm", "all");
-            request.getRequestDispatcher("/DoanhThu.jsp").forward(request, response);
+            request.getRequestDispatcher("DoanhThu.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Bạn không có quền truy cập va trang này");
             request.getRequestDispatcher("/getIndex").forward(request, response);

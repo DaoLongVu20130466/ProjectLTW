@@ -29,7 +29,7 @@ public class APIwardRespone {
             return data;
         }
     }
-    class data{
+    public class data{
         int WardCode;
         int DistrictID;
         String WardName;

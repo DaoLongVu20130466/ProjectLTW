@@ -26,12 +26,12 @@ public class VoucherService {
         Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
         Statement stmt = conn.createStatement();
         // get data from table 'student'
-        ResultSet rs = stmt.executeQuery("SELECT voucher.ID_VOUCHER, NAMES, CODE_VOUCHER, LoaiVoucher, VALUESS , START_DAY , FINISH_DAY FROM \n" +
-                "loaivoucher join \n" +
+        ResultSet rs = stmt.executeQuery("SELECT voucher.ID_VOUCHER, NAMES, CODE_VOUCHER, desciption, VALUESS , START_DAY , FINISH_DAY FROM \n" +
+                "voucher_type join\n" +
                 "voucher join \n" +
-                "voucher_list \n" +
+                "voucher_list\n" +
                 "on voucher_list.ID_VOUCHER = voucher.ID_VOUCHER\n" +
-                "on voucher.TYPE_VOUCHER = loaivoucher.TYPE_Voucher");
+                "on voucher.ID_TYPE = voucher_type.ID_TYPE");
         // show data
         while (rs.next()) {
             Date start = new Date();
@@ -68,14 +68,14 @@ public class VoucherService {
     public void addVoucher(String vcCode , String vcNames , int type , int values , String dayStart , String dayend ){
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO voucher(ID_VOUCHER,CODE_VOUCHER,TYPE_VOUCHER, VALUESS , NAMES)\n" +
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO voucher(ID_VOUCHER,CODE_VOUCHER,ID_TYPE, VALUESS , NAMES)\n" +
                     "VALUES (?,?,?,?,?)");
             stmt.setString(1,vcCode);
             stmt.setString(2,vcCode);
             stmt.setInt(3,type);
             stmt.setInt(4,values);
             stmt.setString(5,vcNames);
-            PreparedStatement stmt2 = conn.prepareStatement("INSERT INTO voucher_list(ID,ID_VOUCHER,START_DAY,FINISH_DAY)\n" +
+            PreparedStatement stmt2 = conn.prepareStatement("INSERT INTO voucher_list(ID_ACCOUNT,ID_VOUCHER,START_DAY,FINISH_DAY)\n" +
                     "VALUES (?,?,?,?)");
             stmt2.setString(1,vcCode);
             stmt2.setString(2,vcCode);
@@ -94,7 +94,7 @@ public class VoucherService {
         try {
             vchr = new Voucher();
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            PreparedStatement stmt = conn.prepareStatement("SELECT voucher.ID_VOUCHER, voucher.NAMES , TYPE_VOUCHER, VALUESS FROM voucher join orders on voucher.ID_VOUCHER = orders.ID_VOUCHER WHERE ID_ORDER = ?");
+            PreparedStatement stmt = conn.prepareStatement("SELECT voucher.ID_VOUCHER, voucher.NAMES , ID_TYPE, VALUESS FROM voucher join orders on voucher.ID_VOUCHER = orders.ID_VOUCHER WHERE ID_ORDER = ?");
             stmt.setString(1, oderId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
