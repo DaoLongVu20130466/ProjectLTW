@@ -197,7 +197,7 @@
         <%}%>
 
 
-        <form action="/BaiNopCuoiKi_war/updateEditProduct"  enctype="multipart/form-data" onSubmit="return submitForm(this);" method="post" onSubmit="">
+        <form action="updateEditProduct"  enctype="multipart/form-data" onSubmit="return submitForm(this);" method="post" onSubmit="">
 
           <div class='add-input' style="display: none">
             ID món ăn
