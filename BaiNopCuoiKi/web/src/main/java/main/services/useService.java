@@ -1,4 +1,5 @@
 package main.services;
+import main.bean.Image;
 import main.bean.Products;
 import main.db.ConnectMysqlExample;
 import main.bean.User;
@@ -7,6 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 public class useService {
     public static useService instance;
@@ -28,7 +30,7 @@ public class useService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM favourite " +
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM favourites " +
                     "WHERE ID_FOOD = ? AND ID_ACCOUNT =?");
             ps.setString(1, idf);
             ps.setString(2, id);
@@ -81,9 +83,16 @@ public class useService {
     }
 
     public User getAllUserByID(String iduser) {
+        String query="SELECT user_information.USER_NAMES ,\n" +
+                "                    addresses.PROVINCE , user_information.PHONE_NUMBER, accounts.STATUSS, accounts.AVATAR,accounts.EMAIL, accounts.ID_ACCOUNT \n" +
+                "                    FROM  accounts join  (user_information JOIN addresses \n" +
+                "                    on user_information.ID_ADDRESS = addresses.ID_ADDRESS)  on  \n" +
+                "                    accounts.ID_USER = user_information.ID_USER\n" +
+                "                    WHERE user_information.ID_USER = ?";
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
 
             PreparedStatement ps = conn.prepareStatement("SELECT user_information.USER_NAMES , " +
                     "addresses.PROVINCE , user_information.PHONE_NUMBER, accounts.STATUSS, accounts.AVATAR,accounts.EMAIL, accounts.ID_ACCOUNT \n" +
@@ -95,13 +104,13 @@ public class useService {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 String userName = rs.getNString(1);
-                String provine = rs.getNString(2);
+                String province = rs.getNString(2);
                 String phoneNumber = rs.getString(3);
                 String status = rs.getNString(4);
                 String avatar = rs.getString(5);
                 String email = rs.getString(6);
-                String idacc = rs.getString(7);
-                return new User(userName, provine, phoneNumber, status, avatar, email, idacc);
+                String idAcc = rs.getString(7);
+                return new User(userName, province, phoneNumber, status, avatar, email, idAcc);
             }
             // close connection
             conn.close();
@@ -248,6 +257,8 @@ public class useService {
     }
 
     public int checkIDFOOD() {
+        Random random = new Random();
+        int rd = random.nextInt(1000000000);
         int b = 0;
 
         try {
@@ -259,7 +270,7 @@ public class useService {
             );
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                b=rs.getInt(1) + 1;
+                b=rs.getInt(1) + rd;
             }
 
         } catch (Exception ex) {
@@ -270,7 +281,6 @@ public class useService {
     }
     public int checkIDIMG() {
         int b = 0;
-
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_IMG) FROM image "
@@ -279,12 +289,55 @@ public class useService {
             while (rs.next()) {
                 b=rs.getInt(1) + 1;
             }
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return b;
-
+    }
+    public int checkIDIMG2() {
+        int b = 0;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_IMG) FROM image "
+            );
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b=rs.getInt(1) + 2;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return b;
+    }
+    public int checkIDIMG3() {
+        int b = 0;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_IMG) FROM image "
+            );
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b=rs.getInt(1) + 3;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return b;
+    }
+    public int checkIDIMG4() {
+        int b = 0;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_IMG) FROM image "
+            );
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b=rs.getInt(1) + 4;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return b;
     }
 
 
@@ -470,19 +523,79 @@ public class useService {
 
 
     }
-    public void deletaFood(String idf, String size) {
+    public void deletaFood(String idf) {
+        ArrayList<Image> list = ProductsService.getInstance().getImgEdit(idf);
+        ArrayList<Image> list2 = ProductsService.getInstance().getImgCmt(idf);
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             PreparedStatement ps = conn.prepareStatement("DELETE FROM FOOD " +
-                    "WHERE ID_FOOD = ? AND ID_SIZE =?");
+                    "WHERE FOOD.ID_FOOD = ? ");
             ps.setString(1,idf);
-            ps.setString(2,size);
             ps.executeUpdate();
+            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM price " +
+                    "WHERE price.ID_FOOD = ? ");
+            ps1.setString(1,idf);
+            ps1.executeUpdate();
+
+            PreparedStatement ps2 = conn.prepareStatement("DELETE FROM image_detail " +
+                    "WHERE image_detail.ID_FOOD = ? ");
+            ps2.setString(1,idf);
+            ps2.executeUpdate();
+            PreparedStatement ps3 = conn.prepareStatement("DELETE FROM size_details " +
+                    "WHERE size_details.ID_FOOD = ? ");
+            ps3.setString(1,idf);
+            ps3.executeUpdate();
+
+            PreparedStatement ps66 = conn.prepareStatement("DELETE FROM comment " +
+                    "WHERE comment.ID_FOOD = ? ");
+            ps66.setString(1,idf);
+            ps66.executeUpdate();
+
+            for (Image image:list) {
+                String idimg= image.getId();
+                PreparedStatement ps4 = conn.prepareStatement("DELETE FROM image " +
+                        "WHERE image.ID_IMG = ? ");
+                ps4.setString(1,idimg);
+                ps4.executeUpdate();
+            }
+            for (Image image:list2) {
+                String idimg2= image.getId();
+                PreparedStatement ps5 = conn.prepareStatement("DELETE FROM image " +
+                        "WHERE image.ID_IMG = ? ");
+                ps5.setString(1,idimg2);
+                ps5.executeUpdate();
+            }
         }catch (Exception e){
 
         }
     }
+
+    public void deleteCmt(String idf) {
+        ArrayList<Image> list2 = ProductsService.getInstance().getImgCmt2(idf);
+
+
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+
+            PreparedStatement ps66 = conn.prepareStatement("DELETE FROM comment " +
+                    "WHERE comment.ID = ? ");
+            ps66.setString(1,idf);
+            ps66.executeUpdate();
+
+            for (Image image:list2) {
+                String idimg2= image.getId();
+                PreparedStatement ps5 = conn.prepareStatement("DELETE FROM image " +
+                        "WHERE image.ID_IMG = ? ");
+                ps5.setString(1,idimg2);
+                ps5.executeUpdate();
+            }
+
+        }catch (Exception e){
+
+        }
+    }
+
 
     public User getUserById(String Uid) {
         User user = new User();
@@ -509,7 +622,7 @@ public class useService {
         }
         return user;
     }
-    public ArrayList<User> getComment(String idf) {
+    public ArrayList<User> getComment(String idf ) {
         ArrayList<User> cmt = new ArrayList<User>();
 
         try {
@@ -517,10 +630,11 @@ public class useService {
             // crate statement
             Statement stmt = conn.createStatement();
             // get data from table 'student'
-            PreparedStatement ps = conn.prepareStatement("SELECT accounts.AVATAR, user_information.USER_NAMES, `comment`.CMT,image.SRC\n" +
+            PreparedStatement ps = conn.prepareStatement("SELECT accounts.AVATAR, user_information.USER_NAMES, `comment`.CMT,image.SRC,`comment`.ID, user_information.ID_USER \n" +
                     "FROM (`comment` JOIN ( accounts JOIN user_information on accounts.ID_USER = user_information.ID_USER)\n" +
                     " ON `comment`.ID_ACCOUNT = accounts.ID_ACCOUNT ) LEFT JOIN image ON `comment`.ID_IMG = image.ID_IMG\n" +
-                    "WHERE `comment`.ID_FOOD =?"  );
+                    "WHERE `comment`.ID_FOOD =?" +
+                    "LIMIT 5 OFFSET 0"  );
             ps.setString(1,  idf);
 
             ResultSet rs = ps.executeQuery();
@@ -529,7 +643,9 @@ public class useService {
                         rs.getString(1),
                         rs.getNString(2),
                         rs.getNString(3),
-                        rs.getNString(4))
+                        rs.getNString(4),
+                        rs.getInt(5),
+                        rs.getNString(6))
                 );
             }
             conn.close();
@@ -567,7 +683,7 @@ public class useService {
     }
     public static void main(String[] args) {
         useService u = new useService();
-        System.out.println(u.getComment("CG7"));
+        System.out.println(u.getComment("CG1"));
     }
 
 

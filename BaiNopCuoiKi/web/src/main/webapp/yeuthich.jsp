@@ -69,7 +69,7 @@
                             <%
                                 String a = (String) session.getAttribute("login");
                                 User user = (User) session.getAttribute("auth");
-                                User userID = (User) session.getAttribute("userID");
+                                User userID = (User) request.getAttribute("userID");
                                 ArrayList<Products> listP = (ArrayList<Products>) request.getAttribute("product");
 
 
@@ -173,7 +173,7 @@
                     <div class="wrapper">
                         <div class="left">
                             <img src="<%=userID.getAvatar()%>" alt="user" width="100">
-                            <h4><%=user.getUserName()%></h4>
+                            <h4><%=userID.getUserName()%></h4>
                             <p></p>
                         </div>
                         <div class="right">
@@ -183,7 +183,7 @@
 
                                 <div class="info_data"> <div class="data">
                                     <h4> Tên </h4>
-                                    <p><%=user.getName()%></p>
+                                    <p><%=userID.getUserName()%></p>
                                 </div>
                                     <div class="data">
                                         <h4>Địa CHỉ</h4>
@@ -251,11 +251,11 @@
                                     <tr>
 
                                         <td class="shoping__cart__item">
-                                            <img src="<%=p.getPath()%>" alt="" style="max-width: 20%;">
+                                            <img src="<%=p.getIdImg()%>" alt="" style="max-width: 20%;">
                                             <h5><%=p.getFoodName()%></h5>
                                         </td>
                                         <td class="shoping__cart__price">
-                                            <%=p.getLISTED_PRICE()%> VND
+                                            <%=p.getPrice()%> VND
                                         </td>
                                         <td class="shoping__cart__quantity">
                                             <span>1</span>

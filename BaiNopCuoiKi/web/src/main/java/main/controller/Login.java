@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
              String src ="Login";
              String content = "Đã đăng nhập vào hệ thống";
              String status = "Hoàn thành";
-//             Log.WriteLog(level, user0,src,content,status);
+//             Log.writeLog(level, user0,src,content,status);
          response.sendRedirect("getIndex");
 
         }

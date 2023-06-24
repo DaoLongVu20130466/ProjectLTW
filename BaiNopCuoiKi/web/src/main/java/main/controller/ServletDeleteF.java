@@ -12,10 +12,10 @@ public class ServletDeleteF extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idf = request.getParameter("fid");
-        String size = request.getParameter("size");
 
-        useService.getInstance().deletaFood(idf,size);
-        response.sendRedirect("/getAllProductByAdmin");
+
+        useService.getInstance().deletaFood(idf);
+        response.sendRedirect("getAllProductByAdmin");
 
     }
 

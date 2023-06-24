@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.Image;
 import main.bean.Products;
 import main.bean.TypeProducts;
 import main.services.ProductsService;
@@ -18,9 +19,11 @@ public class ServletEditProduct extends HttpServlet {
         String size = request.getParameter("size");
         ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
         request.setAttribute("alltype",type);
+        ArrayList<Image> img = ProductsService.getInstance().getImgEdit(idf);
 
-//        Products pro = ProductsService.getInstance().getProductByIDSize(idf,size);
-//        request.setAttribute("pro",pro);
+        Products pro = ProductsService.getInstance().getProductEdit(idf);
+        request.setAttribute("pro",pro);
+        request.setAttribute("img",img);
         request.getRequestDispatcher("/editProdcut.jsp").forward(request,response);
 
 
