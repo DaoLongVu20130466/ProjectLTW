@@ -1,5 +1,7 @@
 package main.controller;
 
+import main.bean.Log;
+import main.bean.User;
 import main.services.ProductsService;
 
 import javax.servlet.*;
@@ -86,6 +88,14 @@ public class ServletUpdateEditProduct extends HttpServlet {
             String idimg4 = request.getParameter("idimg4");
 
             ProductsService.getInstance().updateProduct(idfood, tenmonan, optionSize, niemyet, optionType, optionCombo, optionSale, optionHot, Mota, src, giaban, src2, src3, src4, idimg1, idimg2, idimg3, idimg4);
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("auth");
+            int level = 2;
+            String user0 = user.getUserName();
+            String source ="Edit Product";
+            String content = "Thay đổi sản phẩm ID= "+idfood;
+            String status = "Hoàn thành";
+            Log.writeLog(level, user0,source,content,status);
         }
         catch (Exception e){
             e.printStackTrace();

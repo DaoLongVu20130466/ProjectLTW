@@ -216,34 +216,56 @@ public class ProductsService {
         return allProductByCombo;
     }
 
-    public List<Products> getAllproductsByType(String type){
+    public List<Products> getAllproductsByType(String type,int page){
         ArrayList<Products> allProductByType = new ArrayList<Products>();
+        String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
+                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.SRC FROM food " +
+                "WHERE food.id_TYPE=?" +
+                "LIMIT 12 OFFSET ?";
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE, PRICE.PRICE  , image.SRC\n" +
-                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
-                    "WHERE food.ID_TYPE = ?"
-            );
+            PreparedStatement ps = conn.prepareStatement( query4);
             ps.setString(1, type);
+            ps.setInt(2, page);
             ResultSet rs = ps.executeQuery();
-            //Xong
-
             while (rs.next()) {
                 allProductByType.add(new Products(
                         rs.getString(1),
                         rs.getNString(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getString(5)));
+                        rs.getBoolean(3),
+                        rs.getBoolean(4),
+                        rs.getBoolean(5),
+                        rs.getNString(6),
+                        rs.getString(7),
+                        rs.getInt(8),
+                        rs.getInt(9),
+                        rs.getNString(10)
+
+                ));
             }
             conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
+
         }
         return allProductByType;
+    }
+    public int getPageAllProType(String type) {
+        int b = 0;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(ID_FOOD) FROM food WHERE food.ID_TYPE = ? "
+            );
+            ps.setString(1, type);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b=rs.getInt(1);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return b;
     }
 
     public Products getProductByID(String fid){
@@ -379,7 +401,7 @@ public class ProductsService {
 
 
     public void addProduct
-            (String tenmonan,
+            (String Idfood ,String tenmonan,
              String optionSize,
              int niemyet,
              String optionType,
@@ -394,7 +416,7 @@ public class ProductsService {
              String img4
 
             ){
-        String Idfood = "CG" + useService.getInstance().checkIDFOOD();
+
         String id = "IMG"+useService.getInstance().checkIDIMG();
         String id2 = "IMG"+useService.getInstance().checkIDIMG2();
         String id3 = "IMG"+useService.getInstance().checkIDIMG3();
@@ -473,33 +495,38 @@ public class ProductsService {
 
 
 
-    public List<Products> getAllproductSearch(String txt){
+    public List<Products> getAllproductSearch(String txt, int page){
         ArrayList<Products> allProductSearch = new ArrayList<Products>();
+        String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
+                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.SRC FROM food " +
+                "WHERE food.FOOD_NAME  LIKE ?" +
+                "LIMIT 12 OFFSET ?";
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-
-            PreparedStatement ps = conn.prepareStatement(" SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
-                    "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
-                    " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
-                    " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
-                    "WHERE food.FOOD_NAME LIKE ?"
-
-
-            );
-            ps.setString(1, "%" + txt + "%");
+            PreparedStatement ps = conn.prepareStatement( query4);
+            ps.setString(1, "%"+txt+"%");
+            ps.setInt(2, page);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 allProductSearch.add(new Products(
                         rs.getString(1),
                         rs.getNString(2),
-                        rs.getString(3),
-                        rs.getNString(4), rs.getInt(4),
-                        rs.getInt(6), rs.getString(5)));
+                        rs.getBoolean(3),
+                        rs.getBoolean(4),
+                        rs.getBoolean(5),
+                        rs.getNString(6),
+                        rs.getString(7),
+                        rs.getInt(8),
+                        rs.getInt(9),
+                        rs.getNString(10)
+
+                ));
             }
             conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
+
         }
         return allProductSearch;
     }

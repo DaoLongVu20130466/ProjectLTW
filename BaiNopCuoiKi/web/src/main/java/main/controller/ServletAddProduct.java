@@ -1,7 +1,9 @@
 package main.controller;
 
+import main.bean.Log;
 import main.bean.User;
 import main.services.ProductsService;
+import main.services.useService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -57,6 +59,7 @@ public class ServletAddProduct extends HttpServlet {
             String src4 = "img/Data/"+filename4;
 
 
+            String Idfood = "CG" + useService.getInstance().checkIDFOOD();
             String tenmonan = request.getParameter("tenmonan");
             String optionSize = request.getParameter("optionSize");
             int giaban = (int) Integer.parseInt(request.getParameter("giaban"));
@@ -66,8 +69,15 @@ public class ServletAddProduct extends HttpServlet {
             int optionSale = Integer.parseInt(request.getParameter("optionSale"));
             int optionHot = Integer.parseInt(request.getParameter("optionHot"));
             String Mota = request.getParameter("Mota");
-            ProductsService.getInstance().addProduct(tenmonan,optionSize,niemyet,optionType,optionCombo,optionSale,optionHot,Mota,src,giaban,src2,src3,src4);
-
+            ProductsService.getInstance().addProduct(Idfood,tenmonan,optionSize,niemyet,optionType,optionCombo,optionSale,optionHot,Mota,src,giaban,src2,src3,src4);
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("auth");
+            int level = 1;
+            String user0 = user.getUserName();
+            String source ="Add New Product";
+            String content = "Thêm sản phẩm ID= "+Idfood;
+            String status = "Hoàn thành";
+            Log.writeLog(level, user0,source,content,status);
         }
         catch (Exception e){
             e.printStackTrace();
