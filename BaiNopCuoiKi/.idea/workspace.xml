@@ -10,28 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/404ne.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/AddCommentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/AddCommentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAcceptOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAcceptOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddNewProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddNewProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteAllLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeleteAllLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOderAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOderAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllProductAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllProductAd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/addtoCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/addtoCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getActivate.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getActivate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSearchControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/product-detail.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -380,7 +361,7 @@
       <workItem from="1687417059327" duration="14226000" />
       <workItem from="1687488827086" duration="22873000" />
       <workItem from="1687575614861" duration="19854000" />
-      <workItem from="1687665990817" duration="17289000" />
+      <workItem from="1687665990817" duration="17931000" />
     </task>
     <servers />
   </component>
