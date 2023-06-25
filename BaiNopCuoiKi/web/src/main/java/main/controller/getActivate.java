@@ -22,13 +22,20 @@ public class getActivate extends HttpServlet {
 
         if (AppService.checkAdmin(role)) {
             UserPemission actor = new UserPemission(user.getUserId());
-            if (actor.canAdEditproduct()) {
+            if (actor.canWatchLog()) {
                 ArrayList<Log> allLog = LogController.getAllLog();
                 request.setAttribute("allLog", allLog);
+                request.setAttribute("actor", actor);
+                int level = 2;
+                String user0 = user.getUserName();
+                String source = "getActivate";
+                String content = "Xem Log";
+                String status = "Hoàn thành";
+                Log.writeLog(level, user0, source, content, status);
                 request.getRequestDispatcher("HoatDong.jsp").forward(request, response);
 
             }else {
-                response.sendRedirect("/404Page.html");
+                response.sendRedirect("./404ne.html");
             }
 
         }else {

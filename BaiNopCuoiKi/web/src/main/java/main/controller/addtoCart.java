@@ -15,8 +15,14 @@ public class addtoCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id= request.getParameter("id");
+        String sl=  request.getParameter("soluong");
         Products p = ProductsService.getInstance().getProductByID(id);
-        p.setQuantity(1);
+        if (sl == null) {
+            p.setQuantity(1);
+        }else {
+            int soluong = Integer.parseInt(sl);
+            p.setQuantity(soluong);
+        }
         HttpSession session = request.getSession(true);
         Cart cart=(Cart) session.getAttribute("cart");
 

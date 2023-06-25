@@ -27,7 +27,7 @@ public class ServletAddNewProduct extends HttpServlet {
                 request.setAttribute("alltype", type);
                 request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
             }else {
-                response.sendRedirect("/404Page.html");
+                response.sendRedirect("./404ne.html");
             }
 
         }else {

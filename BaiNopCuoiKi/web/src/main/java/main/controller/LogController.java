@@ -26,7 +26,7 @@ public class LogController {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getTimestamp(6).toString(),
+                        rs.getTimestamp(6),
                         rs.getString(7)));
             }
             conn.close();

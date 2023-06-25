@@ -1,9 +1,6 @@
 package main.controller;
 
-import main.bean.ApiController;
-import main.bean.Order;
-import main.bean.User;
-import main.bean.UserPemission;
+import main.bean.*;
 import main.services.AppService;
 import main.services.OderService;
 
@@ -32,6 +29,12 @@ public class ServletAcceptOder extends HttpServlet {
                 UserPemission userPemission = new UserPemission(user.getUserId());
                 request.setAttribute("permission", userPemission);
                 controller.saveOder(order);
+                    int level = 0;
+                    String user0 = user.getUserName();
+                    String source = "ServletAcceptOder";
+                    String content = "Chấp nhận oder";
+                    String status = "Hoàn thành";
+                    Log.writeLog(level, user0, source, content, status);
                 request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
                 }else {
                     response.sendRedirect("/404Page.html");}

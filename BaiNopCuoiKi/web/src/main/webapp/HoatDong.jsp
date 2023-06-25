@@ -1,7 +1,8 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.User" %>
-<%@ page import="main.bean.Log" %><%--
+<%@ page import="main.bean.Log" %>
+<%@ page import="main.bean.UserPemission" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 5/01/2023
@@ -175,6 +176,11 @@
       </div>
       <div class="col-lg-10 col-md-5">
         <h2>Toàn bộ hoạt động:</h2>
+        <% UserPemission per = (UserPemission) request.getAttribute("actor");
+        if(per.canRemoveLog()){
+        %>
+        <a href="./ServletDeleteAllLog"> Xóa toàn bộ log !</a>
+        <%}%>
         <div class="TaiKhoan">
 
           <table class="cd-table order-table table">
@@ -201,9 +207,9 @@
               <td><%=p.getStatus()%></td>
               <td><%=p.getLevel()%></td>
               <td>
-
+                <%if(per.canRemoveLog()){%>
                 <a href="ServletDeletelog?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
-
+              <%}%>
             </tr>
             <%}%>
             </tbody>

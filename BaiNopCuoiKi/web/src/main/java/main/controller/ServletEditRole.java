@@ -36,6 +36,6 @@ public class ServletEditRole extends HttpServlet {
             Log.writeLog(level, user0, source, content, status);
             response.sendRedirect("/web_war/getUserControl");
         }
-        else response.sendRedirect("404Page.html");
+        else response.sendRedirect("./404ne.html");
     }
 }

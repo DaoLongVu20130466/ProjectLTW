@@ -14,7 +14,7 @@ public class Log {
     String Id_User;
     String src;
     String content;
-    String date;
+    Timestamp date;
     String status;
     static Log instance;
 
@@ -29,7 +29,7 @@ public class Log {
     }
 
 
-    public Log(int id, int level, String id_User, String src, String content, String date, String status) {
+    public Log(int id, int level, String id_User, String src, String content, Timestamp date, String status) {
         this.id = id;
         this.level = level;
         Id_User = id_User;
@@ -82,7 +82,7 @@ public class Log {
         return content;
     }
 
-    public String getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
@@ -112,6 +112,18 @@ public class Log {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
                PreparedStatement prmt = conn.prepareStatement("DELETE FROM log WHERE ID_LOG = ?");
                 prmt.setString(1,id);
+                prmt.execute();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+    public void DeleteAllLog(){
+        {
+            try {
+                Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+                PreparedStatement prmt = conn.prepareStatement("DELETE FROM log ");
                 prmt.execute();
             } catch (SQLException e) {
                 throw new RuntimeException(e);

@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.Log;
 import main.bean.User;
 import main.services.ProductsService;
 
@@ -50,6 +51,12 @@ public class AddCommentServlet extends HttpServlet {
             String idf = (String) session.getAttribute("fid2");
             String text = request.getParameter("cmt");
             ProductsService.getInstance().addComment(idf,iduser,text,src);
+            int level = 0;
+            String user0 = user.getUserName();
+            String source = "AddCommentServlet";
+            String content = "Comment";
+            String status = "Hoàn thành";
+            Log.writeLog(level, user0, source, content, status);
         }
         catch (Exception e){}
         response.sendRedirect("detail");
