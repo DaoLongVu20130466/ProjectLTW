@@ -2,6 +2,7 @@ package main.bean;
 
 import main.services.AppService;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,6 +21,7 @@ public class Order implements Serializable  {
     int net;
     int total;
     Address address;
+    String addresss;
 
     String wardID;
 
@@ -55,7 +57,14 @@ public class Order implements Serializable  {
     public void setDayCrate(Date dayCrate) {
         this.dayCrate = dayCrate;
     }
+    public void update() throws IOException {
+        setAddresss();
+    }
 
+    public void setAddresss() throws IOException {
+        ApiController control = new ApiController();
+        this.addresss = "Hồ Chí Minh "+ control.getLocation(districtID,wardID);
+    }
     public String getWardID() {
         return wardID;
     }
@@ -165,8 +174,8 @@ public class Order implements Serializable  {
         this.allOderCart = allOderCart;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getAddress() {
+        return addresss;
     }
 
     public int getMouth(){

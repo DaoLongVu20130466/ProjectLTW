@@ -92,8 +92,10 @@ public class ApiAllOderReponse {
 
     public void update() throws IOException, ParseException {
         ApiController c = new ApiController();
+        voidGetTime(c);
 //        getfrom();
-        getTo();
+        getTo(c);
+
 //        setLeadTime(c.getTimedeliver(fromDistrictId,fromWardId,toDistrictId,toWardId).toString());
     }
     public int getWidth() {
@@ -104,9 +106,11 @@ public class ApiAllOderReponse {
         ApiController c = new ApiController();
         setFromDistrictId(c.getLocation(fromDistrictId,fromWardId));
     }
-    public void getTo() throws IOException {
-        ApiController c = new ApiController();
+    public void getTo(ApiController c) throws IOException {
         setToDistrictId(c.getLocation(toDistrictId,toWardId));
+    }
+    public void voidGetTime(ApiController c) throws IOException, ParseException {
+        setLeadTime(c.getTimedeliver("3695","90755",toDistrictId,toWardId).toString());
     }
     public void setWidth(int width) {
         this.width = width;

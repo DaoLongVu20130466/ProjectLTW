@@ -192,7 +192,9 @@
                             </thead>
                             <%
                                 ArrayList<User> list = (ArrayList<User>) request.getAttribute("alluser");
+
                                 for (User item: list) {
+                                    if (!item.getUserId().equals("USER1")) {
                             %>
                             <tbody>
                             <tr>
@@ -215,6 +217,7 @@
                                         else if(item.getStatusInt() == 0) {
                                     %>
                                     <a href="ServletLock?uid=<%=item.getUserId()%>" methods="get"><i class="fa fa-lock" aria-hidden="true"></i> Khóa</a></td>
+                                <%}%>
                                 <%}%>
 
                             </tr>

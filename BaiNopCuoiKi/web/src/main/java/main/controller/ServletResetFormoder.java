@@ -44,7 +44,7 @@ public class ServletResetFormoder extends HttpServlet {
 
                } else {
                    request.setAttribute("error", "Thanh toán thất bại");
-                   request.getRequestDispatcher("/404page.html").forward(request, response);
+                   response.sendRedirect("/404page.html");
                }
            }else{
                request.setAttribute("error", "Vui lòng đang nhập để thanh toán");

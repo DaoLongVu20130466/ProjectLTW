@@ -60,6 +60,7 @@ public class Products implements Serializable {
         this.idType = string3;
     }
 
+
     public Products(String idFood, String foodName, int price, String idImg) {
         this.idFood = idFood;
         this.foodName = foodName;

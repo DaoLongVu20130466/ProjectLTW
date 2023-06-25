@@ -733,7 +733,7 @@ public class ProductsService {
                         rs.getString(7),
                         rs.getInt(8),
                         rs.getInt(9)
-                        );
+                );
                 //Xong
             }
             conn.close();

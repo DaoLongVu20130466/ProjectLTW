@@ -158,6 +158,8 @@
                 <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
                 <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
                 <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                <li><a href="ServletVoucher"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
+                <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
             </ul>
           </div>
         </div>
