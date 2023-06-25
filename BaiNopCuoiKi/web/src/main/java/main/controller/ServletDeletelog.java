@@ -12,9 +12,9 @@ import java.io.IOException;
 public class ServletDeletelog extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String logId = request.getParameter("LogId");
+        String logId = request.getParameter("fid");
         Log.getInstance().DeleteLog(logId);
-        request.getRequestDispatcher("/TruySuatLog.jsp").forward(request, response);
+        request.getRequestDispatcher("/getActivate").forward(request, response);
     }
 
     @Override

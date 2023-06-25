@@ -229,7 +229,7 @@
           <div class='add-input'>
             Loại món ăn: <span>*</span>
 
-            <form action="" class="typeAdd">
+
               <select name="optionType"  value="<%=pro.getIdType()%>">
                 <%
                   for ( TypeProducts t : listType
@@ -242,28 +242,42 @@
 
 
           <div class='add-input'>
-            Món ăn Combo:<span>*</span>
+            Món ăn Combo:<span></span>
             <select name="optionCombo" >
+
+              <% if (pro.isCombo() == true){%>
+              <option value="1"> COMBO </option>
+              <option value="0"> KHÔNG </option>
+              <%}else {%>
               <option value="0"> KHÔNG </option>
               <option value="1"> COMBO </option>
+              <%}%>
             </select>
           </div>
           <div class='add-input'>
-            Món ăn Sale:<span>*</span>
+            Món ăn Sale:<span></span>
             <select name="optionSale" >
+              <% if (pro.isIdSale() == true){%>
               <option value="1"> SALE </option>
               <option value="0"> KHÔNG SALE </option>
+              <%}else {%>
+              <option value="0"> KHÔNG SALE </option>
+              <option value="1"> SALE </option>
+              <%}%>
             </select>
           </div>
 
           <div class='add-input'>
             Món ăn hot:<span>*</span>
             <select name="optionHot" >
+              <% if (pro.isHot() == true){%>
               <option value="1"> HOT </option>
               <option value="0"> NORMAL </option>
+              <%}else {%>
+              <option value="0"> NORMAL </option>
+              <option value="1"> HOT </option>
+              <%}%>
             </select>
-          </div>
-
           <div class='add-input'>
             Mô tả<span>*</span>
             <input type='text' name='Mota' placeholder="Mô tả"value="<%=pro.getIdDes()%>" required>
@@ -384,7 +398,7 @@
       </form>
 
     </div>
-  </div>
+  </div></div>
 </section>
 <!-- Product Section End -->
 

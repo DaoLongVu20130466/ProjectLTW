@@ -2,6 +2,7 @@ package main.bean;
 
 import main.services.AppService;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,6 +21,7 @@ public class Order implements Serializable  {
     int net;
     int total;
     Address address;
+    String addresss;
 
     String wardID;
 
@@ -42,6 +44,20 @@ public class Order implements Serializable  {
         this.voucher = voucher;
         this.allOderCart = allproduct;
     }
+    public Order(String idOder, String pbuyName, String phoneNumber, String note, Date dayCrate, String status, String idAccount, Address address, Voucher voucher, ArrayList<OderCart> allproduct,String string1, String string2) {
+        this.idOder = idOder;
+        this.pbuyName = pbuyName;
+        this.phoneNumber = phoneNumber;
+        Note = note;
+        this.dayCrate = dayCrate;
+        this.status = status;
+        this.idAccount = idAccount;
+        this.address = address;
+        this.voucher = voucher;
+        this.allOderCart = allproduct;
+        this.districtID =string1;
+        this.wardID = string2;
+    }
 
     public Order(String idOder, String idAccount, Address address, ArrayList<OderCart> products, String status, Voucher voucher) {
         this.idOder = idOder;
@@ -50,12 +66,31 @@ public class Order implements Serializable  {
         this.idAccount = idAccount;
         this.address = address;
         this.voucher = voucher;
+
+    }
+    public Order(String idOder, String idAccount, Address address, ArrayList<OderCart> products, String status, Voucher voucher,String string1, String string2) {
+        this.idOder = idOder;
+        this.status = status;
+        this.allOderCart = products;
+        this.idAccount = idAccount;
+        this.address = address;
+        this.voucher = voucher;
+        this.districtID =string1;
+        this.wardID = string2;
+
     }
 
     public void setDayCrate(Date dayCrate) {
         this.dayCrate = dayCrate;
     }
+    public void update() throws IOException {
+        setAddresss();
+    }
 
+    public void setAddresss() throws IOException {
+        ApiController control = new ApiController();
+        this.addresss = control.getLocation(districtID,wardID);
+    }
     public String getWardID() {
         return wardID;
     }
@@ -165,8 +200,8 @@ public class Order implements Serializable  {
         this.allOderCart = allOderCart;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getAddress() {
+        return addresss;
     }
 
     public int getMouth(){

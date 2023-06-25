@@ -116,7 +116,7 @@
         <div class="breadcrumb__text">
           <h2>Trang Admin</h2>
           <div class="breadcrumb__option">
-            <a href="./index.html">Admin</a>
+            <a href="getIndex">Admin</a>
             <span>Truy Suất Đơn Hàng</span>
           </div>
         </div>
@@ -137,11 +137,14 @@
             <h4>Quản Lý</h4>
             <ul>
               <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
-                                <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-                                <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
-                                <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-                                <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-                                <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+                <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
+                <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
+                <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
+                <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+                <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                <li><a href="getActivate"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
+                <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
             </ul>
           </div>
         </div>
@@ -169,7 +172,7 @@
                         <tr>
                             <td><%=item.getIdOder()%></td>
                             <td><%=item.getIdAccount()%></td>
-                            <td><%=item.getAddress().getProvine()%></td>
+                            <td><%=item.getAddress()%></td>
                             <td><%=item.getTotalValue()%></td>
                             <td><%=item.getStatus()%></td>
                             <td><a href="/web_war/ServletInforOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>

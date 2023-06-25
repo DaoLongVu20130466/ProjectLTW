@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class ApiController {
-    String username = "daolongvu86@123";
+    String username = "daolongvu86@1234";
     String password = "123456";
 
 //    ArrayList<APIwardRespone.data> gward = this.getWardbyDTid(from_district_id);
@@ -153,6 +153,6 @@ public class ApiController {
 //            System.out.println(info.toString());
 //        }
 
-        System.out.println(controller.getLocation("3695","90764"));
+        System.out.println(controller.getTimedeliver("3695","90755","3695","90766").toString());
     }
 }

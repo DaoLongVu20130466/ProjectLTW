@@ -58,6 +58,7 @@ public class Products implements Serializable {
         this.basePrice = anInt1;
         this.img = string2;
         this.idType = string3;
+    }
 
 
     public Products(String idFood, String foodName, int price, String idImg) {

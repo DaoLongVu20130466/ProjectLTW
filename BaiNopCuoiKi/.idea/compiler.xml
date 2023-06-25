@@ -9,5 +9,10 @@
         <module name="web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BaiNopCuoiKi.main" target="18" />
+      <module name="BaiNopCuoiKi.test" target="18" />
+      <module name="vn.nhom37.web.BaiNopCuoiKi" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -93,7 +93,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -118,7 +118,7 @@
                             if (user.getRole()>=1  ) {
                         %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
-                        <li> <a href="getPageAD"> <i class="	fas fa-user-edit"></i> </a></li>
+                        <li> <a href="ServletGetInforDB"> <i class="	fas fa-user-edit"></i> </a></li>
                         <% }else{
                         %>
                         <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
