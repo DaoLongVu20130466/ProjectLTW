@@ -14,6 +14,7 @@ public class ServletInforOder extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idOder = request.getParameter("idoder");
         Order order = OderService.getInstance().getInforOder(idOder);
+        order.update();
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("/ChiTietDonHang.jsp").forward(request,response) ;
     }

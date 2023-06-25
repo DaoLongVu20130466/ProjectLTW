@@ -10,52 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiAllOderReponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAcceptOder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOderAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetPageAd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/css/formoder.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/yah.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/APIDistrictRespone.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIDistrictRespone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/APIwardRespone.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/APIwardRespone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/DashBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/DashBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddVoucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddVoucher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckout.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetInForDBbyM.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetInForDBbyM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetInforDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetInforDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetUserOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetUserOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletVoucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletVoucher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getUserControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/showCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/showCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AddOderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AddOderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AdressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AdressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/DashBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/DashBoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/OderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/OderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/VoucherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/VoucherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/GioHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/GioHang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuenMK.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMK.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/ThemVoucher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/ThemVoucher.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Truysuatdonhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Truysuatdonhang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,10 +73,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/LTWProject/BaiNopCuoiKi&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4275862&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.AppService">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="ApiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.bean.ApiController" />
       <module name="web" />
@@ -357,8 +316,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AppService" />
         <item itemvalue="Application.ApiController" />
+        <item itemvalue="Application.AppService" />
         <item itemvalue="Application.Reporting" />
         <item itemvalue="Application.SendPhoneOTP" />
       </list>
@@ -400,7 +359,8 @@
       <workItem from="1687350620389" duration="5662000" />
       <workItem from="1687417059327" duration="14226000" />
       <workItem from="1687488827086" duration="22873000" />
-      <workItem from="1687575614861" duration="12028000" />
+      <workItem from="1687575614861" duration="19854000" />
+      <workItem from="1687665990817" duration="6338000" />
     </task>
     <servers />
   </component>
@@ -443,13 +403,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp</url>
-          <line>166</line>
+          <line>168</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOderAPI.java</url>
           <line>27</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/web/src/main/java/main/bean/Reporting.java</url>

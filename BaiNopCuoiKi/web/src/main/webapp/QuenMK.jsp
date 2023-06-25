@@ -126,7 +126,7 @@
                 </div>
                 <div class="input-and-icon">
                 <div>
-                     <i class="fa fa-registered" aria-hidden="true"> <a href="/web_war/ServletSendReset">lấy lại bằng số điện thoại</a></i>
+                     <i class="fa fa-registered" aria-hidden="true"> <a href="QuenMatKhauSDT.jsp">Lấy lại bằng số điện thoại</a></i>
                 </div>
             </div>
 
