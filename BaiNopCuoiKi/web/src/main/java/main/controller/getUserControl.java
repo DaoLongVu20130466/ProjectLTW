@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.Log;
 import main.bean.Products;
 
 import main.bean.User;
@@ -23,6 +24,12 @@ public class    getUserControl extends HttpServlet {
             int role = userr.getRole();
             if (AppService.checkAdmin(role)) {
                 request.setAttribute("alluser", user);
+                int level = 0;
+                String user0 = userr.getUserName();
+                String source = "Xem tài khoản";
+                String content = "Xem tài khoản người dùng ";
+                String status = "Hoàn thành";
+                Log.writeLog(level, user0, source, content, status);
                 request.getRequestDispatcher("QuanLyTaiKhoan.jsp").forward(request, response);
             } else {
                 request.setAttribute("error", "Bạn không có quền truy cập vào trang này");

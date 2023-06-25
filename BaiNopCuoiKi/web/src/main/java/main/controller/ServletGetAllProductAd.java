@@ -43,7 +43,7 @@ public class ServletGetAllProductAd extends HttpServlet {
             request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
         }
         else {
-            response.sendRedirect("/404Page.html");
+            response.sendRedirect("./404Page.html");
         }
         }
         else {

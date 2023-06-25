@@ -14,7 +14,7 @@ public class Log {
     String Id_User;
     String src;
     String content;
-    Date date;
+    String date;
     String status;
     static Log instance;
 
@@ -29,7 +29,7 @@ public class Log {
     }
 
 
-    public Log(int id, int level, String id_User, String src, String content, Date date, String status) {
+    public Log(int id, int level, String id_User, String src, String content, String date, String status) {
         this.id = id;
         this.level = level;
         Id_User = id_User;
@@ -82,7 +82,7 @@ public class Log {
         return content;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -99,7 +99,7 @@ public class Log {
             ps.setString(2, user);
             ps.setString(3, src);
             ps.setString(4, content);
-            ps.setDate(5, java.sql.Date.valueOf(AppService.getNow()));
+            ps.setTimestamp(5, AppService.getNow());
             ps.setString(6, status);
             ps.execute();
         } catch (SQLException e) {

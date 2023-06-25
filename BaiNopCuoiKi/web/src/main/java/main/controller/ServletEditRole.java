@@ -28,6 +28,12 @@ public class ServletEditRole extends HttpServlet {
             String targetID = (String) request.getParameter("targetUID");
             System.out.println(targetID);
             UsrPerServiece.getInstance().upDaterole(roleId, targetID);
+            int level = 3;
+            String user0 = user.getUserName();
+            String source = "Chỉnh role người dùng";
+            String content = "Chỉnh role của ID "+targetID;
+            String status = "Hoàn thành";
+            Log.writeLog(level, user0, source, content, status);
             response.sendRedirect("/web_war/getUserControl");
         }
         else response.sendRedirect("404Page.html");
