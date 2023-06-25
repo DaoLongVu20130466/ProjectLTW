@@ -219,7 +219,7 @@
               <td><%=p.getIdType()%></td>
 
               <td><a href="editProduct?fid=<%=p.getID_food()%>&size=<%=p.getIdSize()%>"><i class="fa fa-lock" aria-hidden="true"></i>Chỉnh sửa</a><br>
-                <a href="deleteF?fid=<%=p.getID_food()%>"> <i class="fa fa-trash-o aria-hidden="true"></i> Xóa</a><br>
+                <a href="deleteF?fid=<%=p.getID_food()%>"> <i class="fa fa-trash-o "aria-hidden=true"></i> Xóa</a><br>
                 <a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"> <i class="fa fa-home" aria-hidden="true"></i>Xem trực tiếp</a></td>
             </tr>
               <%}%>

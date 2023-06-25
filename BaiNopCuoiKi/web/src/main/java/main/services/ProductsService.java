@@ -152,7 +152,7 @@ public class ProductsService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, food.LISTED_PRICE  , food.SRC FROM food WHERE food.IS_SALE = 1");
+            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, food.LISTED_PRICE  , food.L_IMG FROM food WHERE food.IS_SALE = 1");
             while (rs.next()) {
                 allProductBySale.add(new Products(
                         rs.getString(1),
@@ -176,7 +176,7 @@ public class ProductsService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, food.LISTED_PRICE  , food.SRC FROM food WHERE food.IS_HOT = 1");
+            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, food.LISTED_PRICE  , food.L_IMG FROM food WHERE food.IS_HOT = 1");
             while (rs.next()) {
                 allProductByHot.add(new Products(
                         rs.getString(1),
@@ -200,7 +200,7 @@ public class ProductsService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, food.LISTED_PRICE  , food.SRC FROM food WHERE food.IS_COMBO = 1");
+            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, food.LISTED_PRICE  , food.L_IMG FROM food WHERE food.IS_COMBO = 1");
             while (rs.next()) {
                 allProductByCombo.add(new Products(
                         rs.getString(1),
@@ -219,7 +219,7 @@ public class ProductsService {
     public List<Products> getAllproductsByType(String type,int page){
         ArrayList<Products> allProductByType = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.SRC FROM food " +
+                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
                 "WHERE food.id_TYPE=?" +
                 "LIMIT 12 OFFSET ?";
         try {
@@ -305,7 +305,7 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , food.SRC\n" +
+            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , food.L_IMG\n" +
                     "FROM food \n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
                     "WHERE food.ID_TYPE = ? "
@@ -337,7 +337,7 @@ public class ProductsService {
     public List<Products> getAllProductByPage ( int page){
         ArrayList<Products> allProductByPage = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.SRC FROM food " +
+                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
                 "LIMIT 12 OFFSET ?";
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
@@ -372,7 +372,7 @@ public class ProductsService {
 
     public List<Products> getAllproductFavouriteByUser (String iduser){
         ArrayList<Products> allProductByFavourite = new ArrayList<Products>();
-        String query="SELECT  user_information.ID_USER ,food.ID_FOOD , food.FOOD_NAME, PRICE.PRICE , food.SRC \n" +
+        String query="SELECT  user_information.ID_USER ,food.ID_FOOD , food.FOOD_NAME, PRICE.PRICE , food.L_IMG \n" +
                 "FROM user_information  JOIN accounts ON user_information.ID_USER = accounts.ID_USER\n" +
                 "JOIN favourites ON accountS.ID_ACCOUNT = favourites.ID_ACCOUNT\n" +
                 "JOIN food ON  favourites.ID_FOOD  = food.ID_FOOD\n" +
@@ -421,7 +421,7 @@ public class ProductsService {
         String id2 = "IMG"+useService.getInstance().checkIDIMG2();
         String id3 = "IMG"+useService.getInstance().checkIDIMG3();
         String id4 = "IMG"+useService.getInstance().checkIDIMG4();
-        String query1 ="INSERT INTO food (ID_FOOD,FOOD_NAME,IS_COMBO,IS_HOT,IS_SALE,DESCRIPTION,ID_TYPE,SRC,LISTED_PRICE,BASE_PRICE ) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        String query1 ="INSERT INTO food (ID_FOOD,FOOD_NAME,IS_COMBO,IS_HOT,IS_SALE,DESCRIPTION,ID_TYPE,L_IMG,LISTED_PRICE,BASE_PRICE ) VALUES (?,?,?,?,?,?,?,?,?,?)";
         String query2="INSERT INTO price (ID_FOOD,LISTED_PRICE,PRICE) VALUES (?,?,?)";
         String query3="INSERT INTO image_detail(ID_IMG,ID_FOOD) VALUES (?,?)";
         String query4 = "INSERT INTO image(ID_IMG ,SRC) VALUES(?,?)";
@@ -498,7 +498,7 @@ public class ProductsService {
     public List<Products> getAllproductSearch(String txt, int page){
         ArrayList<Products> allProductSearch = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.SRC FROM food " +
+                "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
                 "WHERE food.FOOD_NAME  LIKE ?" +
                 "LIMIT 12 OFFSET ?";
         try {
@@ -566,7 +566,7 @@ public class ProductsService {
              String idimg4
             ){
         String query1 ="UPDATE FOOD SET FOOD_NAME = ?,IS_COMBO = ?," +
-                "IS_HOT=?,IS_SALE=?,DESCRIPTION=?,ID_TYPE = ? ,SRC =? ,LISTED_PRICE = ?,BASE_PRICE =? WHERE FOOD.ID_FOOD = ?";
+                "IS_HOT=?,IS_SALE=?,DESCRIPTION=?,ID_TYPE = ? ,L_IMG =? ,LISTED_PRICE = ?,BASE_PRICE =? WHERE FOOD.ID_FOOD = ?";
         String query2="UPDATE  price SET LISTED_PRICE = ?,PRICE=? WHERE price.ID_FOOD = ?";
         String query4 = "UPDATE  image SET SRC=? WHERE image.ID_IMG = ? ";
         String query5="UPDATE  size_details SET ID_SIZE = ? WHERE size_details.ID_FOOD = ?";

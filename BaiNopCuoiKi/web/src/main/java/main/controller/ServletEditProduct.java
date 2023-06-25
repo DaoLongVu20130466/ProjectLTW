@@ -3,6 +3,7 @@ package main.controller;
 import main.bean.Image;
 import main.bean.Products;
 import main.bean.TypeProducts;
+import main.bean.UserPemission;
 import main.services.ProductsService;
 
 import javax.servlet.*;
@@ -25,7 +26,6 @@ public class ServletEditProduct extends HttpServlet {
         request.setAttribute("pro",pro);
         request.setAttribute("img",img);
         request.getRequestDispatcher("/editProdcut.jsp").forward(request,response);
-
 
     }
 

@@ -123,7 +123,7 @@ public class useService {
     public void LockUser(String uid) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            PreparedStatement stmt = conn.prepareStatement("UPDATE account SET IS_BLOCK = 1 WHERE ID_ACCOUNT = ?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE accounts SET IS_BLOCK = 1 WHERE ID_ACCOUNT = ?");
             stmt.setString(1, uid);
             stmt.execute();
             conn.close();
@@ -135,7 +135,7 @@ public class useService {
     public void updateIF(String uid, String hoten, String email, String sdt, String diachi) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            PreparedStatement stmt = conn.prepareStatement("UPDATE account SET EMAIL = ? WHERE ID_USER = ?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE accounts SET EMAIL = ? WHERE ID_USER = ?");
             stmt.setString(1, email);
 
             stmt.setString(2, uid);
@@ -156,7 +156,7 @@ public class useService {
     public void upImg(String uid, String link) {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            PreparedStatement stmt = conn.prepareStatement("UPDATE account SET AVATAR = ? WHERE ID_USER = ?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE accounts SET AVATAR = ? WHERE ID_USER = ?");
             stmt.setString(1, link);
 
             stmt.setString(2, uid);
@@ -189,7 +189,7 @@ public class useService {
         {
             try {
                 Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-                PreparedStatement stmt = conn.prepareStatement("UPDATE account SET IS_BLOCK = 0 WHERE ID_ACCOUNT = ?");
+                PreparedStatement stmt = conn.prepareStatement("UPDATE accounts SET IS_BLOCK = 0 WHERE ID_ACCOUNT = ?");
                 stmt.setString(1, uid);
                 stmt.execute();
                 conn.close();
@@ -341,49 +341,39 @@ public class useService {
     }
 
 
-    public void registry(String username, String password, String email, String phone, String xa, String huyen, String tinh, String ap) {
+    public void registry(String username, String password, String email, String phone) {
 
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             // crate statement
             String idacconut="ACC"+useService.getInstance().checkIDaccount();
             String idUSER="USER"+useService.getInstance().checkIDaccount();
-            String idadres="ADD"+useService.getInstance().checkIDaccount();
-            String query= "INSERT INTO ACCOUNT(ID_ACCOUNT,USERS,PASS,ID_USER,STATUSS,IS_BLOCK,EMAIL,AVATAR) VALUES(?,?,?,?,'HOẠT ĐỘNG',0,?,'img/cupvangWC.jpg')";
+            String query2= "INSERT INTO user_information (ID_USER,USER_NAMES,PHONE_NUMBER) VALUES(?,?,?)";
+            PreparedStatement b= conn.prepareStatement(query2);
+            b.setString(1,idUSER);
+            b.setString(2,username);
+            b.setString(3,phone);
+            b.executeUpdate();
+            String query= "INSERT INTO accounts (ID_ACCOUNT,USERS,PASS,ID_USER,STATUSS,IS_BLOCK,EMAIL,AVATAR) VALUES(?,?,?,?,'HOẠT ĐỘNG',0,?,'img/cupvangWC.jpg')";
+
             PreparedStatement a= conn.prepareStatement(query);
             a.setString(1,idacconut);
             a.setString(2,username);
             a.setString(3,password);
             a.setString(4,idUSER);
             a.setString(5,email);
-            String query2= "INSERT INTO user_information (ID_USER,USER_NAMES,PHONE_NUMBER,ID_ADDRESS) VALUES(?,?,?,?)";
-            PreparedStatement b= conn.prepareStatement(query2);
-            b.setString(1,idUSER);
-            b.setString(2,username);
-            b.setString(3,phone);
-            b.setString(4,idadres);
-            String query3= "INSERT INTO addresss (ID_ADDRESS,COMMUNE,DISTRICT,PROVINCE,ADDRESS_DETAILS) VALUES(?,?,?,?,?)";
-            PreparedStatement c= conn.prepareStatement(query3);
-            c.setString(1,idadres);
-            c.setString(2,xa);
-            c.setString(3,huyen);
-            c.setString(4,tinh);
-            c.setString(5,ap);
-            String query4= "INSERT INTO role(ID_USER,ROLE,ROLE_NAME)  VALUES(?,?,'USER')";
+            a.executeUpdate();
+
+            String query4= "INSERT INTO role (ID_USER,ROLE,ROLE_NAME)  VALUES(?,?,'USER')";
             PreparedStatement d= conn.prepareStatement(query4);
             d.setString(1,idUSER);
             d.setInt(2,0);
-
             d.executeUpdate();
-            c.executeUpdate();
-            b.executeUpdate();
-            a.executeUpdate();
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
+
 
     public String chekUser(String username) {
         ArrayList<String> allusercontronl = new ArrayList<String>();
@@ -394,7 +384,7 @@ public class useService {
             Statement stmt = conn.createStatement();
             // get data from table 'student'
             ResultSet rs = stmt.executeQuery("select USERS\n" +
-                    "from account");
+                    "from accounts");
             // show data
             while (rs.next()) {
 
@@ -423,7 +413,7 @@ public class useService {
             Statement stmt = conn.createStatement();
             // get data from table 'student'
             ResultSet rs = stmt.executeQuery("select EMAIL\n" +
-                    "from account");
+                    "from accounts");
             // show data
             while (rs.next()) {
 
@@ -452,7 +442,7 @@ public class useService {
             Statement stmt = conn.createStatement();
             // get data from table 'student'
             PreparedStatement ps = conn.prepareStatement("select ID_ACCOUNT\n" +
-                    "from account\n" +
+                    "from accounts \n" +
                     "where EMAIL and ID_SIZE = ?"  );
             ps.setString(1,  email);
 
@@ -682,8 +672,7 @@ public class useService {
 
     }
     public static void main(String[] args) {
-        useService u = new useService();
-        System.out.println(u.getComment("CG1"));
+        useService.getInstance().registry("thoai", "123456 ", "quangvutran248@gmail.com", "0196654411");
     }
 
 
