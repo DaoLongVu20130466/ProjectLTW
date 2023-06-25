@@ -11,11 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletSendReset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuenMK.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMK.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiAllOderReponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiAllOderReponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/DoanhThu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/DoanhThu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/addProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/addProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,19 +73,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/LTWProject/BaiNopCuoiKi",
-    "list.type.of.created.stylesheet": "CSS",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4275862"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/LTWProject/BaiNopCuoiKi&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4275862&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="ApiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.bean.ApiController" />
@@ -320,8 +323,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AppService" />
         <item itemvalue="Application.ApiController" />
+        <item itemvalue="Application.AppService" />
         <item itemvalue="Application.Reporting" />
         <item itemvalue="Application.SendPhoneOTP" />
       </list>
@@ -363,7 +366,8 @@
       <workItem from="1687350620389" duration="5662000" />
       <workItem from="1687417059327" duration="14226000" />
       <workItem from="1687488827086" duration="22873000" />
-      <workItem from="1687575614861" duration="18474000" />
+      <workItem from="1687575614861" duration="19854000" />
+      <workItem from="1687665990817" duration="5962000" />
     </task>
     <servers />
   </component>
@@ -406,7 +410,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp</url>
-          <line>166</line>
+          <line>168</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
