@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "getUserControl", value = "/getUserControl")
-public class getUserControl extends HttpServlet {
+public class    getUserControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<User> user = useService.getInstance().getAllUser();

@@ -16,7 +16,6 @@ public class ServletInforOder extends HttpServlet {
         Order order = OderService.getInstance().getInforOder(idOder);
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("/ChiTietDonHang.jsp").forward(request,response) ;
-
     }
 
     @Override

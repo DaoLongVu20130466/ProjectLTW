@@ -34,7 +34,7 @@ public class ServletGetAllOder extends HttpServlet {
             }
         }
         else {
-            response.sendRedirect("404Page.html");
+            response.sendRedirect("/DangNhap.jsp");
         }
 }
 
