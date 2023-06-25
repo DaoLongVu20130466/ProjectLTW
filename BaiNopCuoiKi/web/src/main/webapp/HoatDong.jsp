@@ -98,7 +98,7 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="header__logo">
-          <a href="./index.html"><img src="img/a.png" alt=""></a>
+          <a href="getIndex"><img src="img/a.png" alt=""></a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -167,6 +167,8 @@
               <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
               <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="getActivate"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
+              <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
             </ul>
           </div>
         </div>
@@ -182,7 +184,7 @@
               <th>Nội dung</th>
               <th>Vào lúc</th>
               <th>Trạng thái</th>
-
+              <th>Level</th>
               <th>Hành Động</th>
             </tr>
             </thead>
@@ -197,9 +199,10 @@
               <td><%=p.getContent()%></td>
               <td><%=p.getDate()%></td>
               <td><%=p.getStatus()%></td>
-
+              <td><%=p.getLevel()%></td>
               <td>
-                <a href="deleteF?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+
+                <a href="ServletDeletelog?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
 
             </tr>
             <%}%>

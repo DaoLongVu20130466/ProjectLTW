@@ -10,8 +10,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletDeletelog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetAllOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/OderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/OderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/CheckOut.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/CheckOut.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Chinhsuathongtin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Chinhsuathongtin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/DoanhThu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/DoanhThu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/DoiMatKhau.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/DoiMatKhau.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/GioHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/GioHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/NhapOtpSdt.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/NhapOtpSdt.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyRole.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuanLyTaiKhoan.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuenMK.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMK.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/QuenMatKhauSDT.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/QuenMatKhauSDT.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/SanPham.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/SanPham.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/TangVoucher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/TangVoucher.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/TruySuatLog.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/TruySuatLog.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/TruyXuatNhapHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Truysuatdonhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Truysuatdonhang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/addProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/addProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/editProdcut.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/editProdcut.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/reset_password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/reset_password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,7 +389,7 @@
       <workItem from="1687417059327" duration="14226000" />
       <workItem from="1687488827086" duration="22873000" />
       <workItem from="1687575614861" duration="19854000" />
-      <workItem from="1687665990817" duration="6338000" />
+      <workItem from="1687665990817" duration="10651000" />
     </task>
     <servers />
   </component>
@@ -403,7 +432,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp</url>
-          <line>168</line>
+          <line>167</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

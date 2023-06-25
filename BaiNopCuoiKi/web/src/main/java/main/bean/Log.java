@@ -87,10 +87,7 @@ public class Log {
     }
 
     public String getStatus() {
-        if(status.equals(1))
-        return "Đã hoàn thành";
-        else
-            return "Chưa Hoàn Thành";
+        return status;
     }
 
     public static void writeLog( int level,String user, String src, String content, String status) {

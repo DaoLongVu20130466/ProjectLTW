@@ -44,6 +44,20 @@ public class Order implements Serializable  {
         this.voucher = voucher;
         this.allOderCart = allproduct;
     }
+    public Order(String idOder, String pbuyName, String phoneNumber, String note, Date dayCrate, String status, String idAccount, Address address, Voucher voucher, ArrayList<OderCart> allproduct,String string1, String string2) {
+        this.idOder = idOder;
+        this.pbuyName = pbuyName;
+        this.phoneNumber = phoneNumber;
+        Note = note;
+        this.dayCrate = dayCrate;
+        this.status = status;
+        this.idAccount = idAccount;
+        this.address = address;
+        this.voucher = voucher;
+        this.allOderCart = allproduct;
+        this.districtID =string1;
+        this.wardID = string2;
+    }
 
     public Order(String idOder, String idAccount, Address address, ArrayList<OderCart> products, String status, Voucher voucher) {
         this.idOder = idOder;
@@ -52,6 +66,18 @@ public class Order implements Serializable  {
         this.idAccount = idAccount;
         this.address = address;
         this.voucher = voucher;
+
+    }
+    public Order(String idOder, String idAccount, Address address, ArrayList<OderCart> products, String status, Voucher voucher,String string1, String string2) {
+        this.idOder = idOder;
+        this.status = status;
+        this.allOderCart = products;
+        this.idAccount = idAccount;
+        this.address = address;
+        this.voucher = voucher;
+        this.districtID =string1;
+        this.wardID = string2;
+
     }
 
     public void setDayCrate(Date dayCrate) {
@@ -63,7 +89,7 @@ public class Order implements Serializable  {
 
     public void setAddresss() throws IOException {
         ApiController control = new ApiController();
-        this.addresss = "Hồ Chí Minh "+ control.getLocation(districtID,wardID);
+        this.addresss = control.getLocation(districtID,wardID);
     }
     public String getWardID() {
         return wardID;

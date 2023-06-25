@@ -65,7 +65,7 @@ public class OderService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
             Statement statement = conn.createStatement();
-            ResultSet rs = statement.executeQuery(("SELECT orders.ID_ORDER, ID_ACCOUNT , STATUSS  \n" +
+            ResultSet rs = statement.executeQuery(("SELECT orders.ID_ORDER, ID_ACCOUNT , STATUSS ,districtID,wardID  \n" +
                     "from orders \n" +
                     "JOIN order_account_details \n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER"));
@@ -75,7 +75,8 @@ public class OderService {
                 Voucher voucher = VoucherService.getInstance().getVcByOderId(idOder);
                 Address ad = AdressService.getInstance().getAdressByOderId(idOder);
                 orc = (ProductsService.getInstance().getProductByOderID(idOder));
-                allOder.add(new Order(idOder,rs.getString(2),ad,orc,rs.getString(3),voucher));
+                allOder.add(new Order(idOder,rs.getString(2),ad,orc,rs.getString(3),voucher,rs.getString(4),rs.getString(5)));
+//                idOder,rs.getString(2),ad,orc,rs.getString(3),voucher),rs.getString(4),rs.getString(5)
             }
             conn.close();
         } catch (Exception ex) {

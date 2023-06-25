@@ -24,6 +24,10 @@ public class ServletGetAllOder extends HttpServlet {
             int role = user.getRole();
             if (AppService.checkAdmin(role)) {
                 ArrayList<Order> oder = OderService.getInstance().getAllOder();
+                for (Order od: oder
+                     ) {
+                    od.update();
+                }
                 request.setAttribute("alloder", oder);
                 UserPemission userPemission = new UserPemission(user.getUserId());
                 request.setAttribute("permission", userPemission);
