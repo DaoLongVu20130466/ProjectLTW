@@ -10,15 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiAllOderReponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiAllOderReponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/DoanhThu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/DoanhThu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/addProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/addProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/donhanggiao.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,7 +360,7 @@
       <workItem from="1687417059327" duration="14226000" />
       <workItem from="1687488827086" duration="22873000" />
       <workItem from="1687575614861" duration="19854000" />
-      <workItem from="1687665990817" duration="5962000" />
+      <workItem from="1687665990817" duration="6338000" />
     </task>
     <servers />
   </component>
