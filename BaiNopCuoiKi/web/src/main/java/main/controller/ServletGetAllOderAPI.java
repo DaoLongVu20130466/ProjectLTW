@@ -33,9 +33,9 @@ public class ServletGetAllOderAPI extends HttpServlet {
             request.setAttribute("alloderapi",rs);
             request.setAttribute("permission", per);
             request.getRequestDispatcher("/donhanggiao.jsp").forward(request, response);}
-            else response.sendRedirect("404Page.html");
+            else response.sendRedirect("/404Page.html");
         }
-        else response.sendRedirect("404Page.html");
+        else response.sendRedirect("/404Page.html");
     }
 
     @Override

@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/checksums.lock" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +26,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/web">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -66,6 +76,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -80,6 +91,20 @@
   }
 }</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web",
+    "list.type.of.created.stylesheet": "CSS",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.AppService">
+>>>>>>> Stashed changes
     <configuration name="ApiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.bean.ApiController" />
       <module name="web" />
@@ -217,6 +242,18 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="web:war" />
         </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -359,8 +396,13 @@
       <workItem from="1687350620389" duration="5662000" />
       <workItem from="1687417059327" duration="14226000" />
       <workItem from="1687488827086" duration="22873000" />
+<<<<<<< Updated upstream
       <workItem from="1687575614861" duration="19854000" />
       <workItem from="1687665990817" duration="6338000" />
+=======
+      <workItem from="1687575614861" duration="12028000" />
+      <workItem from="1687616899362" duration="254000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

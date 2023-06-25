@@ -23,7 +23,6 @@ public class ServletDeleteF extends HttpServlet {
             if (actor.canAdEditproduct()) {
                 String idf = request.getParameter("fid");
                 useService.getInstance().deletaFood(idf);
-                response.sendRedirect("getAllProductByAdmin");
                 int level = 3;
                 String user0 = user.getUserName();
                 String source = "Delete Product";
