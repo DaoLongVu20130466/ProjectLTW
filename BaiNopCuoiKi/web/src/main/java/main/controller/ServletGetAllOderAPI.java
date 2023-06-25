@@ -35,9 +35,9 @@ public class ServletGetAllOderAPI extends HttpServlet {
                 String status = "Hoàn thành";
                 Log.writeLog(level, user0, source, content, status);
             request.getRequestDispatcher("/donhanggiao.jsp").forward(request, response);}
-            else response.sendRedirect("404Page.html");
+            else response.sendRedirect("/404Page.html");
         }
-        else response.sendRedirect("404Page.html");
+        else response.sendRedirect("/404Page.html");
     }
 
     @Override
