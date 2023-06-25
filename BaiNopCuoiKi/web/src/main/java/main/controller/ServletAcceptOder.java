@@ -22,6 +22,8 @@ public class ServletAcceptOder extends HttpServlet {
         if(user!=null) {
             int role = user.getRole();
             if (AppService.checkAdmin(role)) {
+                UserPemission actor = new UserPemission(user.getUserId());
+                if (actor.canEditAddTran()) {
                 OderService.getInstance().AcceptlOder(request.getParameter("idoder"));
                 Order order = OderService.getInstance().getInforOder(request.getParameter("idoder"));
                 ApiController controller = new ApiController();
@@ -31,12 +33,14 @@ public class ServletAcceptOder extends HttpServlet {
                 request.setAttribute("permission", userPemission);
                 controller.saveOder(order);
                 request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
+                }else {
+                    response.sendRedirect("/404Page.html");}
             } else {
-                response.sendRedirect("404Page.html");
+                response.sendRedirect("/404Page.html");
             }
         }
         else {
-            response.sendRedirect("404Page.html");
+            response.sendRedirect("/DangNhap.jsp");
         }
     }
 

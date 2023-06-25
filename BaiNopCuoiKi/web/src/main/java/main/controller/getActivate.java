@@ -2,6 +2,9 @@ package main.controller;
 
 import main.bean.Log;
 import main.bean.TypeProducts;
+import main.bean.User;
+import main.bean.UserPemission;
+import main.services.AppService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,12 +16,26 @@ import java.util.ArrayList;
 public class getActivate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Log> allLog = LogController.getAllLog();
-        request.setAttribute("allLog", allLog);
-        request.getRequestDispatcher("HoatDong.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("auth");
+        int role = user.getRole();
 
+        if (AppService.checkAdmin(role)) {
+            UserPemission actor = new UserPemission(user.getUserId());
+            if (actor.canAdEditproduct()) {
+                ArrayList<Log> allLog = LogController.getAllLog();
+                request.setAttribute("allLog", allLog);
+                request.getRequestDispatcher("HoatDong.jsp").forward(request, response);
+
+            }else {
+                response.sendRedirect("/404Page.html");
+            }
+
+        }else {
+            request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
+            request.getRequestDispatcher("/getIndex").forward(request, response);
+        }
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

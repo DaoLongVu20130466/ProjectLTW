@@ -19,6 +19,7 @@ public class ServletGetUserOder extends HttpServlet {
         String idOder = request.getParameter("idoder");
         HttpSession session =request.getSession();
         User user0 = (User) session.getAttribute("auth");
+
         UserPemission ps = new UserPemission(user0.getUserId());
         String  iduser = user0.getUserId();
         User usernow = useService.getInstance().getAllUserByID(iduser);
@@ -26,7 +27,7 @@ public class ServletGetUserOder extends HttpServlet {
         Order order = OderService.getInstance().getInforOderByUser(idOder,usernow.getIdacc());
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("/ChiTietDonHangUser.jsp").forward(request,response) ;
-        System.out.println(usernow.getIdacc());
+
     }
 
     @Override
