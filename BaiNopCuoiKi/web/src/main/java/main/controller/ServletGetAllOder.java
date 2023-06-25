@@ -1,9 +1,6 @@
 package main.controller;
 
-import main.bean.Order;
-import main.bean.User;
-import main.bean.UserPemission;
-import main.bean.Voucher;
+import main.bean.*;
 import main.services.AppService;
 import main.services.OderService;
 import main.services.VoucherService;
@@ -24,17 +21,26 @@ public class ServletGetAllOder extends HttpServlet {
             int role = user.getRole();
             if (AppService.checkAdmin(role)) {
                 ArrayList<Order> oder = OderService.getInstance().getAllOder();
+                for (Order od: oder
+                     ) {
+                    od.update();
+                }
                 request.setAttribute("alloder", oder);
                 UserPemission userPemission = new UserPemission(user.getUserId());
                 request.setAttribute("permission", userPemission);
+                int level = 0;
+                String user0 = user.getUserName();
+                String source = "ServletGetAllOder";
+                String content = "Xem tổng hợp oder";
+                String status = "Hoàn thành";
+                Log.writeLog(level, user0, source, content, status);
                 request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
             } else {
-                request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
-                request.getRequestDispatcher("/getIndex").forward(request, response);
+                response.sendRedirect("./404ne.html");
             }
         }
         else {
-            response.sendRedirect("/DangNhap.jsp");
+            response.sendRedirect("./DangNhap.jsp");
         }
 }
 

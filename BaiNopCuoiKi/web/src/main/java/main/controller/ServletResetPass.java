@@ -1,5 +1,7 @@
 package main.controller;
 
+import main.bean.Log;
+import main.bean.User;
 import main.services.Utils;
 import main.services.useService;
 
@@ -27,6 +29,8 @@ public class ServletResetPass extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String smail = request.getParameter("email");
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("auth");
         if (smail != null && smail!="") {
             String ID_ACCOUNT = "";
             String rs1 = useService.getInstance().chekemail(smail);
@@ -49,7 +53,12 @@ public class ServletResetPass extends HttpServlet {
 
             String messageText = " Click <a href=" + link + "?key=" + hash + ">Here</a> To Reset your Password. You must reset your password within 20 minutes.";
             Utils.getInstance().sendMail(smail, "Đặt Lại Mật Khẩu", messageText);
-
+            int level = 2;
+            String user0 = user.getUserName();
+            String source = "ServletResetPass";
+            String content = "Đổi mật khẩu";
+            String status = "Hoàn thành";
+            Log.writeLog(level, user0, source, content, status);
 
             //-----------------------------------------------
             request.getRequestDispatcher("/DangNhap.jsp").forward(request, response);

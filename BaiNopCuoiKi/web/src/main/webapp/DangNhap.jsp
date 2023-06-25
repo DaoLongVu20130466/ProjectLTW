@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web/src/main/webapp/index.jsp"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -149,7 +149,7 @@
                 </div>
                 <div class="input-and-icon">
                     <div>
-                        <i class="fa fa-registered" aria-hidden="true"> <a href="QuenMK.html">Quên Mật Khẩu</a></i>
+                        <i class="x" > <a href="QuenMK.jsp">Quên Mật Khẩu</a></i>
                     </div>
                 </div>
                 Nếu chưa có tài khoản hay ấn vào đây: <a href="DangKy.jsp">Đăng ký</a>

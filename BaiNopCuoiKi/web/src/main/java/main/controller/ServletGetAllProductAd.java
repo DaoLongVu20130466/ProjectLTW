@@ -43,11 +43,11 @@ public class ServletGetAllProductAd extends HttpServlet {
             request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
         }
         else {
-            response.sendRedirect("/404Page.html");
+            response.sendRedirect("./404ne.html");
         }
         }
         else {
-            response.sendRedirect("/DangNhap.jsp");
+            response.sendRedirect("./DangNhap.jsp");
         }
     }
 

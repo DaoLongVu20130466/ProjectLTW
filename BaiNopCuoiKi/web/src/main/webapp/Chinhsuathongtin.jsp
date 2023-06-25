@@ -108,7 +108,19 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
+                            <%
+                                if( user == null) {
+                            %>
+                            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                            <%}else if (user.getRole()>=1) {
+                            %>
+                            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                            <li> <a href="ServletGetInforDB"> <i class="fas fa-user-edit"></i> </a></li>
+                            <% }else{
+                            %>
+                            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                            <%}%>
+
                             <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price"></div>

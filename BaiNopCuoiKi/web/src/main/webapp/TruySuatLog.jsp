@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -136,18 +136,14 @@
                     <div class="sidebar__item">
                         <h4>Quản Lý</h4>
                         <ul>
-                            <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh
-                                Thu </a></li>
-                            <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản
-                                Phẩm </a></li>
-                            <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                                Thêm Mặt Hàng</a></li>
-                            <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý
-                                Tài Khoản</a></li>
-                            <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất
-                                Đơn Hàng</a></li>
-                            <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a>
-                            </li>
+                            <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
+                            <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
+                            <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
+                            <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
+                            <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
+                            <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+                            <li><a href="getActivate"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
+                            <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
                         </ul>
                     </div>
                 </div>

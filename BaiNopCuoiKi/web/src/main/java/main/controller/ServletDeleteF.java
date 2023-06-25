@@ -29,7 +29,7 @@ public class ServletDeleteF extends HttpServlet {
                 String content = "Xóa sản phẩm ID= " + idf;
                 String status = "Hoàn thành";
                 Log.writeLog(level, user0, source, content, status);
-                response.sendRedirect("/getAllProductByAdmin");
+                response.sendRedirect("getAllProductByAdmin");
 
             }else {
                 response.sendRedirect("/404Page.html");

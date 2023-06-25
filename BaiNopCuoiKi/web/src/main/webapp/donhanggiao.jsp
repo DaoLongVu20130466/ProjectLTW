@@ -79,7 +79,7 @@
                             <div>Việt Nam </div>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="DangNhap.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+                            <a href="DangNhap.jsp"><i class="fa fa-user"></i> Đăng Nhập</a>
                         </div>
                     </div>
                 </div>
@@ -90,15 +90,14 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li ><a href="./index.html">Trang Chủ</a></li>
-                        <li ><a href="./shop-grid.html">Gian Hàng</a></li>
-
+                        <li><a href="getIndex">Trang Chủ</a></li>
+                        <li ><a href="getAllProduct">Gian Hàng</a></li>
                         <li><a href="./blog.html">Giới Thiệu</a></li>
                         <li><a href="./contact.html">Liên Hệ</a></li>
                     </ul>
@@ -157,7 +156,7 @@
                             <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
                             <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
                             <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
-                            <li><a href="ServletVoucher"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
+                            <li><a href="getActivate"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
                             <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
                         </ul>
                     </div>

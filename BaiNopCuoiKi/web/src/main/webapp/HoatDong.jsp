@@ -1,7 +1,8 @@
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="main.bean.User" %>
-<%@ page import="main.bean.Log" %><%--
+<%@ page import="main.bean.Log" %>
+<%@ page import="main.bean.UserPemission" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 5/01/2023
@@ -98,7 +99,7 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="header__logo">
-          <a href="./index.html"><img src="img/a.png" alt=""></a>
+          <a href="getIndex"><img src="img/a.png" alt=""></a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -167,14 +168,21 @@
               <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
               <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
               <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
+              <li><a href="getActivate"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
+              <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-10 col-md-5">
         <h2>Toàn bộ hoạt động:</h2>
+        <% UserPemission per = (UserPemission) request.getAttribute("actor");
+        if(per.canRemoveLog()){
+        %>
+        <a href="./ServletDeleteAllLog"> Xóa toàn bộ log !</a>
+        <%}%>
         <div class="TaiKhoan">
-
+          <input type="text" class="cd-search table-filter" data-table="order-table" placeholder="Item to filter.." />
           <table class="cd-table order-table table">
             <thead>
             <tr>
@@ -182,7 +190,7 @@
               <th>Nội dung</th>
               <th>Vào lúc</th>
               <th>Trạng thái</th>
-
+              <th>Level</th>
               <th>Hành Động</th>
             </tr>
             </thead>
@@ -197,10 +205,11 @@
               <td><%=p.getContent()%></td>
               <td><%=p.getDate()%></td>
               <td><%=p.getStatus()%></td>
-
+              <td><%=p.getLevel()%></td>
               <td>
-                <a href="deleteF?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
-
+                <%if(per.canRemoveLog()){%>
+                <a href="ServletDeletelog?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+              <%}%>
             </tr>
             <%}%>
             </tbody>
@@ -244,7 +253,47 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+  (function() {
+    'use strict';
 
+    var TableFilter = (function() {
+      var Arr = Array.prototype;
+      var input;
+
+      function onInputEvent(e) {
+        input = e.target;
+        var table1 = document.getElementsByClassName(input.getAttribute('data-table'));
+        Arr.forEach.call(table1, function(table) {
+          Arr.forEach.call(table.tBodies, function(tbody) {
+            Arr.forEach.call(tbody.rows, filter);
+          });
+        });
+      }
+
+      function filter(row) {
+        var text = row.textContent.toLowerCase();
+        //console.log(text);
+        var val = input.value.toLowerCase();
+        //console.log(val);
+        row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+      }
+
+      return {
+        init: function() {
+          var inputs = document.getElementsByClassName('table-filter');
+          Arr.forEach.call(inputs, function(input) {
+            input.oninput = onInputEvent;
+          });
+        }
+      };
+
+    })();
+
+
+    TableFilter.init();
+  })();
+</script>
 
 </body>
 
