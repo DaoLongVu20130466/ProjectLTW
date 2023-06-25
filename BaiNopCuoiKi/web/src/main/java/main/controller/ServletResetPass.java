@@ -48,7 +48,7 @@ public class ServletResetPass extends HttpServlet {
 
 
             String messageText = " Click <a href=" + link + "?key=" + hash + ">Here</a> To Reset your Password. You must reset your password within 20 minutes.";
-            Utils.getInstance().sendMail(smail, "Đặt Cơm", messageText);
+            Utils.getInstance().sendMail(smail, "Đặt Lại Mật Khẩu", messageText);
 
 
             //-----------------------------------------------

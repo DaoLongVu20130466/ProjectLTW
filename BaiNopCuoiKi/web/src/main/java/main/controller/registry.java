@@ -18,10 +18,6 @@ public class registry extends HttpServlet {
         String password = (String) request.getParameter("password");
         String email = (String) request.getParameter("email");
         String phone = (String) request.getParameter("phone");
-        String Xa = (String) request.getParameter("Xa");
-        String Huyen = (String) request.getParameter("Huyen");
-        String Tinh = (String) request.getParameter("Tinh");
-        String Ap = (String) request.getParameter("Ap");
         String rs = useService.getInstance().chekUser(username);
         String rs1 = useService.getInstance().chekemail(email);
         String rs2 = useService.getInstance().chekSDT(phone);
@@ -37,7 +33,7 @@ public class registry extends HttpServlet {
         request.setAttribute("error", rs2);
         request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
     } if(rs==null && rs2==null && rs1==null) {
-            useService.getInstance().registry(username, password, email, phone, Xa, Huyen, Tinh, Ap);
+            useService.getInstance().registry(username, password, email, phone);
             response.sendRedirect("/DangNhap.jsp");
         }
     }

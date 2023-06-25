@@ -219,7 +219,6 @@ public class ProductsService {
     public List<Products> getAllproductsByType(String type,int page){
         ArrayList<Products> allProductByType = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-
                 "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
                 "WHERE food.id_TYPE=?" +
                 "LIMIT 12 OFFSET ?";
@@ -499,9 +498,7 @@ public class ProductsService {
     public List<Products> getAllproductSearch(String txt, int page){
         ArrayList<Products> allProductSearch = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-
                 "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
-
                 "WHERE food.FOOD_NAME  LIKE ?" +
                 "LIMIT 12 OFFSET ?";
         try {
