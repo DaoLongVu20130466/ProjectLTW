@@ -1,7 +1,9 @@
 package main.controller;
 
+import main.bean.Log;
 import main.bean.Products;
 import main.bean.TypeProducts;
+import main.bean.User;
 import main.services.ProductsService;
 
 import javax.servlet.*;
@@ -15,6 +17,8 @@ public class ServletSearchControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("auth");
         request.setCharacterEncoding("UTF-8");
         String txt = (String) request.getParameter("txt");
         String page = request.getParameter("page");
@@ -42,6 +46,12 @@ public class ServletSearchControl extends HttpServlet {
         request.setAttribute("page", pagee);
         request.setAttribute("left", left);
         request.setAttribute("right", right);
+        int level = 1;
+        String user0 = user.getUserName();
+        String source = "ServletSearchControl";
+        String content = "Tìm kiếm :" + txt;
+        String status = "Hoàn thành";
+        Log.writeLog(level, user0, source, content, status);
         request.getRequestDispatcher("/shop-grid.jsp").forward(request, response);
     }
 

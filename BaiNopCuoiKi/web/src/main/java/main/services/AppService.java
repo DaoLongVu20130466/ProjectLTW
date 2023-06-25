@@ -2,6 +2,7 @@ package main.services;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -84,8 +85,8 @@ public  class AppService {
         return rs;
     }
 
-    public static String getNow() {
-        return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+    public static Timestamp getNow() {
+        return new Timestamp(System.currentTimeMillis());
     }
     public static String date_to_fomat(String fotmat, Date date){
         SimpleDateFormat myFormat = new SimpleDateFormat(fotmat);

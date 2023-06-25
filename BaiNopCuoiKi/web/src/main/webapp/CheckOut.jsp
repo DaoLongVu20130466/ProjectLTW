@@ -86,14 +86,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/a.png" alt=""></a>
+                        <a href="getIndex"><img src="img/a.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="./index.html">Trang Chủ</a></li>
-                            <li ><a href="./shop-grid.html">Gian Hàng</a></li>
+                            <li><a href="getIndex">Trang Chủ</a></li>
+                            <li ><a href="getAllProduct">Gian Hàng</a></li>
 <!--                            <li><a href="#">Pages</a>-->
 <!--                                <ul class="header__menu__dropdown">-->
 <!--                                    <li><a href="./shop-details.html">Shop Details</a></li>-->
@@ -111,8 +111,20 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="./user.html"><i class="fa fa-user"></i> </a></li>
-                            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <%
+                                if( user == null) {
+                            %>
+                            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                            <%}else if (user.getRole()>=1) {
+                            %>
+                            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                            <li> <a href="ServletGetInforDB"> <i class="fas fa-user-edit"></i> </a></li>
+                            <% }else{
+                            %>
+                            <li> <a href="getUserInfor"> <i class="fa fa-user"></i> </a></li>
+                            <%}%>
+
+                            <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price"></div>
                     </div>

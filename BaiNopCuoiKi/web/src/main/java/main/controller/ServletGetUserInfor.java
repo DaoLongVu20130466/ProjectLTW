@@ -17,16 +17,20 @@ public class ServletGetUserInfor extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session =request.getSession();
         User user = (User) session.getAttribute("auth");
-        String iduser = user.getUserId();
-        User usernow = useService.getInstance().getAllUserByID(iduser);
+        if(user!=null) {
+            String iduser = user.getUserId();
+            User usernow = useService.getInstance().getAllUserByID(iduser);
 
-        User userinfor = useService.getInstance().getAllUserByID(iduser);
-        session.setAttribute("userID", userinfor);
-        ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
-        session.setAttribute("alloder", list);
-        request.getRequestDispatcher("/user.jsp").forward(request,response);
+            User userinfor = useService.getInstance().getAllUserByID(iduser);
+            session.setAttribute("userID", userinfor);
+            ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
+            session.setAttribute("alloder", list);
+            request.getRequestDispatcher("/user.jsp").forward(request, response);
 
-
+        }
+        else {
+            response.sendRedirect("/DangNhap.jsp");
+        }
     }
 
     @Override

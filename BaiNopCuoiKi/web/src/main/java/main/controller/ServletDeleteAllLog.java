@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.User;
 import main.bean.UserPemission;
 import main.services.LogService;
 
@@ -13,11 +14,13 @@ public class ServletDeleteAllLog extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        UserPemission userPemission = (UserPemission) session.getAttribute("permission");
+        User user = (User) session.getAttribute("auth");
+        UserPemission userPemission = new UserPemission(user.getUserId());
         if (userPemission.canRemoveLog()){
-            LogService.getInstance().clearLog(request.getParameter("LogId"));
+            LogService.getInstance().clearAllLog();
+            request.getRequestDispatcher("./getActivate").forward(request, response);
         }else
-            response.sendRedirect("/web_war/404Page.html");
+            response.sendRedirect("./404ne.html");
 
     }
 

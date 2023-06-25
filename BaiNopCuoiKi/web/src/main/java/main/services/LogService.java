@@ -24,4 +24,7 @@ public class LogService {
     public void clearLog(String id){
         Log.getInstance().DeleteLog(id);
     }
+    public void clearAllLog(){
+        Log.getInstance().DeleteAllLog();
+    }
 }

@@ -219,7 +219,6 @@ public class ProductsService {
     public List<Products> getAllproductsByType(String type,int page){
         ArrayList<Products> allProductByType = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-
                 "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
                 "WHERE food.id_TYPE=?" +
                 "LIMIT 12 OFFSET ?";
@@ -422,7 +421,7 @@ public class ProductsService {
         String id2 = "IMG"+useService.getInstance().checkIDIMG2();
         String id3 = "IMG"+useService.getInstance().checkIDIMG3();
         String id4 = "IMG"+useService.getInstance().checkIDIMG4();
-        String query1 ="INSERT INTO food (ID_FOOD,FOOD_NAME,IS_COMBO,IS_HOT,IS_SALE,DESCRIPTION,ID_TYPE,L_IMG,LISTED_PRICE,BASE_PRICE ) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        String query1 ="INSERT INTO food (ID_FOOD,FOOD_NAME,IS_COMBO,IS_HOT,IS_SALE,DESCRIPTION,ID_TYPE,L_IMG,LISTED_PRICE,BASE_PRICE,QUANTITY ) VALUES (?,?,?,?,?,?,?,?,?,?,100)";
         String query2="INSERT INTO price (ID_FOOD,LISTED_PRICE,PRICE) VALUES (?,?,?)";
         String query3="INSERT INTO image_detail(ID_IMG,ID_FOOD) VALUES (?,?)";
         String query4 = "INSERT INTO image(ID_IMG ,SRC) VALUES(?,?)";
@@ -499,9 +498,7 @@ public class ProductsService {
     public List<Products> getAllproductSearch(String txt, int page){
         ArrayList<Products> allProductSearch = new ArrayList<Products>();
         String query4 = "SELECT food.ID_FOOD , food.FOOD_NAME,food.IS_COMBO,food.IS_HOT," +
-
                 "food.IS_SALE,food.DESCRIPTION,food.ID_TYPE,food.LISTED_PRICE,food.BASE_PRICE,food.L_IMG FROM food " +
-
                 "WHERE food.FOOD_NAME  LIKE ?" +
                 "LIMIT 12 OFFSET ?";
         try {

@@ -2,6 +2,7 @@ package main.controller;
 
 import main.bean.Products;
 import main.bean.User;
+import main.bean.UserPemission;
 import main.services.AppService;
 import main.services.ProductsService;
 
@@ -28,17 +29,26 @@ public class ServletGetAllProductAd extends HttpServlet {
             left = Integer.parseInt(page) - 1 ;
             right = Integer.parseInt(page) +1;
         }
-
-        ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
-        int pagee = ProductsService.getInstance().getPageAllPro();
         HttpSession session = request.getSession();
-
-        request.setAttribute("allproducts", proPage);
-        request.setAttribute("page", pagee);
-        request.setAttribute("left", left);
-        request.setAttribute("right", right);
-        request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
-
+        User user = (User) session.getAttribute("auth");
+        if(user!=null) {
+        UserPemission actor = new UserPemission(user.getUserId());
+        if (actor.canWatchproduct()) {
+            ArrayList<Products> proPage = (ArrayList<Products>) ProductsService.getInstance().getAllProductByPage(page2);
+            int pagee = ProductsService.getInstance().getPageAllPro();
+            request.setAttribute("allproducts", proPage);
+            request.setAttribute("page", pagee);
+            request.setAttribute("left", left);
+            request.setAttribute("right", right);
+            request.getRequestDispatcher("/SanPham.jsp").forward(request, response);
+        }
+        else {
+            response.sendRedirect("./404ne.html");
+        }
+        }
+        else {
+            response.sendRedirect("./DangNhap.jsp");
+        }
     }
 
     @Override

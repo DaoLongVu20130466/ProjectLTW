@@ -2,6 +2,7 @@ package main.controller;
 
 import main.bean.TypeProducts;
 import main.bean.User;
+import main.bean.UserPemission;
 import main.services.AppService;
 import main.services.ProductsService;
 
@@ -20,14 +21,19 @@ public class ServletAddNewProduct extends HttpServlet {
         int role = user.getRole();
 
         if (AppService.checkAdmin(role)) {
-        ArrayList<TypeProducts> type  = ProductsService.getInstance().getTypeProduct();
-        request.setAttribute("alltype",type);
-        request.getRequestDispatcher("/addProduct.jsp").forward(request,response);
+            UserPemission actor = new UserPemission(user.getUserId());
+            if (actor.canAdEditproduct()) {
+                ArrayList<TypeProducts> type = ProductsService.getInstance().getTypeProduct();
+                request.setAttribute("alltype", type);
+                request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
+            }else {
+                response.sendRedirect("./404ne.html");
+            }
 
-    }else {
+        }else {
         request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
         request.getRequestDispatcher("/getIndex").forward(request, response);
-    }
+         }
 }
 
     @Override

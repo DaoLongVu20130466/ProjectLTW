@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.bean.Log;
 import main.bean.Products;
 
 import main.bean.User;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "getUserControl", value = "/getUserControl")
-public class getUserControl extends HttpServlet {
+public class    getUserControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<User> user = useService.getInstance().getAllUser();
@@ -23,12 +24,18 @@ public class getUserControl extends HttpServlet {
             int role = userr.getRole();
             if (AppService.checkAdmin(role)) {
                 request.setAttribute("alluser", user);
+                int level = 0;
+                String user0 = userr.getUserName();
+                String source = "Xem tài khoản";
+                String content = "Xem tài khoản người dùng ";
+                String status = "Hoàn thành";
+                Log.writeLog(level, user0, source, content, status);
                 request.getRequestDispatcher("QuanLyTaiKhoan.jsp").forward(request, response);
             } else {
                 request.setAttribute("error", "Bạn không có quền truy cập vào trang này");
                 request.getRequestDispatcher("/getIndex").forward(request, response);
             }
-        }else response.sendRedirect("404Page.html");
+        }else response.sendRedirect("./404ne.html");
     }
 
     @Override

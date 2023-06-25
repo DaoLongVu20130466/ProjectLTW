@@ -92,7 +92,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="img/a.png" alt=""></a>
+                    <a href="getIndex"><img src="img/a.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -184,9 +184,9 @@
                     <p><%=pro.getIdDes()%>
                     </p>
                 </div>
-                <form action="/web_war/test1" enctype="multipart/form-data" method="get" onSubmit="">
+                <form action="addtoCart" enctype="multipart/form-data" method="get" onSubmit="">
                     <div class='add-input' style="display: none">
-                        <input type='text' name='idfood' value="<%=pro.getID_food()%>">
+                        <input type='text' name='id' value="<%=pro.getID_food()%>">
                     </div>
                     <div class="quantity">
                         Số lượng:
@@ -195,27 +195,17 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h4>Size:</h4>
-                        <label class="size">Thường
-                            <input type="radio" checked="checked" name="radio" value="SIZE1">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="size">Đặc biệt
-                            <input type="radio" name="radio" value="SIZE2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
                     <ul>
                         <li><b>Tình trạng</b> <span> Còn món ăn</span></li>
-                        <li><b>Ghi chú</b> <input type='text' name='ghichu' placeholder="Ghi chu" ></li>
+                        <br>
+                        <li><b>Ghi chú</b> <span>Món ăn ngon tuyệt vời</span></li>
 
                     </ul>
-                    <a href="./addtoCart?id=<%=pro.getID_food()%>">
-                        <button class="btn" > Mua món ăn</button></a>
+
+                    <button class="btn" type="submit"> Mua món ăn</button></a>
 
                 </form>
+            </div>
             </div>
 
             <div class="col-lg-12">
