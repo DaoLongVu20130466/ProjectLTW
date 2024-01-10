@@ -114,7 +114,7 @@
     <div class="container-form">
          <div class="form_lg" style="justify-content: space-evenly;    height: 100%;">
         <p1>Nhập mật khẩu mới</p1>
-             <form  id="passwordForm"  action="">
+             <form  id="passwordForm"  action="Datlaimk">
 
                  <input type="password" style="font-size: 13.25px;     height: calc(1.5em + 2.75rem + 1px);
     padding: 1.375rem 0.75rem;" class="input-lg form-control" name="password1" id="password1" placeholder="New Password" autocomplete="off">

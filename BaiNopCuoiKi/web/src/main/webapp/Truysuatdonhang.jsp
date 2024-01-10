@@ -175,11 +175,11 @@
                             <td><%=item.getAddress()%></td>
                             <td><%=item.getTotalValue()%></td>
                             <td><%=item.getStatus()%></td>
-                            <td><a href="/web_war/ServletInforOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
+                            <td><a href="./ServletInforOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
                             <%
                             UserPemission p = (UserPemission) request.getAttribute("permission");
                             if (p.canEditAddTran()&&item.getStatus().equals("Đang chờ xử lý")){%>
-                            <a href="/web_war/ServletAcceptOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Xác nhận đơn</a>
+                            <a href="./ServletAcceptOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Xác nhận đơn</a>
                             <%}%>
                         </tr>
                         <%}%>

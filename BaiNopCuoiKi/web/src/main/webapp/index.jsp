@@ -126,7 +126,7 @@
                         <%}else{ %>
                         <li> <a href="DangNhap.jsp"> <i class="fa fa-user"></i> </a></li>
                         <%}%>
-                        <li><a href="DangNhap.jsp"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -194,7 +194,7 @@
                         <span>SBE </span>
                         <h2>Rẻ như bèo <br />nghèo cũng có tiền mua</h2>
                         <p>Ăn là sẽ nhớ - nhớ rồi sẽ mua </p>
-                        <a href="shop-grid.html" class="primary-btn">MUA NGAY</a>
+                        <a href="getAllProduct" class="primary-btn">MUA NGAY</a>
                     </div>
                 </div>
             </div>
@@ -268,7 +268,9 @@
             <div class="col-lg-3 col-md-4 col-sm-6 ">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="<%=p.getIdImg()%>">
-                        <ul class="featured__item__pic__hover">
+                        <ul class="product__item__pic__hover">
+                            <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">
@@ -311,9 +313,9 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mix ">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="<%=p.getIdImg() %>">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                        <ul class="product__item__pic__hover">
+                            <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">

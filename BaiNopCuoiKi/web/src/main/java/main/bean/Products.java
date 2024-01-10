@@ -206,9 +206,11 @@ public class Products implements Serializable {
     }
 
     public String getPath() {
-        return "img/Data/ComGa/2comga_dagion-min.jpeg";
+        return idImg;
     }
-
+    public String getPath2() {
+        return img;
+    }
     public String getLISTED_PRICE() {
         return AppService.intToVND(basePrice);
     }

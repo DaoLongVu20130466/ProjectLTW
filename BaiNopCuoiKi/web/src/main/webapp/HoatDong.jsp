@@ -116,8 +116,8 @@
       <div class="col-lg-3">
         <div class="header__cart">
           <ul>
-            <li><a href="./user.html"><i class="fa fa-user"></i></a></li>
-            <li><a href="./GioHang.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <li><a href="getUserInfor"><i class="fa fa-user"></i></a></li>
+            <li><a href="getUserInfor"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
           </ul>
           <div class="header__cart__price"></div>
         </div>
@@ -208,7 +208,7 @@
               <td><%=p.getLevel()%></td>
               <td>
                 <%if(per.canRemoveLog()){%>
-                <a href="ServletDeletelog?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
+                <a href="./ServletDeletelog?fid=<%=p.getId()%>"> <i class="fa fa-trash-o" aria-hidden="true"></i> Xóa</a><br>
               <%}%>
             </tr>
             <%}%>
@@ -227,7 +227,7 @@
 
             for (int i = 1 ; i <= n ; i++) {
           %>
-          <a class href="getPageAD?page=<%= i %>"><%= i%></a>
+          <a class href="./getActivate?page=<%= i %>"><%= i%></a>
           <%}%>
         </div>
       </div>

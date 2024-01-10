@@ -24,9 +24,9 @@ public class ServletGetRole extends HttpServlet {
                 session.setAttribute("userper", new UserPemission(request.getParameter("uid")));
                 request.getRequestDispatcher("QuanLyRole.jsp").forward(request, response);
             } else
-                response.sendRedirect("404Page.html");
+                response.sendRedirect("./404Page.html");
         }
-        else response.sendRedirect("404Page.html");
+        else response.sendRedirect("./404Page.html");
     }
 
     @Override

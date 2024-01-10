@@ -35,7 +35,6 @@ public class ProductsService {
                             "JOIN food \n" +
                             "on type_food.ID_TYPE = food.ID_TYPE\n" +
                             "on food.ID_FOOD = order_details.ID_FOOD  \n" +
-                            "AND food.ID_SIZE = order_details.ID_SIZE\n" +
                             "WHERE ID_ORDER = ?");
 
                     ps.setString(1, oderId);
@@ -64,7 +63,7 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+            ResultSet rs = stmt.executeQuery("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, price.PRICE  , image.SRC\n" +
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD"
@@ -92,7 +91,7 @@ public class ProductsService {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , image.SRC\n" +
+            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, price.PRICE  , image.SRC\n" +
 
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
@@ -272,7 +271,7 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE,food.DESCRIPTION, food.IVENTORY, PRICE.PRICE  , image.SRC \n" +
+            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , food.ID_TYPE,food.DESCRIPTION, food.IVENTORY, price.PRICE  , image.SRC \n" +
                     "FROM ((food LEFT JOIN image_detail on food.ID_FOOD = image_detail.ID_FOOD) \n" +
                     " LEFT JOIN image on image_detail.ID_IMG = image.ID_IMG )\n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD \n" +
@@ -305,7 +304,7 @@ public class ProductsService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, PRICE.PRICE  , food.L_IMG\n" +
+            PreparedStatement ps = conn.prepareStatement("SELECT food.ID_FOOD , food.FOOD_NAME , ID_TYPE, price.PRICE  , food.L_IMG\n" +
                     "FROM food \n" +
                     " LEFT JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
                     "WHERE food.ID_TYPE = ? "
@@ -372,9 +371,9 @@ public class ProductsService {
 
     public List<Products> getAllproductFavouriteByUser (String iduser){
         ArrayList<Products> allProductByFavourite = new ArrayList<Products>();
-        String query="SELECT  user_information.ID_USER ,food.ID_FOOD , food.FOOD_NAME, PRICE.PRICE , food.L_IMG \n" +
+        String query="SELECT  user_information.ID_USER ,food.ID_FOOD , food.FOOD_NAME, price.PRICE , food.L_IMG \n" +
                 "FROM user_information  JOIN accounts ON user_information.ID_USER = accounts.ID_USER\n" +
-                "JOIN favourites ON accountS.ID_ACCOUNT = favourites.ID_ACCOUNT\n" +
+                "JOIN favourites ON accounts.ID_ACCOUNT = favourites.ID_ACCOUNT\n" +
                 "JOIN food ON  favourites.ID_FOOD  = food.ID_FOOD\n" +
                 "JOIN price on   food.ID_FOOD = price.ID_FOOD\n" +
                 " WHERE user_information.ID_USER = ?";
@@ -565,8 +564,8 @@ public class ProductsService {
              String idimg3,
              String idimg4
             ){
-        String query1 ="UPDATE FOOD SET FOOD_NAME = ?,IS_COMBO = ?," +
-                "IS_HOT=?,IS_SALE=?,DESCRIPTION=?,ID_TYPE = ? ,L_IMG =? ,LISTED_PRICE = ?,BASE_PRICE =? WHERE FOOD.ID_FOOD = ?";
+        String query1 ="UPDATE food SET FOOD_NAME = ?,IS_COMBO = ?," +
+                "IS_HOT=?,IS_SALE=?,DESCRIPTION=?,ID_TYPE = ? ,L_IMG =? ,LISTED_PRICE = ?,BASE_PRICE =? WHERE food.ID_FOOD = ?";
         String query2="UPDATE  price SET LISTED_PRICE = ?,PRICE=? WHERE price.ID_FOOD = ?";
         String query4 = "UPDATE  image SET SRC=? WHERE image.ID_IMG = ? ";
         String query5="UPDATE  size_details SET ID_SIZE = ? WHERE size_details.ID_FOOD = ?";

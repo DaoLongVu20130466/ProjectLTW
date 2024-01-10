@@ -121,11 +121,12 @@ public class OderService {
     }
     public ArrayList<Order> getAllUserOder(String idUSer){
         ArrayList<Order> allOder = new ArrayList<>();
+
         ArrayList<OderCart> orc;
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement statement = conn.prepareStatement("SELECT orders.ID_ORDER, ID_ACCOUNT , STATUSS  \n" +
+            PreparedStatement statement = conn.prepareStatement("SELECT orders.ID_ORDER, ID_ACCOUNT , STATUSS ,DELIVERY_CHARGES,districtID,wardID \n" +
                     "from orders \n" +
                     "JOIN order_account_details \n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE ID_ACCOUNT = ?");
@@ -133,11 +134,15 @@ public class OderService {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
+                Order rsl  ;
                 String idOder = rs.getString(1);
                 Voucher voucher = VoucherService.getInstance().getVcByOderId(idOder);
                 Address ad = AdressService.getInstance().getAdressByOderId(idOder);
                 orc = (ProductsService.getInstance().getProductByOderID(idOder));
-                allOder.add(new Order(idOder,rs.getString(2),ad,orc,rs.getString(3),voucher));
+                allOder.add(rsl = new Order(idOder,rs.getString(2),ad,orc,rs.getString(3),voucher));
+                rsl.setShip(rs.getInt(4));
+                rsl.setDistrictID(Integer.toString(rs.getInt(5)));
+                rsl.setWardID(Integer.toString(rs.getInt(6)));
             }
             conn.close();
         } catch (Exception ex) {
@@ -151,7 +156,7 @@ public class OderService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , ORDER_DATE, STATUSS , DELIVERY_CHARGES\n" +
+            PreparedStatement stmt = conn.prepareStatement("SELECT orders.ID_ORDER, NAMEUSER, PHONE_NUMBER , NOTE , STATUSS , DELIVERY_CHARGES,districtID,wardID\n" +
                     "from orders\n" +
                     "JOIN order_account_details\n" +
                     "on order_account_details.ID_ORDER = orders.ID_ORDER WHERE orders.ID_ORDER =? AND ID_ACCOUNT = ?");
@@ -166,8 +171,10 @@ public class OderService {
                 rsl.setPbuyName(rs.getString(2));
                 rsl.setPhoneNumber(rs.getString(3));
                 rsl.setNote(rs.getString(4));
-                rsl.setStatus(rs.getString(6));
-                rsl.setShip(rs.getInt(7));
+                rsl.setStatus(rs.getString(5));
+                rsl.setShip(rs.getInt(6));
+                rsl.setDistrictID(rs.getString(7));
+                rsl.setWardID(rs.getString(8));
                 rsl.setVoucher(voucher);
                 rsl.setAddress(ad);
                 rsl.setAllOderCart(orc);

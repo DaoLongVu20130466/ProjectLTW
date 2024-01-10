@@ -149,14 +149,12 @@
                     <div class="sidebar">
                         <div class="sidebar__item">
                             <ul>
-                                <li><a href="ServletGetInforDB"><i class="fa fa-tachometer" aria-hidden="true"></i> Doanh Thu </a></li>
-                                <li><a href="getAllProductByAdmin"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Sản Phẩm </a></li>
-                                <li><a href="ServletAddNewProduct"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Thêm Mặt Hàng</a></li>
-                                <li><a href="getUserControl"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Quản Lý Tài Khoản</a></li>
-                                <li><a href="ServletGetAllOder"><i class="fa fa-square" aria-hidden="true"></i> Truy Xuất Đơn Hàng</a></li>
-                                <li><a href="ServletVoucher"><i class="fa fa-gift" aria-hidden="true"></i> Tặng Voucher</a></li>
-                                <li><a href="getActivate"><i class="fa fa-file-text" aria-hidden="true"></i> Log</a></li>
-                                <li><a href="ServletGetAllOderAPI"><i class="fa fa-train" aria-hidden="true"></i> Xem đơn vận chuyển</a></li>
+                                <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                                <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
+                                <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
+                                <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
+
+                                <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
                             </ul>
                         </div>
                     </div>
@@ -237,12 +235,12 @@
                                 %>
                                 <tr>
                                     <td><%=item.getIdOder()%></td>
-                                    <td><%=item.getAddress().getProvine()%></td>
+                                    <td><%=item.getAddress()%></td>
                                     <td><%=item.getTotalValue()%></td>
                                     <td><%=item.getStatus()%></td>
                                     <td>
-                                        <a href="/web_war/ServletGetUserOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
-                                        <a href="/web_war/ServletCancelOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a>
+                                        <a href="./ServletGetUserOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-file" aria-hidden="true"></i>Chi Tiết</a>
+                                        <a href="./ServletCancelOder?idoder=<%=item.getIdOder()%>"><i class="fa fa-trash" aria-hidden="true"></i>Hủy</a>
                                 </tr>
                                 <%}%>
                                 </tbody>

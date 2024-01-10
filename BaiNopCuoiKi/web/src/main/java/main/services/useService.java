@@ -48,22 +48,20 @@ public class useService {
             // crate statement
             Statement stmt = conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = stmt.executeQuery("SELECT id,userid , phone,pro,sodon,sts\n" +
-                    "from (\n" +
-                    "(SELECT accounts.ID_USER as id, \n" +
-                    "USER_NAMES as userid , \n" +
-                    "PHONE_NUMBER as phone,\n" +
-                    "PROVINCE as pro,\n" +
-                    "IS_BLOCK as sts\n" +
-                    "FROM accounts\n" +
-                    "join user_information \n" +
-                    "join addresses \n" +
-                    "on addresses.ID_ADDRESS = user_information.ID_ADDRESS\n" +
-                    "on user_information.ID_USER = accounts.ID_USER\n" +
-                    ") as bangtam) left join\n" +
-                    "((SELECT ID_ACCOUNT as acc, COUNT(ID_ACCOUNT) as sodon from order_account_details)\n" +
-                    "as bangphu)\n" +
-                    "on bangtam.id = bangphu.acc");
+            ResultSet rs = stmt.executeQuery("SELECT id,userid , phone,pro,sodon,sts from\n" +
+                    "                                        (SELECT accounts.ID_USER as id, \n" +
+                    "                    USER_NAMES as userid ,\n" +
+                    "                    PHONE_NUMBER as phone,\n" +
+                    "                    PROVINCE as pro,\n" +
+                    "                    IS_BLOCK as sts\n" +
+                    "                    FROM accounts\n" +
+                    "                    join user_information\n" +
+                    "                    join addresses\n" +
+                    "                    on addresses.ID_ADDRESS = user_information.ID_ADDRESS\n" +
+                    "                                        on user_information.ID_USER = accounts.ID_USER) as bangtam\n" +
+                    "                                        left join\n" +
+                    "                                        (SELECT ID_ACCOUNT as acc, COUNT(ID_ACCOUNT) as sodon from order_account_details \n" +
+                    "                                        GROUP BY ID_ACCOUNT) as bangphu on bangtam.id = bangphu.acc");
             // show data
             while (rs.next()) {
                 String id = rs.getString(1);
@@ -140,7 +138,7 @@ public class useService {
 
             stmt.setString(2, uid);
 
-            PreparedStatement stmt2 = conn.prepareStatement("UPDATE user_information us join addresss ad on us.ID_ADDRESS=ad.ID_ADDRESS SET PROVINCE = ? , PHONE_NUMBER= ? , USER_NAMES =? WHERE ID_USER = ?");
+            PreparedStatement stmt2 = conn.prepareStatement("UPDATE user_information us join addresses ad on us.ID_ADDRESS=ad.ID_ADDRESS SET PROVINCE = ? , PHONE_NUMBER= ? , USER_NAMES =? WHERE ID_USER = ?");
             stmt2.setString(1, diachi);
             stmt2.setString(2, sdt);
             stmt2.setString(3, hoten);
@@ -167,6 +165,37 @@ public class useService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public  boolean isWithin15Minutes(long savedTimeMillis) {
+        long currentTimeMillis = System.currentTimeMillis();
+        long difference = currentTimeMillis - savedTimeMillis;
+        long fifteenMinutesMillis = 15 * 60 * 1000;
+        return difference <= fifteenMinutesMillis;
+    }
+    public String checkRSP(String hash) {
+        String result=null;
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            Statement stmt = conn.createStatement();
+            // get data from table 'student'
+            PreparedStatement ps = conn.prepareStatement("SELECT ID_ACCOUNT,Exptime FROM reset_password WHERE Hash_Code=?"  );
+            ps.setString(1,hash);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                String id = rs.getString(1);
+                long exptime = rs.getLong(2);
+                if(useService.getInstance().isWithin15Minutes(exptime)){
+                    result=id ;
+                }
+            }
+            conn.close();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return result;
     }
 
     public void upImgProducts(String uid, String link) {
@@ -207,6 +236,7 @@ public class useService {
 
     public User checkLogin(String username, String password) {
         ArrayList<User> listuser = new ArrayList<User>();
+
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             // crate statement
@@ -348,11 +378,12 @@ public class useService {
             // crate statement
             String idacconut="ACC"+useService.getInstance().checkIDaccount();
             String idUSER="USER"+useService.getInstance().checkIDaccount();
-            String query2= "INSERT INTO user_information (ID_USER,USER_NAMES,PHONE_NUMBER) VALUES(?,?,?)";
+            String query2= "INSERT INTO user_information (ID_USER,USER_NAMES,PHONE_NUMBER,ID_ADDRESS) VALUES(?,?,?,?)";
             PreparedStatement b= conn.prepareStatement(query2);
             b.setString(1,idUSER);
             b.setString(2,username);
             b.setString(3,phone);
+            b.setString(4,"ADD1");
             b.executeUpdate();
             String query= "INSERT INTO accounts (ID_ACCOUNT,USERS,PASS,ID_USER,STATUSS,IS_BLOCK,EMAIL,AVATAR) VALUES(?,?,?,?,'HOẠT ĐỘNG',0,?,'img/cupvangWC.jpg')";
 
@@ -443,7 +474,7 @@ public class useService {
             // get data from table 'student'
             PreparedStatement ps = conn.prepareStatement("select ID_ACCOUNT\n" +
                     "from accounts \n" +
-                    "where EMAIL and ID_SIZE = ?"  );
+                    "where EMAIL = ?"  );
             ps.setString(1,  email);
 
             ResultSet rs = ps.executeQuery();
@@ -489,7 +520,28 @@ public class useService {
         return result;
     }
 
+    public void doimk2(String userId, String newpassword) {
+        try {
+            Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
+            // crate statement
+            String idacconut="ACC"+useService.getInstance().checkIDaccount();
+            String idUSER="USER"+useService.getInstance().checkIDaccount();
+            String idadres="ADD"+useService.getInstance().checkIDaccount();
+            String query= "UPDATE accounts\n" +
+                    "SET PASS = ? \n" +
+                    "WHERE ID_ACCOUNT = ?";
+            PreparedStatement a= conn.prepareStatement(query);
+            a.setString(1,newpassword);
+            a.setString(2,userId);
 
+            a.executeUpdate();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+
+    }
 
     public void doimk(String userId, String newpassword) {
         try {
@@ -519,8 +571,8 @@ public class useService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
 
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM FOOD " +
-                    "WHERE FOOD.ID_FOOD = ? ");
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM food " +
+                    "WHERE food.ID_FOOD = ? ");
             ps.setString(1,idf);
             ps.executeUpdate();
             PreparedStatement ps1 = conn.prepareStatement("DELETE FROM price " +
@@ -650,20 +702,17 @@ public class useService {
 
     public int upReset_password( String ID_ACCOUNT, String hash) {
         int Y = 0;
-        java.sql.Timestamp  intime = new java.sql.Timestamp(new
-                java.util.Date().getTime());
-        Calendar cal = Calendar.getInstance();
-        cal.setTimeInMillis(intime.getTime());
-        cal.add(Calendar.MINUTE, 20);
-        java.sql.Timestamp  exptime = new Timestamp(cal.getTime().getTime());
-
+        long expiryTime = System.currentTimeMillis() + 15 * 60 * 1000;
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             Statement stmt = conn.createStatement();
-            String query= "insert into reset_password(ID_ACCOUNT,Hash_Code,Exptime,Datetime)Value ("+ID_ACCOUNT+","+hash+","+exptime+","+intime+")" ;
+            String query= "INSERT INTO reset_password(ID_ACCOUNT,Hash_Code,Exptime)Values (?,?,?)" ;
 
-
-            Y= stmt.executeUpdate(query);
+            PreparedStatement a= conn.prepareStatement(query);
+            a.setString(1,ID_ACCOUNT);
+            a.setString(2,hash);
+            a.setLong(3,expiryTime);
+             a.executeUpdate();
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -672,7 +721,8 @@ public class useService {
 
     }
     public static void main(String[] args) {
-        useService.getInstance().registry("thoai", "123456 ", "quangvutran248@gmail.com", "0196654411");
+        System.out.println( useService.getInstance().upReset_password("dfdf","dfdf"));
+
     }
 
 

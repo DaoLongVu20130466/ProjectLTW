@@ -35,7 +35,7 @@ public class UserPemission implements Serializable {
     public void getUserPermisson(String uid){
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
-            PreparedStatement ps = conn.prepareStatement("SELECT ProductLevel, AccountLevel,LogLevel,VoucherLevel,TranLevel,AccountLv, RoleName FROM rolerule join role on role.ROLE = rolerule.ID WHERE ROLE.ID_USER= ?");
+            PreparedStatement ps = conn.prepareStatement("SELECT ProductLevel, AccountLevel,LogLevel,VoucherLevel,TranLevel,AccountLv, RoleName FROM rolerule join role on role.ROLE = rolerule.ID WHERE role.ID_USER= ?");
             ps.setString(1,uid);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

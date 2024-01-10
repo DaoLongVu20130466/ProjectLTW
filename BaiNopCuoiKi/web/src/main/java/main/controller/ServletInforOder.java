@@ -28,7 +28,7 @@ public class ServletInforOder extends HttpServlet {
             String status = "Hoàn thành";
             Log.writeLog(level, user0, source, content, status);
             request.getRequestDispatcher("/ChiTietDonHang.jsp").forward(request, response);
-        }else response.sendRedirect("/404ne.html");
+        }else response.sendRedirect("./404ne.html");
     }
 
     @Override
