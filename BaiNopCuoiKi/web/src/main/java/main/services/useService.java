@@ -378,6 +378,14 @@ public class useService {
             // crate statement
             String idacconut="ACC"+useService.getInstance().checkIDaccount();
             String idUSER="USER"+useService.getInstance().checkIDaccount();
+            String query1= "INSERT INTO keyrsa (ID_Key,KeyRSA,status,time_active,ID_USER) VALUES(?,?,?,?,?)";
+            PreparedStatement x= conn.prepareStatement(query1);
+            x.setString(1,idUSER+"key");
+            x.setString(2,"");
+            x.setString(3,"Chưa Tạo");
+            x.setString(4,"");
+            x.setString(5,"idUSER");
+            x.executeUpdate();
             String query2= "INSERT INTO user_information (ID_USER,USER_NAMES,PHONE_NUMBER,ID_ADDRESS) VALUES(?,?,?,?)";
             PreparedStatement b= conn.prepareStatement(query2);
             b.setString(1,idUSER);

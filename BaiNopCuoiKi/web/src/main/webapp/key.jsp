@@ -1,7 +1,8 @@
 <%@ page import="main.bean.User" %>
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="main.bean.Order" %><%--
+<%@ page import="main.bean.Order" %>
+<%@ page import="main.bean.Key" %><%--
   Created by IntelliJ IDEA.
   User: thoai
   Date: 7/01/2023
@@ -70,7 +71,19 @@
               <%
                 String a = (String) session.getAttribute("login");
                 User user = (User) session.getAttribute("auth");
+                Key ifkey= (Key) session.getAttribute("ifkey");
                 ArrayList<Order> list = (ArrayList<Order>) session.getAttribute("alloder");
+                String mess = (String)request.getAttribute("message");
+
+              %>
+              <%
+                if (mess!=null) {
+              %>
+              <script>
+                alert(" <%=mess%>");
+              </script>
+              <%
+                }
               %>
               <%
                 if (a == null) {
@@ -159,7 +172,6 @@
                 <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                 <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                 <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>
-
                 <li><a href="GetVoucherUser"><i class="fa fa-gift" aria-hidden="true"></i>Voucher</a></li>
               </ul>
             </div>
@@ -182,40 +194,41 @@
             <div class="right">
               <div class="info">
 
-                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Chỉnh sửa</a></div>
+                <div class="chinhsuainfo"> <h3>Thông tin</h3>    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;margin-left: 23%;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 0px 5px 15px;">Vô hiệu hóa</a></div>
 
                 <div class="info_data"> <div class="data">
-                  <h4> Tên </h4>
-                  <p><%=user.getName()%></p>
+                  <h4> Trạng thái </h4>
+                  <p><%=ifkey.getStatus()%></p>
                 </div>
                   <div class="data">
-                    <h4>Địa CHỉ</h4>
-                    <p><%=userID.getProvine()%></p>
+                    <h4> Ngày Active </h4>
+                    <p><%=ifkey.getTimeActive()%></p>
                   </div>
                 </div>
+
                 <div class="projects_data">
+                  <% if (ifkey.getStatus().equals("Chưa Tạo")){
+                  %>
                   <div class="data">
-                    <h4>Email</h4>
-                    <p><%=userID.getEmail()%></p>
+                    <h4>Tạo khóa</h4>
+                    <a href="/ServletCreateKey" style="background-color: #2ec791;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 14px 5px 15px;">Tạo Khóa</a>
                   </div>
+                  <%
+                    }else{
+                  %>
                   <div class="data">
-                    <h4>Phone</h4>
-                    <p><%=userID.getPhoneNumber()%></p>
+                    <h4>Tạo khóa</h4>
+                    <a href="/ServletCreateKey" style="background-color: #2ec791;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 14px 5px 15px;">Thay khóa</a>
+                  </div>
+                  <%
+                    }
+                  %>
+                  <div class="data">
+                    <h4>Quên khóa</h4>
+                    <a href="Chinhsuathongtin.jsp" style="background-color: #2ec791;height: 40px;width: 100px;color: #000000;border-radius: 3px;padding: 8px 14px 5px 15px;">Quên Khóa</a>
+
                   </div>
                 </div>
-                <div class="projects_data">
-                  <div class="data">
-                    <h4>Số Đơn Đã Ủng Hộ</h4>
-                    <p><%=list.size()%></p>
-                  </div>
-                  <div class="data">
-                    <h4>Trạng thoái</h4>
-                    <p><%=userID.getStatus()%></p>
-                  </div>
-
-
-                </div>
-
               </div>
             </div>
 
