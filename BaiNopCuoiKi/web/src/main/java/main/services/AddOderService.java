@@ -31,11 +31,11 @@ public class AddOderService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             PreparedStatement statement = conn.prepareStatement(
-                    "UPDATE food SET QUANTITY = ? WHERE ID_FOOD = ? and ID_SIZE = 'SIZE1'");
+                    "UPDATE food SET QUANTITY = ? WHERE ID_FOOD = ? ");
             statement.setInt(1,getAmount(foodid)-quantity);
             statement.setString(2,foodid);
             if(getAmount(foodid)-quantity <=0){
-                PreparedStatement statement1 = conn.prepareStatement("UPDATE food SET STATUSS = 'Hết Hàng' WHERE ID_FOOD = ? and ID_SIZE = 'SIZE1'");
+                PreparedStatement statement1 = conn.prepareStatement("UPDATE food SET STATUSS = 'Hết Hàng' WHERE ID_FOOD = ? ");
                 statement1.setString(1,foodid);
                 statement1.execute();
             }
@@ -63,7 +63,7 @@ public class AddOderService {
         try {
             Connection conn = ConnectMysqlExample.getConnection(ConnectMysqlExample.getDbUrl(), ConnectMysqlExample.getUserName(), ConnectMysqlExample.getPASSWORD());
             PreparedStatement statement = conn.prepareStatement(
-                    "SELECT QUANTITY FROM food WHERE ID_FOOD =? AND ID_SIZE = 'SIZE1'");
+                    "SELECT QUANTITY FROM food WHERE ID_FOOD =? ");
             statement.setString(1, foodID);
             ResultSet rsl = statement.executeQuery();
             while (rsl.next()) {

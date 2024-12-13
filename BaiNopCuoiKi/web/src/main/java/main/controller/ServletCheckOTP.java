@@ -35,7 +35,7 @@ public class ServletCheckOTP extends HttpServlet {
                     otp.sendNewPass();
                     session.removeAttribute("otp");
                     request.removeAttribute("arlertw");
-                    response.sendRedirect("/web_war/DangNhap.jsp");
+                    response.sendRedirect("./DangNhap.jsp");
                 } catch (NoSuchAlgorithmException e) {
                     throw new RuntimeException(e);
                 }

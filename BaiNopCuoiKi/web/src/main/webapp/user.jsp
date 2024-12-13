@@ -155,6 +155,7 @@
             <div class="sidebar__item">
               <ul>
                 <li ><a href="getUser"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Thông Tin </a></li>
+                <li><a href="ServletGetKeyInfor"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Chữ Ký </a></li>
                 <li><a href="getUIFOder"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn Hàng </a></li>
                 <li><a href="getAllFavourite"><i class="fa fa-heart" aria-hidden="true"></i> Yêu Thích </a></li>
                 <li><a href="Doimk"><i class="fa fa-refresh" aria-hidden="true"></i>Đổi Mật Khẩu</a></li>

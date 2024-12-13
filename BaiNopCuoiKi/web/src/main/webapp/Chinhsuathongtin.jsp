@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+
 <html lang="zxx">
 <%@ page import="main.bean.User" %>
 <%@ page import="main.bean.Products" %>
 <%@ page import="java.util.ArrayList" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
     <meta charset="UTF-8">
@@ -235,7 +234,7 @@
                             <h2 class="title">CHỉnh sửa</h2>
                             <form  class="form-horizontal" action="UploadDownloadFileServlet" enctype="multipart/form-data" method="post">
                                 <div class="form-inline col-md-10 col-sm-9 col-xs-12">
-                                    <input type="file" id="img" name="fileName" class="file-uploader pull-left" >
+                                    <input type="file" id="img" name="myfile" class="file-uploader pull-left" >
                                     <input type="submit" value="Upload" class="btn btn-sm btn-default-alt pull-left" style="margin-top: 0px; margin-left: 5px;" >
                                 </div>
                             </form>

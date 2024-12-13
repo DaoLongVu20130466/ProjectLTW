@@ -9,7 +9,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <context-param>
     <param-name>tempfile.dir</param-name>
-    <param-value>web_war\img\IMG</param-value>
+    <param-value>web_war\img</param-value>
   </context-param>
 
   <servlet>
@@ -289,6 +289,14 @@
     <url-pattern>/ServletResetPass</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>reset_password</servlet-name>
+    <servlet-class>main.controller.reset_password</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reset_password</servlet-name>
+    <url-pattern>/reset_password</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ServletSearchControl</servlet-name>
     <servlet-class>main.controller.ServletSearchControl</servlet-class>
   </servlet>
@@ -327,6 +335,22 @@
   <servlet-mapping>
     <servlet-name>ServletUpdateEditProduct</servlet-name>
     <url-pattern>/updateEditProduct</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Datlaimk</servlet-name>
+    <servlet-class>main.controller.Datlaimk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Datlaimk</servlet-name>
+    <url-pattern>/Datlaimk</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletMailRegistry</servlet-name>
+    <servlet-class>main.controller.ServletMailRegistry</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMailRegistry</servlet-name>
+    <url-pattern>/ServletMailRegistry</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletUpdateIF</servlet-name>

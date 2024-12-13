@@ -243,7 +243,7 @@
                                         <tr>
                                             <td>
                                                 <div class="itin4">
-                                                    <img src="<%=item.getItem().getPath()%>" alt="" >
+                                                    <img src="<%=item.getItem().getPath2()%>" alt="" >
                                                     <div class="ittabp">
                                                         <p class="itemi4"> <%=item.getItem().getFoodName()%></p>
                                                         <p class="mahang"> <%=item.getItem().getID_food()%></p>

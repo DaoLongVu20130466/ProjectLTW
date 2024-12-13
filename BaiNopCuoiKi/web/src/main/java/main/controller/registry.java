@@ -1,6 +1,7 @@
 package main.controller;
 
 import main.bean.User;
+import main.services.Utils;
 import main.services.useService;
 
 import javax.servlet.*;
@@ -33,12 +34,13 @@ public class registry extends HttpServlet {
         request.setAttribute("error", rs2);
         request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
     } if(rs==null && rs2==null && rs1==null) {
-            useService.getInstance().registry(username, password, email, phone);
-            response.sendRedirect("/DangNhap.jsp");
+            String links = request.getRequestURL().toString().replace("registry", "ServletMailRegistry")+"?username="+username+"&password="+password+"&email="+email+"&phone="+phone;
+            String messageText = " Click <a href=" + links  + ">Here</a> To Confirm Account Registration";
+            Utils.getInstance().sendMail(email,"Đăng kí tài khoản",messageText);
+            response.sendRedirect("/BaiNopCuoiKi/DangNhap.jsp");
         }
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/DangKy.jsp").forward(request, response);
     }
 }

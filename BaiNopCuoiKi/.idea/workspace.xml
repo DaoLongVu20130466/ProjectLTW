@@ -10,12 +10,190 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e04245c-329d-4940-ba36-8b5148ac3031" name="Changes" comment="">
-
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/checksums.lock" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/8.0.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/8.0.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/web/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/bean/UserPemission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/Doimk.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/Doimk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAcceptOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAcceptOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddFavourite.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletAddFavourite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletCheckOTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletEditRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetUserOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletGetUserOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletInforOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetFormoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletResetPass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletUIFOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/ServletUIFOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/getActivate.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/getActivate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/registry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/controller/uploadimg.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/controller/uploadimg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/AddOderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/AddOderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/OderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/OderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/main/services/useService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/404Page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/404ne.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/404ne.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHangUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/ChiTietDonHangUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Chinhsuathongtin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Chinhsuathongtin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/DangKy.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/DangKy.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Donhang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/GioHang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/GioHang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/HoatDong.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Log.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/Truysuatdonhang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/Truysuatdonhang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/10pho_taibam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/11pho_botai-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/12pho_bonam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/1bun_bovien-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/2bun_botaibovien-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/3bun_rieucuagioheo-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/4bun_rieucuathapcam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/5bun_bohuedacbiet-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/6bun_bohuetaicha-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/7pho_tainambovien-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/8pho_namgan-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Bun/9pho_dacbiet-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/10combo_nguvisotkem-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/11combo_kimchiphomai-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/12combo_bongcai-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/1combo_nuongdauque-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/2combo_bohamtrunglongdao-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/3combo_boham-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/4combo_bonuongtrunglongdao-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/5combo_bonuongOsaka-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/6combo_luonnuong-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/7combo_luongnuong_phomai-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/8combo_bulgogi_nho-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComBo/9combo_bulgogi_lon-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/10comchine_duongchau-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/11comchien_duiga-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/12comchien_duabo-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/1comchien-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/2comchien_thit-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/3comchien_thapcam-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/4cowmchine_mitron-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/5comchien_boluclac-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/6comchien_daga-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/7comchien_lindong-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/8comchien_haisan-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComChien/9comchien_caman-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/10Comga_xoimoT99-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/11Comga_xoimoTC-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/12comga_chiennuocmam-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/1comga_aquang-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/2comga_dagion-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/3comga_denhat-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/4comga_garanjpeg-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/5comga_mamtoi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/6comga_ngon-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/7comga_nuongtieuxanh-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/8Comga_xoimo142-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComGa/9comga_xoimoongdia-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/10haisan_goikhocasac-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/11haisan_mucchiennuocmam-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/12haisan_tomchiengion-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/1haisan_goicacauquan-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/2haisan_muconghap-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/3haisan_tomlanhoWasabi-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/4haisan_cangudaiduong-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/5haisan_chacuongcatrich-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/6haisan_chaohaosua-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/7haisan_haunuongphomai-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/8haisan_haisankhoilua-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComHaiSan/9haisan_charamtondat-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/10Common_thitheochienxu-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/11Common_carithitheochienxu-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/12Common_bobulgogixaootchuong-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/1Common_thitheochienxu-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/2Common_tonkatsudon-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/3Common_caribo-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/4Common_beefsteak-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/5Common_combapbohap-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/6Common_oyakodon-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/7Common_trungsotdemi-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/8Common_cahoiapchao-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComMon/9Common_chaythapcam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/10comsuon_lapxuong-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/11comsuon_cayopla-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/12comsuon_suongcay-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/1comsuon-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/2comsuon_trung-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/3comsuon_chabi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/4comsuon_bi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/5comsuon_trungchabi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/6comsuon_nuong-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/7comsuon_trung2-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/8comsuon_trungopla-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/ComSuon/9comsuon_trungkho-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/1combo_2suonbicha+raumadauxanh-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/2combo_comsuon+comthem+raumadauxanh-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/3combo_2suongbicha+1comthem-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/4combo_2suongchaopla+comthem-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/5combo_bunbodacbiet+02pepsi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/6combo_comga+pepssi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/7combo_suonbichatietkiem-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Combomonan/8combo_suontietkiem+1montuychon-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/GiamGia/1comga_aquang-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/GiamGia/2comga_dagion-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/GiamGia/4comga_garanjpeg-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/GiamGia/5comga_mamtoi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/GiamGia/5haisan_chacuongcatrich-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/GiamGia/6haisan_chaohaosua-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/1bun_bovien-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/1comga_aquang-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/1comsuon-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/2comga_dagion-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/2comsuon_trung-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/4comga_garanjpeg-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/5comga_mamtoi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Hothonhot/9pho_dacbiet-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/10canh_rongbienthitbam2-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/11canh_chua2-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/12canh_xuongham-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/1canh_rongbienthitnam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/2canh_caichuathitbam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/3canh_rongbien-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/4canh_chua-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/5canh_rongbien2-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/6canh_chuacahu-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/7canh_khoqua-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/8canh_caingot-min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/MonCanh/9canh_caichuathitbam-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/10thucuong_string-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/11thucuong_olong-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/12thucuong_aquafina-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/1thucuong_tradao-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/2thucuong_travai-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/3thucuong_tradaohatchia-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/4thucuong_nuocsuoi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/5thucuong_sprite-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/6thucuong_cocacola-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/7thucuong_fanta-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/8thucuong_pepsi-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/img/Data/Thucuong/9thucuong_7up-min.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/reset_password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/reset_password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/shop-grid.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/yah.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/yah.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +214,37 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/web">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BaiNopCuoiKi" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -76,19 +282,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web",
-    "list.type.of.created.stylesheet": "CSS",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vu/Documents/GitHub/ProjectLTW/BaiNopCuoiKi/web&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.AppService">
+}</component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
     <configuration name="ApiController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.bean.ApiController" />
       <module name="web" />
@@ -383,7 +591,8 @@
       <workItem from="1687665990817" duration="6338000" />
       <workItem from="1687575614861" duration="12028000" />
       <workItem from="1687616899362" duration="254000" />
-
+      <workItem from="1704374196470" duration="354000" />
+      <workItem from="1704377786695" duration="148000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,6 @@ public class getActivate extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
         int role = user.getRole();
-
         if (AppService.checkAdmin(role)) {
             UserPemission actor = new UserPemission(user.getUserId());
             if (actor.canWatchLog()) {
@@ -32,6 +31,7 @@ public class getActivate extends HttpServlet {
                 String content = "Xem Log";
                 String status = "Hoàn thành";
                 Log.writeLog(level, user0, source, content, status);
+
                 request.getRequestDispatcher("HoatDong.jsp").forward(request, response);
 
             }else {
