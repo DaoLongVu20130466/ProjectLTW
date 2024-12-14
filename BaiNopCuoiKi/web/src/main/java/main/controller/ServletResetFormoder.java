@@ -40,15 +40,15 @@ public class ServletResetFormoder extends HttpServlet {
                if (AddOderService.getInstance().adODer(user.getIdacc(), cart, vouch,adrs1,adrs2)) {
                    request.setAttribute("error", "Thanh toán thành công");
                    session.setAttribute("cart", new Cart());
-                   request.getRequestDispatcher("/yah.html").forward(request, response);
+                   request.getRequestDispatcher("./yah.html").forward(request, response);
 
                } else {
                    request.setAttribute("error", "Thanh toán thất bại");
-                   response.sendRedirect("/404page.html");
+                   response.sendRedirect("./404ne.html");
                }
            }else{
                request.setAttribute("error", "Vui lòng đang nhập để thanh toán");
-               request.getRequestDispatcher("/getIndex").forward(request, response);
+               request.getRequestDispatcher("./getIndex").forward(request, response);
            }
        }
     }

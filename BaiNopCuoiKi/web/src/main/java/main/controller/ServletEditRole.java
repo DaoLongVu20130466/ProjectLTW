@@ -24,9 +24,7 @@ public class ServletEditRole extends HttpServlet {
             User user = (User) session.getAttribute("auth");
 //        Log.getInstance().WriteLog(user.getUserId(),1,this.getClass().getName(),"a","a");
             String roleId = request.getParameter("Role");
-            System.out.println(roleId);
             String targetID = (String) request.getParameter("targetUID");
-            System.out.println(targetID);
             UsrPerServiece.getInstance().upDaterole(roleId, targetID);
             int level = 3;
             String user0 = user.getUserName();
@@ -34,7 +32,9 @@ public class ServletEditRole extends HttpServlet {
             String content = "Chỉnh role của ID "+targetID;
             String status = "Hoàn thành";
             Log.writeLog(level, user0, source, content, status);
-            response.sendRedirect("/web_war/getUserControl");
+            request.setAttribute("auth",user);
+            request.setAttribute("targetUID",targetID);
+            request.getRequestDispatcher("/ServletGetInforDB").forward(request, response);
         }
         else response.sendRedirect("./404ne.html");
     }

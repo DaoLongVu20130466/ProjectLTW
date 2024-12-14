@@ -16,11 +16,15 @@ public class ServletUIFOder extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session =request.getSession();
-        User user0 = (User) session.getAttribute("auth");
-        String  iduser = user0.getUserId();
-        User usernow = useService.getInstance().getAllUserByID(iduser);
+        User user = (User) session.getAttribute("auth");
+
+        User usernow = useService.getInstance().getAllUserByID(user.getUserId());
         request.setAttribute("userID",usernow);
         ArrayList<Order> list = OderService.getInstance().getAllUserOder(usernow.getIdacc());
+        for (Order item: list
+        ) {
+            item.update();
+        }
         session.setAttribute("alloder", list);
         request.getRequestDispatcher("/Donhang.jsp").forward(request, response);
 

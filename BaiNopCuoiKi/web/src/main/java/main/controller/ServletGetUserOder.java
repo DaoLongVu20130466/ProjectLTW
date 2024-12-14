@@ -25,6 +25,7 @@ public class ServletGetUserOder extends HttpServlet {
         User usernow = useService.getInstance().getAllUserByID(iduser);
         request.setAttribute("userID",usernow);
         Order order = OderService.getInstance().getInforOderByUser(idOder,usernow.getIdacc());
+        order.update();
         request.setAttribute("inforOder",order);
         request.getRequestDispatcher("/ChiTietDonHangUser.jsp").forward(request,response) ;
 

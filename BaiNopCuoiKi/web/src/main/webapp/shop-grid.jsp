@@ -115,7 +115,7 @@
 
                         <li><a href="getUser"><i class="fa fa-user"></i> </a></li>
 
-                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="showCart"><i class="fa fa-shopping-bag"></i></a></li>
                     </ul>
                     <div class="header__cart__price"></div>
                 </div>
@@ -200,16 +200,16 @@
                                 <div class="product__discount__item">
                                     <div class="product__discount__item__pic set-bg"
                                          data-setbg="<%=p.getIdImg()%>">
-                                        <div class="product__discount__percent">-20%</div>
+
                                         <ul class="product__item__pic__hover">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="ServletAddFavourite?idf=<%=p.getID_food()%>"><i class="fa fa-heart"></i></a></li>
                                             <li><a href="addtoCart?id=<%=p.getID_food()%>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="product__discount__item__text">
                                         <span><%=p.getIdType()%></span>
                                         <h5><a href="detail?type=<%=p.getIdType()%>&fid=<%=p.getID_food()%>"><%=p.getFoodName()%></a></h5>
-                                        <div class="product__item__price"><%=AppService.intToVND(p.getPrice())%> <span>60000VND</span></div>
+                                        <div class="product__item__price"><%=AppService.intToVND(p.getPrice())%></div>
                                     </div>
                                 </div>
                             </div>

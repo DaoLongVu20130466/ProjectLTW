@@ -35,11 +35,11 @@ public class ServletAcceptOder extends HttpServlet {
                     String content = "Chấp nhận oder";
                     String status = "Hoàn thành";
                     Log.writeLog(level, user0, source, content, status);
-                request.getRequestDispatcher("/Truysuatdonhang.jsp").forward(request, response);
+                request.getRequestDispatcher("/ServletGetAllOder").forward(request, response);
                 }else {
-                    response.sendRedirect("/404Page.html");}
+                    response.sendRedirect("./404Page.html");}
             } else {
-                response.sendRedirect("/404Page.html");
+                response.sendRedirect("./404Page.html");
             }
         }
         else {

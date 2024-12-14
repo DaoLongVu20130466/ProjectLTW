@@ -303,7 +303,7 @@
                                         <%  }else {%>
 
                                         <form action="AddCommentServlet" enctype="multipart/form-data" method="post" onSubmit="">
-                                            <img class="rounded-circle border p-1" src="https://tse1.mm.bing.net/th?id=OIP.U9C4RzMqCACUyFqpkWjXWgHaEK&pid=Api&P=0" alt="Generic placeholder image" style="width:74px;height:74px;">
+                                            <img class="rounded-circle border p-1" src="<%=user.getAvatar()%>" alt="Generic placeholder image" style="width:74px;height:74px;">
                                             <input type="text" placeholder="Nhận xét" style="width: 800px;" name="cmt">
 
 

@@ -345,23 +345,13 @@
                         <a href="showCart" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>Cập nhật</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="shoping__continue">
-                        <div class="shoping__discount">
-                            <h5>Mã giảm giá</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Nhập mã giảm giá" name="voucher" id="voucher" >
-                                <button type="submit" class="site-btn">Áp Dụng</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
                         <%int stage = (int) request.getAttribute("stage");
                         System.out.println(stage);
                         %>
-                        <form id="form1" method="post" action="/web_war/ServletResetFormoder">
+                        <form id="form1" method="post" action="ServletResetFormoder">
                             <input type="hidden" id="stage" name="stage" value=<%=request.getAttribute("stage")%>>
                         <h5>Tổng Đơn Hàng</h5>
                         <ul>

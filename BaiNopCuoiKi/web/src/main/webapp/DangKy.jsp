@@ -113,7 +113,7 @@
     <div class="form_lg">
         <p1>Đăng ký</p1>
 
-        <form action="/web_war/registry" class="main-form" id ="main-formm"onSubmit="return checkPw(this)">
+        <form action="registry" class="main-form" id ="main-formm"onSubmit="return checkPw(this)">
 
             <%
                 String error = (String) request.getAttribute("error");

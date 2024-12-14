@@ -34,10 +34,7 @@ public class ServletAddFavourite extends HttpServlet {
         ArrayList<Products> product = (ArrayList<Products>) ProductsService.getInstance().getAllproductFavouriteByUser(idser);
         request.setAttribute("userID", user2);
         request.setAttribute("product", product);
-
-
         response.sendRedirect("getAllFavourite");
-
     }
 
     @Override
